@@ -13,7 +13,9 @@ window.PLAYBOOK_CONTENT = {
     visualPlaceholder: "Espacio visual",
     previousStep: "Paso anterior",
     nextStep: "Paso siguiente",
-    placeholderFlag: "Placeholder — contenido pendiente"
+    placeholderFlag: "Placeholder — contenido pendiente",
+    jumpToStep: "Ir a un paso…",
+    phase: "Fase"
   },
   tocIntro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, quis nostrud exercitation ullamco laboris.",
   steps: [

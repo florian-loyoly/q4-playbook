@@ -48,6 +48,14 @@ Il suffit de remplacer les valeurs texte par le vrai contenu fourni par le parte
 
 Chaque étape a une couleur d'accent (`--step-1` à `--step-9`, réglables dans `assets/css/style.css`) assignée automatiquement selon sa position dans le tableau.
 
+## Routing des chapitres
+
+Chaque chapitre a sa propre URL en hash : `/fr/#chapter-3` (numérotation 1 à 9, non traduite — c'est un identifiant technique, pas du texte visible). Ouvrir cette URL directement affiche le bon chapitre au chargement. Le bouton Précédent/Suivant du navigateur fonctionne (navigation via `history.pushState`/`popstate` dans `app.js`, fonctions `applyDetail` / `applyJourney` / `syncFromHash`).
+
+## Lien de démo (CTA de fin de frise)
+
+Le bouton "Réserver une démo Loyoly" (et ses équivalents EN/ES) pointe vers une seule constante `DEMO_URL` en haut de `assets/js/app.js`. Pour changer le lien, il suffit de modifier cette constante — elle s'applique automatiquement aux 3 langues via les éléments `[data-cta-url]`.
+
 ## Développement local
 
 Aucune installation requise (pas de Node.js, pas de dépendances) pour éditer le contenu. Pour **prévisualiser** dans le navigateur, il faut servir les fichiers via un petit serveur local (les chemins `/assets/...` ne fonctionnent pas en ouverture directe `file://`) :

@@ -24,6 +24,17 @@
   --step-8: #12a594;
   --step-9: #1864ab;
 
+  /* Lightened variants of each accent, reserved for use on dark backgrounds (AA contrast) */
+  --step-1-dark: #6d95ff;
+  --step-2-dark: #c9a876;
+  --step-3-dark: #ff7fac;
+  --step-4-dark: #55d17b;
+  --step-5-dark: #ff9a58;
+  --step-6-dark: #a793f2;
+  --step-7-dark: #4fd0e2;
+  --step-8-dark: #4fe0c9;
+  --step-9-dark: #6fa8e6;
+
   --font-display: "Lexend", "Inter", system-ui, sans-serif;
   --font-body: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   --font-label: "Montserrat", "Inter", system-ui, sans-serif;
@@ -70,6 +81,29 @@ button {
 @keyframes flipIn    { from { opacity: 0; transform: perspective(1200px) rotateY(9deg) translateY(22px); } to { opacity: 1; transform: none; } }
 @keyframes spineFlow { to { background-position: 0 15px; } }
 @keyframes spineDraw { from { clip-path: inset(0 0 100% 0); } to { clip-path: inset(0 0 0 0); } }
+
+/* View transitions (journey <-> detail) */
+@keyframes viewSlideIn     { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+@keyframes viewSlideBack   { from { opacity: 0; transform: translateY(-10px); } to { opacity: 1; transform: none; } }
+@keyframes viewFadeOnly    { from { opacity: 0; } to { opacity: 1; } }
+@keyframes stepIn          { from { opacity: 0; transform: translateY(14px); } to { opacity: 1; transform: none; } }
+
+.js-stagger { opacity: 0; animation: stepIn 420ms var(--ease) both; }
+.js-stagger.is-reduced { animation: viewFadeOnly 150ms linear both; }
+
+/* Return-to-origin highlight */
+@keyframes cardHighlight {
+  0%   { box-shadow: 0 0 0 0 color-mix(in srgb, var(--step-color, var(--accent)) 45%, transparent); border-color: var(--step-color, var(--accent)); }
+  70%  { box-shadow: 0 0 0 8px color-mix(in srgb, var(--step-color, var(--accent)) 0%, transparent); border-color: var(--step-color, var(--accent)); }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Kill continuous/ambient motion; JS handles the view-transition + stagger branch separately */
+  .spine-dot[data-live="1"] { animation: none; }
+  .spine[data-spine="flow"]::before { animation: none; }
+  .step-card { animation: viewFadeOnly 120ms linear both; }
+}
 
 /* ---------- Backgrounds ---------- */
 
@@ -305,7 +339,7 @@ button {
 .spine-row {
   display: flex;
   align-items: center;
-  min-height: 150px;
+  min-height: 104px;
   position: relative;
 }
 
@@ -333,21 +367,59 @@ button {
   animation: floatDot 2.4s ease-in-out infinite;
 }
 
+.spine-dot.is-milestone {
+  width: 17px;
+  height: 17px;
+  border-width: 3px;
+  border-color: var(--step-color, var(--border-strong));
+}
+
+.phase-divider {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 22px 0;
+  margin: 0 auto;
+  max-width: 356px;
+}
+
+.phase-divider::before,
+.phase-divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.phase-divider-label {
+  font-family: var(--font-label);
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--ink-faint);
+  white-space: nowrap;
+}
+
+.phase-divider:first-child { padding-top: 0; }
+
 .step-card {
   display: flex;
   flex-direction: column;
-  gap: 13px;
+  gap: 10px;
   width: 100%;
   text-align: left;
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 18px;
+  padding: 16px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, .06);
   cursor: pointer;
   transition: border-color .22s, box-shadow .22s, transform .22s;
   animation: riseIn 500ms var(--ease) both;
 }
+
+.step-card.is-highlighted { animation: cardHighlight 1.5s var(--ease) both; }
 
 .step-card:hover {
   border-color: var(--step-color, var(--border-strong));
@@ -426,7 +498,14 @@ button {
 
 /* ---------- Detail view ---------- */
 
-.detail-topbar { padding: 20px 0 0; }
+.detail-topbar {
+  padding: 20px 0 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
 
 .back-link {
   display: inline-flex;
@@ -438,6 +517,29 @@ button {
 }
 
 .back-link:hover { color: var(--ink); }
+
+.detail-progress {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: var(--ink-faint);
+}
+
+.progress-count { font-weight: 600; color: var(--ink-soft); white-space: nowrap; }
+
+.step-jump {
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-soft);
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 6px 10px;
+  cursor: pointer;
+  max-width: 220px;
+}
 
 .detail-hero { padding: 28px 0 36px; }
 
@@ -535,7 +637,7 @@ button {
   font-weight: 600;
   font-size: clamp(48px, 7vw, 74px);
   line-height: 1;
-  color: var(--step-color, var(--accent));
+  color: var(--step-color-dark, var(--step-color, var(--accent)));
 }
 
 .stat-sep { width: 1px; align-self: stretch; background: rgba(245, 244, 240, .2); }
@@ -685,7 +787,64 @@ button {
 .nav-btn:hover { border-color: var(--border-strong); transform: translateY(-1px); }
 .nav-btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
 
+/* ---------- Closing CTA ---------- */
+
+.cta-block {
+  background: var(--ink);
+  color: #f5f4f0;
+  border-radius: var(--radius);
+  padding: 44px 28px;
+  margin: 8px 0 40px;
+  text-align: center;
+  background-image: radial-gradient(circle at 80% 20%, rgba(255, 255, 255, .06), transparent 60%);
+}
+
+.cta-title {
+  font-family: var(--font-display);
+  font-weight: 500;
+  font-size: clamp(24px, 3.5vw, 32px);
+  margin: 0 0 10px;
+}
+
+.cta-text {
+  font-size: 15px;
+  color: rgba(245, 244, 240, .75);
+  margin: 0 0 24px;
+  max-width: 50ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 26px;
+  border-radius: var(--radius);
+  background: var(--accent);
+  color: #fff;
+  font-weight: 600;
+  font-size: 15px;
+  transition: filter .2s var(--ease), transform .15s var(--ease);
+}
+
+.btn-primary:hover { filter: brightness(1.08); transform: translateY(-1px); }
+
+/* ---------- Focus visibility (global fallback) ---------- */
+
+a:focus-visible,
+button:focus-visible,
+select:focus-visible,
+[role="button"]:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
 /* ---------- Footer ---------- */
 
 .site-footer { padding: 30px 0 60px; color: var(--ink-faint); font-size: 13px; text-align: center; }
 .site-footer a { color: var(--ink-soft); text-decoration: underline; }
+
+@media (max-width: 640px) {
+  .header-title { display: none; }
+}

@@ -7,9 +7,15 @@
   <script>
     (function () {
       var supported = ["en", "fr", "es"];
+      var stored = null;
+      try {
+        stored = localStorage.getItem("q4-market");
+      } catch (e) {
+        /* localStorage unavailable (privacy mode) — ignore */
+      }
       var lang = (navigator.language || "en").slice(0, 2).toLowerCase();
-      var target = supported.indexOf(lang) !== -1 ? lang : "en";
-      window.location.replace("/" + target + "/");
+      var target = supported.indexOf(stored) !== -1 ? stored : (supported.indexOf(lang) !== -1 ? lang : "en");
+      window.location.replace("/" + target + "/" + location.hash);
     })();
   </script>
 </head>
