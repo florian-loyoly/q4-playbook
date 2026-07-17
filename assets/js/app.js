@@ -68,8 +68,10 @@
         ? "<span></span>"
         : '<span class="step-partner"><span class="partner-avatar">' + esc(step.partner.initial) + "</span>" + esc(step.partner.name) + "</span>";
 
+      var sideClass = i % 2 === 0 ? " is-right" : "";
+
       html +=
-        '<div class="spine-row">' +
+        '<div class="spine-row' + sideClass + '">' +
           '<div class="spine-card">' +
             '<div class="step-card" role="button" tabindex="0" aria-expanded="false" data-index="' + i + '" ' +
               'style="--step-color: var(--step-' + (i + 1) + "); animation-delay: " + i * 50 + 'ms">' +
@@ -79,10 +81,9 @@
               "</div>" +
               '<h2 class="step-title">' + esc(step.title) + "</h2>" +
               '<p class="step-question">' + esc(step.question) + "</p>" +
-              '<div class="step-card-bottom">' + partnerRow + '<span class="step-open-label">Open →</span></div>' +
+              '<div class="step-card-bottom">' + partnerRow + '<span class="step-open-label">' + esc(C.labels.open) + " →</span></div>" +
             "</div>" +
           "</div>" +
-          '<div class="spine-spacer"></div>' +
           '<span class="spine-dot' + (isPhaseStart ? " is-milestone" : "") + '" data-live="' + (i === 0 ? 1 : 0) + '" style="--step-color: var(--step-' + (i + 1) + ')"></span>' +
         "</div>";
     });

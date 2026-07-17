@@ -15,7 +15,8 @@ window.PLAYBOOK_CONTENT = {
     nextStep: "Paso siguiente",
     placeholderFlag: "Placeholder — contenido pendiente",
     jumpToStep: "Ir a un paso…",
-    phase: "Fase"
+    phase: "Fase",
+    open: "Abrir"
   },
   tocIntro: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, quis nostrud exercitation ullamco laboris.",
   steps: [

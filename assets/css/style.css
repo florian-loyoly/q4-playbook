@@ -112,6 +112,8 @@ button {
 .page[data-bg="banded"] .spine-section { background: var(--bg-banded); }
 .spine-section { transition: background .3s; padding: 40px 0 80px; }
 
+.spine-section-header { margin-bottom: 28px; }
+
 /* ---------- Header ---------- */
 
 .site-header {
@@ -184,6 +186,60 @@ button {
 
 .hero { padding: 48px 0 8px; }
 
+.hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr);
+  gap: 32px;
+  align-items: start;
+}
+
+.hero-side { padding-top: 4px; }
+
+.hero-intro {
+  font-size: 15px;
+  color: var(--ink-soft);
+  margin: 0 0 22px;
+  max-width: 46ch;
+}
+
+/* Dormant variant: wrap .hero-intro in a <div class="hero-intro-box"> to restore a bordered card look */
+.hero-intro-box {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px 22px;
+  margin-bottom: 22px;
+}
+
+.hero-intro-box .hero-intro { margin-bottom: 0; }
+
+.hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 24px;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-strong);
+  color: var(--ink);
+  font-weight: 600;
+  font-size: 15px;
+  transition: border-color .2s var(--ease), background-color .2s var(--ease), transform .15s var(--ease);
+}
+
+.btn-secondary:hover { background: var(--card); transform: translateY(-1px); }
+
+@media (max-width: 860px) {
+  .hero-grid { grid-template-columns: 1fr; }
+  .hero-side { padding-top: 0; margin-top: 8px; }
+}
+
 .badge {
   display: inline-flex;
   align-items: center;
@@ -203,9 +259,9 @@ button {
 .hero h1 {
   font-family: var(--font-display);
   font-weight: 500;
-  font-size: clamp(34px, 5vw, 52px);
+  font-size: clamp(30px, 3.4vw, 44px);
   letter-spacing: -.03em;
-  line-height: 1.02;
+  line-height: 1.05;
   margin: 0 0 18px;
   color: var(--ink);
 }
@@ -251,7 +307,7 @@ button {
   background: var(--card);
   border: 1px solid var(--border);
   border-radius: var(--radius);
-  padding: 28px;
+  padding: 22px;
   margin-bottom: 8px;
 }
 
@@ -266,51 +322,71 @@ button {
 }
 
 .market-question {
-  font-size: 19px;
+  font-size: 16px;
   font-weight: 600;
   color: var(--ink);
-  margin: 0 0 20px;
+  margin: 0 0 18px;
   max-width: 50ch;
 }
 
-.market-buttons { display: flex; flex-wrap: wrap; gap: 12px; }
+.market-buttons { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
 
 .market-btn {
+  position: relative;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
-  padding: 12px 16px;
+  gap: 8px;
+  padding: 12px 8px;
   border-radius: var(--radius);
   border: 1px solid var(--border);
   background: #fff;
   cursor: pointer;
-  transition: border-color .2s var(--ease), background-color .2s var(--ease), transform .15s var(--ease);
-  text-align: left;
+  transition: border-color .2s var(--ease), box-shadow .2s var(--ease), transform .15s var(--ease);
+  text-align: center;
 }
 
 .market-btn:hover { border-color: var(--border-strong); transform: translateY(-1px); }
 
 .market-btn.is-active {
-  background: var(--ink);
-  border-color: var(--ink);
-  color: #fff;
+  background: var(--card);
+  border: 2px solid var(--accent);
+  padding: 11px 7px;
+  box-shadow: 0 3px 10px rgba(43, 37, 31, .08);
 }
 
-.market-code {
-  font-family: var(--font-label);
-  font-weight: 700;
-  font-size: 11px;
-  letter-spacing: .04em;
-  padding: 4px 8px;
-  border-radius: 4px;
-  background: var(--border);
-  color: var(--ink);
+.market-flag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--bg);
+  font-size: 14px;
+  line-height: 1;
+  flex-shrink: 0;
+  overflow: hidden;
 }
 
-.market-btn.is-active .market-code { background: rgba(255, 255, 255, .18); color: #fff; }
+.market-check {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+.market-check svg { width: 12px; height: 12px; stroke: #fff; }
+.market-btn.is-active .market-check { display: flex; }
 
 .market-name { font-weight: 600; font-size: 14px; }
-.market-sub { font-size: 12px; opacity: .7; }
+.market-sub { font-size: 12px; color: var(--ink-soft); }
 
 /* ---------- Views ---------- */
 
@@ -337,15 +413,15 @@ button {
 .spine[data-spine="flow"]::before { animation: spineFlow 1.1s linear infinite; }
 
 .spine-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 80px 1fr;
   align-items: center;
   min-height: 104px;
   position: relative;
 }
 
-.spine-row:nth-child(even) { flex-direction: row-reverse; }
-.spine-card { flex: 0 0 356px; max-width: 356px; }
-.spine-spacer { flex: 1; }
+.spine-card { grid-column: 1; justify-self: end; width: 100%; max-width: 356px; }
+.spine-row.is-right .spine-card { grid-column: 3; justify-self: start; }
 
 .spine-dot {
   position: absolute;
@@ -394,10 +470,10 @@ button {
 .phase-divider-label {
   font-family: var(--font-label);
   font-weight: 700;
-  font-size: 11px;
-  letter-spacing: .12em;
+  font-size: 12.5px;
+  letter-spacing: .1em;
   text-transform: uppercase;
-  color: var(--ink-faint);
+  color: var(--ink-soft);
   white-space: nowrap;
 }
 
@@ -481,15 +557,25 @@ button {
   flex-shrink: 0;
 }
 
-.step-open-label { font-size: 12.5px; font-weight: 600; color: var(--ink-faint); white-space: nowrap; }
+.step-open-label {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-label);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: .02em;
+  color: var(--step-color, var(--accent));
+  background: color-mix(in srgb, var(--step-color, var(--accent)) 12%, transparent);
+  border-radius: 999px;
+  padding: 5px 12px;
+  white-space: nowrap;
+}
 
 @media (max-width: 760px) {
   .spine { max-width: 100%; }
   .spine::before { left: 20px; }
-  .spine-row, .spine-row:nth-child(even) { flex-direction: row; }
-  .spine-row { padding-left: 46px; min-height: 0; margin-bottom: 16px; }
-  .spine-card { flex: 1 1 auto; max-width: none; width: 100%; }
-  .spine-spacer { display: none; }
+  .spine-row { grid-template-columns: 1fr; padding-left: 46px; min-height: 0; margin-bottom: 16px; }
+  .spine-card, .spine-row.is-right .spine-card { grid-column: 1; justify-self: stretch; max-width: none; width: 100%; }
   .spine-dot { left: 20px; top: 34px; }
   .detail-hero-grid { grid-template-columns: 1fr !important; }
   .toc-grid { grid-template-columns: 1fr !important; }

@@ -31,43 +31,55 @@
     <div id="view-journey" class="view is-active">
       <main class="container">
         <section class="hero">
-          <span class="badge">2026 Edition · Black Friday → Post-Holiday</span>
-          <h1>The Ultimate Q4 Playbook<span class="dot">.</span></h1>
-          <p><strong>The e-commerce customer journey, decoded step by step</strong> — nine moments, nine best-in-class partners.</p>
-          <p>The last quarter of the year brings together all the challenges of e-commerce: record volumes, increased competition, pressure on margins and high consumer expectations.</p>
-          <p>Between Black Friday, Cyber Monday and the end-of-year holidays, everything happens in just a few weeks. The bottom line? Every detail of your customer journey counts.</p>
-          <p><strong>This playbook is designed as an operational roadmap to guide you step by step in preparing for Q4.</strong></p>
-          <p>No useless theory: each section is written by an expert partner, with practical recommendations you can implement immediately.</p>
-          <hr class="hero-rule" />
-          <div class="metrics">
-            <div><div class="metric-value">9</div><div class="metric-label">journey steps</div></div>
-            <div><div class="metric-value">9</div><div class="metric-label">expert partners</div></div>
-            <div><div class="metric-value">Q4</div><div class="metric-label">peak season</div></div>
+          <div class="hero-grid">
+            <div class="hero-main">
+              <span class="badge">2026 Edition · Black Friday → Post-Holiday</span>
+              <h1>The Ultimate Q4 Playbook<span class="dot">.</span></h1>
+              <!-- To use the boxed intro variant instead, wrap this <p> in a <div class="hero-intro-box"> -->
+              <p class="hero-intro">The e-commerce customer journey, decoded step by step — nine moments, nine best-in-class partners.</p>
+              <div class="hero-actions">
+                <a class="btn-primary" href="#spine-section">Start the journey →</a>
+                <a class="btn-secondary" data-cta-url href="#">Book a demo</a>
+              </div>
+              <div class="metrics">
+                <div><div class="metric-value">9</div><div class="metric-label">journey steps</div></div>
+                <div><div class="metric-value">9</div><div class="metric-label">expert partners</div></div>
+                <div><div class="metric-value">Q4</div><div class="metric-label">peak season</div></div>
+              </div>
+            </div>
+
+            <div class="hero-side">
+              <div class="market-box">
+                <div class="eyebrow">Tailored to your market</div>
+                <p class="market-question">Which market are you preparing for? Partners, benchmarks and tips adapt to the one you pick.</p>
+                <div class="market-buttons">
+                  <button type="button" class="market-btn is-active" data-market="en">
+                    <span class="market-flag">🇬🇧</span>
+                    <span><span class="market-name">United Kingdom</span><br /><span class="market-sub">English (UK)</span></span>
+                    <span class="market-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span>
+                  </button>
+                  <button type="button" class="market-btn" data-market="fr">
+                    <span class="market-flag">🇫🇷</span>
+                    <span><span class="market-name">France</span><br /><span class="market-sub">Français</span></span>
+                    <span class="market-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span>
+                  </button>
+                  <button type="button" class="market-btn" data-market="es">
+                    <span class="market-flag">🇪🇸</span>
+                    <span><span class="market-name">España</span><br /><span class="market-sub">Español</span></span>
+                    <span class="market-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M5 13l4 4L19 7"/></svg></span>
+                  </button>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
-
-        <div class="market-box">
-          <div class="eyebrow">Tailored to your market</div>
-          <p class="market-question">Which market are you preparing for? Partners, benchmarks and tips adapt to the one you pick.</p>
-          <div class="market-buttons">
-            <button type="button" class="market-btn is-active" data-market="en">
-              <span class="market-code">UK</span>
-              <span><span class="market-name">United Kingdom</span><br /><span class="market-sub">English (UK)</span></span>
-            </button>
-            <button type="button" class="market-btn" data-market="fr">
-              <span class="market-code">FR</span>
-              <span><span class="market-name">France</span><br /><span class="market-sub">Français</span></span>
-            </button>
-            <button type="button" class="market-btn" data-market="es">
-              <span class="market-code">ES</span>
-              <span><span class="market-name">España</span><br /><span class="market-sub">Español</span></span>
-            </button>
-          </div>
-        </div>
       </main>
 
-      <section class="spine-section">
+      <section class="spine-section" id="spine-section">
         <div class="container">
+          <div class="spine-section-header">
+            <div class="eyebrow">01 · The Customer Journey</div>
+          </div>
           <div class="spine" id="spine" data-spine="flow" data-draw="1"></div>
         </div>
       </section>
