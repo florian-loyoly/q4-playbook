@@ -1,44 +1,64 @@
 # The Ultimate Q4 Playbook
 
-Site statique (HTML/CSS/JS, sans build) présentant le customer journey map Q4 en 3 langues : EN, FR, ES.
+Site statique (HTML/CSS/JS, sans build) présentant le customer journey map Q4 en 3 langues : EN, FR, ES. Chaque page bascule entre une vue "frise" (les 9 étapes) et une vue "détail" plein écran par étape (sommaire, chiffre clé, conseils, partenaire).
 
 ## Structure
 
 ```
-index.html        → redirige automatiquement vers /en/, /fr/ ou /es/ selon la langue du navigateur
-en/index.html      → version anglaise (marché EN)
-fr/index.html      → version française (marché FR)
-es/index.html      → version espagnole (marché ES)
-assets/css/        → style partagé par les 3 versions
-assets/js/         → interactions partagées (clic sur une étape → animation)
-assets/img/        → logo, icônes, logos partenaires
+index.html                → redirige automatiquement vers /en/, /fr/ ou /es/ selon la langue du navigateur
+en/index.html             → coquille HTML de la version anglaise (marché EN/UK)
+fr/index.html             → coquille HTML de la version française (marché FR)
+es/index.html             → coquille HTML de la version espagnole (marché ES)
+assets/css/style.css      → design system partagé par les 3 versions
+assets/js/app.js          → logique partagée : rendu de la frise + de la vue détail, navigation, sélecteur de marché
+assets/js/content-en.js   → contenu des 9 étapes en anglais (le fichier à éditer pour changer les textes EN)
+assets/js/content-fr.js   → contenu des 9 étapes en français
+assets/js/content-es.js   → contenu des 9 étapes en espagnol
+assets/img/               → logo
 ```
 
-Chaque version linguistique est un fichier HTML autonome. Il n'y a pas de système de traduction automatique : c'est volontaire, car chaque marché a son propre partenaire et donc son propre contenu (pas une simple traduction).
+Chaque langue a son propre fichier `content-XX.js` avec ses propres partenaires — ce n'est pas une simple traduction, car chaque marché a un partenaire différent par étape.
 
 ## Comment remplacer le contenu placeholder par un vrai partenaire
 
-Tout le contenu actuellement dans le site est un **placeholder**, clairement identifié par une étiquette jaune "Placeholder" dans chaque section. Pour remplacer une étape :
+Tout le texte est actuellement un **placeholder** (partenaires fictifs, tips génériques). Pour remplacer une étape, ouvre le fichier `assets/js/content-en.js` (ou `content-fr.js` / `content-es.js`) et repère l'entrée correspondante dans le tableau `steps` (elles sont dans l'ordre, de l'étape 1 à 9). Chaque étape a cette forme :
 
-1. Ouvre le fichier de la langue concernée (`en/index.html`, `fr/index.html` ou `es/index.html`).
-2. Cherche le numéro de l'étape à modifier, ex. `<!-- 03 — On-site Experience & Merchandising -->`.
-3. Dans le bloc `.step-card`, remplace :
-   - le nom du partenaire (`<span class="partner-avatar">S</span>Shelfwise` → nom réel + initiale)
-   - la question (`.step-question`)
-4. Dans le bloc `.step-detail` juste en dessous :
-   - remplace le titre du conseil (`<h3>...</h3>`)
-   - remplace les paragraphes de texte par le vrai tip du partenaire
-   - **supprime la ligne** `<span class="placeholder-flag">...</span>` une fois le contenu confirmé
-5. Si tu as un visuel (image/illustration) à la place de l'encadré "Visual placeholder", remplace le bloc `.visual-placeholder` par une balise `<img src="/assets/img/..." alt="...">`.
+```js
+{
+  title: "Acquisition & Ads",              // nom de l'étape (affiché sur la carte et en détail)
+  question: "How do you capture...",       // sous-titre de la carte
+  isHouse: false,                          // true seulement pour l'étape "Loyalty & Engagement" (Loyoly)
+  partner: {
+    name: "Adnova",                        // nom du partenaire réel à renseigner
+    initial: "A",                          // 1ère lettre, utilisée pour l'avatar coloré
+    url: "#",                              // lien vers le site du partenaire
+    description: "Full-funnel paid..."     // description affichée dans l'encart partenaire
+  },
+  stat: { value: "+38%", label: "lower cost per acquisition" }, // chiffre clé + libellé
+  tips: [
+    "Lock your Black Friday budget by mid-October",   // titre du conseil n°1
+    "Retarget cart abandoners with dynamic creative",  // titre du conseil n°2
+    "...",
+    "..."
+  ]
+}
+```
 
-Chaque étape a une couleur d'accent définie en haut du bloc, ex. `style="--step-color: var(--step-1);"` — les 9 couleurs sont réglables dans `assets/css/style.css` (variables `--step-1` à `--step-9`).
+Il suffit de remplacer les valeurs texte par le vrai contenu fourni par le partenaire. Le corps de texte de chaque conseil (les paragraphes "Lorem ipsum...") est généré automatiquement par `app.js` à partir d'un petit pool de texte de remplissage — une fois que le partenaire fournit un vrai texte pour un conseil donné, ce sera à généraliser dans `app.js` (fonction `renderDetail`) si on veut un corps de texte différent par tip plutôt que le pool générique.
+
+Chaque étape a une couleur d'accent (`--step-1` à `--step-9`, réglables dans `assets/css/style.css`) assignée automatiquement selon sa position dans le tableau.
 
 ## Développement local
 
-Aucune installation requise (pas de Node.js, pas de dépendances). Pour prévisualiser :
-- Double-clique sur `en/index.html` (ou fr/es) pour l'ouvrir dans le navigateur.
-- Ou demande à Claude Code de l'ouvrir dans le navigateur intégré.
+Aucune installation requise (pas de Node.js, pas de dépendances) pour éditer le contenu. Pour **prévisualiser** dans le navigateur, il faut servir les fichiers via un petit serveur local (les chemins `/assets/...` ne fonctionnent pas en ouverture directe `file://`) :
+
+```
+cd q4-playbook
+python3 -m http.server 8743
+```
+
+Puis ouvrir `http://localhost:8743/en/` (ou `/fr/`, `/es/`).
 
 ## Déploiement
 
-Le site est hébergé sur Vercel, connecté au repo GitHub. Chaque `git push` (via GitHub Desktop) redéploie automatiquement le site en production.
+Le site est hébergé sur Vercel, connecté au repo GitHub (`florian-loyoly/q4-playbook`). Chaque `git push` sur `main` redéploie automatiquement le site en production.

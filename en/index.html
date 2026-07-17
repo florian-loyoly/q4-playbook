@@ -5,345 +5,83 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>The Ultimate Q4 Playbook — Loyoly</title>
   <meta name="description" content="The e-commerce customer journey for Q4 2026, decoded step by step by nine expert partners." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Lexend:wght@500;600&family=Montserrat:wght@600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="/assets/css/style.css" />
 </head>
 <body>
+  <div class="page" data-bg="banded">
 
-  <header class="site-header">
-    <div class="container">
-      <a href="/en/" class="brand">
-        <img src="/assets/img/logo-loyoly.svg" alt="Loyoly" />
-        Loyoly
-        <span class="brand-sep">The Ultimate Q4 Playbook</span>
-      </a>
-      <nav class="lang-toggle" aria-label="Language">
-        <a href="/en/" class="is-active">EN</a>
-        <a href="/fr/">FR</a>
-        <a href="/es/">ES</a>
-      </nav>
+    <header class="site-header">
+      <div class="container">
+        <a href="/en/" class="brand">
+          <img src="/assets/img/logo-loyoly.svg" alt="Loyoly" />
+          Loyoly
+        </a>
+        <span class="header-title">The Ultimate Q4 Playbook · 2026</span>
+        <nav class="lang-toggle" aria-label="Language">
+          <a href="/en/" class="is-active">EN</a>
+          <a href="/fr/">FR</a>
+          <a href="/es/">ES</a>
+        </nav>
+      </div>
+    </header>
+
+    <div id="view-journey" class="view is-active">
+      <main class="container">
+        <section class="hero">
+          <span class="badge">2026 Edition · Black Friday → Post-Holiday</span>
+          <h1>The Ultimate Q4 Playbook<span class="dot">.</span></h1>
+          <p><strong>The e-commerce customer journey, decoded step by step</strong> — nine moments, nine best-in-class partners.</p>
+          <p>The last quarter of the year brings together all the challenges of e-commerce: record volumes, increased competition, pressure on margins and high consumer expectations.</p>
+          <p>Between Black Friday, Cyber Monday and the end-of-year holidays, everything happens in just a few weeks. The bottom line? Every detail of your customer journey counts.</p>
+          <p><strong>This playbook is designed as an operational roadmap to guide you step by step in preparing for Q4.</strong></p>
+          <p>No useless theory: each section is written by an expert partner, with practical recommendations you can implement immediately.</p>
+          <hr class="hero-rule" />
+          <div class="metrics">
+            <div><div class="metric-value">9</div><div class="metric-label">journey steps</div></div>
+            <div><div class="metric-value">9</div><div class="metric-label">expert partners</div></div>
+            <div><div class="metric-value">Q4</div><div class="metric-label">peak season</div></div>
+          </div>
+        </section>
+
+        <div class="market-box">
+          <div class="eyebrow">Tailored to your market</div>
+          <p class="market-question">Which market are you preparing for? Partners, benchmarks and tips adapt to the one you pick.</p>
+          <div class="market-buttons">
+            <button type="button" class="market-btn is-active" data-market="en">
+              <span class="market-code">UK</span>
+              <span><span class="market-name">United Kingdom</span><br /><span class="market-sub">English (UK)</span></span>
+            </button>
+            <button type="button" class="market-btn" data-market="fr">
+              <span class="market-code">FR</span>
+              <span><span class="market-name">France</span><br /><span class="market-sub">Français</span></span>
+            </button>
+            <button type="button" class="market-btn" data-market="es">
+              <span class="market-code">ES</span>
+              <span><span class="market-name">España</span><br /><span class="market-sub">Español</span></span>
+            </button>
+          </div>
+        </div>
+      </main>
+
+      <section class="spine-section">
+        <div class="container">
+          <div class="spine" id="spine" data-spine="flow" data-draw="1"></div>
+        </div>
+      </section>
+
+      <footer class="site-footer container">
+        <p>The Ultimate Q4 Playbook — brought to you by <a href="https://www.loyoly.io" target="_blank" rel="noopener">Loyoly</a> and partners. Placeholder content for demo.</p>
+      </footer>
     </div>
-  </header>
 
-  <main class="container">
-    <section class="hero">
-      <span class="badge">2026 Edition · Black Friday → Post-Holiday</span>
-      <h1>The Ultimate Q4 Playbook<span class="dot">.</span></h1>
-      <p><strong>The e-commerce customer journey, decoded step by step</strong> — nine moments, nine best-in-class partners.</p>
-      <p>The last quarter of the year brings together all the challenges of e-commerce: record volumes, increased competition, pressure on margins and high consumer expectations.</p>
-      <p>Between Black Friday, Cyber Monday and the end-of-year holidays, everything happens in just a few weeks. The bottom line? Every detail of your customer journey counts.</p>
-      <p><strong>This playbook is designed as an operational roadmap to guide you step by step in preparing for Q4.</strong></p>
-      <p>No useless theory: each section is written by an expert partner, with practical recommendations you can implement immediately.</p>
-      <hr class="hero-rule" />
-    </section>
+    <div id="view-detail" class="view"></div>
 
-    <ol class="timeline">
+  </div>
 
-      <!-- 01 — Acquisition & Ads -->
-      <li class="timeline-item" style="--step-color: var(--step-1);">
-        <div class="timeline-track"><span class="timeline-dot"></span></div>
-        <button class="step-card" type="button" aria-expanded="false">
-          <div class="step-card-top">
-            <span class="step-number">01</span>
-            <span class="step-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="4"/><circle cx="12" cy="12" r="1"/></svg>
-            </span>
-          </div>
-          <h2 class="step-title">Acquisition &amp; Ads</h2>
-          <p class="step-question">How do you capture qualified traffic without letting CPA spiral during peak?</p>
-          <div class="step-card-bottom">
-            <span class="step-partner"><span class="partner-avatar">A</span>Adnova</span>
-            <span class="step-open-label">Open →</span>
-          </div>
-        </button>
-        <div class="step-detail">
-          <div class="step-detail-inner">
-            <div class="step-detail-eyebrow">Step 01</div>
-            <h3>Lock your Black Friday budget by mid-October</h3>
-            <p class="step-detail-byline">Brought to you by <strong>Adnova</strong></p>
-            <span class="placeholder-flag">Placeholder — partner tip pending</span>
-            <p>[Content to be provided by the EN-market partner] Budgets set too late lose the auction to competitors who locked theirs weeks in advance — bidding early protects your CPA when demand spikes.</p>
-            <p>Full recommendation, channel breakdown and benchmark figures will appear here once the partner content is confirmed.</p>
-            <div class="visual-placeholder">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
-              Visual placeholder
-            </div>
-          </div>
-        </div>
-      </li>
-
-      <!-- 02 — CRM · Activation & Nurturing -->
-      <li class="timeline-item" style="--step-color: var(--step-2);">
-        <div class="timeline-track"><span class="timeline-dot"></span></div>
-        <button class="step-card" type="button" aria-expanded="false">
-          <div class="step-card-top">
-            <span class="step-number">02</span>
-            <span class="step-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11L21 3l-8 18-2-8-8-2z"/></svg>
-            </span>
-          </div>
-          <h2 class="step-title">CRM · Activation &amp; Nurturing</h2>
-          <p class="step-question">How do you turn a first-time buyer into an engaged subscriber within 48h?</p>
-          <div class="step-card-bottom">
-            <span class="step-partner"><span class="partner-avatar">C</span>Cadence</span>
-            <span class="step-open-label">Open →</span>
-          </div>
-        </button>
-        <div class="step-detail">
-          <div class="step-detail-inner">
-            <div class="step-detail-eyebrow">Step 02</div>
-            <h3>Send the right welcome email within the hour of purchase</h3>
-            <p class="step-detail-byline">Brought to you by <strong>Cadence</strong></p>
-            <span class="placeholder-flag">Placeholder — partner tip pending</span>
-            <p>[Content to be provided by the EN-market partner] Speed matters more than polish for the very first touchpoint — a fast, human welcome email outperforms a delayed, beautifully designed one.</p>
-            <p>Full recommendation, flow example and timing benchmarks will appear here once the partner content is confirmed.</p>
-            <div class="visual-placeholder">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
-              Visual placeholder
-            </div>
-          </div>
-        </div>
-      </li>
-
-      <!-- 03 — On-site Experience & Merchandising -->
-      <li class="timeline-item" style="--step-color: var(--step-3);">
-        <div class="timeline-track"><span class="timeline-dot"></span></div>
-        <button class="step-card" type="button" aria-expanded="false">
-          <div class="step-card-top">
-            <span class="step-number">03</span>
-            <span class="step-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6 8h12l-1 12H7L6 8z"/><path d="M9 8V6a3 3 0 016 0v2"/></svg>
-            </span>
-          </div>
-          <h2 class="step-title">On-site Experience &amp; Merchandising</h2>
-          <p class="step-question">How do you guide shoppers to the right product before they bounce?</p>
-          <div class="step-card-bottom">
-            <span class="step-partner"><span class="partner-avatar">S</span>Shelfwise</span>
-            <span class="step-open-label">Open →</span>
-          </div>
-        </button>
-        <div class="step-detail">
-          <div class="step-detail-inner">
-            <div class="step-detail-eyebrow">Step 03</div>
-            <h3>Feature your bestsellers on the homepage from early November</h3>
-            <p class="step-detail-byline">Brought to you by <strong>Shelfwise</strong></p>
-            <span class="placeholder-flag">Placeholder — partner tip pending</span>
-            <p>[Content to be provided by the EN-market partner] Peak-season visitors have less patience to browse — surfacing proven bestsellers above the fold shortens the path to purchase.</p>
-            <p>Full recommendation, merchandising checklist and examples will appear here once the partner content is confirmed.</p>
-            <div class="visual-placeholder">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
-              Visual placeholder
-            </div>
-          </div>
-        </div>
-      </li>
-
-      <!-- 04 — Checkout & Payments -->
-      <li class="timeline-item" style="--step-color: var(--step-4);">
-        <div class="timeline-track"><span class="timeline-dot"></span></div>
-        <button class="step-card" type="button" aria-expanded="false">
-          <div class="step-card-top">
-            <span class="step-number">04</span>
-            <span class="step-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/></svg>
-            </span>
-          </div>
-          <h2 class="step-title">Checkout &amp; Payments</h2>
-          <p class="step-question">How do you reduce cart abandonment at the critical payment step?</p>
-          <div class="step-card-bottom">
-            <span class="step-partner"><span class="partner-avatar">P</span>Payhaven</span>
-            <span class="step-open-label">Open →</span>
-          </div>
-        </button>
-        <div class="step-detail">
-          <div class="step-detail-inner">
-            <div class="step-detail-eyebrow">Step 04</div>
-            <h3>Offer at least 3 payment methods, including a pay-later option</h3>
-            <p class="step-detail-byline">Brought to you by <strong>Payhaven</strong></p>
-            <span class="placeholder-flag">Placeholder — partner tip pending</span>
-            <p>[Content to be provided by the EN-market partner] Payment friction is the single biggest reason for last-second drop-off — every extra option removes a reason to abandon the cart.</p>
-            <p>Full recommendation, provider shortlist and conversion data will appear here once the partner content is confirmed.</p>
-            <div class="visual-placeholder">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
-              Visual placeholder
-            </div>
-          </div>
-        </div>
-      </li>
-
-      <!-- 05 — Delivery & Logistics -->
-      <li class="timeline-item" style="--step-color: var(--step-5);">
-        <div class="timeline-track"><span class="timeline-dot"></span></div>
-        <button class="step-card" type="button" aria-expanded="false">
-          <div class="step-card-top">
-            <span class="step-number">05</span>
-            <span class="step-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 7h11v9H3z"/><path d="M14 10h4l3 3v3h-7z"/><circle cx="7" cy="18" r="1.5"/><circle cx="18" cy="18" r="1.5"/></svg>
-            </span>
-          </div>
-          <h2 class="step-title">Delivery &amp; Logistics</h2>
-          <p class="step-question">How do you keep delivery promises despite peak volume spikes?</p>
-          <div class="step-card-bottom">
-            <span class="step-partner"><span class="partner-avatar">F</span>Fleetline</span>
-            <span class="step-open-label">Open →</span>
-          </div>
-        </button>
-        <div class="step-detail">
-          <div class="step-detail-inner">
-            <div class="step-detail-eyebrow">Step 05</div>
-            <h3>Show a realistic delivery date on the product page, not just at checkout</h3>
-            <p class="step-detail-byline">Brought to you by <strong>Fleetline</strong></p>
-            <span class="placeholder-flag">Placeholder — partner tip pending</span>
-            <p>[Content to be provided by the EN-market partner] Setting expectations early prevents support tickets later — shoppers who know the real delivery window before they buy complain far less afterwards.</p>
-            <p>Full recommendation, carrier tips and cut-off calendar will appear here once the partner content is confirmed.</p>
-            <div class="visual-placeholder">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
-              Visual placeholder
-            </div>
-          </div>
-        </div>
-      </li>
-
-      <!-- 06 — Customer Service & Support -->
-      <li class="timeline-item" style="--step-color: var(--step-6);">
-        <div class="timeline-track"><span class="timeline-dot"></span></div>
-        <button class="step-card" type="button" aria-expanded="false">
-          <div class="step-card-top">
-            <span class="step-number">06</span>
-            <span class="step-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 13a8 8 0 0116 0"/><rect x="3" y="13" width="4" height="6" rx="1.5"/><rect x="17" y="13" width="4" height="6" rx="1.5"/></svg>
-            </span>
-          </div>
-          <h2 class="step-title">Customer Service &amp; Support</h2>
-          <p class="step-question">How do you absorb the support spike without hurting customer experience?</p>
-          <div class="step-card-bottom">
-            <span class="step-partner"><span class="partner-avatar">H</span>Helpra</span>
-            <span class="step-open-label">Open →</span>
-          </div>
-        </button>
-        <div class="step-detail">
-          <div class="step-detail-inner">
-            <div class="step-detail-eyebrow">Step 06</div>
-            <h3>Prep your Q4 canned responses by mid-October to halve response time</h3>
-            <p class="step-detail-byline">Brought to you by <strong>Helpra</strong></p>
-            <span class="placeholder-flag">Placeholder — partner tip pending</span>
-            <p>[Content to be provided by the EN-market partner] Most Q4 tickets repeat the same handful of questions — pre-writing the answers in advance is what actually saves the team in December.</p>
-            <p>Full recommendation, staffing benchmarks and template library will appear here once the partner content is confirmed.</p>
-            <div class="visual-placeholder">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
-              Visual placeholder
-            </div>
-          </div>
-        </div>
-      </li>
-
-      <!-- 07 — Loyalty & Engagement (Loyoly) -->
-      <li class="timeline-item" style="--step-color: var(--step-7);">
-        <div class="timeline-track"><span class="timeline-dot"></span></div>
-        <button class="step-card" type="button" aria-expanded="false">
-          <div class="step-card-top">
-            <span class="step-number">07</span>
-            <span class="step-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20s-7-4.35-9.5-8.5C.7 8 2 4.5 5.5 4.5c2 0 3.5 1.2 4.5 2.7 1-1.5 2.5-2.7 4.5-2.7C18 4.5 19.3 8 17.5 11.5 15 15.65 12 20 12 20z"/></svg>
-            </span>
-          </div>
-          <h2 class="step-title">Loyalty &amp; Engagement</h2>
-          <p class="step-question">How do you turn Q4 shoppers into year-round loyal customers?</p>
-          <div class="step-card-bottom">
-            <span class="step-partner"><span class="partner-avatar">L</span>Loyoly</span>
-            <span class="step-open-label">Open →</span>
-          </div>
-        </button>
-        <div class="step-detail">
-          <div class="step-detail-inner">
-            <div class="step-detail-eyebrow">Step 07</div>
-            <h3>Reward Black Friday purchases with double points to build a return habit</h3>
-            <p class="step-detail-byline">Brought to you by <strong>Loyoly</strong></p>
-            <span class="placeholder-flag">Placeholder — content pending</span>
-            <p>[Content to finalize with the Loyoly team] A Q4 buyer who joins your loyalty program during checkout is far more likely to come back in January — the reward has to be visible before they leave, not after.</p>
-            <p>Full recommendation, program mechanics and expected retention lift will appear here once finalized.</p>
-            <div class="visual-placeholder">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
-              Visual placeholder
-            </div>
-          </div>
-        </div>
-      </li>
-
-      <!-- 08 — Reviews & Social Proof -->
-      <li class="timeline-item" style="--step-color: var(--step-8);">
-        <div class="timeline-track"><span class="timeline-dot"></span></div>
-        <button class="step-card" type="button" aria-expanded="false">
-          <div class="step-card-top">
-            <span class="step-number">08</span>
-            <span class="step-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.6 5.6 6.1.6-4.6 4.1 1.3 6-5.4-3.2-5.4 3.2 1.3-6L3.3 9.2l6.1-.6L12 3z"/></svg>
-            </span>
-          </div>
-          <h2 class="step-title">Reviews &amp; Social Proof</h2>
-          <p class="step-question">How do you reassure a new shopper who doesn't know your brand yet?</p>
-          <div class="step-card-bottom">
-            <span class="step-partner"><span class="partner-avatar">T</span>Trustlyne</span>
-            <span class="step-open-label">Open →</span>
-          </div>
-        </button>
-        <div class="step-detail">
-          <div class="step-detail-inner">
-            <div class="step-detail-eyebrow">Step 08</div>
-            <h3>Show verified reviews right under the price, not just at the bottom of the page</h3>
-            <p class="step-detail-byline">Brought to you by <strong>Trustlyne</strong></p>
-            <span class="placeholder-flag">Placeholder — partner tip pending</span>
-            <p>[Content to be provided by the EN-market partner] Trust signals work best exactly where doubt appears — next to the price and the buy button, not buried below the fold.</p>
-            <p>Full recommendation, placement examples and uplift figures will appear here once the partner content is confirmed.</p>
-            <div class="visual-placeholder">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
-              Visual placeholder
-            </div>
-          </div>
-        </div>
-      </li>
-
-      <!-- 09 — Post-Holiday Reactivation -->
-      <li class="timeline-item" style="--step-color: var(--step-9);">
-        <div class="timeline-track"><span class="timeline-dot"></span></div>
-        <button class="step-card" type="button" aria-expanded="false">
-          <div class="step-card-top">
-            <span class="step-number">09</span>
-            <span class="step-icon">
-              <svg viewBox="0 0 24 24" fill="none" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 10-3 6.2"/><path d="M20 5v5h-5"/></svg>
-            </span>
-          </div>
-          <h2 class="step-title">Post-Holiday Reactivation</h2>
-          <p class="step-question">How do you re-engage December shoppers once the holidays are over?</p>
-          <div class="step-card-bottom">
-            <span class="step-partner"><span class="partner-avatar">W</span>Winback Co.</span>
-            <span class="step-open-label">Open →</span>
-          </div>
-        </button>
-        <div class="step-detail">
-          <div class="step-detail-inner">
-            <div class="step-detail-eyebrow">Step 09</div>
-            <h3>Launch a targeted win-back campaign within 2 weeks of Christmas</h3>
-            <p class="step-detail-byline">Brought to you by <strong>Winback Co.</strong></p>
-            <span class="placeholder-flag">Placeholder — partner tip pending</span>
-            <p>[Content to be provided by the EN-market partner] Attention drops fast after the holidays — the window to re-engage a December buyer closes within a couple of weeks, not months.</p>
-            <p>Full recommendation, campaign timeline and segment examples will appear here once the partner content is confirmed.</p>
-            <div class="visual-placeholder">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>
-              Visual placeholder
-            </div>
-          </div>
-        </div>
-      </li>
-
-    </ol>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container">
-      <p>The Ultimate Q4 Playbook — brought to you by <a href="https://www.loyoly.io" target="_blank" rel="noopener">Loyoly</a> and partners.</p>
-    </div>
-  </footer>
-
+  <script src="/assets/js/content-en.js"></script>
   <script src="/assets/js/app.js"></script>
 </body>
 </html>
