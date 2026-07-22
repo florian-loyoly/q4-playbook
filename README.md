@@ -1,72 +1,56 @@
-# The Ultimate Q4 Playbook
+# The Ultimate Q4 Playbook 2026
 
-Site statique (HTML/CSS/JS, sans build) présentant le customer journey map Q4 en 3 langues : EN, FR, ES. Chaque page bascule entre une vue "frise" (les 9 étapes) et une vue "détail" plein écran par étape (sommaire, chiffre clé, conseils, partenaire).
+Interactive Q4 e-commerce customer journey. Nine stages, each sponsored by a partner who shares Q4 tips (Black Friday, Cyber Week, holidays). Built with Next.js (App Router) + TypeScript + Framer Motion.
 
-## Structure
+## Markets and routes
 
-```
-index.html                → redirige automatiquement vers /en/, /fr/ ou /es/ selon la langue du navigateur
-en/index.html             → coquille HTML de la version anglaise (marché EN/UK)
-fr/index.html             → coquille HTML de la version française (marché FR)
-es/index.html             → coquille HTML de la version espagnole (marché ES)
-assets/css/style.css      → design system partagé par les 3 versions
-assets/js/app.js          → logique partagée : rendu de la frise + de la vue détail, navigation, sélecteur de marché
-assets/js/content-en.js   → contenu des 9 étapes en anglais (le fichier à éditer pour changer les textes EN)
-assets/js/content-fr.js   → contenu des 9 étapes en français
-assets/js/content-es.js   → contenu des 9 étapes en espagnol
-assets/img/               → logo
-```
+Three market versions, each a full experience. Market and language are coupled 1:1 (changing market swaps the whole payload, partners and UI language).
 
-Chaque langue a son propre fichier `content-XX.js` avec ses propres partenaires — ce n'est pas une simple traduction, car chaque marché a un partenaire différent par étape.
+- `/uk` : UK market, English UI (default)
+- `/fr` : French market, French UI
+- `/es` : Spanish market, Spanish UI
+- `/` and any generic entry redirect to `/uk`.
+- Each stage has its own route, e.g. `/uk/acquisition-ads`. Stage slugs are stable across markets, so switching market keeps your position.
 
-## Comment remplacer le contenu placeholder par un vrai partenaire
+## Content
 
-Tout le texte est actuellement un **placeholder** (partenaires fictifs, tips génériques). Pour remplacer une étape, ouvre le fichier `assets/js/content-en.js` (ou `content-fr.js` / `content-es.js`) et repère l'entrée correspondante dans le tableau `steps` (elles sont dans l'ordre, de l'étape 1 à 9). Chaque étape a cette forme :
+All copy is placeholder (lorem ipsum, partner names like "AdPeak"). It lives in one typed data file, separate from the components, so real content drops in without touching UI:
 
-```js
-{
-  title: "Acquisition & Ads",              // nom de l'étape (affiché sur la carte et en détail)
-  question: "How do you capture...",       // sous-titre de la carte
-  isHouse: false,                          // true seulement pour l'étape "Loyalty & Engagement" (Loyoly)
-  partner: {
-    name: "Adnova",                        // nom du partenaire réel à renseigner
-    initial: "A",                          // 1ère lettre, utilisée pour l'avatar coloré
-    url: "#",                              // lien vers le site du partenaire
-    description: "Full-funnel paid..."     // description affichée dans l'encart partenaire
-  },
-  stat: { value: "+38%", label: "lower cost per acquisition" }, // chiffre clé + libellé
-  tips: [
-    "Lock your Black Friday budget by mid-October",   // titre du conseil n°1
-    "Retarget cart abandoners with dynamic creative",  // titre du conseil n°2
-    "...",
-    "..."
-  ]
-}
-```
+- `lib/playbook-data.ts` : `MARKETS_META`, `STEP_META`, `UI` (strings per language), `CONTENT` (per language and stage).
+- `lib/types.ts` : the `Tip / Partner / KeyStat / Step / Market` shapes.
 
-Il suffit de remplacer les valeurs texte par le vrai contenu fourni par le partenaire. Le corps de texte de chaque conseil (les paragraphes "Lorem ipsum...") est généré automatiquement par `app.js` à partir d'un petit pool de texte de remplissage — une fois que le partenaire fournit un vrai texte pour un conseil donné, ce sera à généraliser dans `app.js` (fonction `renderDetail`) si on veut un corps de texte différent par tip plutôt que le pool générique.
+Stages 2 and 7 have two partners; the components handle 1 or 2 partners natively (partners is an array).
 
-Chaque étape a une couleur d'accent (`--step-1` à `--step-9`, réglables dans `assets/css/style.css`) assignée automatiquement selon sa position dans le tableau.
+## Gating and the dev bypass
 
-## Routing des chapitres
+Stage 1 is free. The other stages are gated: one form (`components/LeadForm.tsx`) unlocks the whole journey for the session, shared across the three markets.
 
-Chaque chapitre a sa propre URL en hash : `/fr/#chapter-3` (numérotation 1 à 9, non traduite — c'est un identifiant technique, pas du texte visible). Ouvrir cette URL directement affiche le bon chapitre au chargement. Le bouton Précédent/Suivant du navigateur fonctionne (navigation via `history.pushState`/`popstate` dans `app.js`, fonctions `applyDetail` / `applyJourney` / `syncFromHash`).
+The gate is controlled by `NEXT_PUBLIC_GATE_ENABLED` (read in `lib/gate.tsx`):
 
-## Lien de démo (CTA de fin de frise)
+- `false` : gate disabled, everything accessible, no wall, no locks (use this in local dev, set in `.env.local`).
+- `true` or unset : gate active (default, production).
 
-Le bouton "Réserver une démo Loyoly" (et ses équivalents EN/ES) pointe vers une seule constante `DEMO_URL` en haut de `assets/js/app.js`. Pour changer le lien, il suffit de modifier cette constante — elle s'applique automatiquement aux 3 langues via les éléments `[data-cta-url]`.
+Copy `.env.example` to `.env.local` for local development.
 
-## Développement local
+## Lead capture (HubSpot wiring later)
 
-Aucune installation requise (pas de Node.js, pas de dépendances) pour éditer le contenu. Pour **prévisualiser** dans le navigateur, il faut servir les fichiers via un petit serveur local (les chemins `/assets/...` ne fonctionnent pas en ouverture directe `file://`) :
+Lead submission is stubbed. It is NOT connected to HubSpot yet.
 
-```
-cd q4-playbook
-python3 -m http.server 8743
+- `lib/leads.ts` exports `submitLead(payload)` (the single entry point). It posts to `/api/lead`.
+- `app/api/lead/route.ts` validates the payload and returns `{ ok: true }` without sending anything anywhere. The exact place for the real HubSpot call is marked with `// TODO HubSpot`.
+- The payload already carries the 4 fields + the market + the consent flag, so the future HubSpot mapping is trivial.
+
+## Local development
+
+```bash
+npm install
+cp .env.example .env.local   # then set NEXT_PUBLIC_GATE_ENABLED=false for dev
+npm run dev                  # http://localhost:3000
+npm run build                # production build
 ```
 
-Puis ouvrir `http://localhost:8743/en/` (ou `/fr/`, `/es/`).
+Requires Node.js 18+.
 
-## Déploiement
+## Deployment
 
-Le site est hébergé sur Vercel, connecté au repo GitHub (`florian-loyoly/q4-playbook`). Chaque `git push` sur `main` redéploie automatiquement le site en production.
+Hosted on Vercel, connected to the GitHub repo. Vercel auto-detects Next.js. Set the environment variable `NEXT_PUBLIC_GATE_ENABLED=true` (or leave it unset) in the Vercel project so the gate is active in production. Each push to `main` redeploys.
