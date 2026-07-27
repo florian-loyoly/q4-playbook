@@ -23,7 +23,8 @@ export function StepCard({
   const [hover, setHover] = useState(false);
   const accent = step.accent;
   const dual = step.partners.length > 1;
-  const showLock = locked || leaving;
+  // State badge (top-right): free -> FREE pill, locked (or unlocking) -> lock, unlocked -> check.
+  const badgeMode: "free" | "lock" | "check" = step.isFree ? "free" : locked || leaving ? "lock" : "check";
 
   return (
     <Link
@@ -32,7 +33,9 @@ export function StepCard({
       onMouseLeave={() => setHover(false)}
       style={{
         position: "relative",
-        display: "block",
+        display: "flex",
+        flexDirection: "column",
+        minHeight: 176,
         textAlign: "left",
         textDecoration: "none",
         width: "100%",
@@ -43,12 +46,33 @@ export function StepCard({
         padding: "18px 18px 16px",
         boxShadow: hover ? "0 8px 22px rgba(43,37,31,.12)" : locked ? "none" : "0 1px 3px rgba(43,37,31,.07)",
         transition: "border-color .2s, box-shadow .2s, filter .25s, opacity .25s",
-        opacity: locked ? (hover ? 0.9 : 0.6) : 1,
-        filter: locked ? (hover ? "grayscale(.35)" : "grayscale(.85)") : "none",
+        opacity: locked ? (hover ? 0.92 : 0.55) : 1,
+        filter: locked ? (hover ? "grayscale(.4)" : "grayscale(.95)") : "none",
         animation: leaving ? `pbPop .6s ease ${(step.order - 2) * 90 + 200}ms both` : "none",
       }}
     >
-      {showLock ? (
+      {/* State badge (top-right) */}
+      {badgeMode === "free" ? (
+        <span
+          style={{
+            position: "absolute",
+            top: 14,
+            right: 14,
+            fontFamily: BODY,
+            fontSize: 10,
+            fontWeight: 700,
+            letterSpacing: ".06em",
+            textTransform: "uppercase",
+            color: accent,
+            background: tint(accent, 0.12),
+            border: `1px solid ${tint(accent, 0.3)}`,
+            borderRadius: 999,
+            padding: "3px 9px",
+          }}
+        >
+          {ui.free}
+        </span>
+      ) : badgeMode === "lock" ? (
         <span
           aria-hidden="true"
           style={{
@@ -59,7 +83,7 @@ export function StepCard({
             height: 26,
             borderRadius: 999,
             background: P.p100,
-            border: `1px solid ${P.p200}`,
+            border: `1px solid ${P.p300}`,
             display: "inline-flex",
             alignItems: "center",
             justifyContent: "center",
@@ -69,7 +93,26 @@ export function StepCard({
         >
           <Icon name="lock" color={P.p700} size={14} />
         </span>
-      ) : null}
+      ) : (
+        <span
+          aria-hidden="true"
+          style={{
+            position: "absolute",
+            top: 12,
+            right: 12,
+            width: 26,
+            height: 26,
+            borderRadius: 999,
+            background: tint(accent, 0.14),
+            border: `1px solid ${tint(accent, 0.35)}`,
+            display: "inline-flex",
+            alignItems: "center",
+            justifyContent: "center",
+          }}
+        >
+          <Icon name="check" color={accent} size={14} />
+        </span>
+      )}
 
       <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 12 }}>
         <span
@@ -105,26 +148,6 @@ export function StepCard({
         >
           <Icon name={step.icon} color={accent} size={18} />
         </span>
-        {step.isFree ? (
-          <span
-            style={{
-              marginLeft: "auto",
-              marginRight: 2,
-              fontFamily: BODY,
-              fontSize: 10,
-              fontWeight: 600,
-              letterSpacing: ".06em",
-              textTransform: "uppercase",
-              color: accent,
-              background: tint(accent, 0.12),
-              border: `1px solid ${tint(accent, 0.3)}`,
-              borderRadius: 999,
-              padding: "3px 9px",
-            }}
-          >
-            {ui.free}
-          </span>
-        ) : null}
       </div>
 
       <h3 style={{ fontFamily: DISP, fontWeight: 600, fontSize: 17, lineHeight: 1.15, letterSpacing: "-.01em", color: P.p950, margin: "0 0 6px" }}>
@@ -132,7 +155,7 @@ export function StepCard({
       </h3>
       <p style={{ fontFamily: BODY, fontSize: 13, lineHeight: 1.45, color: P.p700, margin: "0 0 14px" }}>{step.teaser}</p>
 
-      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8, paddingTop: 12, borderTop: `1px solid ${P.p100}` }}>
+      <div style={{ marginTop: "auto", display: "flex", alignItems: "center", justifyContent: "space-between", gap: 8, paddingTop: 12, borderTop: `1px solid ${P.p100}` }}>
         <div style={{ display: "flex", alignItems: "center", gap: dual ? 10 : 0, flexWrap: "wrap" }}>
           {step.partners.map((pt, i) => (
             <span key={i} style={{ display: "inline-flex", alignItems: "center" }}>
