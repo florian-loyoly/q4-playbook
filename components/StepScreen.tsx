@@ -1,43 +1,48 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useRouter } from "next/navigation";
 import type { MarketId, Step, UIStrings } from "@/lib/types";
 import { useGate } from "@/lib/gate";
 import { StepView } from "./StepView";
 import { GateWall } from "./GateWall";
 import { Toast } from "./Toast";
 
-// Decides between the step content and the gate wall based on gate state,
-// and shows the unlocked toast right after a successful submission.
+// Decides between the step content and the gate wall based on gate state.
+// On successful submission it unlocks, then redirects to the stage the user
+// picked as their #1 Q4 priority. The unlocked toast is driven by the gate
+// provider's justUnlocked flag, which survives the redirect (it lives above
+// the route segment) and any remount.
 export function StepScreen({ market, step, steps, ui }: { market: MarketId; step: Step; steps: Step[]; ui: UIStrings }) {
-  const { isUnlocked, unlock } = useGate();
-  const [showToast, setShowToast] = useState(false);
+  const { isUnlocked, unlock, justUnlocked, clearJustUnlocked } = useGate();
+  const router = useRouter();
 
   useEffect(() => {
-    if (!showToast) return;
-    const t = setTimeout(() => setShowToast(false), 3600);
+    if (!justUnlocked) return;
+    const t = setTimeout(() => clearJustUnlocked(), 3600);
     return () => clearTimeout(t);
-  }, [showToast]);
+  }, [justUnlocked, clearJustUnlocked]);
 
   const locked = !step.isFree && !isUnlocked;
+
+  function handleSuccess(prioritySlug: string) {
+    unlock();
+    const target = prioritySlug || step.slug;
+    if (target !== step.slug) {
+      router.push(`/${market}/${target}`);
+    } else {
+      window.scrollTo({ top: 0, behavior: "auto" });
+    }
+  }
 
   return (
     <>
       {locked ? (
-        <GateWall
-          market={market}
-          steps={steps}
-          ui={ui}
-          onSuccess={() => {
-            unlock();
-            setShowToast(true);
-            window.scrollTo({ top: 0, behavior: "auto" });
-          }}
-        />
+        <GateWall market={market} steps={steps} ui={ui} onSuccess={handleSuccess} />
       ) : (
         <StepView market={market} step={step} steps={steps} ui={ui} />
       )}
-      {showToast ? <Toast message={ui.unlockedToast} /> : null}
+      {justUnlocked ? <Toast message={ui.unlockedToast} /> : null}
     </>
   );
 }

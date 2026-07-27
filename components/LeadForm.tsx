@@ -1,19 +1,19 @@
 "use client";
 
 import { useState } from "react";
-import type { MarketId, UIStrings } from "@/lib/types";
+import type { MarketId, Step, UIStrings } from "@/lib/types";
 import { DISP, BODY, P } from "@/lib/tokens";
 import { Icon } from "./Icon";
 import { submitLead } from "@/lib/leads";
 
-type Fields = { email: string; company: string; job: string; website: string; consent: boolean };
+type Fields = { email: string; company: string; job: string; website: string; priority: string; consent: boolean };
 type Errors = Partial<Record<keyof Fields, string>>;
 
 const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 const URL_RE = /^(https?:\/\/)?([\w-]+\.)+[\w-]{2,}(\/.*)?$/;
 
-export function LeadForm({ market, ui, onSuccess }: { market: MarketId; ui: UIStrings; onSuccess: () => void }) {
-  const [form, setForm] = useState<Fields>({ email: "", company: "", job: "", website: "", consent: false });
+export function LeadForm({ market, steps, ui, onSuccess }: { market: MarketId; steps: Step[]; ui: UIStrings; onSuccess: (prioritySlug: string) => void }) {
+  const [form, setForm] = useState<Fields>({ email: "", company: "", job: "", website: "", priority: "", consent: false });
   const [touched, setTouched] = useState<Partial<Record<keyof Fields, boolean>>>({});
   const [errors, setErrors] = useState<Errors>({});
   const [submitting, setSubmitting] = useState(false);
@@ -26,6 +26,7 @@ export function LeadForm({ market, ui, onSuccess }: { market: MarketId; ui: UISt
     if (!f.job.trim()) e.job = ui.errRequired;
     if (!f.website.trim()) e.website = ui.errRequired;
     else if (!URL_RE.test(f.website.trim())) e.website = ui.errUrl;
+    if (!f.priority) e.priority = ui.errRequired;
     if (!f.consent) e.consent = ui.errConsent;
     return e;
   }
@@ -42,7 +43,7 @@ export function LeadForm({ market, ui, onSuccess }: { market: MarketId; ui: UISt
     const e = validate(form);
     if (Object.keys(e).length) {
       setErrors(e);
-      setTouched({ email: true, company: true, job: true, website: true, consent: true });
+      setTouched({ email: true, company: true, job: true, website: true, priority: true, consent: true });
       return;
     }
     setSubmitting(true);
@@ -54,9 +55,10 @@ export function LeadForm({ market, ui, onSuccess }: { market: MarketId; ui: UISt
       consent: form.consent,
       market,
       source: "Q4 Playbook 2026",
+      priority: form.priority,
     });
     setSubmitting(false);
-    if (res.ok) onSuccess();
+    if (res.ok) onSuccess(form.priority);
   }
 
   const field = (name: keyof Fields, label: string, ph: string, type = "text") => {
@@ -123,6 +125,50 @@ export function LeadForm({ market, ui, onSuccess }: { market: MarketId; ui: UISt
       {field("company", ui.fieldCompany, ui.phCompany)}
       {field("job", ui.fieldJob, ui.phJob)}
       {field("website", ui.fieldWebsite, ui.phWebsite)}
+
+      <div style={{ marginBottom: 14 }}>
+        <label htmlFor="f-priority" style={{ display: "block", fontFamily: BODY, fontSize: 12, fontWeight: 500, color: P.p900, marginBottom: 6 }}>
+          {ui.fieldPriority}
+        </label>
+        <div style={{ position: "relative" }}>
+          <select
+            id="f-priority"
+            value={form.priority}
+            onChange={(e) => onField("priority", e.target.value)}
+            onBlur={() => {
+              setTouched((t) => ({ ...t, priority: true }));
+              setErrors(validate(form));
+            }}
+            style={{
+              appearance: "none",
+              WebkitAppearance: "none",
+              width: "100%",
+              background: "#fff",
+              border: `1px solid ${touched.priority && errors.priority ? P.pink : P.p200}`,
+              borderRadius: 12,
+              padding: "11px 34px 11px 14px",
+              fontFamily: BODY,
+              fontSize: 14,
+              color: form.priority ? P.p950 : P.p500,
+              cursor: "pointer",
+              boxShadow: touched.priority && errors.priority ? "0 0 0 3px rgba(247,79,158,.12)" : "none",
+            }}
+          >
+            <option value="" disabled>
+              {ui.phPriority}
+            </option>
+            {steps.map((s) => (
+              <option key={s.slug} value={s.slug}>
+                {s.order}. {s.title}
+              </option>
+            ))}
+          </select>
+          <span style={{ position: "absolute", right: 12, top: "50%", transform: "translateY(-50%)", pointerEvents: "none", display: "inline-flex" }}>
+            <Icon name="chevD" color={P.p700} size={16} />
+          </span>
+        </div>
+        {touched.priority && errors.priority ? <div style={{ fontFamily: BODY, fontSize: 12, color: P.pink, marginTop: 5 }}>{errors.priority}</div> : null}
+      </div>
 
       <label style={{ display: "flex", gap: 10, alignItems: "flex-start", margin: "6px 0 4px", cursor: "pointer" }}>
         <input

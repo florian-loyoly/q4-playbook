@@ -33,7 +33,7 @@ export const STEP_META: StepMeta[] = [
 export const UI: Record<Locale, UIStrings> = {
   en: {
     kicker: "The Ultimate Q4 Playbook 2026",
-    heroTitle: "The Q4 customer journey, sponsored by the experts who master it.",
+    heroTitle: "Q4 can be 30-40% of your year. Here's the 9-stage playbook to not leave money on the table.",
     heroSub: "Nine stages, from the first ad to the final return. At each one, a partner expert shares the moves that win Black Friday, Cyber Week and the holidays.",
     heroCta: "Explore the journey",
     editedBy: "Curated by",
@@ -67,6 +67,8 @@ export const UI: Record<Locale, UIStrings> = {
     fieldCompany: "Company name",
     fieldJob: "Job title",
     fieldWebsite: "Website URL",
+    fieldPriority: "What's your #1 Q4 priority?",
+    phPriority: "Select a stage",
     phEmail: "you@company.com",
     phCompany: "Acme Commerce",
     phJob: "Head of Retention",
@@ -85,7 +87,7 @@ export const UI: Record<Locale, UIStrings> = {
   },
   fr: {
     kicker: "The Ultimate Q4 Playbook 2026",
-    heroTitle: "Le parcours client du Q4, parrainé par les experts qui le maîtrisent.",
+    heroTitle: "Le Q4 peut peser 30 à 40% de votre CA. Voici le playbook en 9 étapes pour ne pas laisser filer votre chiffre.",
     heroSub: "Neuf étapes, de la première pub au dernier retour. À chacune, un partenaire expert partage les leviers qui font gagner le Black Friday, la Cyber Week et Noël.",
     heroCta: "Explorer le parcours",
     editedBy: "Édité par",
@@ -118,6 +120,8 @@ export const UI: Record<Locale, UIStrings> = {
     fieldCompany: "Nom de l'entreprise",
     fieldJob: "Fonction",
     fieldWebsite: "URL du site",
+    fieldPriority: "Quelle est votre priorité n°1 pour le Q4 ?",
+    phPriority: "Choisissez une étape",
     phEmail: "vous@entreprise.com",
     phCompany: "Acme Commerce",
     phJob: "Responsable fidélisation",
@@ -136,7 +140,7 @@ export const UI: Record<Locale, UIStrings> = {
   },
   es: {
     kicker: "The Ultimate Q4 Playbook 2026",
-    heroTitle: "El recorrido del cliente en el Q4, presentado por los expertos que lo dominan.",
+    heroTitle: "El Q4 puede ser el 30-40% de tu año. Aquí tienes el playbook de 9 etapas para no dejar ventas sin cerrar.",
     heroSub: "Nueve etapas, del primer anuncio a la última devolución. En cada una, un partner experto comparte las claves para ganar el Black Friday, la Cyber Week y Navidad.",
     heroCta: "Explorar el recorrido",
     editedBy: "Editado por",
@@ -169,6 +173,8 @@ export const UI: Record<Locale, UIStrings> = {
     fieldCompany: "Nombre de la empresa",
     fieldJob: "Cargo",
     fieldWebsite: "URL del sitio",
+    fieldPriority: "¿Cuál es tu prioridad n.º 1 para el Q4?",
+    phPriority: "Elige una etapa",
     phEmail: "tu@empresa.com",
     phCompany: "Acme Commerce",
     phJob: "Responsable de fidelización",

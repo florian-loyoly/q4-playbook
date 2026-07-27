@@ -8,6 +8,7 @@ export type LeadPayload = {
   consent: boolean;
   market: MarketId; // originating market (fr / uk / es)
   source: string; // e.g. "Q4 Playbook 2026"
+  priority?: string; // slug of the stage the user picked as their #1 Q4 priority
 };
 
 export type LeadResult = { ok: boolean };

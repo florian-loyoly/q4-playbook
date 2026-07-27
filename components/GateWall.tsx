@@ -6,7 +6,7 @@ import { Button } from "./Button";
 import { LeadForm } from "./LeadForm";
 
 // Inline blurred wall: locked stage previews behind, form card on top. Not a modal.
-export function GateWall({ market, steps, ui, onSuccess }: { market: MarketId; steps: Step[]; ui: UIStrings; onSuccess: () => void }) {
+export function GateWall({ market, steps, ui, onSuccess }: { market: MarketId; steps: Step[]; ui: UIStrings; onSuccess: (prioritySlug: string) => void }) {
   const preview = (
     <div
       aria-hidden="true"
@@ -46,7 +46,7 @@ export function GateWall({ market, steps, ui, onSuccess }: { market: MarketId; s
         {preview}
         <div style={{ position: "absolute", inset: 0, zIndex: 1, background: "linear-gradient(180deg, rgba(238,234,224,.55), rgba(238,234,224,.9))" }} />
         <div style={{ position: "relative", zIndex: 2, display: "flex", justifyContent: "center", padding: "44px 18px" }}>
-          <LeadForm market={market} ui={ui} onSuccess={onSuccess} />
+          <LeadForm market={market} steps={steps} ui={ui} onSuccess={onSuccess} />
         </div>
       </div>
     </div>
