@@ -81,8 +81,10 @@ export function MapView({ market, steps, ui }: { market: MarketId; steps: Step[]
     </div>
   );
 
+  // Align the section title to the same column as the timeline cards (shared max-width, centered),
+  // so its left edge coincides with the leftmost cards and the centered-to-left-aligned shift reads as intentional.
   const controls = (
-    <div style={{ marginBottom: 34 }}>
+    <div style={{ maxWidth: narrow ? 720 : 920, margin: "0 auto", marginBottom: 34 }}>
       <div style={{ fontFamily: DISP, fontWeight: 600, fontSize: 19, color: P.p950 }}>{ui.mapTitle}</div>
       <div style={{ fontFamily: BODY, fontSize: 13, color: P.p700, marginTop: 2 }}>{ui.mapSub}</div>
     </div>
