@@ -96,7 +96,6 @@ export function StepView({ market, step, steps, ui }: { market: MarketId; step: 
                 borderRadius: 8,
                 padding: "8px 34px 8px 12px",
                 cursor: "pointer",
-                outline: "none",
                 maxWidth: 260,
                 textOverflow: "ellipsis",
               }}

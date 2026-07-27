@@ -86,7 +86,6 @@ export function LeadForm({ market, ui, onSuccess }: { market: MarketId; ui: UISt
             fontFamily: BODY,
             fontSize: 14,
             color: P.p950,
-            outline: "none",
             boxShadow: err ? "0 0 0 3px rgba(247,79,158,.12)" : "none",
           }}
         />
