@@ -5,7 +5,14 @@ import { usePathname } from "next/navigation";
 import { MARKETS_META } from "@/lib/playbook-data";
 import { marketMeta } from "@/lib/i18n";
 import type { MarketId } from "@/lib/types";
-import { P } from "@/lib/tokens";
+import { BODY, P } from "@/lib/tokens";
+
+// Accessible label per target market, written in that market's own language.
+const SWITCH_LABEL: Record<MarketId, string> = {
+  uk: "Switch to English",
+  fr: "Passer en français",
+  es: "Cambiar a español",
+};
 
 // Real links to /{market} (+ same slug when on a step), so switching keeps the
 // reader's position and the URL changes (indexable, shareable, hreflang-friendly).
@@ -27,29 +34,43 @@ export function MarketSwitcher({ current }: { current: MarketId }) {
         {MARKETS_META.map((m) => {
           const active = m.id === current;
           const href = slug ? `/${m.id}/${slug}` : `/${m.id}`;
+          const code = m.locale.toUpperCase(); // EN / FR / ES
           return (
             <Link
               key={m.id}
               href={href}
               aria-current={active ? "true" : undefined}
-              title={m.id.toUpperCase()}
+              aria-label={SWITCH_LABEL[m.id]}
               style={{
                 display: "inline-flex",
                 alignItems: "center",
                 justifyContent: "center",
-                width: 38,
-                height: 30,
+                gap: 6,
+                minWidth: 44,
+                height: 44,
+                padding: "0 12px",
                 borderRadius: 999,
-                fontSize: 16,
                 lineHeight: 1,
                 textDecoration: "none",
                 transition: "background .18s, box-shadow .18s, filter .18s",
                 background: active ? "#fff" : "transparent",
                 boxShadow: active ? "0 1px 2px rgba(0,0,0,.12)" : "none",
-                filter: active ? "none" : "saturate(.55) opacity(.7)",
               }}
             >
-              {m.flag}
+              <span aria-hidden="true" style={{ fontSize: 16, lineHeight: 1, filter: active ? "none" : "saturate(.55) opacity(.7)" }}>
+                {m.flag}
+              </span>
+              <span
+                style={{
+                  fontFamily: BODY,
+                  fontSize: 12,
+                  fontWeight: 600,
+                  letterSpacing: ".03em",
+                  color: active ? P.p950 : P.p700,
+                }}
+              >
+                {code}
+              </span>
             </Link>
           );
         })}
