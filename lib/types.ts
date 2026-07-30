@@ -18,6 +18,7 @@ export type Partner = {
   url: string;
   tips: Tip[];
   logo?: string; // path to a real logo image; falls back to a colored initial tile
+  keyStat?: KeyStat; // dual-partner steps: each partner brings its own key stat
 };
 
 // Two shapes for the dark "number that matters" card:

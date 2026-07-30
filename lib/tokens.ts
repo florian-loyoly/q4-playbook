@@ -25,6 +25,9 @@ export const P = {
 export const DISP = "var(--font-lexend), system-ui, sans-serif";
 export const BODY = "var(--font-inter), system-ui, sans-serif";
 
+// Sticky header is 64px tall; anchor scrolls offset by header + a little breathing room.
+export const HEADER_OFFSET = 80;
+
 // hex + alpha -> rgba() string. Accepts #rgb or #rrggbb.
 export function tint(hex: string, alpha: number): string {
   let h = hex.replace("#", "");
@@ -33,4 +36,16 @@ export function tint(hex: string, alpha: number): string {
   const g = parseInt(h.slice(2, 4), 16);
   const b = parseInt(h.slice(4, 6), 16);
   return `rgba(${r},${g},${b},${alpha})`;
+}
+
+// Lighten a hex color by mixing it toward white (ratio 0..1). Used to keep an
+// accent readable/vivid on the dark stat card.
+export function mixWhite(hex: string, ratio: number): string {
+  let h = hex.replace("#", "");
+  if (h.length === 3) h = h.split("").map((x) => x + x).join("");
+  const r = parseInt(h.slice(0, 2), 16);
+  const g = parseInt(h.slice(2, 4), 16);
+  const b = parseInt(h.slice(4, 6), 16);
+  const m = (c: number) => Math.round(c + (255 - c) * ratio);
+  return `rgb(${m(r)},${m(g)},${m(b)})`;
 }

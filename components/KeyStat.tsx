@@ -2,14 +2,15 @@
 
 import React, { useEffect, useRef, useState } from "react";
 import { useInView, useReducedMotion } from "framer-motion";
-import type { Step, UIStrings } from "@/lib/types";
-import { DISP, BODY, P, tint } from "@/lib/tokens";
+import type { KeyStat as KeyStatType, Step, UIStrings } from "@/lib/types";
+import { DISP, BODY, P, tint, mixWhite } from "@/lib/tokens";
 
 // Dark "the number that matters" box. Two modes:
 //  - figure mode: standalone big number with a count-up on first view + caption
 //  - sentence mode: a full statement with a highlighted number inside it
-export function KeyStat({ step, ui }: { step: Step; ui: UIStrings }) {
-  const ks = step.keyStat;
+// `stat` overrides step.keyStat (used for per-partner stats on dual steps).
+export function KeyStat({ step, ui, stat }: { step: Step; ui: UIStrings; stat?: KeyStatType }) {
+  const ks = stat ?? step.keyStat;
   const isSentence = !!ks.statement;
   const val = ks.value ?? 0;
   const dec = String(val).indexOf(".") >= 0 ? 1 : 0;
@@ -60,7 +61,7 @@ export function KeyStat({ step, ui }: { step: Step; ui: UIStrings }) {
       out.push(seg);
       if (i < parts.length - 1) {
         out.push(
-          <span key={i} style={{ fontFamily: DISP, fontWeight: 700, fontSize: "1.7em", color: "#fff", letterSpacing: "-.02em", whiteSpace: "nowrap" }}>
+          <span key={i} style={{ fontFamily: DISP, fontWeight: 700, fontSize: "1.7em", color: mixWhite(step.accent, 0.5), letterSpacing: "-.02em", whiteSpace: "nowrap" }}>
             {h}
           </span>
         );
