@@ -3,9 +3,10 @@ import type { Partner } from "@/lib/types";
 
 // Loyoly shows its real logo; other (placeholder) partners get a colored initial tile + name.
 export function PartnerLogo({ partner, accent, size = 28 }: { partner: Partner; accent: string; size?: number }) {
-  if (partner.name === "Loyoly") {
+  const logoSrc = partner.logo || (partner.name === "Loyoly" ? "/assets/logo-loyoly.svg" : null);
+  if (logoSrc) {
     // eslint-disable-next-line @next/next/no-img-element
-    return <img src="/assets/logo-loyoly.svg" alt="Loyoly" style={{ height: size * 0.7, width: "auto", display: "block" }} />;
+    return <img src={logoSrc} alt={partner.name} style={{ height: size * 0.7, width: "auto", maxWidth: size * 6, objectFit: "contain", display: "block" }} />;
   }
   return (
     <span style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>

@@ -4,7 +4,7 @@
 export type MarketId = "uk" | "fr" | "es";
 export type Locale = "en" | "fr" | "es";
 
-export type VisualSlot = { label: string };
+export type VisualSlot = { label: string; src?: string };
 
 export type Tip = {
   title: string;
@@ -17,13 +17,19 @@ export type Partner = {
   pitch: string;
   url: string;
   tips: Tip[];
+  logo?: string; // path to a real logo image; falls back to a colored initial tile
 };
 
+// Two shapes for the dark "number that matters" card:
+//  - figure mode: a standalone big number (value + unit + prefix) with a caption (label)
+//  - sentence mode: a full statement with a highlighted number inside it
 export type KeyStat = {
-  value: number;
-  unit: string;
+  value?: number;
+  unit?: string;
   prefix?: string;
-  label: string;
+  label?: string;
+  statement?: string; // sentence mode: full sentence to display
+  highlight?: string; // sentence mode: the substring to emphasize (e.g. "36%")
   source: string;
 };
 

@@ -41,27 +41,37 @@ export function TipBlock({ step, partner, pi, ui }: { step: Step; partner: Partn
                 ))}
                 {tp.visuals && tp.visuals.length ? (
                   <div style={{ marginTop: 6, display: "grid", gap: 12 }}>
-                    {tp.visuals.map((v, vi) => (
-                      <div
-                        key={vi}
-                        style={{
-                          aspectRatio: "16 / 7",
-                          background: P.bg50,
-                          border: `1px dashed ${P.p300}`,
-                          borderRadius: 3,
-                          display: "flex",
-                          flexDirection: "column",
-                          alignItems: "center",
-                          justifyContent: "center",
-                          gap: 8,
-                          color: P.p500,
-                        }}
-                      >
-                        <Icon name="grid" color={P.p400} size={22} />
-                        <span style={{ fontFamily: BODY, fontSize: 12, fontWeight: 500, color: P.p500 }}>{ui.visualSlot}</span>
-                        <span style={{ fontFamily: BODY, fontSize: 12, color: P.p400 }}>{v.label}</span>
-                      </div>
-                    ))}
+                    {tp.visuals.map((v, vi) =>
+                      v.src ? (
+                        // eslint-disable-next-line @next/next/no-img-element
+                        <img
+                          key={vi}
+                          src={v.src}
+                          alt={v.label}
+                          style={{ width: "100%", height: "auto", display: "block", borderRadius: 3, border: `1px solid ${P.p200}` }}
+                        />
+                      ) : (
+                        <div
+                          key={vi}
+                          style={{
+                            aspectRatio: "16 / 7",
+                            background: P.bg50,
+                            border: `1px dashed ${P.p300}`,
+                            borderRadius: 3,
+                            display: "flex",
+                            flexDirection: "column",
+                            alignItems: "center",
+                            justifyContent: "center",
+                            gap: 8,
+                            color: P.p500,
+                          }}
+                        >
+                          <Icon name="grid" color={P.p400} size={22} />
+                          <span style={{ fontFamily: BODY, fontSize: 12, fontWeight: 500, color: P.p500 }}>{ui.visualSlot}</span>
+                          <span style={{ fontFamily: BODY, fontSize: 12, color: P.p400 }}>{v.label}</span>
+                        </div>
+                      )
+                    )}
                   </div>
                 ) : null}
               </div>

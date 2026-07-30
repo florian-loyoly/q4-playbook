@@ -201,7 +201,7 @@ export const UI: Record<Locale, UIStrings> = {
 
 // helper to build a tip
 const tip = (t: string, paras: string[], visuals?: VisualSlot[]): Tip => ({ title: t, paragraphs: paras, visuals: visuals || [] });
-const V = (label: string): VisualSlot => ({ label });
+const V = (label: string, src?: string): VisualSlot => ({ label, src });
 
 type StepContent = { title: string; teaser: string; keyStat: KeyStat; partners: Partner[] };
 
@@ -294,18 +294,19 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
     "crm-retention": {
       title: "CRM: Retention & Repurchase",
       teaser: "Win the second order before January.",
-      keyStat: { value: 5, unit: "x", prefix: "", label: "cheaper to reactivate a Q4 buyer than to acquire a new one in Q1", source: "Winback analysis, 2025" },
+      keyStat: { statement: "CRM accounts for an average of 36% of total revenue for Underground Ecom's clients, making retention the highest-ROI channel in Q4, not an afterthought.", highlight: "36%", source: "Underground Ecom client data, Fashion & Apparel niche" },
       partners: [
-        { name: "Winback", pitch: "Post-purchase reactivation flows.", url: "#",
+        {
+          name: "Underground Ecom",
+          logo: "/assets/partners/underground-ecom-logo.png",
+          pitch: "Underground Ecom is a rapidly growing Email marketing agency specialising in helping ecommerce businesses reach their full potential through retention marketing. We help global brands achieve an extra 20-30% in total revenue using our data-driven email marketing strategies.",
+          url: "https://www.undergroundecom.com/",
           tips: [
-            tip("Ut enim ad minim veniam", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
-            tip("Quis nostrud exercitation ullamco", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
-          ],
-        },
-        { name: "Retaino", pitch: "Churn prediction and win-back.", url: "#",
-          tips: [
-            tip("Duis aute irure dolor", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
-            tip("Lorem ipsum dolor sit amet", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
+            tip("Give Your Best Customers First Access - Before the Sale Goes Public", ["Q4 is the moment to reward loyalty, not dilute it. Before opening your BFCM offers to the world, create an exclusive 24-48 hour early-access window for your highest-value repeat buyers. This signals that their loyalty matters, drives high-intent purchases before peak demand hits, and means your deepest discounts are reserved for converting new or lapsed customers, not handed to people who would have bought regardless. Done well, it deepens loyalty and protects margin at the same time."], [V("Underground Ecom, Creative Is King", "/assets/partners/UK-CRM-Retention-Repurchase-underground-ecom-tip1.png")]),
+            tip("Trigger Replenishment Campaigns Based on What You Already Know", ["The most powerful retention message is one sent at exactly the right moment. Use purchase history and average product lifecycle data to trigger replenishment campaigns before a customer runs out: a reorder reminder for a consumable, a refill prompt for a seasonal product, or a timely bundle at the natural restock window. These triggered sends consistently outperform broadcast campaigns on conversion rate and margin because they're relevant by design, not by luck."]),
+            tip("Win Back Lapsed Customers in October - Before the Noise Hits", ["October is your quiet window before the Q4 storm. Launch a three-step win-back sequence (a re-introduction, an early-access or exclusive offer, and a final last-chance message) to re-engage customers who haven't purchased in six to twelve months. Competing in a less-crowded inbox means your offer feels like a privilege, not another BFCM blast. Brands that reactivate their lapsed segment in October consistently see stronger Q4 revenue from CRM than those who wait until November."], [V("Underground Ecom, Our Proven Impact", "/assets/partners/UK-CRM-Retention-Repurchase-underground-ecom-tip3.png")]),
+            tip("Build a Post-Purchase Flow That Turns BFCM Buyers Into Loyal Customers", ["Q4 drives a wave of first-time and deal-motivated buyers who will not return without the right follow-up. Set up a post-purchase nurturing sequence that goes beyond the order confirmation: a product education touchpoint at day 2, a brand story or community moment at day 5, and a cross-sell or loyalty incentive at day 10. This flow consistently lifts 90-day repeat purchase rates and converts seasonal volume into sustainable lifetime value, regardless of which platform or channel you use."]),
+            tip("Don't Go Dark in January - Your Competitors Will", ["Most brands switch off the moment the Christmas period ends, making January one of the most underused retention windows of the year. Your Q4 cohort (new customers, gift card recipients, and reactivated lapsed buyers) is still fresh but fading fast. A January nurturing sequence that acknowledges the new year, deepens the brand relationship, and gives customers a compelling reason to return can turn what brands write off as a quiet month into one of the strongest CRM revenue periods on the calendar."], [V("Underground Ecom, Our Proven Impact", "/assets/partners/UK-CRM-Retention-Repurchase-underground-ecom-tip5.png")]),
           ],
         },
       ],
