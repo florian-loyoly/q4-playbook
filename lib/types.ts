@@ -24,6 +24,7 @@ export type Partner = {
   url: string;
   tips: Tip[];
   logo?: string; // path to a real logo image; falls back to a colored initial tile
+  logoScale?: number; // per-logo size multiplier (square logos read small vs horizontal ones)
   keyStat?: KeyStat; // dual-partner steps: each partner brings its own key stat
   author?: PartnerAuthor; // the expert who contributes the tips (placeholder until provided)
 };

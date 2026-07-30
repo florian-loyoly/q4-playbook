@@ -311,8 +311,10 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
         {
           name: "Underground Ecom",
           logo: "/assets/partners/underground-ecom-logo.png",
+          logoScale: 1.4,
           pitch: "Underground Ecom is a rapidly growing Email marketing agency specialising in helping ecommerce businesses reach their full potential through retention marketing. We help global brands achieve an extra 20-30% in total revenue using our data-driven email marketing strategies.",
           url: "https://www.undergroundecom.com/",
+          author: { name: "Emini Jaggan-Hilton", role: "Head of Partnerships, Events & Marketing", photo: "/assets/partners/underground-ecom-author.webp" },
           tips: [
             tip("Give Your Best Customers First Access - Before the Sale Goes Public", ["Q4 is the moment to reward loyalty, not dilute it. Before opening your BFCM offers to the world, create an exclusive 24-48 hour early-access window for your highest-value repeat buyers.", "This signals that their loyalty matters, drives high-intent purchases before peak demand hits, and means your deepest discounts are reserved for converting new or lapsed customers, not handed to people who would have bought regardless. Done well, it deepens loyalty and protects margin at the same time."], [V("Underground Ecom, Creative Is King", "/assets/partners/UK-CRM-Retention-Repurchase-underground-ecom-tip1.png")]),
             tip("Trigger Replenishment Campaigns Based on What You Already Know", ["The most powerful retention message is one sent at exactly the right moment. Use purchase history and average product lifecycle data to trigger replenishment campaigns before a customer runs out: a reorder reminder for a consumable, a refill prompt for a seasonal product, or a timely bundle at the natural restock window.", "These triggered sends consistently outperform broadcast campaigns on conversion rate and margin because they're relevant by design, not by luck."]),

@@ -5,8 +5,9 @@ import type { Partner } from "@/lib/types";
 export function PartnerLogo({ partner, accent, size = 28 }: { partner: Partner; accent: string; size?: number }) {
   const logoSrc = partner.logo || (partner.name === "Loyoly" ? "/assets/logo-loyoly.svg" : null);
   if (logoSrc) {
+    const scale = partner.logoScale ?? 1;
     // eslint-disable-next-line @next/next/no-img-element
-    return <img src={logoSrc} alt={partner.name} style={{ height: size * 0.7, width: "auto", maxWidth: size * 6, objectFit: "contain", display: "block" }} />;
+    return <img src={logoSrc} alt={partner.name} style={{ height: size * 0.7 * scale, width: "auto", maxWidth: size * 6 * scale, objectFit: "contain", display: "block" }} />;
   }
   return (
     <span style={{ display: "inline-flex", alignItems: "center", gap: 8 }}>
