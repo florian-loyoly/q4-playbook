@@ -72,7 +72,7 @@ export function StepView({ market, step, steps, ui }: { market: MarketId; step: 
         <TipProgressBar active={active} total={flatItems.length} accent={accent} />
       )}
 
-      <div style={{ display: "grid", gridTemplateColumns: narrow ? "1fr" : "212px minmax(0,1fr)", gap: narrow ? 0 : 40, alignItems: "start" }}>
+      <div style={{ display: "grid", gridTemplateColumns: narrow ? "1fr" : "264px minmax(0,1fr)", gap: narrow ? 0 : 44, alignItems: "start" }}>
         {!narrow ? <TipRail items={flatItems} active={active} accent={accent} jumpTo={jumpTo} headingLabel={ui.inThisChapter} /> : null}
 
         <div style={{ minWidth: 0 }}>

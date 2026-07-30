@@ -84,7 +84,7 @@ export function KeyStat({ step, ui, stat }: { step: Step; ui: UIStrings; stat?: 
         }}
       />
       {isSentence ? (
-        <div style={{ position: "relative", maxWidth: "52ch" }}>
+        <div style={{ position: "relative" }}>
           {eyebrow}
           <p style={{ fontFamily: BODY, fontSize: "clamp(18px,2.4vw,23px)", lineHeight: 1.5, color: "rgba(255,255,255,.92)", margin: 0 }}>{renderStatement()}</p>
           {source}
