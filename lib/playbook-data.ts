@@ -222,7 +222,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       teaser: "Buy attention that converts when everyone is bidding.",
       keyStat: { value: 38, unit: "%", prefix: "+", label: "higher ROAS for brands that pre-build Q4 audiences before November", source: "AdPeak Q4 benchmark, 2025" },
       partners: [{
-        name: "AdPeak", pitch: "Paid acquisition, tuned for peak season.", url: "#",
+        name: "Lorem Ipsum", pitch: "Paid acquisition, tuned for peak season.", url: "#",
         tips: [
           tip("Lorem ipsum dolor sit amet", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."], [V("Lorem ipsum")]),
           tip("Consectetur adipiscing elit", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."], [V("Lorem ipsum")]),
@@ -235,13 +235,13 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       teaser: "Turn first-time buyers into a list that opens.",
       keyStat: { value: 4.2, unit: "x", prefix: "", label: "more revenue per send from segmented welcome flows vs one-off blasts", source: "Flowmail data, 2025" },
       partners: [
-        { name: "Flowmail", pitch: "Lifecycle email and automation.", url: "#",
+        { name: "Dolor Amet", pitch: "Lifecycle email and automation.", url: "#",
           tips: [
             tip("Ut enim ad minim veniam", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."], [V("Lorem ipsum")]),
             tip("Quis nostrud exercitation ullamco", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
           ],
         },
-        { name: "Pulsecrm", pitch: "SMS and multi-channel nurturing.", url: "#",
+        { name: "Consectetur Elit", pitch: "SMS and multi-channel nurturing.", url: "#",
           tips: [
             tip("Duis aute irure dolor", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
             tip("Lorem ipsum dolor sit amet", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
@@ -254,7 +254,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       teaser: "Make the right product impossible to miss.",
       keyStat: { value: 27, unit: "%", prefix: "+", label: "conversion lift from peak-tuned merchandising and clear urgency cues", source: "Shopfront study, 2025" },
       partners: [{
-        name: "Shopfront", pitch: "On-site personalization and merchandising.", url: "#",
+        name: "Sed Tempor", pitch: "On-site personalization and merchandising.", url: "#",
         tips: [
           tip("Consectetur adipiscing elit", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
           tip("Sed do eiusmod tempor incididunt", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
@@ -266,7 +266,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       teaser: "Remove every reason to abandon at the last step.",
       keyStat: { value: 18, unit: "%", prefix: "-", label: "checkout abandonment when express wallets and clear fees appear early", source: "PayGlide report, 2025" },
       partners: [{
-        name: "PayGlide", pitch: "Frictionless checkout and payments.", url: "#",
+        name: "Incididunt Labore", pitch: "Frictionless checkout and payments.", url: "#",
         tips: [
           tip("Ut enim ad minim veniam", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
           tip("Quis nostrud exercitation ullamco", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
@@ -278,7 +278,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       teaser: "Promise a date you can actually keep.",
       keyStat: { value: 31, unit: "%", prefix: "+", label: "repeat intent when the delivery promise is met during peak", source: "Shipwise index, 2025" },
       partners: [{
-        name: "Shipwise", pitch: "Delivery orchestration and tracking.", url: "#",
+        name: "Dolore Magna", pitch: "Delivery orchestration and tracking.", url: "#",
         tips: [
           tip("Duis aute irure dolor", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
           tip("Lorem ipsum dolor sit amet", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
@@ -290,7 +290,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       teaser: "Answer fast when volume triples overnight.",
       keyStat: { value: 24, unit: "%", prefix: "+", label: "CSAT when peak tickets are deflected with self-serve answers", source: "Helply benchmark, 2025" },
       partners: [{
-        name: "Helply", pitch: "Support automation and help center.", url: "#",
+        name: "Aliqua Enim", pitch: "Support automation and help center.", url: "#",
         tips: [
           tip("Consectetur adipiscing elit", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
           tip("Sed do eiusmod tempor incididunt", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
@@ -347,7 +347,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       teaser: "Make returns a reason to buy again.",
       keyStat: { value: 92, unit: "%", prefix: "", label: "of shoppers rebuy from a brand after an easy return experience", source: "ReturnHero survey, 2025" },
       partners: [{
-        name: "ReturnHero", pitch: "Returns and exchanges, self-serve.", url: "#",
+        name: "Veniam Quis", pitch: "Returns and exchanges, self-serve.", url: "#",
         tips: [
           tip("Quis nostrud exercitation ullamco", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
           tip("Duis aute irure dolor", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
@@ -361,7 +361,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       teaser: "Acheter une attention qui convertit quand tout le monde enchérit.",
       keyStat: { value: 38, unit: "%", prefix: "+", label: "de ROAS pour les marques qui préparent leurs audiences Q4 avant novembre", source: "Benchmark Adklix Q4, 2025" },
       partners: [{
-        name: "Adklix", pitch: "L'acquisition payante, calibrée pour le pic.", url: "#",
+        name: "Lorem Ipsum", pitch: "L'acquisition payante, calibrée pour le pic.", url: "#",
         tips: [
           tip("Lorem ipsum dolor sit amet", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."], [V("Lorem ipsum")]),
           tip("Consectetur adipiscing elit", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."], [V("Lorem ipsum")]),
@@ -374,13 +374,13 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       teaser: "Transformer les premiers acheteurs en une base qui ouvre.",
       keyStat: { value: 4.2, unit: "x", prefix: "", label: "de revenu par envoi grâce aux flows de bienvenue segmentés vs les envois de masse", source: "Données Sendora, 2025" },
       partners: [
-        { name: "Sendora", pitch: "Email cycle de vie et automatisation.", url: "#",
+        { name: "Dolor Amet", pitch: "Email cycle de vie et automatisation.", url: "#",
           tips: [
             tip("Ut enim ad minim veniam", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."], [V("Lorem ipsum")]),
             tip("Quis nostrud exercitation ullamco", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
           ],
         },
-        { name: "Mailpulse", pitch: "SMS et nurturing multicanal.", url: "#",
+        { name: "Consectetur Elit", pitch: "SMS et nurturing multicanal.", url: "#",
           tips: [
             tip("Duis aute irure dolor", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
             tip("Lorem ipsum dolor sit amet", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
@@ -393,7 +393,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       teaser: "Rendre le bon produit impossible à manquer.",
       keyStat: { value: 27, unit: "%", prefix: "+", label: "de conversion grâce à un merchandising calibré pour le pic et des repères d'urgence clairs", source: "Étude Vitrina, 2025" },
       partners: [{
-        name: "Vitrina", pitch: "Personnalisation on-site et merchandising.", url: "#",
+        name: "Sed Tempor", pitch: "Personnalisation on-site et merchandising.", url: "#",
         tips: [
           tip("Consectetur adipiscing elit", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
           tip("Sed do eiusmod tempor incididunt", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
@@ -405,7 +405,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       teaser: "Retirer toute raison d'abandonner à la dernière étape.",
       keyStat: { value: 18, unit: "%", prefix: "-", label: "d'abandon panier quand les wallets express et les frais clairs apparaissent tôt", source: "Rapport Paylibre, 2025" },
       partners: [{
-        name: "Paylibre", pitch: "Checkout et paiement sans friction.", url: "#",
+        name: "Incididunt Labore", pitch: "Checkout et paiement sans friction.", url: "#",
         tips: [
           tip("Ut enim ad minim veniam", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
           tip("Quis nostrud exercitation ullamco", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
@@ -417,7 +417,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       teaser: "Promettre une date que vous pouvez vraiment tenir.",
       keyStat: { value: 31, unit: "%", prefix: "+", label: "d'intention de rachat quand la promesse de livraison est tenue en période de pic", source: "Indice Cargoo, 2025" },
       partners: [{
-        name: "Cargoo", pitch: "Orchestration de livraison et suivi.", url: "#",
+        name: "Dolore Magna", pitch: "Orchestration de livraison et suivi.", url: "#",
         tips: [
           tip("Duis aute irure dolor", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
           tip("Lorem ipsum dolor sit amet", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
@@ -429,7 +429,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       teaser: "Répondre vite quand le volume triple du jour au lendemain.",
       keyStat: { value: 24, unit: "%", prefix: "+", label: "de CSAT quand les tickets de pic sont déviés vers du self-service", source: "Benchmark Assista, 2025" },
       partners: [{
-        name: "Assista", pitch: "Automatisation du support et centre d'aide.", url: "#",
+        name: "Aliqua Enim", pitch: "Automatisation du support et centre d'aide.", url: "#",
         tips: [
           tip("Consectetur adipiscing elit", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
           tip("Sed do eiusmod tempor incididunt", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
@@ -441,13 +441,13 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       teaser: "Gagner la deuxième commande avant janvier.",
       keyStat: { value: 5, unit: "x", prefix: "", label: "moins cher de réactiver un acheteur Q4 que d'en acquérir un nouveau au Q1", source: "Analyse Reveni, 2025" },
       partners: [
-        { name: "Reveni", pitch: "Flows de réactivation post-achat.", url: "#",
+        { name: "Nostrud Exercitation", pitch: "Flows de réactivation post-achat.", url: "#",
           tips: [
             tip("Ut enim ad minim veniam", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
             tip("Quis nostrud exercitation ullamco", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
           ],
         },
-        { name: "Fidelio", pitch: "Prédiction de churn et win-back.", url: "#",
+        { name: "Ullamco Laboris", pitch: "Prédiction de churn et win-back.", url: "#",
           tips: [
             tip("Duis aute irure dolor", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
             tip("Lorem ipsum dolor sit amet", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
@@ -473,7 +473,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       teaser: "Faire du retour une raison de racheter.",
       keyStat: { value: 92, unit: "%", prefix: "", label: "des acheteurs rachètent après une expérience de retour simple", source: "Enquête Retourna, 2025" },
       partners: [{
-        name: "Retourna", pitch: "Retours et échanges en self-service.", url: "#",
+        name: "Veniam Quis", pitch: "Retours et échanges en self-service.", url: "#",
         tips: [
           tip("Quis nostrud exercitation ullamco", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
           tip("Duis aute irure dolor", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
@@ -487,7 +487,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       teaser: "Comprar atención que convierte cuando todos pujan.",
       keyStat: { value: 38, unit: "%", prefix: "+", label: "de ROAS para las marcas que preparan sus audiencias Q4 antes de noviembre", source: "Benchmark Adverta Q4, 2025" },
       partners: [{
-        name: "Adverta", pitch: "La adquisición de pago, ajustada al pico.", url: "#",
+        name: "Lorem Ipsum", pitch: "La adquisición de pago, ajustada al pico.", url: "#",
         tips: [
           tip("Lorem ipsum dolor sit amet", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."], [V("Lorem ipsum")]),
           tip("Consectetur adipiscing elit", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."], [V("Lorem ipsum")]),
@@ -500,13 +500,13 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       teaser: "Convertir a los primeros compradores en una base que abre.",
       keyStat: { value: 4.2, unit: "x", prefix: "", label: "más ingresos por envío con flows de bienvenida segmentados frente a envíos masivos", source: "Datos Correara, 2025" },
       partners: [
-        { name: "Correara", pitch: "Email de ciclo de vida y automatización.", url: "#",
+        { name: "Dolor Amet", pitch: "Email de ciclo de vida y automatización.", url: "#",
           tips: [
             tip("Ut enim ad minim veniam", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."], [V("Lorem ipsum")]),
             tip("Quis nostrud exercitation ullamco", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
           ],
         },
-        { name: "Pulsomail", pitch: "SMS y nurturing multicanal.", url: "#",
+        { name: "Consectetur Elit", pitch: "SMS y nurturing multicanal.", url: "#",
           tips: [
             tip("Duis aute irure dolor", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
             tip("Lorem ipsum dolor sit amet", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
@@ -519,7 +519,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       teaser: "Hacer que el producto correcto sea imposible de pasar por alto.",
       keyStat: { value: 27, unit: "%", prefix: "+", label: "de conversión con un merchandising ajustado al pico y señales de urgencia claras", source: "Estudio Escaparate, 2025" },
       partners: [{
-        name: "Escaparate", pitch: "Personalización on-site y merchandising.", url: "#",
+        name: "Sed Tempor", pitch: "Personalización on-site y merchandising.", url: "#",
         tips: [
           tip("Consectetur adipiscing elit", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
           tip("Sed do eiusmod tempor incididunt", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
@@ -531,7 +531,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       teaser: "Eliminar cualquier motivo para abandonar en el último paso.",
       keyStat: { value: 18, unit: "%", prefix: "-", label: "de abandono de carrito cuando los wallets express y los gastos claros aparecen pronto", source: "Informe Pagalibre, 2025" },
       partners: [{
-        name: "Pagalibre", pitch: "Checkout y pagos sin fricción.", url: "#",
+        name: "Incididunt Labore", pitch: "Checkout y pagos sin fricción.", url: "#",
         tips: [
           tip("Ut enim ad minim veniam", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
           tip("Quis nostrud exercitation ullamco", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
@@ -543,7 +543,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       teaser: "Prometer una fecha que puedas cumplir de verdad.",
       keyStat: { value: 31, unit: "%", prefix: "+", label: "de intención de recompra cuando se cumple la promesa de entrega en pico", source: "Índice Enviaya, 2025" },
       partners: [{
-        name: "Enviaya", pitch: "Orquestación de entrega y seguimiento.", url: "#",
+        name: "Dolore Magna", pitch: "Orquestación de entrega y seguimiento.", url: "#",
         tips: [
           tip("Duis aute irure dolor", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
           tip("Lorem ipsum dolor sit amet", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
@@ -555,7 +555,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       teaser: "Responder rápido cuando el volumen se triplica de la noche a la mañana.",
       keyStat: { value: 24, unit: "%", prefix: "+", label: "de CSAT cuando los tickets de pico se desvían a self-service", source: "Benchmark Ayudame, 2025" },
       partners: [{
-        name: "Ayudame", pitch: "Automatización de soporte y centro de ayuda.", url: "#",
+        name: "Aliqua Enim", pitch: "Automatización de soporte y centro de ayuda.", url: "#",
         tips: [
           tip("Consectetur adipiscing elit", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
           tip("Sed do eiusmod tempor incididunt", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
@@ -567,13 +567,13 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       teaser: "Ganar el segundo pedido antes de enero.",
       keyStat: { value: 5, unit: "x", prefix: "", label: "más barato reactivar a un comprador Q4 que adquirir uno nuevo en Q1", source: "Análisis Recupera, 2025" },
       partners: [
-        { name: "Recupera", pitch: "Flows de reactivación post-compra.", url: "#",
+        { name: "Nostrud Exercitation", pitch: "Flows de reactivación post-compra.", url: "#",
           tips: [
             tip("Ut enim ad minim veniam", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
             tip("Quis nostrud exercitation ullamco", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
           ],
         },
-        { name: "Fidelia", pitch: "Predicción de churn y win-back.", url: "#",
+        { name: "Ullamco Laboris", pitch: "Predicción de churn y win-back.", url: "#",
           tips: [
             tip("Duis aute irure dolor", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
             tip("Lorem ipsum dolor sit amet", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
@@ -599,7 +599,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       teaser: "Hacer de la devolución una razón para volver a comprar.",
       keyStat: { value: 92, unit: "%", prefix: "", label: "de los compradores vuelven a comprar tras una devolución sencilla", source: "Encuesta Devolvia, 2025" },
       partners: [{
-        name: "Devolvia", pitch: "Devoluciones y cambios en self-service.", url: "#",
+        name: "Veniam Quis", pitch: "Devoluciones y cambios en self-service.", url: "#",
         tips: [
           tip("Quis nostrud exercitation ullamco", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
           tip("Duis aute irure dolor", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
