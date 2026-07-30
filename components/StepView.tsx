@@ -103,9 +103,6 @@ export function StepView({ market, step, steps, ui, onGateSuccess }: { market: M
           {/* header */}
           <Reveal style={{ margin: "26px 0 8px" }}>
             <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
-              <span style={{ width: 56, height: 56, borderRadius: 12, background: tint(accent, 0.12), border: `1px solid ${tint(accent, 0.3)}`, display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
-                <Icon name={step.icon} color={accent} size={28} />
-              </span>
               <div style={{ display: "flex", alignItems: "baseline", gap: 12, flexWrap: "wrap" }}>
                 <span style={{ fontFamily: DISP, fontWeight: 700, fontSize: "clamp(30px,6vw,42px)", color: tint(accent, 0.35), lineHeight: 1 }}>{String(step.order).padStart(2, "0")}</span>
                 <h1 style={{ fontFamily: DISP, fontWeight: 600, fontSize: "clamp(26px,5vw,40px)", lineHeight: 1.1, letterSpacing: "-.02em", color: P.p950, margin: 0 }}>{step.title}</h1>

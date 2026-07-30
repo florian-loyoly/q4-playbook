@@ -47,7 +47,7 @@ export function TipBlock({ step, partner, pi, ui, limit }: { step: Step; partner
               <div style={{ flex: 1, minWidth: 0 }}>
                 <h3 style={{ fontFamily: DISP, fontWeight: 600, fontSize: 20, lineHeight: 1.2, letterSpacing: "-.01em", color: P.p950, margin: "6px 0 12px" }}>{tp.title}</h3>
                 {tp.paragraphs.map((pg, gi) => (
-                  <p key={gi} style={{ fontFamily: BODY, fontSize: 15, lineHeight: 1.65, color: P.p800, margin: "0 0 14px", maxWidth: 660, textWrap: "pretty" }}>
+                  <p key={gi} style={{ fontFamily: BODY, fontSize: 15, lineHeight: 1.65, color: P.p800, margin: "0 0 14px", textWrap: "pretty" }}>
                     {pg}
                   </p>
                 ))}
