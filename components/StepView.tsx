@@ -11,7 +11,6 @@ import { PartnerLogo } from "./PartnerLogo";
 import { KeyStat } from "./KeyStat";
 import { TipBlock } from "./TipBlock";
 import { PartnerCard } from "./PartnerCard";
-import { ChapterList } from "./ChapterList";
 import { TipProgressBar, TipRail, TipMobileNav, type NavItem } from "./TipNav";
 import { fill } from "@/lib/i18n";
 import { useGate } from "@/lib/gate";
@@ -36,12 +35,34 @@ export function StepView({ market, step, steps, ui }: { market: MarketId; step: 
   const ids = useMemo(() => flatItems.map((i) => i.id), [flatItems]);
   const { active, jumpTo } = useTipSpy(ids);
 
-  const partnerItems = (pi: number) => step.partners[pi].tips.map((tp, ti) => ({ id: `tip-${pi}-${ti}`, label: tp.title }));
-
   return (
-    <div style={{ maxWidth: 1120, margin: "0 auto", padding: "18px 20px 70px" }}>
-      <div style={{ marginBottom: 16 }}>
+    <div style={{ maxWidth: 1240, margin: "0 auto", padding: "18px 20px 70px" }}>
+      {/* top bar: back link + stage selector */}
+      <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 14, flexWrap: "wrap", marginBottom: 16 }}>
         <Button label={ui.backToMap} variant="ghost" iconL="arrowL" href={`/${market}`} style={{ paddingLeft: 8 }} />
+        <div style={{ display: "flex", alignItems: "center", gap: 12, flexWrap: "wrap" }}>
+          <span style={{ fontFamily: BODY, fontSize: 13, fontWeight: 500, color: P.p700 }}>{fill(ui.stageOf, { n: step.order })}</span>
+          <div style={{ position: "relative", display: "inline-flex", alignItems: "center" }}>
+            <select
+              value={String(step.order)}
+              onChange={(e) => {
+                const target = steps.find((s) => s.order === parseInt(e.target.value, 10));
+                if (target) router.push(`/${market}/${target.slug}`);
+              }}
+              aria-label={ui.jumpTo}
+              style={{ appearance: "none", WebkitAppearance: "none", fontFamily: BODY, fontSize: 13, fontWeight: 500, color: P.p900, background: "#fff", border: `1px solid ${P.p200}`, borderRadius: 8, padding: "8px 34px 8px 12px", cursor: "pointer", maxWidth: 260, textOverflow: "ellipsis" }}
+            >
+              {steps.map((s) => (
+                <option key={s.order} value={String(s.order)}>
+                  {(lockedOf(s) ? "🔒 " : "") + s.order + ". " + s.title}
+                </option>
+              ))}
+            </select>
+            <span style={{ position: "absolute", right: 10, pointerEvents: "none", display: "inline-flex" }}>
+              <Icon name="chevD" color={P.p700} size={16} />
+            </span>
+          </div>
+        </div>
       </div>
 
       {/* progress + tip nav */}
@@ -76,29 +97,6 @@ export function StepView({ market, step, steps, ui }: { market: MarketId; step: 
 
           {/* header */}
           <Reveal style={{ margin: "26px 0 8px" }}>
-            <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 14, flexWrap: "wrap", marginBottom: 18 }}>
-              <span style={{ fontFamily: BODY, fontSize: 13, fontWeight: 500, color: P.p700 }}>{fill(ui.stageOf, { n: step.order })}</span>
-              <div style={{ position: "relative", display: "inline-flex", alignItems: "center" }}>
-                <select
-                  value={String(step.order)}
-                  onChange={(e) => {
-                    const target = steps.find((s) => s.order === parseInt(e.target.value, 10));
-                    if (target) router.push(`/${market}/${target.slug}`);
-                  }}
-                  aria-label={ui.jumpTo}
-                  style={{ appearance: "none", WebkitAppearance: "none", fontFamily: BODY, fontSize: 13, fontWeight: 500, color: P.p900, background: "#fff", border: `1px solid ${P.p200}`, borderRadius: 8, padding: "8px 34px 8px 12px", cursor: "pointer", maxWidth: 260, textOverflow: "ellipsis" }}
-                >
-                  {steps.map((s) => (
-                    <option key={s.order} value={String(s.order)}>
-                      {(lockedOf(s) ? "🔒 " : "") + s.order + ". " + s.title}
-                    </option>
-                  ))}
-                </select>
-                <span style={{ position: "absolute", right: 10, pointerEvents: "none", display: "inline-flex" }}>
-                  <Icon name="chevD" color={P.p700} size={16} />
-                </span>
-              </div>
-            </div>
             <div style={{ display: "flex", alignItems: "center", gap: 16 }}>
               <span style={{ width: 56, height: 56, borderRadius: 12, background: tint(accent, 0.12), border: `1px solid ${tint(accent, 0.3)}`, display: "inline-flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
                 <Icon name={step.icon} color={accent} size={28} />
@@ -109,23 +107,6 @@ export function StepView({ market, step, steps, ui }: { market: MarketId; step: 
               </div>
             </div>
           </Reveal>
-
-          {/* in this chapter: one list, or two side by side for dual partners */}
-          <div style={{ margin: "26px 0" }}>
-            {dual ? (
-              <div style={{ display: "grid", gridTemplateColumns: narrow ? "1fr" : "1fr 1fr", gap: 16 }}>
-                {step.partners.map((pt, pi) => (
-                  <Reveal key={pi}>
-                    <ChapterList items={partnerItems(pi)} accent={accent} jumpTo={jumpTo} headingLabel={ui.inThisChapter} partner={pt} />
-                  </Reveal>
-                ))}
-              </div>
-            ) : (
-              <Reveal>
-                <ChapterList items={partnerItems(0)} accent={accent} jumpTo={jumpTo} headingLabel={ui.inThisChapter} />
-              </Reveal>
-            )}
-          </div>
 
           {/* single-partner: step-level stat here (dual stats live inside each section) */}
           {!dual ? (
