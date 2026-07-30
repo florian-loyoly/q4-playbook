@@ -309,6 +309,17 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
             tip("Don't Go Dark in January - Your Competitors Will", ["Most brands switch off the moment the Christmas period ends, making January one of the most underused retention windows of the year. Your Q4 cohort (new customers, gift card recipients, and reactivated lapsed buyers) is still fresh but fading fast. A January nurturing sequence that acknowledges the new year, deepens the brand relationship, and gives customers a compelling reason to return can turn what brands write off as a quiet month into one of the strongest CRM revenue periods on the calendar."], [V("Underground Ecom, Our Proven Impact", "/assets/partners/UK-CRM-Retention-Repurchase-underground-ecom-tip5.png")]),
           ],
         },
+        {
+          name: "Paper Run",
+          logo: "/assets/partners/paper-run-logo.png",
+          pitch: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, quis nostrud exercitation ullamco laboris.",
+          url: "#",
+          tips: [
+            tip("Lorem ipsum dolor sit amet", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."], [V("Lorem ipsum")]),
+            tip("Consectetur adipiscing elit", ["Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident."]),
+            tip("Sed do eiusmod tempor incididunt", ["Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure."], [V("Lorem ipsum")]),
+          ],
+        },
       ],
     },
     "loyalty-engagement": {
