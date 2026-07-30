@@ -24,6 +24,7 @@ const ICONS: Record<string, El[]> = {
   grid: [["path", { d: "M4 6h16M4 12h16M4 18h16" }]],
   list: [["path", { d: "M8 6h13M8 12h13M8 18h13" }], ["circle", { cx: 3.5, cy: 6, r: 1 }], ["circle", { cx: 3.5, cy: 12, r: 1 }], ["circle", { cx: 3.5, cy: 18, r: 1 }]],
   spark: [["path", { d: "M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8z" }]],
+  user: [["circle", { cx: 12, cy: 8, r: 4 }], ["path", { d: "M4 21v-1a6 6 0 016-6h4a6 6 0 016 6v1" }]],
 };
 
 export function Icon({ name, color, size = 20 }: { name: string; color?: string; size?: number }) {

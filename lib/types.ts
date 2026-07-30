@@ -12,6 +12,12 @@ export type Tip = {
   visuals: VisualSlot[];
 };
 
+export type PartnerAuthor = {
+  name: string;
+  role: string; // job title
+  photo?: string; // path to a real headshot; falls back to a placeholder avatar
+};
+
 export type Partner = {
   name: string;
   pitch: string;
@@ -19,6 +25,7 @@ export type Partner = {
   tips: Tip[];
   logo?: string; // path to a real logo image; falls back to a colored initial tile
   keyStat?: KeyStat; // dual-partner steps: each partner brings its own key stat
+  author?: PartnerAuthor; // the expert who contributes the tips (placeholder until provided)
 };
 
 // Two shapes for the dark "number that matters" card:
