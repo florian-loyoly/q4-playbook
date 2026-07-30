@@ -1,5 +1,7 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import { DISP, BODY, P } from "@/lib/tokens";
 import { fill } from "@/lib/i18n";
 import type { UIStrings } from "@/lib/types";
@@ -7,8 +9,13 @@ import type { UIStrings } from "@/lib/types";
 // Short full-screen interstitial shown when the reader switches market, before
 // navigating. Mirrors RedirectNotice: a heading, a message, and a loader while
 // the new market's localized playbook loads. `flag` heads the card.
+// Portaled to <body>: the header ancestor uses backdrop-filter, which would
+// otherwise become the containing block for this fixed overlay and mis-center it.
 export function MarketSwitchNotice({ ui, marketName, flag }: { ui: UIStrings; marketName: string; flag: string }) {
-  return (
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+
+  const node = (
     <div
       role="status"
       aria-live="polite"
@@ -58,4 +65,7 @@ export function MarketSwitchNotice({ ui, marketName, flag }: { ui: UIStrings; ma
       </div>
     </div>
   );
+
+  if (!mounted) return null;
+  return createPortal(node, document.body);
 }
