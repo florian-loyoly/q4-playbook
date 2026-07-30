@@ -5,11 +5,13 @@ import { Reveal } from "./Reveal";
 
 // Renders one partner's numbered expert tips. gid = tip-{partnerIndex}-{tipIndex} for anchors.
 // Tips are separated by a hairline + generous spacing (scannable, premium rhythm).
-export function TipBlock({ step, partner, pi, ui }: { step: Step; partner: Partner; pi: number; ui: UIStrings }) {
+// `limit` caps how many tips render (used for the free preview before the gate).
+export function TipBlock({ step, partner, pi, ui, limit }: { step: Step; partner: Partner; pi: number; ui: UIStrings; limit?: number }) {
   const accent = step.accent;
+  const tips = typeof limit === "number" ? partner.tips.slice(0, limit) : partner.tips;
   return (
     <>
-      {partner.tips.map((tp, ti) => {
+      {tips.map((tp, ti) => {
         const gid = `tip-${pi}-${ti}`;
         return (
           <Reveal

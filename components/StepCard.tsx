@@ -11,20 +11,21 @@ export function StepCard({
   step,
   market,
   ui,
-  locked,
+  unlocked,
   leaving,
 }: {
   step: Step;
   market: MarketId;
   ui: UIStrings;
-  locked: boolean;
-  leaving: boolean; // lock icon animating out during the unlock moment
+  unlocked: boolean; // whole app unlocked (form submitted this session)
+  leaving: boolean; // badge popping during the unlock moment
 }) {
   const [hover, setHover] = useState(false);
   const accent = step.accent;
   const dual = step.partners.length > 1;
-  // State badge (top-right): free -> FREE pill, locked (or unlocking) -> lock, unlocked -> check.
-  const badgeMode: "free" | "lock" | "check" = step.isFree ? "free" : locked || leaving ? "lock" : "check";
+  // Every stage is openable (first tip free). Badge: "1st tip free" pill before
+  // unlock, a check once the whole app is unlocked.
+  const badgeMode: "free" | "check" = unlocked ? "check" : "free";
 
   return (
     <Link
@@ -39,16 +40,15 @@ export function StepCard({
         textAlign: "left",
         textDecoration: "none",
         width: "100%",
-        background: locked ? P.p100 : tint(accent, 0.05),
-        border: `1px solid ${hover ? tint(accent, 0.7) : locked ? P.p200 : tint(accent, 0.45)}`,
-        borderTop: `3px solid ${locked && !hover ? P.p300 : accent}`,
+        background: tint(accent, 0.05),
+        border: `1px solid ${hover ? tint(accent, 0.7) : tint(accent, 0.45)}`,
+        borderTop: `3px solid ${accent}`,
         borderRadius: 2,
         padding: "18px 18px 16px",
-        boxShadow: hover ? "0 8px 22px rgba(43,37,31,.12)" : locked ? "none" : "0 1px 3px rgba(43,37,31,.07)",
+        boxShadow: hover ? "0 8px 22px rgba(43,37,31,.12)" : "0 1px 3px rgba(43,37,31,.07)",
         transition: "border-color .2s, box-shadow .2s, filter .25s, opacity .25s",
-        opacity: locked ? (hover ? 0.92 : 0.55) : 1,
-        filter: locked ? (hover ? "grayscale(.4)" : "grayscale(.95)") : "none",
-        animation: leaving ? `pbPop .6s ease ${(step.order - 2) * 90 + 200}ms both` : "none",
+        opacity: 1,
+        animation: leaving ? `pbPop .6s ease ${(step.order - 1) * 70 + 150}ms both` : "none",
       }}
     >
       {/* State badge (top-right) */}
@@ -70,28 +70,7 @@ export function StepCard({
             padding: "3px 9px",
           }}
         >
-          {ui.free}
-        </span>
-      ) : badgeMode === "lock" ? (
-        <span
-          aria-hidden="true"
-          style={{
-            position: "absolute",
-            top: 12,
-            right: 12,
-            width: 26,
-            height: 26,
-            borderRadius: 999,
-            background: P.p100,
-            border: `1px solid ${P.p300}`,
-            display: "inline-flex",
-            alignItems: "center",
-            justifyContent: "center",
-            color: P.p700,
-            animation: leaving ? `pbLockOut .5s cubic-bezier(.4,0,.2,1) ${(step.order - 2) * 90}ms forwards` : "none",
-          }}
-        >
-          <Icon name="lock" color={P.p700} size={14} />
+          {ui.freeTip}
         </span>
       ) : (
         <span
@@ -164,9 +143,9 @@ export function StepCard({
             </span>
           ))}
         </div>
-        <span style={{ fontFamily: BODY, fontSize: 11, fontWeight: 500, color: locked ? P.p500 : accent, display: "inline-flex", alignItems: "center", gap: 4, whiteSpace: "nowrap" }}>
-          {locked ? ui.tapToUnlock : ui.tapToOpen}
-          <Icon name={locked ? "lock" : "arrowR"} color={locked ? P.p500 : accent} size={13} />
+        <span style={{ fontFamily: BODY, fontSize: 11, fontWeight: 500, color: accent, display: "inline-flex", alignItems: "center", gap: 4, whiteSpace: "nowrap" }}>
+          {ui.tapToOpen}
+          <Icon name="arrowR" color={accent} size={13} />
         </span>
       </div>
     </Link>

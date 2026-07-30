@@ -44,8 +44,8 @@ export function MapView({ market, steps, ui }: { market: MarketId; steps: Step[]
     return () => clearTimeout(t);
   }, [justUnlocked, clearJustUnlocked]);
 
-  const lockedOf = (s: Step) => !s.isFree && !isUnlocked;
-
+  // New model: every stage is openable (first tip free). Cards show a "1st tip
+  // free" pill until the form is submitted, then a check once fully unlocked.
   const hero = (
     <div style={{ textAlign: "center", maxWidth: 760, margin: "0 auto 30px" }}>
       <div
@@ -95,14 +95,13 @@ export function MapView({ market, steps, ui }: { market: MarketId; steps: Step[]
       <div style={{ position: "absolute", left: 19, top: 10, bottom: 10, width: 2, background: P.p200, zIndex: 0 }} />
       <div style={{ display: "flex", flexDirection: "column", gap: 34 }}>
         {steps.map((s, i) => {
-          const lk = lockedOf(s);
           return (
             <Reveal as="div" key={s.order} delay={i * 0.055} style={{ position: "relative", display: "flex", gap: 16, alignItems: "stretch", zIndex: 1 }}>
               <div style={{ flexShrink: 0, width: 40 }}>
-                <TimelineNode step={s} locked={lk} />
+                <TimelineNode step={s} locked={false} />
               </div>
               <div style={{ flex: 1, minWidth: 0 }}>
-                <StepCard step={s} market={market} ui={ui} locked={lk} leaving={justUnlocked && !s.isFree} />
+                <StepCard step={s} market={market} ui={ui} unlocked={isUnlocked} leaving={justUnlocked} />
               </div>
             </Reveal>
           );
@@ -114,16 +113,15 @@ export function MapView({ market, steps, ui }: { market: MarketId; steps: Step[]
       <div style={{ position: "absolute", left: "50%", top: 10, bottom: 10, width: 2, marginLeft: -1, background: P.p200, zIndex: 0 }} />
       <div style={{ display: "flex", flexDirection: "column", gap: 36 }}>
         {steps.map((s, i) => {
-          const lk = lockedOf(s);
           const rightSide = i % 2 === 1;
           return (
             <Reveal as="div" key={s.order} delay={i * 0.055} style={{ position: "relative", display: "flex", justifyContent: rightSide ? "flex-end" : "flex-start", zIndex: 1 }}>
               <div style={{ position: "absolute", left: "50%", top: 24, transform: "translate(-50%,-50%)", zIndex: 3 }}>
-                <TimelineNode step={s} locked={lk} />
+                <TimelineNode step={s} locked={false} />
               </div>
               <div style={{ width: "calc(50% - 34px)", minWidth: 0, position: "relative" }}>
                 <div style={{ position: "absolute", top: 24, width: 16, height: 2, background: P.p200, zIndex: 0, left: rightSide ? -16 : "auto", right: rightSide ? "auto" : -16 }} />
-                <StepCard step={s} market={market} ui={ui} locked={lk} leaving={justUnlocked && !s.isFree} />
+                <StepCard step={s} market={market} ui={ui} unlocked={isUnlocked} leaving={justUnlocked} />
               </div>
             </Reveal>
           );

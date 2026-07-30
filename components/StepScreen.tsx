@@ -5,19 +5,18 @@ import { useRouter } from "next/navigation";
 import type { MarketId, Step, UIStrings } from "@/lib/types";
 import { useGate } from "@/lib/gate";
 import { StepView } from "./StepView";
-import { GateWall } from "./GateWall";
 import { RedirectNotice } from "./RedirectNotice";
 import { Toast } from "./Toast";
 
 const REDIRECT_DELAY = 1400;
 
-// Decides between the step content and the gate wall based on gate state.
-// On successful submission it shows a short confirmation notice, then unlocks
-// and redirects to the stage the user picked as their #1 Q4 priority. The
-// unlocked toast is driven by the gate provider's justUnlocked flag so it
-// survives the redirect.
+// Always renders the step; the gate now lives inline inside StepView (first
+// tip free, form for the rest). On successful submission it shows a short
+// confirmation notice, then unlocks and redirects to the stage the user picked
+// as their #1 Q4 priority. The unlocked toast is driven by the gate provider's
+// justUnlocked flag so it survives the redirect.
 export function StepScreen({ market, step, steps, ui }: { market: MarketId; step: Step; steps: Step[]; ui: UIStrings }) {
-  const { isUnlocked, unlock, justUnlocked, clearJustUnlocked } = useGate();
+  const { unlock, justUnlocked, clearJustUnlocked } = useGate();
   const router = useRouter();
   const [redirectSlug, setRedirectSlug] = useState<string | null>(null);
 
@@ -44,16 +43,11 @@ export function StepScreen({ market, step, steps, ui }: { market: MarketId; step
     return () => clearTimeout(t);
   }, [redirectSlug, step.slug, market, router, unlock]);
 
-  const locked = !step.isFree && !isUnlocked;
   const redirectTitle = redirectSlug ? steps.find((s) => s.slug === redirectSlug)?.title ?? "" : "";
 
   return (
     <>
-      {locked ? (
-        <GateWall market={market} steps={steps} ui={ui} onSuccess={(slug) => setRedirectSlug(slug)} />
-      ) : (
-        <StepView market={market} step={step} steps={steps} ui={ui} />
-      )}
+      <StepView market={market} step={step} steps={steps} ui={ui} onGateSuccess={(slug) => setRedirectSlug(slug)} />
       {redirectSlug ? <RedirectNotice ui={ui} stageTitle={redirectTitle} /> : null}
       {justUnlocked ? <Toast message={ui.unlockedToast} /> : null}
     </>

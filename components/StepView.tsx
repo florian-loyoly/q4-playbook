@@ -11,12 +11,13 @@ import { PartnerLogo } from "./PartnerLogo";
 import { KeyStat } from "./KeyStat";
 import { TipBlock } from "./TipBlock";
 import { PartnerCard } from "./PartnerCard";
+import { GateInline } from "./GateInline";
 import { TipProgressBar, TipRail, TipMobileNav, type NavItem } from "./TipNav";
 import { fill } from "@/lib/i18n";
 import { useGate } from "@/lib/gate";
 import { useIsNarrow, useTipSpy } from "@/lib/hooks";
 
-export function StepView({ market, step, steps, ui }: { market: MarketId; step: Step; steps: Step[]; ui: UIStrings }) {
+export function StepView({ market, step, steps, ui, onGateSuccess }: { market: MarketId; step: Step; steps: Step[]; ui: UIStrings; onGateSuccess: (prioritySlug: string) => void }) {
   const router = useRouter();
   const { isUnlocked } = useGate();
   const narrow = useIsNarrow(1024);
@@ -24,14 +25,18 @@ export function StepView({ market, step, steps, ui }: { market: MarketId; step: 
   const dual = step.partners.length > 1;
   const next = steps.find((s) => s.order === step.order + 1);
   const prev = steps.find((s) => s.order === step.order - 1);
-  const lockedOf = (s: Step) => !s.isFree && !isUnlocked;
-  const nextLocked = next ? lockedOf(next) : false;
+  // New model: every stage is openable. When gated, only the first tip of each
+  // partner is shown as a free preview; the rest sits behind the inline form.
+  const locked = !isUnlocked;
+  const previewCount = 1; // free tips per partner before the gate
+  const tipLimit = (pt: Step["partners"][number]) => (locked ? Math.min(previewCount, pt.tips.length) : pt.tips.length);
 
-  // Single source of truth for the tips (reused by the TOC(s) and the rail).
+  // Single source of truth for the visible tips (reused by the rail / progress).
   const flatItems: NavItem[] = useMemo(() => {
     const d = step.partners.length > 1;
-    return step.partners.flatMap((pt, pi) => pt.tips.map((tp, ti) => ({ id: `tip-${pi}-${ti}`, label: tp.title, partnerName: d ? pt.name : undefined })));
-  }, [step]);
+    const lim = !isUnlocked ? 1 : Infinity;
+    return step.partners.flatMap((pt, pi) => pt.tips.slice(0, lim).map((tp, ti) => ({ id: `tip-${pi}-${ti}`, label: tp.title, partnerName: d ? pt.name : undefined })));
+  }, [step, isUnlocked]);
   const ids = useMemo(() => flatItems.map((i) => i.id), [flatItems]);
   const { active, jumpTo } = useTipSpy(ids);
 
@@ -54,7 +59,7 @@ export function StepView({ market, step, steps, ui }: { market: MarketId; step: 
             >
               {steps.map((s) => (
                 <option key={s.order} value={String(s.order)}>
-                  {(lockedOf(s) ? "🔒 " : "") + s.order + ". " + s.title}
+                  {s.order + ". " + s.title}
                 </option>
               ))}
             </select>
@@ -134,16 +139,21 @@ export function StepView({ market, step, steps, ui }: { market: MarketId; step: 
                     <KeyStat step={step} ui={ui} stat={pt.keyStat ?? step.keyStat} />
                   </div>
                   <div>
-                    <TipBlock step={step} partner={pt} pi={pi} ui={ui} />
+                    <TipBlock step={step} partner={pt} pi={pi} ui={ui} limit={tipLimit(pt)} />
                   </div>
                 </Reveal>
               ))}
             </div>
           ) : (
             <div>
-              <TipBlock step={step} partner={step.partners[0]} pi={0} ui={ui} />
+              <TipBlock step={step} partner={step.partners[0]} pi={0} ui={ui} limit={tipLimit(step.partners[0])} />
             </div>
           )}
+
+          {/* inline gate: replaces the remaining tips until the form is submitted */}
+          {locked ? (
+            <GateInline market={market} step={step} steps={steps} ui={ui} onSuccess={onGateSuccess} />
+          ) : null}
 
           {/* partner presentations */}
           <div style={{ marginTop: 40, display: "grid", gap: 16 }}>
@@ -170,7 +180,7 @@ export function StepView({ market, step, steps, ui }: { market: MarketId; step: 
                   <div style={{ fontFamily: BODY, fontSize: 11, fontWeight: 600, letterSpacing: ".06em", textTransform: "uppercase", color: P.p700 }}>{ui.upNext}</div>
                   <div style={{ fontFamily: DISP, fontWeight: 600, fontSize: 16, color: P.p950, marginTop: 2 }}>{next.title}</div>
                 </div>
-                <Icon name={nextLocked ? "lock" : "arrowR"} color={nextLocked ? P.p700 : next.accent} size={nextLocked ? 18 : 20} />
+                <Icon name="arrowR" color={next.accent} size={20} />
               </a>
             ) : null}
             <div style={{ display: "flex", alignItems: "center", justifyContent: "space-between", gap: 12, flexWrap: "wrap" }}>
