@@ -664,21 +664,25 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
         url: "https://yuma.ai",
         author: { name: "Guillaume Luccisano", role: "Founder & CEO", photo: "/assets/partners/yuma-author.png" },
         tips: [
-          tip("Automatisez des actions, pas seulement vos réponses", [
-            "La vraie ligne de partage en automatisation CX, la voici : votre IA se contente-t-elle de rédiger une réponse, ou fait-elle vraiment le boulot ? La valeur apparaît quand l'IA passe à l'action : elle émet le remboursement, modifie la commande, traite l'échange, annule l'abonnement, puis clôture le ticket toute seule. Rédiger, ça laisse le travail sur les épaules de votre équipe. Agir, ça l'enlève complètement.",
-            "Notre benchmark est sans détour sur le pourquoi : le plafond de l'automatisation, ce n'est pas l'intelligence de l'IA, ce sont les droits et les intégrations que vous lui donnez. Connectez votre IA à vos workflows qui touchent à l'argent avant le Q4, parce que c'est exactement là que se cachent les plus gros gains.",
+          tip("Automatisez les actions, pas seulement les réponses", [
+            "Voici la vraie ligne de partage dans l'automatisation du support : votre IA se contente-t-elle de rédiger une réponse, ou fait-elle réellement le job ?",
+            "La valeur apparaît quand l'IA passe à l'action, elle émet le remboursement, modifie la commande, traite l'échange, annule l'abonnement, puis clôture le ticket toute seule. La rédaction laisse encore le travail sur les bras de votre équipe ; l'action l'enlève complètement.",
+            "Notre benchmark est sans détour sur ce point : le plafond de l'automatisation, ce n'est pas l'intelligence de l'IA, ce sont les droits et les intégrations que vous lui donnez. Connectez votre IA à vos workflows qui touchent à l'argent avant le Q4, car c'est précisément là que se cachent les plus gros gains.",
           ], [V("Yuma AI", "/assets/partners/FR-Customer Support-yuma-tip1.png")]),
           tip("Gardez vos meilleurs agents concentrés sur les conversations à forte valeur", [
-            "Le Q4 n'ajoute pas que des tickets, il ajoute du bruit. Laissez l'IA absorber le répétitif (statut de commande, changement d'adresse, retours simples) pour que vos meilleurs éléments ne passent pas tout le mois de décembre enterrés sous les cinq mêmes questions. Ça les libère pour les cas qui comptent vraiment : les problèmes complexes, les clients VIP, les échanges où il y a du chiffre en jeu.",
-            "Ce n'est pas l'IA contre votre équipe, c'est l'IA qui prend le volume pour que votre équipe prenne la valeur. Vos agents finissent le pic d'activité en donnant le meilleur d'eux-mêmes, pas en enchaînant les tâches les plus ingrates.",
+            "Le Q4 n'ajoute pas seulement des tickets, il ajoute du bruit. Laissez l'IA absorber le répétitif, statut de commande, changement d'adresse, retours simples, pour que vos meilleurs éléments ne croulent pas sous les mêmes cinq questions tout le mois de décembre.",
+            "Ça libère vos agents pour les cas qui font vraiment la différence : sujets complexes, clients VIP et conversations avec du chiffre en jeu. Ce n'est pas l'IA contre votre équipe, c'est l'IA qui gère le volume pour que votre équipe gère la valeur.",
+            "Vos agents terminent le peak en donnant le meilleur d'eux-mêmes, pas en faisant les tâches les plus ingrates.",
           ], [V("Yuma AI", "/assets/partners/FR-Customer Support-yuma-tip2.png")]),
-          tip("Le vrai KPI Q4, ce sont les recrutements que vous n'avez pas eu à faire", [
-            "Le taux d'automatisation, c'est un joli chiffre sur un dashboard. Mais le ROI que votre équipe finance ressent vraiment, ce sont les renforts saisonniers que vous n'avez jamais eu à embaucher. Le volume de support est multiplié par 1,5 à 6 en période de pic, et dimensionner ses effectifs sur ce pic, ça revient à payer des agents inoccupés les dix autres mois de l'année.",
-            "La capacité de l'IA, elle, est élastique : elle encaisse la vague, puis redescend, sans course au recrutement ni licenciements post-fêtes. Comme le résume une marque de notre taille : chaque point d'automatisation, c'est de l'effectif réel. Comptez les recrutements que vous vous êtes épargnés, voilà votre vrai ROI de pic saisonnier.",
+          tip("Le vrai KPI du Q4, ce sont les recrutements que vous n'avez pas eu à faire", [
+            "Le taux d'automatisation fait joli sur un dashboard, mais le ROI que votre équipe finance ressent vraiment, ce sont les renforts saisonniers que vous n'avez jamais eu à embaucher.",
+            "Le volume de support explose de 1,5x à 6x au pic, et dimensionner ses effectifs sur ce pic revient à payer des agents inoccupés les dix autres mois de l'année.",
+            "La capacité de l'IA est élastique : elle absorbe la vague, puis se réduit, sans course au recrutement ni licenciements post-fêtes. Comme le résumait une marque de notre taille, chaque point d'automatisation, c'est du headcount bien réel. Comptez les embauches que vous vous êtes épargnées : voilà votre vrai ROI de peak season.",
           ], [V("Yuma AI", "/assets/partners/FR-Customer Support-yuma-tip3.png")]),
-          tip("Ne laissez pas votre CSAT chuter quand les tickets explosent", [
-            "La vieille croyance, c'était qu'automatiser davantage rimait forcément avec service dégradé. Les données démontent le mythe : sur plus de 100 marques, un niveau d'automatisation plus élevé n'a montré aucun compromis sur la satisfaction, et le CSAT reste autour de 4,5 sur 5 même chez ceux qui automatisent le plus. Une IA bien configurée répond vite, de façon cohérente et 24h/24, donc la qualité ne se fissure pas quand le volume double ou triple.",
-            "Le client reçoit la même réponse, fidèle à votre marque, à 2h du matin un Black Friday comme un mardi tranquille. C'est précisément en période de pic que la constance compte le plus, et précisément là que les équipes 100 % humaines commencent à décrocher.",
+          tip("Ne laissez pas votre CSAT chuter quand le volume de tickets explose", [
+            "Le vieux réflexe partait du principe qu'automatiser plus, c'est offrir un moins bon service. Les données enterrent ce mythe : sur plus de 100 marques, plus d'automatisation ne s'est traduite par aucun compromis sur la satisfaction, et le CSAT se maintient autour de 4,5 sur 5 même chez les plus gros automatisateurs.",
+            "Une IA bien configurée répond vite, de façon cohérente et 24/7, si bien que la qualité ne craque pas quand le volume double ou triple.",
+            "Le client reçoit la même réponse fidèle à votre marque à 2h du matin un jour de Black Friday que celle qu'il aurait eue un mardi creux. Le peak, c'est justement le moment où la cohérence compte le plus, et justement celui où les équipes 100 % humaines commencent à décrocher.",
           ], [V("Yuma AI", "/assets/partners/FR-Customer Support-yuma-tip4.png")]),
         ],
       }],
