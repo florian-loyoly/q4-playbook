@@ -50,6 +50,7 @@ export type KeyStat = {
   statement?: string; // sentence mode: full sentence to display
   highlight?: string; // sentence mode: the substring to emphasize (e.g. "36%")
   source: string;
+  sourceUrl?: string; // optional link to the source (shown as an arrow next to the source)
 };
 
 // Shared, market-independent metadata for a stage.

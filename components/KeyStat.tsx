@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { useInView, useReducedMotion } from "framer-motion";
 import type { KeyStat as KeyStatType, Step, UIStrings } from "@/lib/types";
 import { DISP, BODY, P, tint, mixWhite } from "@/lib/tokens";
+import { Icon } from "./Icon";
 
 // Dark "the number that matters" box. Two modes:
 //  - figure mode: standalone big number with a count-up on first view + caption
@@ -45,8 +46,13 @@ export function KeyStat({ step, ui, stat }: { step: Step; ui: UIStrings; stat?: 
     </div>
   );
   const source = (
-    <div style={{ fontFamily: BODY, fontSize: 12, color: "rgba(255,255,255,.5)", marginTop: isSentence ? 14 : 0 }}>
-      {ui.source}: {ks.source}
+    <div style={{ fontFamily: BODY, fontSize: 12, color: "rgba(255,255,255,.5)", marginTop: isSentence ? 14 : 0, display: "inline-flex", alignItems: "center", gap: 6 }}>
+      <span>{ui.source}: {ks.source}</span>
+      {ks.sourceUrl ? (
+        <a href={ks.sourceUrl} target="_blank" rel="noopener noreferrer" aria-label={ui.source} style={{ display: "inline-flex", color: mixWhite(step.accent, 0.5), flexShrink: 0 }}>
+          <Icon name="ext" color={mixWhite(step.accent, 0.5)} size={14} />
+        </a>
+      ) : null}
     </div>
   );
 

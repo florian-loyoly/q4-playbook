@@ -656,7 +656,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
     "customer-support": {
       title: "Customer Support",
       teaser: "Répondre vite quand le volume triple du jour au lendemain.",
-      keyStat: { statement: "Les marques les plus performantes sur Yuma automatisent jusqu'à 87% des tickets de support éligibles sur un trimestre complet, tout en maintenant un CSAT de 4,5 sur 5.", highlight: "87%", source: "Yuma AI, State of CX Automation in Ecommerce 2026 (benchmark de plus de 100 marchands Shopify et Shopify Plus)." },
+      keyStat: { statement: "Les marques les plus performantes sur Yuma automatisent jusqu'à 87% des tickets de support éligibles sur un trimestre complet, tout en maintenant un CSAT de 4,5 sur 5.", highlight: "87%", source: "Yuma AI, State of CX Automation in Ecommerce 2026 (benchmark de plus de 100 marchands Shopify et Shopify Plus).", sourceUrl: "https://yuma.ai/cx-automation-benchmark-2026" },
       partners: [{
         name: "Yuma AI",
         logo: "/assets/partners/Yuma-logo.png",
