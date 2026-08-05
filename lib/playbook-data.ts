@@ -33,12 +33,12 @@ export const STEP_META: StepMeta[] = [
 export const UI: Record<Locale, UIStrings> = {
   en: {
     kicker: "The Ultimate Q4 Playbook 2026",
-    heroTitle: "Q4 can be 30-40% of your year. Here's the 9-stage playbook to not leave money on the table.",
-    heroSub: "Nine stages, from the first ad to the final return. At each one, a partner expert shares the moves that win Black Friday, Cyber Week and the holidays.",
+    heroTitle: "Q4 drives 30 to 40% of your revenue. Here is the playbook to capture every pound of that peak.",
+    heroSub: "From the first ad impression to the last product return, 9 steps broken down by an expert partner. The concrete levers to win Black Friday, Cyber Week and Christmas.",
     heroCta: "Explore the journey",
     editedBy: "Curated by",
-    mapTitle: "The 9 stages of the Q4 journey",
-    mapSub: "Tap a stage to unlock its expert playbook.",
+    mapTitle: "Your 9-step Q4 roadmap",
+    mapSub: "Open a step to reveal its expert's advice.",
     variantAbstract: "Journey path",
     variantVertical: "Story scroll",
     layoutLabel: "Layout",
@@ -94,12 +94,12 @@ export const UI: Record<Locale, UIStrings> = {
   },
   fr: {
     kicker: "The Ultimate Q4 Playbook 2026",
-    heroTitle: "Le Q4 peut peser 30 à 40% de votre CA. Voici le playbook en 9 étapes pour ne pas laisser filer votre chiffre.",
-    heroSub: "Neuf étapes, de la première pub au dernier retour. À chacune, un partenaire expert partage les leviers qui font gagner le Black Friday, la Cyber Week et Noël.",
+    heroTitle: "Le Q4 pèse 30 à 40% de votre CA. Voici le playbook pour capter chaque euro de ce pic.",
+    heroSub: "De la première impression pub au dernier retour produit, 9 étapes décryptées par un partenaire expert. Les leviers concrets pour gagner le Black Friday, la Cyber Week et Noël.",
     heroCta: "Explorer le parcours",
     editedBy: "Édité par",
-    mapTitle: "Les 9 étapes du parcours Q4",
-    mapSub: "Cliquez sur une étape pour débloquer ses conseils d'experts.",
+    mapTitle: "Votre feuille de route Q4 en 9 étapes",
+    mapSub: "Ouvrez une étape pour révéler les conseils de son expert.",
     variantAbstract: "Tracé du parcours",
     variantVertical: "Scroll narratif",
     layoutLabel: "Affichage",
@@ -154,12 +154,12 @@ export const UI: Record<Locale, UIStrings> = {
   },
   es: {
     kicker: "The Ultimate Q4 Playbook 2026",
-    heroTitle: "El Q4 puede ser el 30-40% de tu año. Aquí tienes el playbook de 9 etapas para no dejar ventas sin cerrar.",
-    heroSub: "Nueve etapas, del primer anuncio a la última devolución. En cada una, un partner experto comparte las claves para ganar el Black Friday, la Cyber Week y Navidad.",
+    heroTitle: "El Q4 supone entre el 30 y el 40% de tu facturación. Aquí tienes el playbook para capturar cada euro de ese pico.",
+    heroSub: "Desde la primera impresión de anuncio hasta la última devolución de producto, 9 etapas analizadas por un partner experto. Las palancas concretas para ganar el Black Friday, la Cyber Week y la Navidad.",
     heroCta: "Explorar el recorrido",
     editedBy: "Editado por",
-    mapTitle: "Las 9 etapas del recorrido Q4",
-    mapSub: "Toca una etapa para desbloquear sus consejos de expertos.",
+    mapTitle: "Tu hoja de ruta Q4 en 9 etapas",
+    mapSub: "Abre una etapa para revelar los consejos de su experto.",
     variantAbstract: "Trazado del recorrido",
     variantVertical: "Scroll narrativo",
     layoutLabel: "Vista",
@@ -235,7 +235,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
   en: {
     "acquisition-ads": {
       title: "Acquisition & Ads",
-      teaser: "Buy attention that converts when everyone is bidding.",
+      teaser: "Make your ROAS work even when CPMs spike and everyone is bidding you up.",
       keyStat: { value: 38, unit: "%", prefix: "+", label: "higher ROAS for brands that pre-build Q4 audiences before November", source: "AdPeak Q4 benchmark, 2025" },
       partners: [{
         name: "Lorem Ipsum", pitch: "Paid acquisition, tuned for peak season.", url: "#",
@@ -248,7 +248,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
     },
     "crm-activation": {
       title: "CRM: Activation & Nurturing",
-      teaser: "Turn first-time buyers into a list that opens.",
+      teaser: "Turn fresh opt-ins into an engaged list before the peak, with flows that convert.",
       keyStat: { value: 4.2, unit: "x", prefix: "", label: "more revenue per send from segmented welcome flows vs one-off blasts", source: "Flowmail data, 2025" },
       partners: [
         {
@@ -285,7 +285,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
     },
     "onsite-experience": {
       title: "On-site Experience & Merchandising",
-      teaser: "Make the right product impossible to miss.",
+      teaser: "Put the right product in front of the right visitor to lift conversion, without bloating the page.",
       keyStat: { value: 27, unit: "%", prefix: "+", label: "conversion lift from peak-tuned merchandising and clear urgency cues", source: "Shopfront study, 2025" },
       partners: [{
         name: "Kubix",
@@ -326,7 +326,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
     },
     "payment-checkout": {
       title: "Payment & Checkout",
-      teaser: "Remove every reason to abandon at the last step.",
+      teaser: "Strip out every checkout friction to win back the carts that stall at payment.",
       keyStat: { value: 18, unit: "%", prefix: "-", label: "checkout abandonment when express wallets and clear fees appear early", source: "PayGlide report, 2025" },
       partners: [{
         name: "Incididunt Labore", pitch: "Frictionless checkout and payments.", url: "#",
@@ -338,7 +338,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
     },
     "logistics-delivery": {
       title: "Logistics & Delivery",
-      teaser: "Promise a date you can actually keep.",
+      teaser: "Show a delivery date you can actually hold, even when volumes spike.",
       keyStat: { value: 31, unit: "%", prefix: "+", label: "repeat intent when the delivery promise is met during peak", source: "Shipwise index, 2025" },
       partners: [{
         name: "Dolore Magna", pitch: "Delivery orchestration and tracking.", url: "#",
@@ -350,7 +350,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
     },
     "customer-support": {
       title: "Customer Support",
-      teaser: "Answer fast when volume triples overnight.",
+      teaser: "Hit your SLAs when ticket volume triples, without letting CSAT slip.",
       keyStat: { value: 24, unit: "%", prefix: "+", label: "CSAT when peak tickets are deflected with self-serve answers", source: "Helply benchmark, 2025" },
       partners: [{
         name: "Aliqua Enim", pitch: "Support automation and help center.", url: "#",
@@ -362,7 +362,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
     },
     "crm-retention": {
       title: "CRM: Retention & Repurchase",
-      teaser: "Win the second order before January.",
+      teaser: "Trigger the second order before January and turn BFCM one-shots into repeat customers.",
       keyStat: { statement: "CRM accounts for an average of 36% of total revenue for Underground Ecom's clients, making retention the highest-ROI channel in Q4, not an afterthought.", highlight: "36%", source: "Underground Ecom client data, Fashion & Apparel niche" },
       partners: [
         {
@@ -396,7 +396,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
     },
     "loyalty-engagement": {
       title: "Loyalty & Engagement",
-      teaser: "Turn peak buyers into ambassadors, not one-offs.",
+      teaser: "Turn Q4 deal-hunters into loyal members and advocates who buy again.",
       keyStat: { value: 40, unit: "", prefix: "+", label: "engagement mechanics to reward every meaningful action after purchase", source: "Loyoly platform, 2026" },
       partners: [{
         name: "Loyoly", pitch: "The #1 post-purchase engagement platform for ecommerce brands.", url: "https://loyoly.io",
@@ -409,7 +409,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
     },
     "returns-after-sales": {
       title: "Returns & After-sales",
-      teaser: "Make returns a reason to buy again.",
+      teaser: "Turn every return into a repurchase and protect your margin once the peak is over.",
       keyStat: { value: 92, unit: "%", prefix: "", label: "of shoppers rebuy from a brand after an easy return experience", source: "ReturnHero survey, 2025" },
       partners: [{
         name: "Reveni",
@@ -456,7 +456,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
   fr: {
     "acquisition-ads": {
       title: "Acquisition & Ads",
-      teaser: "Acheter une attention qui convertit quand tout le monde enchérit.",
+      teaser: "Faire performer votre ROAS quand les CPM flambent et que tout le monde surenchérit.",
       keyStat: { value: 38, unit: "%", prefix: "+", label: "de ROAS pour les marques qui préparent leurs audiences Q4 avant novembre", source: "Benchmark Adklix Q4, 2025" },
       partners: [{
         name: "Ben&Vic",
@@ -531,7 +531,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
     },
     "crm-activation": {
       title: "CRM : Activation & Nurturing",
-      teaser: "Transformer les premiers acheteurs en une base qui ouvre.",
+      teaser: "Convertir vos nouveaux opt-ins en base engagée avant le pic, avec des flows qui convertissent.",
       keyStat: { value: 4.2, unit: "x", prefix: "", label: "de revenu par envoi grâce aux flows de bienvenue segmentés vs les envois de masse", source: "Données Sendora, 2025" },
       partners: [
         {
@@ -559,8 +559,8 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       ],
     },
     "onsite-experience": {
-      title: "On-site Experience & Merchandising",
-      teaser: "Rendre le bon produit impossible à manquer.",
+      title: "Expérience on-site & Merchandising",
+      teaser: "Mettre le bon produit devant le bon visiteur pour pousser le taux de conversion, sans alourdir la page.",
       keyStat: { value: 27, unit: "%", prefix: "+", label: "de conversion grâce à un merchandising calibré pour le pic et des repères d'urgence clairs", source: "Étude Vitrina, 2025" },
       partners: [{
         name: "Webyn",
@@ -600,8 +600,8 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       }],
     },
     "payment-checkout": {
-      title: "Payment & Checkout",
-      teaser: "Retirer toute raison d'abandonner à la dernière étape.",
+      title: "Paiement & Checkout",
+      teaser: "Supprimer chaque friction du checkout pour récupérer les paniers qui décrochent au paiement.",
       keyStat: { value: 18, unit: "%", prefix: "-", label: "d'abandon panier quand les wallets express et les frais clairs apparaissent tôt", source: "Rapport Paylibre, 2025" },
       partners: [{
         name: "Payplug",
@@ -642,8 +642,8 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       }],
     },
     "logistics-delivery": {
-      title: "Logistics & Delivery",
-      teaser: "Promettre une date que vous pouvez vraiment tenir.",
+      title: "Logistique & Livraison",
+      teaser: "Afficher une date de livraison crédible et la tenir, même quand les volumes explosent.",
       keyStat: { value: 31, unit: "%", prefix: "+", label: "d'intention de rachat quand la promesse de livraison est tenue en période de pic", source: "Indice Cargoo, 2025" },
       partners: [{
         name: "Dolore Magna", pitch: "Orchestration de livraison et suivi.", url: "#",
@@ -654,8 +654,8 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       }],
     },
     "customer-support": {
-      title: "Customer Support",
-      teaser: "Répondre vite quand le volume triple du jour au lendemain.",
+      title: "Support client",
+      teaser: "Tenir vos SLA quand le volume de tickets triple, sans dégrader la satisfaction.",
       keyStat: { statement: "Les marques les plus performantes sur Yuma automatisent jusqu'à 87% des tickets de support éligibles sur un trimestre complet, tout en maintenant un CSAT de 4,5 sur 5.", highlight: "87%", source: "Yuma AI, State of CX Automation in Ecommerce 2026", sourceUrl: "https://yuma.ai/cx-automation-benchmark-2026" },
       partners: [{
         name: "Yuma AI",
@@ -688,8 +688,8 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       }],
     },
     "crm-retention": {
-      title: "CRM : Retention & Repurchase",
-      teaser: "Gagner la deuxième commande avant janvier.",
+      title: "CRM : Rétention & Réachat",
+      teaser: "Déclencher la deuxième commande avant janvier et transformer les one-shot du BFCM en clients récurrents.",
       keyStat: { value: 5, unit: "x", prefix: "", label: "moins cher de réactiver un acheteur Q4 que d'en acquérir un nouveau au Q1", source: "Analyse Reveni, 2025" },
       partners: [
         {
@@ -780,8 +780,8 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       ],
     },
     "loyalty-engagement": {
-      title: "Loyalty & Engagement",
-      teaser: "Transformer les acheteurs de pic en ambassadeurs, pas en one-shots.",
+      title: "Fidélisation & Engagement",
+      teaser: "Convertir les chasseurs de promo du Q4 en membres fidèles et en ambassadeurs qui rachètent.",
       keyStat: { value: 40, unit: "", prefix: "+", label: "mécaniques d'engagement pour récompenser chaque action utile après l'achat", source: "Plateforme Loyoly, 2026" },
       partners: [{
         name: "Loyoly", pitch: "La plateforme n°1 d'engagement post-achat pour les marques e-commerce.", url: "https://loyoly.io",
@@ -793,8 +793,8 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       }],
     },
     "returns-after-sales": {
-      title: "Returns & After-sales",
-      teaser: "Faire du retour une raison de racheter.",
+      title: "Retours & SAV",
+      teaser: "Transformer chaque retour en réachat et protéger votre marge une fois le pic passé.",
       keyStat: { value: 92, unit: "%", prefix: "", label: "des acheteurs rachètent après une expérience de retour simple", source: "Enquête Retourna, 2025" },
       partners: [{
         name: "Veniam Quis", pitch: "Retours et échanges en self-service.", url: "#",
@@ -807,8 +807,8 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
   },
   es: {
     "acquisition-ads": {
-      title: "Acquisition & Ads",
-      teaser: "Comprar atención que convierte cuando todos pujan.",
+      title: "Adquisición & Ads",
+      teaser: "Haz rentable tu ROAS cuando los CPM se disparan y todo el mundo puja más alto.",
       keyStat: { value: 38, unit: "%", prefix: "+", label: "de ROAS para las marcas que preparan sus audiencias Q4 antes de noviembre", source: "Benchmark Adverta Q4, 2025" },
       partners: [{
         name: "Lorem Ipsum", pitch: "La adquisición de pago, ajustada al pico.", url: "#",
@@ -820,8 +820,8 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       }],
     },
     "crm-activation": {
-      title: "CRM: Activation & Nurturing",
-      teaser: "Convertir a los primeros compradores en una base que abre.",
+      title: "CRM: Activación & Nurturing",
+      teaser: "Convierte tus nuevos opt-ins en una base comprometida antes del pico, con flows que convierten.",
       keyStat: { value: 4.2, unit: "x", prefix: "", label: "más ingresos por envío con flows de bienvenida segmentados frente a envíos masivos", source: "Datos Correara, 2025" },
       partners: [
         { name: "Dolor Amet", pitch: "Email de ciclo de vida y automatización.", url: "#",
@@ -833,8 +833,8 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       ],
     },
     "onsite-experience": {
-      title: "On-site Experience & Merchandising",
-      teaser: "Hacer que el producto correcto sea imposible de pasar por alto.",
+      title: "Experiencia on-site & Merchandising",
+      teaser: "Pon el producto adecuado ante el visitante adecuado para subir la tasa de conversión, sin recargar la página.",
       keyStat: { value: 27, unit: "%", prefix: "+", label: "de conversión con un merchandising ajustado al pico y señales de urgencia claras", source: "Estudio Escaparate, 2025" },
       partners: [{
         name: "Sed Tempor", pitch: "Personalización on-site y merchandising.", url: "#",
@@ -845,8 +845,8 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       }],
     },
     "payment-checkout": {
-      title: "Payment & Checkout",
-      teaser: "Eliminar cualquier motivo para abandonar en el último paso.",
+      title: "Pago & Checkout",
+      teaser: "Elimina cada fricción del checkout para recuperar los carritos que se caen en el pago.",
       keyStat: { value: 18, unit: "%", prefix: "-", label: "de abandono de carrito cuando los wallets express y los gastos claros aparecen pronto", source: "Informe Pagalibre, 2025" },
       partners: [{
         name: "Incididunt Labore", pitch: "Checkout y pagos sin fricción.", url: "#",
@@ -857,8 +857,8 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       }],
     },
     "logistics-delivery": {
-      title: "Logistics & Delivery",
-      teaser: "Prometer una fecha que puedas cumplir de verdad.",
+      title: "Logística & Entrega",
+      teaser: "Muestra una fecha de entrega creíble y cúmplela, aunque los volúmenes se disparen.",
       keyStat: { value: 31, unit: "%", prefix: "+", label: "de intención de recompra cuando se cumple la promesa de entrega en pico", source: "Índice Enviaya, 2025" },
       partners: [{
         name: "Dolore Magna", pitch: "Orquestación de entrega y seguimiento.", url: "#",
@@ -869,8 +869,8 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       }],
     },
     "customer-support": {
-      title: "Customer Support",
-      teaser: "Responder rápido cuando el volumen se triplica de la noche a la mañana.",
+      title: "Atención al cliente",
+      teaser: "Cumple tus SLA cuando el volumen de tickets se triplica, sin sacrificar la satisfacción.",
       keyStat: { value: 24, unit: "%", prefix: "+", label: "de CSAT cuando los tickets de pico se desvían a self-service", source: "Benchmark Ayudame, 2025" },
       partners: [{
         name: "Aliqua Enim", pitch: "Automatización de soporte y centro de ayuda.", url: "#",
@@ -881,8 +881,8 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       }],
     },
     "crm-retention": {
-      title: "CRM: Retention & Repurchase",
-      teaser: "Ganar el segundo pedido antes de enero.",
+      title: "CRM: Retención & Recompra",
+      teaser: "Activa el segundo pedido antes de enero y convierte los one-shot del BFCM en clientes recurrentes.",
       keyStat: { value: 5, unit: "x", prefix: "", label: "más barato reactivar a un comprador Q4 que adquirir uno nuevo en Q1", source: "Análisis Recupera, 2025" },
       partners: [
         { name: "Nostrud Exercitation", pitch: "Flows de reactivación post-compra.", url: "#",
@@ -900,8 +900,8 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       ],
     },
     "loyalty-engagement": {
-      title: "Loyalty & Engagement",
-      teaser: "Convertir a los compradores de pico en embajadores, no en compras únicas.",
+      title: "Fidelización & Engagement",
+      teaser: "Convierte a los cazadores de ofertas del Q4 en miembros fieles y embajadores que recompran.",
       keyStat: { value: 40, unit: "", prefix: "+", label: "mecánicas de engagement para recompensar cada acción útil tras la compra", source: "Plataforma Loyoly, 2026" },
       partners: [{
         name: "Loyoly", pitch: "La plataforma n.º 1 de engagement post-compra para marcas de ecommerce.", url: "https://loyoly.io",
@@ -913,8 +913,8 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       }],
     },
     "returns-after-sales": {
-      title: "Returns & After-sales",
-      teaser: "Hacer de la devolución una razón para volver a comprar.",
+      title: "Devoluciones & Postventa",
+      teaser: "Convierte cada devolución en una recompra y protege tu margen una vez pasado el pico.",
       keyStat: { value: 92, unit: "%", prefix: "", label: "de los compradores vuelven a comprar tras una devolución sencilla", source: "Encuesta Devolvia, 2025" },
       partners: [{
         name: "Veniam Quis", pitch: "Devoluciones y cambios en self-service.", url: "#",
