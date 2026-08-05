@@ -17,7 +17,7 @@ export const MARKETS_META: MarketMeta[] = [
 // Shared step meta (identical across markets, so switch mapping is direct).
 export const STEP_META: StepMeta[] = [
   { order: 1, slug: "acquisition-ads",      accent: "#F2724B", icon: "target" },
-  { order: 2, slug: "crm-activation",       accent: "#F0A93B", icon: "mail",       dual: true },
+  { order: 2, slug: "crm-activation",       accent: "#F0A93B", icon: "mail" },
   { order: 3, slug: "onsite-experience",    accent: "#D9A21F", icon: "layout" },
   { order: 4, slug: "payment-checkout",     accent: "#4FA968", icon: "card" },
   { order: 5, slug: "logistics-delivery",   accent: "#17A997", icon: "truck" },
@@ -247,12 +247,6 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
             tip("Quis nostrud exercitation ullamco", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
           ],
         },
-        { name: "Consectetur Elit", pitch: "SMS and multi-channel nurturing.", url: "#",
-          tips: [
-            tip("Duis aute irure dolor", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
-            tip("Lorem ipsum dolor sit amet", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
-          ],
-        },
       ],
     },
     "onsite-experience": {
@@ -402,12 +396,6 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
               "Nos données montrent que les marques les plus performantes ventilent 66 % de leurs envois sur au moins 6 segments, au lieu de traiter le peak comme un gros blast à toute la base. Les segments qui font vraiment bouger l'aiguille sont comportementaux, pas seulement démographiques : chasseurs de promos vs clients fidèles, actifs vs dormants, AOV élevé vs faible.",
               "Tout repose ici sur une règle : faire de votre CRM la single source of truth de votre donnée client. Plus cette donnée est complète, plus vous ciblez ces poches avec précision et adressez à chacune un message calé sur son intention, au lieu d'espérer qu'un envoi générique parle à tout le monde.",
             ], [V("Klaviyo", "/assets/partners/FR-CRM-activation-nurturing-klaviyo-tip3b.png")]),
-          ],
-        },
-        { name: "Consectetur Elit", pitch: "SMS et nurturing multicanal.", url: "#",
-          tips: [
-            tip("Duis aute irure dolor", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
-            tip("Lorem ipsum dolor sit amet", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
           ],
         },
       ],
@@ -562,12 +550,6 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
           tips: [
             tip("Ut enim ad minim veniam", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."], [V("Lorem ipsum")]),
             tip("Quis nostrud exercitation ullamco", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
-          ],
-        },
-        { name: "Consectetur Elit", pitch: "SMS y nurturing multicanal.", url: "#",
-          tips: [
-            tip("Duis aute irure dolor", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
-            tip("Lorem ipsum dolor sit amet", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
           ],
         },
       ],

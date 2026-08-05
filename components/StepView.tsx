@@ -110,11 +110,12 @@ export function StepView({ market, step, steps, ui, onGateSuccess }: { market: M
             </div>
           </Reveal>
 
-          {/* single-partner: step-level stat here (dual stats live inside each section) */}
+          {/* single-partner: stat here (dual stats live inside each section).
+              Prefer the partner's own stat when it has one, else the step stat. */}
           {!dual ? (
             <div style={{ margin: "26px 0" }}>
               <Reveal>
-                <KeyStat step={step} ui={ui} />
+                <KeyStat step={step} ui={ui} stat={step.partners[0].keyStat ?? step.keyStat} />
               </Reveal>
             </div>
           ) : null}
