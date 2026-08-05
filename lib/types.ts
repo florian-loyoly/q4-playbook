@@ -12,7 +12,7 @@ export type TipBlock =
   | { kind: "p"; text: string }
   | { kind: "list"; items: string[] }
   | { kind: "quote"; text: string }
-  | { kind: "callout"; heading?: string; text: string };
+  | { kind: "callout"; heading?: string; text: string; href?: string };
 
 export type Tip = {
   title: string;
@@ -36,6 +36,7 @@ export type Partner = {
   logoScale?: number; // per-logo size multiplier (square logos read small vs horizontal ones)
   keyStat?: KeyStat; // dual-partner steps: each partner brings its own key stat
   author?: PartnerAuthor; // the expert who contributes the tips (placeholder until provided)
+  noAuthor?: boolean; // opt out of the author byline entirely (no lorem fallback)
 };
 
 // Two shapes for the dark "number that matters" card:

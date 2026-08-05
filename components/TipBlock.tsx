@@ -7,7 +7,7 @@ const paraStyle = { fontFamily: BODY, fontSize: 15, lineHeight: 1.65, color: P.p
 
 // Renders a tip's rich content: paragraphs, bullet lists, pull quotes, and
 // boxed callouts (e.g. a client example), in author order.
-function TipRich({ blocks, accent }: { blocks: TipBlockT[]; accent: string }) {
+function TipRich({ blocks, accent, ui }: { blocks: TipBlockT[]; accent: string; ui: UIStrings }) {
   // Even, generous vertical rhythm between blocks so long tips breathe. The
   // grid gap owns the spacing, so each block carries no vertical margin.
   return (
@@ -37,6 +37,12 @@ function TipRich({ blocks, accent }: { blocks: TipBlockT[]; accent: string }) {
             <div key={i} style={{ margin: 0, background: tint(accent, 0.05), border: `1px solid ${P.p200}`, borderLeft: `3px solid ${accent}`, borderRadius: 8, padding: "18px 20px" }}>
               {b.heading ? <div style={{ fontFamily: DISP, fontWeight: 600, fontSize: 15, color: P.p950, marginBottom: 8 }}>{b.heading}</div> : null}
               <p style={{ fontFamily: BODY, fontSize: 14, lineHeight: 1.65, color: P.p800, margin: 0, textWrap: "pretty" }}>{b.text}</p>
+              {b.href ? (
+                <a href={b.href} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 5, marginTop: 10, fontFamily: BODY, fontSize: 13, fontWeight: 600, color: accent, textDecoration: "none" }}>
+                  {ui.viewCaseStudy}
+                  <Icon name="ext" color={accent} size={13} />
+                </a>
+              ) : null}
             </div>
           );
         }
@@ -94,7 +100,7 @@ export function TipBlock({ step, partner, pi, ui, limit }: { step: Step; partner
               <div style={{ flex: 1, minWidth: 0 }}>
                 <h3 style={{ fontFamily: DISP, fontWeight: 600, fontSize: 20, lineHeight: 1.2, letterSpacing: "-.01em", color: P.p950, margin: "6px 0 12px" }}>{tp.title}</h3>
                 {tp.blocks && tp.blocks.length ? (
-                  <TipRich blocks={tp.blocks} accent={accent} />
+                  <TipRich blocks={tp.blocks} accent={accent} ui={ui} />
                 ) : (
                   tp.paragraphs.map((pg, gi) => (
                     <p key={gi} style={paraStyle}>
@@ -103,7 +109,7 @@ export function TipBlock({ step, partner, pi, ui, limit }: { step: Step; partner
                   ))
                 )}
                 {tp.visuals && tp.visuals.length ? (
-                  <div style={{ marginTop: 22, display: "grid", gap: 14 }}>
+                  <div style={{ marginTop: 22, display: "grid", gap: 14, gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", alignItems: "start" }}>
                     {tp.visuals.map((v, vi) =>
                       v.src ? (
                         <figure

@@ -36,7 +36,7 @@ export function getSteps(market: MarketId): Step[] {
   const loc = localeOf(market);
   return STEP_META.map((meta) => {
     const c = CONTENT[loc][meta.slug];
-    const partners = c.partners.map((p, pi) => ({ ...p, author: p.author ?? loremAuthor(meta.slug, pi) }));
+    const partners = c.partners.map((p, pi) => ({ ...p, author: p.noAuthor ? undefined : p.author ?? loremAuthor(meta.slug, pi) }));
     return { ...meta, ...c, partners, isFree: meta.order === 1 };
   });
 }

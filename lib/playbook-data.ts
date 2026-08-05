@@ -56,6 +56,7 @@ export const UI: Record<Locale, UIStrings> = {
     visualSlot: "Visual placeholder",
     stagePartner: "Stage partner",
     visit: "Visit {name}",
+    viewCaseStudy: "View the case study",
     backToMap: "Back to the journey",
     prev: "Previous stage",
     next: "Next stage",
@@ -116,6 +117,7 @@ export const UI: Record<Locale, UIStrings> = {
     visualSlot: "Emplacement visuel",
     stagePartner: "Partenaire de l'étape",
     visit: "Visiter {name}",
+    viewCaseStudy: "Voir le cas client",
     backToMap: "Retour à la frise",
     prev: "Étape précédente",
     next: "Étape suivante",
@@ -175,6 +177,7 @@ export const UI: Record<Locale, UIStrings> = {
     visualSlot: "Espacio visual",
     stagePartner: "Partner de la etapa",
     visit: "Visitar {name}",
+    viewCaseStudy: "Ver el caso de cliente",
     backToMap: "Volver al recorrido",
     prev: "Etapa anterior",
     next: "Etapa siguiente",
@@ -220,7 +223,7 @@ const tipB = (t: string, blocks: TipBlock[], visuals?: VisualSlot[]): Tip => ({ 
 const PB = (text: string): TipBlock => ({ kind: "p", text });
 const LB = (...items: string[]): TipBlock => ({ kind: "list", items });
 const QB = (text: string): TipBlock => ({ kind: "quote", text });
-const BOX = (heading: string, text: string): TipBlock => ({ kind: "callout", heading, text });
+const BOX = (heading: string, text: string, href?: string): TipBlock => ({ kind: "callout", heading: heading || undefined, text, href });
 
 type StepContent = { title: string; teaser: string; keyStat: KeyStat; partners: Partner[] };
 
@@ -261,10 +264,39 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       teaser: "Make the right product impossible to miss.",
       keyStat: { value: 27, unit: "%", prefix: "+", label: "conversion lift from peak-tuned merchandising and clear urgency cues", source: "Shopfront study, 2025" },
       partners: [{
-        name: "Sed Tempor", pitch: "On-site personalization and merchandising.", url: "#",
+        name: "Kubix",
+        logo: "/assets/partners/kubix-logo.svg",
+        pitch: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        url: "https://kubixmedia.co.uk",
+        noAuthor: true,
         tips: [
-          tip("Consectetur adipiscing elit", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
-          tip("Sed do eiusmod tempor incididunt", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
+          tipB("Turn simple navigation into a merchandising tool", [
+            PB("Most people arrive already knowing roughly what they want, so the fundamentals have not changed: navigation needs to be simple, clear and quick to scan."),
+            PB("Once that is right, the menu becomes a merchandising tool in its own right. Test visual cues within the menu to surface seasonal offers, gift edits or new launches tied to specific collections and ranges."),
+            PB("Keep testing what earns its place, because a menu built to promote everything ends up promoting nothing."),
+          ], [V("Kubix", "/assets/partners/UK-onsite-experience-merchandising-kubix-tip1.png")]),
+          tipB("Make collection pages an experience, without getting in the way", [
+            PB("Collection pages are where a lot of peak browsing actually happens, and shoppers respond to pages that feel considered and visually rich rather than a flat grid of products."),
+            PB("The aim is a collection that feels like an experience, with editorial imagery, clear seasonal framing and thoughtful grouping, but not so much design that it distracts from the products or slows the page down."),
+            PB("Design for mobile first, since that is where most of this browsing takes place and where heavy layouts do the most damage."),
+            PB("Done well, a merchandised collection guides people to the right products faster while still feeling like a brand worth buying from."),
+          ], [V("Kubix", "/assets/partners/UK-onsite-experience-merchandising-kubix-tip2.png")]),
+          tipB("Publish genuinely useful content that helps guide customers to purchase", [
+            PB("Blog and guide content used to be a slow burn justified mainly by SEO, but that has changed."),
+            PB("Shoppers now research and compare through ChatGPT and other LLMs, and useful, specific content is what makes your brand visible and quotable in those answers."),
+            PB("A well-made gift guide or buying guide gives human visitors something worth reading during a decision-heavy peak period, while doing real commercial work for SEO, GEO and AEO. Write from genuine experience with the products rather than rewording a feed, because that specificity is exactly what search engines and AI platforms reward."),
+          ], [V("Kubix", "/assets/partners/UK-onsite-experience-merchandising-kubix-tip3a.png"), V("Kubix", "/assets/partners/UK-onsite-experience-merchandising-kubix-tip3b.png")]),
+          tipB("Match every marketing promotion with the page it promises", [
+            PB("This is foundational and a lot of brands still miss it, especially at peak when ad spend is at its highest. Send paid traffic to the specific product or collection page that matches the advert, never the homepage, and make sure the offer and the creative someone saw in the ad are repeated on the PDP they land on."),
+            PB("If a customer clicks a gifting ad for a particular product at a particular discount, that product, that price and that creative should be the first thing they see. Any gap between the ad and the page reintroduces doubt and wastes attention you have paid a premium for."),
+            PB("Be sure to test before launch."),
+            BOX("", "After Kubix rebuilt Scotch & Soda's Shopify store to strengthen navigation, UX and merchandising ahead of peak, the Amsterdam fashion brand saw total sales increase by over 40% year on year, with sessions up 66%.", "https://kubixmedia.co.uk/case-study/scotch-soda"),
+          ], [V("Kubix", "/assets/partners/UK-onsite-experience-merchandising-kubix-tip4.png")]),
+          tipB("Bring live shopping onto your Shopify store", [
+            PB("Most brands now sell and engage across many channels, but the activity often lives everywhere except their own website. A dedicated hub or live shopping page inside your Shopify store gives customers one place to join live events, follow drops and get involved with the community, which matters most at peak when attention and urgency are high."),
+            PB("It keeps that engagement on a property you own and can merchandise directly, rather than renting it on a social platform."),
+            PB("Even a simple, well-signposted hub can turn a one-off peak shopper into a returning audience."),
+          ]),
         ],
       }],
     },
