@@ -541,28 +541,6 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       keyStat: { value: 5, unit: "x", prefix: "", label: "moins cher de réactiver un acheteur Q4 que d'en acquérir un nouveau au Q1", source: "Analyse Reveni, 2025" },
       partners: [
         {
-          name: "Klaviyo",
-          logo: "/assets/partners/klaviyo-logo.png",
-          pitch: "Klaviyo est un CRM B2C autonome et une plateforme de marketing IA qui centralise les données clients et automatise les messages par e-mail, SMS, RCS, WhatsApp et notification push permettant de piloter des campagnes personnalisées qui convertissent.",
-          url: "https://www.klaviyo.com/fr/",
-          author: { name: "Henri Soropogui Viret", role: "Responsable Marketing Europe du Sud", photo: "/assets/partners/klaviyo-author.jpg" },
-          keyStat: { statement: "Les marques voient plus de nouveaux clients pendant le peak que sur les trois mois précédents réunis, et les 10 plus grosses journées de shopping à elles seules amènent plus de nouveaux acheteurs que tout le mois de février.", highlight: "10", source: "How BFCM Shapes Retail: Turning New Shoppers Into Lifelong Customers, Klaviyo, 2025" },
-          tips: [
-            tip("Faites de votre expérience post-achat votre premier levier de réachat", [
-              "La relation ne s'arrête pas au checkout, c'est là que la rétention commence, et ce qui se passe ensuite décide si ce client rachètera ou non. Après la confirmation de commande, misez sur la pédagogie produit, anticipez les retards de livraison avant même que le client ne pose la question, et calez vos rappels de réassort sur la façon dont le produit se consomme réellement.",
-              "Passez à l'échelle avec la segmentation : regroupez vos clients par historique d'achat (chasseurs de promos vs gros paniers), par région et saison, ou selon leur navigation en temps réel, puis laissez une recommandation cross-category vraiment pertinente faire le travail à la place d'un upsell générique.",
-            ], [V("Klaviyo", "/assets/partners/FR-CRM-retention-repurchase-klaviyo-tip1.png")]),
-            tip("Transformez les nouveaux acheteurs du peak en membres fidèles", [
-              "Le peak amène une vague de nouveaux acheteurs one-time que vous ne verriez pas d'habitude, alors poussez votre programme de fidélité à fond tant que ce trafic est à son maximum, et pas seulement auprès de votre base existante. Affichez le solde de points et les récompenses dès le checkout et dans les messages post-achat, plutôt que de les enterrer dans un espace compte : un tout nouveau client voit ainsi l'intérêt de s'inscrire pendant que sa première commande est encore fraîche.",
-              "Offrez des multiplicateurs de points plus généreux sur les gros paniers pendant la vente, au lieu de courir à la remise la plus agressive : c'est ce qui transforme un achat ponctuel en raison de revenir. Une fois le calme revenu, basculez tous ceux qui ont acheté sans s'inscrire dans un flow de nurturing qui présente le programme comme il faut, et calez l'expiration des points pour les pousser vers un deuxième achat.",
-            ], [V("Klaviyo", "/assets/partners/FR-CRM-retention-repurchase-klaviyo-tip2.png")]),
-            tip("Repérez vos clients à plus forte valeur avant qu'ils ne disparaissent", [
-              "Identifiez vos clients à plus forte valeur en croisant la performance de vos campagnes, le scoring RFM, le comportement par cohorte et ce qui a réellement déclenché chaque achat pendant le peak : autant de signaux qui révèlent qui est susceptible de racheter et comment l'atteindre au mieux. Les nouveaux clients qui ont dépensé au-dessus de votre AOV, payé plein tarif ou acheté sur plusieurs catégories sont d'excellents indicateurs précoces de qui va rester.",
-              "Les acheteurs qui ont interagi avec plusieurs messages avant de convertir méritent la même attention : ce schéma trahit souvent un vrai intérêt plutôt qu'un achat d'impulsion. Récompensez-les avec quelque chose qui prolonge leur dernier achat, comme un accès anticipé aux nouveautés.",
-            ], [V("Klaviyo", "/assets/partners/FR-CRM-retention-repurchase-klaviyo-tip3.png")]),
-          ],
-        },
-        {
           name: "ThirtyFive",
           logo: "/assets/partners/thirtyfive-logo.svg",
           pitch: "ThirtyFive accompagne les marques e-commerce dans la structuration, l'analyse et le pilotage de leur stratégie CRM. Nous transformons vos données en décisions et votre rétention en croissance incrémentale, grâce à une approche sur-mesure pensée pour vos enjeux business.",
@@ -623,6 +601,28 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
               ),
               QB("Le CRM ne subit pas Q4, il apprend au Paid à mieux le préparer. La boucle se referme."),
             ], [V("ThirtyFive", "/assets/partners/FR-CRM-retention-repurchase-thirtyfive-tip5.png")]),
+          ],
+        },
+        {
+          name: "Klaviyo",
+          logo: "/assets/partners/klaviyo-logo.png",
+          pitch: "Klaviyo est un CRM B2C autonome et une plateforme de marketing IA qui centralise les données clients et automatise les messages par e-mail, SMS, RCS, WhatsApp et notification push permettant de piloter des campagnes personnalisées qui convertissent.",
+          url: "https://www.klaviyo.com/fr/",
+          author: { name: "Henri Soropogui Viret", role: "Responsable Marketing Europe du Sud", photo: "/assets/partners/klaviyo-author.jpg" },
+          keyStat: { statement: "Les marques voient plus de nouveaux clients pendant le peak que sur les trois mois précédents réunis, et les 10 plus grosses journées de shopping à elles seules amènent plus de nouveaux acheteurs que tout le mois de février.", highlight: "10", source: "How BFCM Shapes Retail: Turning New Shoppers Into Lifelong Customers, Klaviyo, 2025" },
+          tips: [
+            tip("Faites de votre expérience post-achat votre premier levier de réachat", [
+              "La relation ne s'arrête pas au checkout, c'est là que la rétention commence, et ce qui se passe ensuite décide si ce client rachètera ou non. Après la confirmation de commande, misez sur la pédagogie produit, anticipez les retards de livraison avant même que le client ne pose la question, et calez vos rappels de réassort sur la façon dont le produit se consomme réellement.",
+              "Passez à l'échelle avec la segmentation : regroupez vos clients par historique d'achat (chasseurs de promos vs gros paniers), par région et saison, ou selon leur navigation en temps réel, puis laissez une recommandation cross-category vraiment pertinente faire le travail à la place d'un upsell générique.",
+            ], [V("Klaviyo", "/assets/partners/FR-CRM-retention-repurchase-klaviyo-tip1.png")]),
+            tip("Transformez les nouveaux acheteurs du peak en membres fidèles", [
+              "Le peak amène une vague de nouveaux acheteurs one-time que vous ne verriez pas d'habitude, alors poussez votre programme de fidélité à fond tant que ce trafic est à son maximum, et pas seulement auprès de votre base existante. Affichez le solde de points et les récompenses dès le checkout et dans les messages post-achat, plutôt que de les enterrer dans un espace compte : un tout nouveau client voit ainsi l'intérêt de s'inscrire pendant que sa première commande est encore fraîche.",
+              "Offrez des multiplicateurs de points plus généreux sur les gros paniers pendant la vente, au lieu de courir à la remise la plus agressive : c'est ce qui transforme un achat ponctuel en raison de revenir. Une fois le calme revenu, basculez tous ceux qui ont acheté sans s'inscrire dans un flow de nurturing qui présente le programme comme il faut, et calez l'expiration des points pour les pousser vers un deuxième achat.",
+            ], [V("Klaviyo", "/assets/partners/FR-CRM-retention-repurchase-klaviyo-tip2.png")]),
+            tip("Repérez vos clients à plus forte valeur avant qu'ils ne disparaissent", [
+              "Identifiez vos clients à plus forte valeur en croisant la performance de vos campagnes, le scoring RFM, le comportement par cohorte et ce qui a réellement déclenché chaque achat pendant le peak : autant de signaux qui révèlent qui est susceptible de racheter et comment l'atteindre au mieux. Les nouveaux clients qui ont dépensé au-dessus de votre AOV, payé plein tarif ou acheté sur plusieurs catégories sont d'excellents indicateurs précoces de qui va rester.",
+              "Les acheteurs qui ont interagi avec plusieurs messages avant de convertir méritent la même attention : ce schéma trahit souvent un vrai intérêt plutôt qu'un achat d'impulsion. Récompensez-les avec quelque chose qui prolonge leur dernier achat, comme un accès anticipé aux nouveautés.",
+            ], [V("Klaviyo", "/assets/partners/FR-CRM-retention-repurchase-klaviyo-tip3.png")]),
           ],
         },
       ],
