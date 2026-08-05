@@ -401,7 +401,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
             tip("Segmentez plus finement pour personnaliser vos envois", [
               "Nos données montrent que les marques les plus performantes ventilent 66 % de leurs envois sur au moins 6 segments, au lieu de traiter le peak comme un gros blast à toute la base. Les segments qui font vraiment bouger l'aiguille sont comportementaux, pas seulement démographiques : chasseurs de promos vs clients fidèles, actifs vs dormants, AOV élevé vs faible.",
               "Tout repose ici sur une règle : faire de votre CRM la single source of truth de votre donnée client. Plus cette donnée est complète, plus vous ciblez ces poches avec précision et adressez à chacune un message calé sur son intention, au lieu d'espérer qu'un envoi générique parle à tout le monde.",
-            ], [V("Klaviyo", "/assets/partners/FR-CRM-activation-nurturing-klaviyo-tip3.png")]),
+            ], [V("Klaviyo", "/assets/partners/FR-CRM-activation-nurturing-klaviyo-tip3b.png")]),
           ],
         },
         { name: "Consectetur Elit", pitch: "SMS et nurturing multicanal.", url: "#",
