@@ -251,10 +251,34 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       teaser: "Turn first-time buyers into a list that opens.",
       keyStat: { value: 4.2, unit: "x", prefix: "", label: "more revenue per send from segmented welcome flows vs one-off blasts", source: "Flowmail data, 2025" },
       partners: [
-        { name: "Dolor Amet", pitch: "Lifecycle email and automation.", url: "#",
+        {
+          name: "Visualsoft",
+          logo: "/assets/partners/visualsoft-logo.png",
+          pitch: "We are the UK's unified retail agency. For over 25 years, Visualsoft has helped high street and multi-site brands bring their in-store and online worlds together, creating seamless experiences that drive loyalty, efficiency, and growth.",
+          url: "https://www.visualsoft.co.uk/",
+          author: { name: "Niall Young O'Brien", role: "eCommerce Consultant", photo: "/assets/partners/visualsoft-author.jpeg" },
+          keyStat: { statement: "A targeted \"high-intent non-purchaser\" flow (triggered for subscribers who viewed products three times and abandoned checkout) converted at 2.20%, backed by a 42.39% open rate and a negligible 0.45% unsubscribe rate.", highlight: "2.20%", source: "Visualsoft internal data" },
           tips: [
-            tip("Ut enim ad minim veniam", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."], [V("Lorem ipsum")]),
-            tip("Quis nostrud exercitation ullamco", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
+            tip("Segment your high-LTV audience before the noise starts.", [
+              "Identify your VIPs and repeat purchasers ahead of Black Friday and give them early or exclusive access.",
+              "It sets the tone for the peak period, protects margin versus a blanket discount, and rewards the customers who matter most before they're competing with a flood of new, discount-only traffic.",
+            ]),
+            tip("Build a dedicated nurture flow for Q4-acquired subscribers.", [
+              "A huge share of new sign-ups in Q4 come in through paid and social, chasing a deal. Don't drop them straight into your always-on newsletter.",
+              "Build a short, purpose-built welcome/activation flow that introduces the brand, gets them into loyalty early, and sets expectations, rather than relying on generic BFCM blasts to do the work.",
+            ]),
+            tip("Prioritise the post-purchase window as hard as the pre-purchase one.", [
+              "Q4 buyers are disproportionately one-and-done.",
+              "A structured post-purchase nurture flow in the 30 days after a first order, covering replenishment prompts, complementary product suggestions, and loyalty enrolment, is one of the highest-leverage things you can do to turn a Q4 discount shopper into a repeat customer.",
+            ]),
+            tip("Personalise nurture content off real behaviour, not assumptions.", [
+              "Static, one-size-fits-all nurture emails get lost in an inbox that's more crowded than any other point in the year.",
+              "Use browse and purchase behaviour to dynamically tailor content and offers within your activation flows. Even simple category-based personalisation will outperform a generic send during Q4.",
+            ]),
+            tip("Align your CRM cadence with the paid and social calendar.", [
+              "Q4 send frequency naturally increases, and if CRM isn't coordinated with paid promotions, you end up either competing with your own ads or fatiguing the same audience twice.",
+              "Map your nurture and activation sends against the wider marketing calendar so each channel is doing a distinct job, not duplicating the same message.",
+            ]),
           ],
         },
       ],
