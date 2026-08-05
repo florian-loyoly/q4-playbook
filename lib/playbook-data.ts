@@ -608,6 +608,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
         logo: "/assets/partners/payplug-logo.png",
         pitch: "Payplug est la solution la plus simple pour accepter les paiements en ligne. Elle s'adresse aux e-marchands et leur permet d'accepter les paiements par carte bancaire.",
         url: "https://www.payplug.com/fr/",
+        author: { name: "Paul-Louis Bénard", role: "Head of Alliances & Channel - Ecommerce", photo: "/assets/partners/payplug-author.jpeg" },
         keyStat: { statement: "Une optimisation rigoureuse du checkout peut permettre de récupérer jusqu'à 35 % des ventes perdues, sans générer plus de trafic.", highlight: "35 %", source: "Baymard Institute" },
         tips: [
           tip("Optimisez parfaitement votre checkout", [
