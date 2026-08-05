@@ -6,9 +6,18 @@ export type Locale = "en" | "fr" | "es";
 
 export type VisualSlot = { label: string; src?: string };
 
+// Rich content blocks inside a tip. Legacy tips use `paragraphs` (plain <p>);
+// tips with `blocks` render this ordered mix instead.
+export type TipBlock =
+  | { kind: "p"; text: string }
+  | { kind: "list"; items: string[] }
+  | { kind: "quote"; text: string }
+  | { kind: "callout"; heading?: string; text: string };
+
 export type Tip = {
   title: string;
   paragraphs: string[];
+  blocks?: TipBlock[]; // when present, rendered instead of paragraphs
   visuals: VisualSlot[];
 };
 

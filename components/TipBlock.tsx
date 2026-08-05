@@ -1,7 +1,52 @@
-import type { Partner, Step, UIStrings } from "@/lib/types";
+import type { Partner, Step, UIStrings, TipBlock as TipBlockT } from "@/lib/types";
 import { DISP, BODY, P, tint, HEADER_OFFSET } from "@/lib/tokens";
 import { Icon } from "./Icon";
 import { Reveal } from "./Reveal";
+
+const paraStyle = { fontFamily: BODY, fontSize: 15, lineHeight: 1.65, color: P.p800, margin: "0 0 14px", textWrap: "pretty" as const };
+
+// Renders a tip's rich content: paragraphs, bullet lists, pull quotes, and
+// boxed callouts (e.g. a client example), in author order.
+function TipRich({ blocks, accent }: { blocks: TipBlockT[]; accent: string }) {
+  return (
+    <>
+      {blocks.map((b, i) => {
+        if (b.kind === "list") {
+          return (
+            <ul key={i} style={{ listStyle: "none", margin: "2px 0 16px", padding: 0, display: "grid", gap: 9 }}>
+              {b.items.map((it, j) => (
+                <li key={j} style={{ display: "flex", gap: 11, alignItems: "flex-start", fontFamily: BODY, fontSize: 15, lineHeight: 1.5, color: P.p800 }}>
+                  <span aria-hidden="true" style={{ flexShrink: 0, width: 6, height: 6, borderRadius: 999, background: accent, marginTop: 8 }} />
+                  <span>{it}</span>
+                </li>
+              ))}
+            </ul>
+          );
+        }
+        if (b.kind === "quote") {
+          return (
+            <blockquote key={i} style={{ margin: "8px 0 18px", padding: "4px 0 4px 18px", borderLeft: `3px solid ${accent}`, fontFamily: DISP, fontStyle: "italic", fontWeight: 500, fontSize: 17, lineHeight: 1.45, color: P.p900 }}>
+              {b.text}
+            </blockquote>
+          );
+        }
+        if (b.kind === "callout") {
+          return (
+            <div key={i} style={{ margin: "8px 0 18px", background: tint(accent, 0.05), border: `1px solid ${P.p200}`, borderLeft: `3px solid ${accent}`, borderRadius: 8, padding: "14px 18px" }}>
+              {b.heading ? <div style={{ fontFamily: DISP, fontWeight: 600, fontSize: 15, color: P.p950, marginBottom: 6 }}>{b.heading}</div> : null}
+              <p style={{ fontFamily: BODY, fontSize: 14, lineHeight: 1.6, color: P.p800, margin: 0, textWrap: "pretty" }}>{b.text}</p>
+            </div>
+          );
+        }
+        return (
+          <p key={i} style={paraStyle}>
+            {b.text}
+          </p>
+        );
+      })}
+    </>
+  );
+}
 
 // Renders one partner's numbered expert tips. gid = tip-{partnerIndex}-{tipIndex} for anchors.
 // Tips are separated by a hairline + generous spacing (scannable, premium rhythm).
@@ -46,11 +91,15 @@ export function TipBlock({ step, partner, pi, ui, limit }: { step: Step; partner
               </span>
               <div style={{ flex: 1, minWidth: 0 }}>
                 <h3 style={{ fontFamily: DISP, fontWeight: 600, fontSize: 20, lineHeight: 1.2, letterSpacing: "-.01em", color: P.p950, margin: "6px 0 12px" }}>{tp.title}</h3>
-                {tp.paragraphs.map((pg, gi) => (
-                  <p key={gi} style={{ fontFamily: BODY, fontSize: 15, lineHeight: 1.65, color: P.p800, margin: "0 0 14px", textWrap: "pretty" }}>
-                    {pg}
-                  </p>
-                ))}
+                {tp.blocks && tp.blocks.length ? (
+                  <TipRich blocks={tp.blocks} accent={accent} />
+                ) : (
+                  tp.paragraphs.map((pg, gi) => (
+                    <p key={gi} style={paraStyle}>
+                      {pg}
+                    </p>
+                  ))
+                )}
                 {tp.visuals && tp.visuals.length ? (
                   <div style={{ marginTop: 10, display: "grid", gap: 14 }}>
                     {tp.visuals.map((v, vi) =>

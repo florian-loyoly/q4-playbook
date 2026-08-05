@@ -5,7 +5,7 @@
 // No em dash "—" anywhere in copy (comma / colon / parentheses only).
 // =============================================================
 
-import type { MarketMeta, StepMeta, UIStrings, Tip, VisualSlot, KeyStat, Partner, Locale } from "./types";
+import type { MarketMeta, StepMeta, UIStrings, Tip, VisualSlot, KeyStat, Partner, Locale, TipBlock } from "./types";
 
 // Selector order: UK (default), FR, ES. flag = country, label = "market" localized.
 export const MARKETS_META: MarketMeta[] = [
@@ -215,6 +215,13 @@ export const UI: Record<Locale, UIStrings> = {
 const tip = (t: string, paras: string[], visuals?: VisualSlot[]): Tip => ({ title: t, paragraphs: paras, visuals: visuals || [] });
 const V = (label: string, src?: string): VisualSlot => ({ label, src });
 
+// Rich-tip helpers: build a tip from an ordered mix of blocks.
+const tipB = (t: string, blocks: TipBlock[], visuals?: VisualSlot[]): Tip => ({ title: t, paragraphs: [], blocks, visuals: visuals || [] });
+const PB = (text: string): TipBlock => ({ kind: "p", text });
+const LB = (...items: string[]): TipBlock => ({ kind: "list", items });
+const QB = (text: string): TipBlock => ({ kind: "quote", text });
+const BOX = (heading: string, text: string): TipBlock => ({ kind: "callout", heading, text });
+
 type StepContent = { title: string; teaser: string; keyStat: KeyStat; partners: Partner[] };
 
 // -------------------------------------------------------------
@@ -363,11 +370,73 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       teaser: "Acheter une attention qui convertit quand tout le monde enchérit.",
       keyStat: { value: 38, unit: "%", prefix: "+", label: "de ROAS pour les marques qui préparent leurs audiences Q4 avant novembre", source: "Benchmark Adklix Q4, 2025" },
       partners: [{
-        name: "Lorem Ipsum", pitch: "L'acquisition payante, calibrée pour le pic.", url: "#",
+        name: "Ben&Vic",
+        logo: "/assets/partners/benandvic-logo.svg",
+        pitch: "Ben&Vic transforme vos Ads en leviers de croissance rentables. Google Ads, Social Ads, Creative Ads & UGC : des campagnes pilotées par des experts.",
+        url: "https://www.benandvic.com/",
+        author: { name: "Victor Montaucet", role: "CEO", photo: "/assets/partners/benandvic-author.png" },
+        keyStat: { statement: "Une créa vue 4 fois convertit environ 45% de moins. Au pic, c'est pas le budget qui manque. C'est la diversité créative.", highlight: "45%", source: "Analytics at Meta, Meta, 2025" },
         tips: [
-          tip("Lorem ipsum dolor sit amet", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."], [V("Lorem ipsum")]),
-          tip("Consectetur adipiscing elit", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."], [V("Lorem ipsum")]),
-          tip("Sed do eiusmod tempor incididunt", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."], [V("Lorem ipsum")]),
+          tipB("Teste tes offres avant le Black Friday", [
+            PB("Le Black Friday, c'est pas le moment de découvrir si votre offre convertit. C'est le moment de la scaler. On voit trop de marques débarquer en novembre avec un -30% sur tout, jamais testé, poussé à gros budget. Et regarder en direct l'offre ne pas prendre. Alors que vous avez tout ce qu'il faut juste avant : la rentrée, les French Days, Halloween, le pré-BF. Des fenêtres parfaites pour tester à petit budget."),
+            LB(
+              "Testez dès la rentrée : offres, hooks, paliers de remise, à petit budget",
+              "Cherchez le bon mécanisme, pas juste le pourcentage : bundle, cadeau offert, palier, early-access",
+              "Laissez chaque test aller au bout : 3-4× votre CPA cible dépensé avant de trancher, pas une journée",
+              "Arrivez au BF avec 2-3 offres validées, et un algo qui a déjà appris dessus",
+            ),
+            QB("Le Black Friday se gagne en septembre-octobre. On y scale des offres prouvées, on n'y teste rien."),
+          ], [V("Ben&Vic", "/assets/partners/FR-acquisition-ads-benandvic-tip1.png")]),
+          tipB("Surveillez votre taux de pénétration : une perte de signal peut faire ×4 sur votre CPA", [
+            PB("Le taux de pénétration, c'est le ratio entre les vues de votre page de destination et les clics. En clair : sur 10 personnes qui cliquent, combien Meta voit vraiment arriver sur votre site. C'est la quantité de signal que vous renvoyez à l'algo. Et c'est au pic, quand vous scalez et que l'enchère s'emballe, que Meta a le plus besoin de voir qui achète. Problème : c'est exactement là que le signal se dégrade le plus. Refonte de site pour le BF, nouvelle bannière de consentement, tags déplacés."),
+            LB(
+              "Signal haut = Meta voit, le CPA descend, vous pouvez scaler.",
+              "Signal bas = Meta est aveugle, le CPA grimpe. Pas parce que votre pub est mauvaise. Parce que l'info manque.",
+            ),
+            PB("Un tracking qui lâche le 20 novembre, c'est trois semaines de budget de pic optimisées à l'aveugle."),
+            BOX("Un CPA ×4 sans que la pub ait bougé", "Compte e-commerce, taux stable à 0,50, CPA autour de 40€. En quelques mois, le taux tombe à 0,20 et le CPA grimpe à 160€. Le réflexe de tout le monde : couper le budget. Sauf que la pub n'y était pour rien. Une bannière cookie reconfigurée avait coupé le signal. On corrige le tracking : le taux remonte à 0,52, le CPA est divisé par 2,7 en 4 à 6 semaines. Sans toucher aux créas."),
+            LB(
+              "Contrôlez votre taux de pénétration avant le lancement Q4 : un décrochage = un problème de signal, pas de créa",
+              "Un CPA ne se lit jamais seul : avant de couper, vérifiez que Meta enregistre bien vos conversions",
+              "Pilotez sur CP ATC → CPC → CPA, et mesurez l'incrémental (+24% de conversions que l'attribution standard ne voit pas, selon Meta)",
+              "Connectez vos conversions hors-ligne : au BF, l'omnicanal fait -21% de CPA contre +8% en online-only",
+            ),
+            QB("Un CPA qui grimpe n'accuse pas toujours la pub. Souvent, c'est Meta qui est devenu aveugle. Rétablissez le signal avant de couper quoi que ce soit."),
+          ], [V("Ben&Vic", "/assets/partners/FR-acquisition-ads-benandvic-tip2.png")]),
+          tipB("Misez sur la vidéo verticale : +48% de CPM au pic, contre +61% pour les autres formats", [
+            PB("Quand tout le monde enchérit en même temps, la vidéo devient un levier de coût. Pendant le Black Friday, les vidéos 9:16 avec son ont pris +48% de CPM. Tous les autres formats : +61%. Même pic, moins de pression sur vos coûts."),
+            PB("Pourquoi : la vidéo verticale, c'est le format que les gens consomment déjà toute la journée. Elle génère plus d'interactions, donc un meilleur score de qualité, donc un CPM plus bas dans l'enchère. Et côté conversion, 53% des utilisateurs disent acheter plus facilement quand un créateur présente le produit en Reels."),
+            LB(
+              "Constituez votre bibliothèque de vidéos verticales avec son avant la saison : la prod se rembourse en coûts de diffusion",
+              "Une vidéo native = meilleur score de qualité = CPM plus bas dans l'enchère chaude",
+              "Plus de la moitié du temps passé sur Instagram se joue en vidéo courte : misez sur les Reels et les créateurs",
+              "Bonus : vos vidéos tiennent mieux la baisse de Noël (CVR -18% contre -33% pour les autres formats)",
+            ),
+            QB("En enchère saturée, une bonne vidéo ne coûte pas seulement moins cher à diffuser. Elle convertit mieux, plus longtemps."),
+          ], [V("Ben&Vic", "/assets/partners/FR-acquisition-ads-benandvic-tip3.png")]),
+          tipB("Rafraîchissez vos créas avant novembre : au rythme du Q4, une créa s'use en quelques jours", [
+            PB("Le signe qui ne trompe pas : votre CTR baisse alors que votre CPM reste stable. C'est pas la concurrence. C'est votre créa qui fatigue. Et au rythme du Q4, ça arrive en quelques jours."),
+            PB("La bonne nouvelle : la production n'est plus le goulot. L'IA a fait sauter le verrou (adoption des outils IA : +70% en un an, Air France a testé jusqu'à 150 combinaisons automatiquement). Mais l'IA produit du volume. L'angle, lui, reste votre travail."),
+            LB(
+              "Surveillez le duo CTR qui baisse / CPM stable = créa qui fatigue → refresh avant le pic",
+              "Préparez plusieurs angles et hooks en amont, pas dix variantes du même",
+              "Utilisez l'IA pour la prod (volume, déclinaisons), gardez la main sur l'angle",
+              "Testez tôt : une créa se juge après 3-4× son CPA cible dépensé, pas à la journée",
+            ),
+            QB("Au pic, c'est pas le budget qui manque. C'est l'angle créatif. Préparez la réserve avant novembre."),
+          ], [V("Ben&Vic", "/assets/partners/FR-acquisition-ads-benandvic-tip4.png")]),
+          tipB("Lancez en Cost Cap avec de gros budgets : le volume, sans lâcher la rentabilité", [
+            PB("La peur n°1 au pic : le CPA qui s'emballe dès qu'on ouvre les budgets."),
+            PB("Le Cost Cap répond exactement à ça. Vous fixez un coût par résultat à ne pas dépasser en moyenne, et l'algo ne dépense que quand il peut le tenir. Vous pouvez lancer avec des budgets larges sans craindre le dérapage."),
+            PB("Vous n'arbitrez plus entre volume et rentabilité : vous allez chercher tout le volume que votre cible de coût autorise. Le seul piège : un cap trop serré face à des enchères qui montent finit par brider votre diffusion."),
+            LB(
+              "Lancez en Cost Cap, pas en « coût le plus bas » : vous posez le plafond de CPA, l'algo maximise le volume en dessous",
+              "Ouvrez des budgets larges : le budget n'est plus le frein, c'est le plafond de coût qui régule",
+              "Calez votre cap sur votre vraie cible de CAC (marge déduite, issue de votre LTV par cohorte), pas sur un CPA au feeling",
+              "Si la diffusion se bride au pic, desserrez le cap de quelques % plutôt que de couper : enchères hautes ≠ campagne ratée",
+            ),
+            QB("Le Cost Cap transforme votre budget en accélérateur : vous poussez le volume, le plafond garantit que chaque euro reste rentable."),
+          ], [V("Ben&Vic", "/assets/partners/FR-acquisition-ads-benandvic-tip5.png")]),
         ],
       }],
     },
