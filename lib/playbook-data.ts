@@ -539,10 +539,39 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       teaser: "Rendre le bon produit impossible à manquer.",
       keyStat: { value: 27, unit: "%", prefix: "+", label: "de conversion grâce à un merchandising calibré pour le pic et des repères d'urgence clairs", source: "Étude Vitrina, 2025" },
       partners: [{
-        name: "Sed Tempor", pitch: "Personnalisation on-site et merchandising.", url: "#",
+        name: "Webyn",
+        logo: "/assets/partners/webyn-logo.png",
+        pitch: "Webyn est une plateforme CRO (Conversion Rate Optimization) qui aide les e-commerçants à augmenter leur chiffre d'affaires sans augmenter leur budget acquisition. Grâce à une approche combinant analyse comportementale, expérimentation A/B et personnalisation on-site, Webyn identifie les frictions invisibles sur les sites e-commerce et les transforme en leviers de croissance mesurables.",
+        url: "https://www.webyn.ai",
+        author: { name: "Alexandre Farhat", role: "Co-fondateur", photo: "/assets/partners/webyn-author.png" },
+        keyStat: { statement: "Sur mobile, seulement 1 % des visiteurs utilisent la recherche interne. Pourtant, ce segment convertit 2 à 3 fois mieux que les visiteurs qui naviguent via les menus.", highlight: "1 %", source: "Données propriétaires Webyn - analyse comportementale réalisée sur le site Nutrimuscle (2024)" },
         tips: [
-          tip("Consectetur adipiscing elit", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
-          tip("Sed do eiusmod tempor incididunt", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
+          tipB("Votre barre de recherche convertit 2 à 3× mieux que le reste du site. Arrêtez de l'ignorer.", [
+            PB("En Q4, vos visiteurs cherchent vite et partent vite. Pourtant, la majorité des sites e-commerce traitent la recherche interne comme un détail d'UX. C'est une erreur coûteuse."),
+            PB("Chez l'un de nos clients, Nutrimuscle, nous avons analysé le comportement mobile : seulement 1 % des visiteurs mobiles utilisent la recherche interne, mais ce segment convertit 2 à 3 fois mieux que les visiteurs qui naviguent via les menus. Un potentiel énorme, totalement inexploité."),
+            PB("En optimisant l'expérience de recherche (repositionnement de la barre, affichage des suggestions intelligentes, mise en avant des résultats pertinents) nous avons généré +5,3 % de taux de conversion et +14 405 € de revenus additionnels, mesurés en A/B test sur 4 semaines."),
+            BOX("Action concrète pour Q4", "Avant le Black Friday, testez un repositionnement de votre barre de recherche en position haute sur mobile, et activez des suggestions prédictives orientées vers vos bestsellers et vos offres promotionnelles. L'impact est rapide et mesurable."),
+          ], [V("Webyn", "/assets/partners/FR-onsite-experience-merchandising-webyn-tip1.png")]),
+          tipB("La homepage générique coûte des conversions. Personnalisez-la selon le profil visiteur.", [
+            PB("En période de pic, votre homepage accueille des profils très différents : nouveaux visiteurs, clients fidèles, visiteurs qui reviennent après abandon. Leur servir le même contenu statique, c'est rater l'opportunité de capter chacun au bon moment avec le bon message."),
+            PB("Chez AIME Skincare nous avons identifié un frein majeur : les utilisateurs arrivant sur leur page de résultats de diagnostic voyaient un bloc de connexion en haut de page, créant une friction immédiate avant même d'accéder à la valeur. En le supprimant et en reorganisant la hiérarchie visuelle autour des résultats, nous avons obtenu +31 % d'ajouts au panier et +59 % de revenu par session."),
+            BOX("Action concrète pour Q4", "Identifiez les 2-3 segments de visiteurs les plus importants sur votre site (nouveaux vs. revenants, mobile vs. desktop) et créez des variations de vos blocs hero et CTA principaux adaptées à chaque segment. Même un changement simple (un message différent, une offre mise en avant différemment) peut avoir un impact significatif en période de forte concurrence."),
+          ], [V("Webyn", "/assets/partners/FR-onsite-experience-merchandising-webyn-tip2.png")]),
+          tipB("Vos menus reflètent votre catalogue, pas les intentions de vos clients. Changez ça avant le Q4.", [
+            PB("Beaucoup d'e-commerçants construisent leur navigation selon la logique de leur catalogue produit. Mais vos visiteurs, eux, naviguent selon leurs propres priorités. L'écart entre les deux, c'est du trafic perdu et des conversions ratées, surtout quand l'attention est rare, comme en Q4."),
+            PB("Chez Fusalp, l'analyse des données comportementales a révélé une asymétrie frappante : 26 % des visiteurs allaient spontanément vers les pages Ski, contre seulement 13 % vers les pages Prêt-à-Porter. Pourtant, la navigation principale ne reflétait pas cette priorité. En repositionnant la catégorie Ski en position dominante dans le menu, nous avons mesuré +30 % de taux de conversion et +56 % de clics vers les catégories Ski."),
+            BOX("Action concrète pour Q4", "Analysez dès maintenant vos données de navigation (heatmaps, flux de clics, analytics) pour identifier vos pages et catégories les plus visitées. Si votre menu ne reflète pas ces priorités, testez un repositionnement avant le Black Friday. C'est l'un des A/B tests les plus rapides à mettre en place et les plus impactants en période de pic."),
+          ], [V("Webyn", "/assets/partners/FR-onsite-experience-merchandising-webyn-tip3.png")]),
+          tipB("En Q4, vos promos doivent sauter aux yeux, pas se noyer dans votre catalogue", [
+            PB("Black Friday, Cyber Monday, Noël : les consommateurs cherchent activement les bonnes affaires. Si vos promotions sont noyées dans votre catalogue sans moyen de les filtrer rapidement, vous perdez des ventes au profit de concurrents plus lisibles."),
+            PB("Chez Passage du Désir, nous avons observé que malgré un catalogue promotionnel actif, les visiteurs ne trouvaient pas facilement les articles soldés dans les pages listing. La solution a été simple et efficace : ajouter une option de tri \"Meilleures promotions\" en tête de liste dans les pages catégories. Résultat : +7 % d'uplift de conversion mesuré en A/B test."),
+            BOX("Action concrète pour Q4", "Avant le Black Friday, auditez votre parcours promotionnel : est-ce qu'un visiteur qui arrive sur votre site peut trouver vos meilleures offres en moins de 2 clics ? Ajoutez un filtre ou un tri dédié aux promotions dans vos pages listing, et testez une mise en avant visuelle distincte (badge, couleur, position) pour les produits en promotion."),
+          ], [V("Webyn", "/assets/partners/FR-onsite-experience-merchandising-webyn-tip4.png")]),
+          tipB("Un A/B test sur la couleur de votre bouton \"Ajouter au panier\" peut générer +23 % d'ajouts, en quelques jours", [
+            PB("On sous-estime souvent l'impact des micro-détails sur la conversion. Couleur, wording, taille, position d'un bouton… Ces éléments paraissent anodins mais influencent directement la décision d'achat, surtout quand l'attention du visiteur est limitée en période de Q4."),
+            PB("Chez France Toner, revendeur de consommables d'impression, nous avons repositionné les résultats de recherche interne pour mieux correspondre à l'intention des visiteurs : résultat, +18 % d'accès aux pages produits. Dans un second test, une simple modification de la couleur du CTA \"Ajouter au panier\" a suffi à générer +23 % d'ajouts au panier, sans changer le prix, le texte, ni le contenu de la page."),
+            BOX("Action concrète pour Q4", "Ne partez pas en période de pic avec des hypothèses non testées. Lancez dès maintenant un A/B test sur vos CTAs principaux (couleur, wording \"Ajouter au panier\" vs \"Commander maintenant\", taille). Ces tests se paramètrent en moins d'une heure et livrent des résultats en 1 à 2 semaines, largement avant le Black Friday."),
+          ], [V("Webyn", "/assets/partners/FR-onsite-experience-merchandising-webyn-tip5.png")]),
         ],
       }],
     },
