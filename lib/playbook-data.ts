@@ -382,10 +382,26 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       teaser: "Transformer les premiers acheteurs en une base qui ouvre.",
       keyStat: { value: 4.2, unit: "x", prefix: "", label: "de revenu par envoi grâce aux flows de bienvenue segmentés vs les envois de masse", source: "Données Sendora, 2025" },
       partners: [
-        { name: "Dolor Amet", pitch: "Email cycle de vie et automatisation.", url: "#",
+        {
+          name: "Klaviyo",
+          logo: "/assets/partners/klaviyo-logo.png",
+          pitch: "Klaviyo est un CRM B2C autonome et une plateforme de marketing IA qui centralise les données clients et automatise les messages par e-mail, SMS, RCS, WhatsApp et notification push permettant de piloter des campagnes personnalisées qui convertissent.",
+          url: "https://www.klaviyo.com/fr/",
+          author: { name: "Henri Soropogui Viret", role: "Responsable Marketing Europe du Sud", photo: "/assets/partners/klaviyo-author.jpg" },
+          keyStat: { statement: "Les flows, comme la welcome series et l'abandon de panier, ne représentent que 5,3 % des envois mais génèrent 41 % du revenu email total, avec un revenu par destinataire près de 18 fois supérieur à celui des campagnes one-shot.", highlight: "41 %", source: "Email marketing benchmarks by Industry, Klaviyo, 2026" },
           tips: [
-            tip("Ut enim ad minim veniam", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."], [V("Lorem ipsum")]),
-            tip("Quis nostrud exercitation ullamco", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
+            tip("Commencez le list building bien avant le peak", [
+              "Les shoppers pensent au Black Friday et à Noël bien avant que la saison ne démarre, alors votre acquisition d'opt-ins devrait suivre le même tempo. L'accès en avant-première est un levier simple : offrez un accès prioritaire à des produits en série limitée ou à des offres saisonnières en échange des coordonnées. Les outils interactifs comme les gift finders ou les quiz de style sont encore plus efficaces, car ils collectent de la donnée déclarative en plus de l'email ou du numéro.",
+              "Résultat : dès l'opt-in, les réponses d'un nouvel abonné vous en disent déjà long sur son intention, qu'il achète pour lui en novembre ou pour un proche en décembre. Les auto-replies sur les réseaux sociaux sont une autre porte d'entrée redoutable : elles permettent de s'inscrire en email, SMS ou WhatsApp directement depuis une interaction Instagram.",
+            ], [V("Klaviyo", "/assets/partners/FR-CRM-activation-nurturing-klaviyo-tip1.png")]),
+            tip("Activez vos flows clés avant le pic de volume", [
+              "Nos données sont claires : les top marques abordent le peak avec au moins 8 flows générateurs de revenus déjà en place, jusqu'à 13 pour les plus grosses. Au menu : welcome series, abandon de panier, abandon de navigation, post-achat, win-back, back-in-stock et VIP.",
+              "Les marques les plus performantes misent sur l'activation et l'optimisation des flows qu'elles ont déjà, plutôt que d'en créer de nouveaux une fois que le trafic s'emballe. Le principe : les mettre en ligne et bien les roder en amont. La welcome series et les abandons de navigation ou de panier restent les flows les plus déployés, et pour cause : ce sont eux qui portent l'essentiel du nurturing des nouveaux abonnés et de la récupération des ventes perdues quand le volume grimpe.",
+            ], [V("Klaviyo", "/assets/partners/FR-CRM-activation-nurturing-klaviyo-tip2.png")]),
+            tip("Segmentez plus finement pour personnaliser vos envois", [
+              "Nos données montrent que les marques les plus performantes ventilent 66 % de leurs envois sur au moins 6 segments, au lieu de traiter le peak comme un gros blast à toute la base. Les segments qui font vraiment bouger l'aiguille sont comportementaux, pas seulement démographiques : chasseurs de promos vs clients fidèles, actifs vs dormants, AOV élevé vs faible.",
+              "Tout repose ici sur une règle : faire de votre CRM la single source of truth de votre donnée client. Plus cette donnée est complète, plus vous ciblez ces poches avec précision et adressez à chacune un message calé sur son intention, au lieu d'espérer qu'un envoi générique parle à tout le monde.",
+            ], [V("Klaviyo", "/assets/partners/FR-CRM-activation-nurturing-klaviyo-tip3.png")]),
           ],
         },
         { name: "Consectetur Elit", pitch: "SMS et nurturing multicanal.", url: "#",
