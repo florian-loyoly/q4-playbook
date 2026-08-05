@@ -551,10 +551,40 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       teaser: "Retirer toute raison d'abandonner à la dernière étape.",
       keyStat: { value: 18, unit: "%", prefix: "-", label: "d'abandon panier quand les wallets express et les frais clairs apparaissent tôt", source: "Rapport Paylibre, 2025" },
       partners: [{
-        name: "Incididunt Labore", pitch: "Checkout et paiement sans friction.", url: "#",
+        name: "Payplug",
+        logo: "/assets/partners/payplug-logo.png",
+        pitch: "Payplug est la solution la plus simple pour accepter les paiements en ligne. Elle s'adresse aux e-marchands et leur permet d'accepter les paiements par carte bancaire.",
+        url: "https://www.payplug.com/fr/",
+        keyStat: { statement: "Une optimisation rigoureuse du checkout peut permettre de récupérer jusqu'à 35 % des ventes perdues, sans générer plus de trafic.", highlight: "35 %", source: "Baymard Institute" },
         tips: [
-          tip("Ut enim ad minim veniam", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
-          tip("Quis nostrud exercitation ullamco", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
+          tip("Optimisez parfaitement votre checkout", [
+            "Plus de 70 % des abandons de panier ont lieu au moment du checkout, et 18 % d'entre eux sont directement liés à un processus de paiement trop complexe (Baymard Institute, 2025).",
+            "Demandez uniquement les informations indispensables : fusionnez facturation et livraison, activez l'autocomplétion et proposez l'achat invité par défaut (guest-first).",
+            "Pour maximiser vos conversions, pensez au One Page Checkout (OPC) : en rassemblant l'adresse, le transporteur et le paiement sur un seul écran sans rechargement de page, vous supprimez les frictions inutiles, particulièrement sur mobile.",
+            "Preuve que ce modèle s'impose comme la norme : PrestaShop répond à une attente historique en intégrant un One Page Checkout natif dans sa version 9.2 (disponible en octobre 2026). Une nouveauté out-of-the-box majeure à activer avant la fin d'année pour offrir une expérience d'achat ultra-fluide.",
+          ], [V("Payplug", "/assets/partners/FR-payment-checkout-payplug-tip1.jpg")]),
+          tip("Calibrez votre curseur fraude au lieu de le durcir uniformément", [
+            "Le BFCM est une période particulièrement exposée à la fraude CNP (carte non présente) : au milieu de milliers de commandes légitimes, les fraudeurs savent que leurs transactions passent plus facilement inaperçues. Mais un système trop rigide déclenche une authentification forte sur chaque transaction.",
+            "Résultat : des frictions inutiles qui font fuir des acheteurs légitimes au moment de l'achat. Le Smart 3DS évalue plutôt le risque de chaque transaction en temps réel, et ne déclenche l'authentification forte que si le profil le justifie.",
+            "Concrètement, définissez des règles d'exemption selon le montant, l'historique du client ou le mode de livraison, plutôt qu'un seuil unique pour tous.",
+            "Suivez aussi votre taux de refus de paiement : une hausse soudaine pendant le pic de trafic est souvent le signe d'un système trop strict, pas d'une vague de fraude.",
+          ], [V("Payplug", "/assets/partners/FR-payment-checkout-payplug-tip2.jpg")]),
+          tip("Proposez des moyens de paiement alternatifs : préparez l'arrivée de Wero", [
+            "Diversifier ses moyens de paiement est un levier de conversion majeur (Apple Pay, moyens de paiement locaux etc.).",
+            "Parmi les options, le paiement fractionné (Buy Now Pay Later) fait figure d'incontournable en cette période de fin d'année avec des résultats prouvés : un taux de conversion en hausse de 20 à 30 %, un panier moyen en hausse de 30 à 50 % et jusqu'à 35 % d'abandon de panier en moins (E-commerce Nation, Étude BNPL).",
+            "Avec Payplug, vous intégrez simplement l'option à vos moyens de paiement avec Scalapay (disponibles sur Shopify, PrestaShop, WooCommerce et Magento) ou Oney.",
+            "En parallèle, une nouveauté est à surveiller cette année : Wero, la solution de paiement souveraine européenne forte de plus de 55 millions d'utilisateurs (données EPI/Wero, juin 2026). Déjà disponible sur Payplug en Allemagne et en Belgique, la solution pour la France est en phase pilote avant un lancement à l'automne 2026, alors contactez nos équipes pour être parmi les premiers marchands prêts d'ici la fin d'année.",
+          ], [V("Payplug", "/assets/partners/FR-payment-checkout-payplug-tip3.jpg")]),
+          tip("En boutique, ne faites pas attendre vos clients", [
+            "51 % des consommateurs ont déclaré préférer faire leurs achats en magasin pendant le Black Friday 2025, souvent après avoir repéré le produit en ligne (Bilan Black Friday 2025, Payplug).",
+            "Pour éviter la file d'attente aux heures de pointe, équipez vos vendeurs d'un encaissement mobile (SoftPOS / Tap to Pay) qui permet de finaliser la vente directement en rayon, en cabine d'essayage, ou là où se trouve le client plutôt qu'uniquement à la caisse.",
+            "Avec le SoftPOS, l'encaissement n'est plus un lieu fixe mais une fonction mobile : chaque vendeur devient capable de finaliser une transaction à tout moment. Le marché mondial du SoftPOS doit plus que tripler d'ici 2034, signe que cet usage devient un standard plutôt qu'un simple gadget (Fortune Business Insights).",
+          ]),
+          tip("Appuyez-vous sur l'IA pour gagner du temps en SAV et limiter les risques d'erreur", [
+            "Pendant le BFCM, la précipitation du rush peut vite transformer chaque manipulation manuelle en risque d'erreur, alors que votre trafic peut être multiplié par 5, 10, voire 15 en quelques minutes (Payplug, \"MCP PrestaShop : pilotez vos commandes et vos paiements avec l'IA\", juillet 2026).",
+            "Pour y faire face, l'IA peut vous assister dans la gestion commerciale et celle du service client. Avec le Model Context Protocol (MCP) Payplug, votre assistant IA devient un véritable copilote financier, capable de générer un lien de paiement ou de déclencher un remboursement en langage naturel.",
+            "L'IA prépare chaque action en 2 secondes, mais rien n'est exécuté sans votre validation manuelle : vous gagnez en vitesse sans jamais perdre la main sur vos finances. De quoi transformer la pression opérationnelle du Q4 en avantage compétitif.",
+          ], [V("Payplug", "/assets/partners/FR-payment-checkout-payplug-tip5.jpg")]),
         ],
       }],
     },
