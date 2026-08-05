@@ -58,7 +58,9 @@ export function TipBlock({ step, partner, pi, ui, limit }: { step: Step; partner
                         <figure
                           key={vi}
                           style={{
-                            margin: 0,
+                            margin: "0 auto",
+                            width: "fit-content",
+                            maxWidth: "100%",
                             background: P.bg50,
                             border: `1px solid ${P.p200}`,
                             borderRadius: 12,
@@ -68,7 +70,8 @@ export function TipBlock({ step, partner, pi, ui, limit }: { step: Step; partner
                           }}
                         >
                           {/* eslint-disable-next-line @next/next/no-img-element */}
-                          <img src={v.src} alt={v.label} loading="lazy" style={{ width: "100%", height: "auto", display: "block", borderRadius: 6 }} />
+                          {/* Cap by height so wide images stay near full width while square/portrait ones shrink instead of stretching. */}
+                          <img src={v.src} alt={v.label} loading="lazy" style={{ maxWidth: "100%", maxHeight: 480, width: "auto", height: "auto", display: "block", borderRadius: 6 }} />
                         </figure>
                       ) : (
                         <div
