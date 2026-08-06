@@ -45,9 +45,16 @@ export function StepScreen({ market, step, steps, ui }: { market: MarketId; step
 
   const redirectTitle = redirectSlug ? steps.find((s) => s.slug === redirectSlug)?.title ?? "" : "";
 
+  // If the chosen priority is the stage we're already on, there's no redirect:
+  // unlock in place (no notice). Otherwise show the notice, then redirect.
+  const handleGateSuccess = (slug: string) => {
+    if (slug === step.slug) unlock();
+    else setRedirectSlug(slug);
+  };
+
   return (
     <>
-      <StepView market={market} step={step} steps={steps} ui={ui} onGateSuccess={(slug) => setRedirectSlug(slug)} />
+      <StepView market={market} step={step} steps={steps} ui={ui} onGateSuccess={handleGateSuccess} />
       {redirectSlug ? <RedirectNotice ui={ui} stageTitle={redirectTitle} /> : null}
       {justUnlocked ? <Toast message={ui.unlockedToast} /> : null}
     </>
