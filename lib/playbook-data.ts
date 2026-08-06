@@ -290,9 +290,10 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       partners: [{
         name: "Kubix",
         logo: "/assets/partners/kubix-logo.svg",
-        pitch: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        pitch: "Kubix is a Shopify Platinum agency helping eCommerce and retail brands create better shopping experiences and stronger commercial results. Combining strategy, UX, design and development with hands-on Shopify expertise, supporting brands across on-site merchandising, conversion, POS, retention and paid media.",
         url: "https://kubixmedia.co.uk",
         noAuthor: true,
+        keyStat: { statement: "+107% conversion rate uplift after Kubix rebuilt Ted Baker's Shopify storefront and UX.", highlight: "+107%", source: "Kubix, Ted Baker case study", sourceUrl: "https://kubixmedia.co.uk/case-study/ted-baker" },
         tips: [
           tipB("Turn simple navigation into a merchandising tool", [
             PB("Most people arrive already knowing roughly what they want, so the fundamentals have not changed: navigation needs to be simple, clear and quick to scan."),
@@ -320,7 +321,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
             PB("Most brands now sell and engage across many channels, but the activity often lives everywhere except their own website. A dedicated hub or live shopping page inside your Shopify store gives customers one place to join live events, follow drops and get involved with the community, which matters most at peak when attention and urgency are high."),
             PB("It keeps that engagement on a property you own and can merchandise directly, rather than renting it on a social platform."),
             PB("Even a simple, well-signposted hub can turn a one-off peak shopper into a returning audience."),
-          ]),
+          ], [V("Kubix", "/assets/partners/UK-onsite-experience-merchandising-kubix-tip5.png")]),
         ],
       }],
     },
