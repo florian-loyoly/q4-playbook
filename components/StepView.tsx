@@ -31,14 +31,19 @@ export function StepView({ market, step, steps, ui, onGateSuccess }: { market: M
   const previewCount = 1; // free tips per partner before the gate
   const tipLimit = (pt: Step["partners"][number]) => (locked ? Math.min(previewCount, pt.tips.length) : pt.tips.length);
 
-  // Single source of truth for the visible tips (reused by the rail / progress).
+  const gateId = "unlock-form";
+
+  // Single source of truth: ALL tips. When gated, tips beyond the free preview
+  // are flagged `locked` so the rail can show them greyed and jump to the form.
   const flatItems: NavItem[] = useMemo(() => {
     const d = step.partners.length > 1;
-    const lim = !isUnlocked ? 1 : Infinity;
-    return step.partners.flatMap((pt, pi) => pt.tips.slice(0, lim).map((tp, ti) => ({ id: `tip-${pi}-${ti}`, label: tp.title, partnerName: d ? pt.name : undefined })));
-  }, [step, isUnlocked]);
-  const ids = useMemo(() => flatItems.map((i) => i.id), [flatItems]);
-  const { active, jumpTo } = useTipSpy(ids);
+    return step.partners.flatMap((pt, pi) => pt.tips.map((tp, ti) => ({ id: `tip-${pi}-${ti}`, label: tp.title, partnerName: d ? pt.name : undefined, locked: locked && ti >= previewCount })));
+  }, [step, locked]);
+  // Only the rendered (unlocked) tips have anchors, so scroll-spy tracks those.
+  const visibleIds = useMemo(() => flatItems.filter((i) => !i.locked).map((i) => i.id), [flatItems]);
+  const { active, jumpTo } = useTipSpy(visibleIds);
+  const activeId = visibleIds[active] ?? visibleIds[0] ?? "";
+  const activeIndexAll = Math.max(0, flatItems.findIndex((i) => i.id === activeId));
 
   return (
     <div style={{ maxWidth: 1240, margin: "0 auto", padding: "18px 20px 70px" }}>
@@ -72,13 +77,13 @@ export function StepView({ market, step, steps, ui, onGateSuccess }: { market: M
 
       {/* progress + tip nav */}
       {narrow ? (
-        <TipMobileNav items={flatItems} active={active} accent={accent} jumpTo={jumpTo} headingLabel={ui.inThisChapter} />
+        <TipMobileNav items={flatItems} activeId={activeId} accent={accent} jumpTo={jumpTo} gateId={gateId} headingLabel={ui.inThisChapter} />
       ) : (
-        <TipProgressBar active={active} total={flatItems.length} accent={accent} />
+        <TipProgressBar active={activeIndexAll} total={flatItems.length} accent={accent} />
       )}
 
       <div style={{ display: "grid", gridTemplateColumns: narrow ? "1fr" : "264px minmax(0,1fr)", gap: narrow ? 0 : 44, alignItems: "start" }}>
-        {!narrow ? <TipRail items={flatItems} active={active} accent={accent} jumpTo={jumpTo} headingLabel={ui.inThisChapter} /> : null}
+        {!narrow ? <TipRail items={flatItems} activeId={activeId} accent={accent} jumpTo={jumpTo} gateId={gateId} headingLabel={ui.inThisChapter} /> : null}
 
         <div style={{ minWidth: 0 }}>
           {/* partner banner */}
@@ -150,7 +155,7 @@ export function StepView({ market, step, steps, ui, onGateSuccess }: { market: M
 
           {/* inline gate: replaces the remaining tips until the form is submitted */}
           {locked ? (
-            <GateInline market={market} step={step} steps={steps} ui={ui} onSuccess={onGateSuccess} />
+            <GateInline market={market} step={step} steps={steps} ui={ui} onSuccess={onGateSuccess} anchorId={gateId} />
           ) : null}
 
           {/* partner presentations */}

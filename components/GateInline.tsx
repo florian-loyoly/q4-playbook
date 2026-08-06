@@ -1,7 +1,7 @@
 "use client";
 
 import type { MarketId, Step, UIStrings } from "@/lib/types";
-import { P, tint } from "@/lib/tokens";
+import { P, tint, HEADER_OFFSET } from "@/lib/tokens";
 import { LeadForm } from "./LeadForm";
 
 // Inline gate that replaces the remaining tips once the free preview ends.
@@ -14,12 +14,14 @@ export function GateInline({
   steps,
   ui,
   onSuccess,
+  anchorId,
 }: {
   market: MarketId;
   step: Step;
   steps: Step[];
   ui: UIStrings;
   onSuccess: (prioritySlug: string) => void;
+  anchorId?: string;
 }) {
   const accent = step.accent;
   const skeletonRow = (w: string) => (
@@ -35,7 +37,7 @@ export function GateInline({
   );
 
   return (
-    <div style={{ position: "relative", marginTop: 30, paddingTop: 30, borderTop: `1px solid ${P.p200}`, overflow: "hidden", borderRadius: 4 }}>
+    <div id={anchorId} style={{ position: "relative", marginTop: 30, paddingTop: 30, borderTop: `1px solid ${P.p200}`, overflow: "hidden", borderRadius: 4, scrollMarginTop: HEADER_OFFSET }}>
       {/* blurred skeletons hinting at the locked tips */}
       <div
         aria-hidden="true"
