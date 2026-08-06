@@ -47,7 +47,7 @@ export function MapView({ market, steps, ui }: { market: MarketId; steps: Step[]
   // New model: every stage is openable (first tip free). Cards show a "1st tip
   // free" pill until the form is submitted, then a check once fully unlocked.
   const hero = (
-    <div style={{ textAlign: "center", maxWidth: 760, margin: "0 auto 30px" }}>
+    <div style={{ textAlign: "center", maxWidth: 940, margin: "0 auto 30px" }}>
       <div
         style={{
           display: "inline-flex",
