@@ -33,6 +33,7 @@ export const STEP_META: StepMeta[] = [
 export const UI: Record<Locale, UIStrings> = {
   en: {
     kicker: "The Ultimate Q4 Playbook 2026",
+    headerTag: "Q4 Playbook",
     heroTitle: "Q4 drives 30 to 40% of your revenue. Here is the playbook to capture every pound of that peak.",
     heroSub: "From the first ad impression to the last product return, 9 steps broken down by an expert partner. The concrete levers to win Black Friday, Cyber Week and Christmas.",
     heroCta: "Explore the journey",
@@ -93,7 +94,8 @@ export const UI: Record<Locale, UIStrings> = {
     footNote: "Prototype with static data. Lead capture is simulated.",
   },
   fr: {
-    kicker: "The Ultimate Q4 Playbook 2026",
+    kicker: "L'ultime Playbook Q4 2026",
+    headerTag: "Playbook Q4",
     heroTitle: "Le Q4 pèse 30 à 40% de votre CA. Voici le playbook pour capter chaque euro de ce pic.",
     heroSub: "De la première impression pub au dernier retour produit, 9 étapes décryptées par un partenaire expert. Les leviers concrets pour gagner le Black Friday, la Cyber Week et Noël.",
     heroCta: "Explorer le parcours",
@@ -153,7 +155,8 @@ export const UI: Record<Locale, UIStrings> = {
     footNote: "Prototype avec données statiques. La capture de lead est simulée.",
   },
   es: {
-    kicker: "The Ultimate Q4 Playbook 2026",
+    kicker: "El Playbook Q4 definitivo 2026",
+    headerTag: "Playbook Q4",
     heroTitle: "El Q4 supone entre el 30 y el 40% de tu facturación. Aquí tienes el playbook para capturar cada euro de ese pico.",
     heroSub: "Desde la primera impresión de anuncio hasta la última devolución de producto, 9 etapas analizadas por un partner experto. Las palancas concretas para ganar el Black Friday, la Cyber Week y la Navidad.",
     heroCta: "Explorar el recorrido",

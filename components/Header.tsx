@@ -2,8 +2,10 @@ import Link from "next/link";
 import { MarketSwitcher } from "./MarketSwitcher";
 import type { MarketId } from "@/lib/types";
 import { P, tint } from "@/lib/tokens";
+import { getUI } from "@/lib/i18n";
 
 export function Header({ market }: { market: MarketId }) {
+  const ui = getUI(market);
   return (
     <header
       style={{
@@ -45,7 +47,7 @@ export function Header({ market }: { market: MarketId }) {
               whiteSpace: "nowrap",
             }}
           >
-            Q4 Playbook
+            {ui.headerTag}
           </span>
         </Link>
         <MarketSwitcher current={market} />
