@@ -45,7 +45,7 @@ export function KeyStat({ step, ui, stat }: { step: Step; ui: UIStrings; stat?: 
       {ui.keyStatLabel}
     </div>
   );
-  const source = (
+  const source = ks.source ? (
     <div style={{ fontFamily: BODY, fontSize: 12, color: "rgba(255,255,255,.5)", marginTop: isSentence ? 14 : 0, display: "inline-flex", alignItems: "center", gap: 6 }}>
       <span>{ui.source}: {ks.source}</span>
       {ks.sourceUrl ? (
@@ -54,7 +54,7 @@ export function KeyStat({ step, ui, stat }: { step: Step; ui: UIStrings; stat?: 
         </a>
       ) : null}
     </div>
-  );
+  ) : null;
 
   // Sentence mode: render the statement with the highlighted number emphasized inline.
   function renderStatement() {
