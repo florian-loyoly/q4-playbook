@@ -227,6 +227,9 @@ const PB = (text: string): TipBlock => ({ kind: "p", text });
 const LB = (...items: string[]): TipBlock => ({ kind: "list", items });
 const QB = (text: string): TipBlock => ({ kind: "quote", text });
 const BOX = (heading: string, text: string, href?: string): TipBlock => ({ kind: "callout", heading: heading || undefined, text, href });
+// Action / result callouts (distinct icon + colour).
+const DO = (heading: string, text: string): TipBlock => ({ kind: "callout", heading, text, variant: "do" });
+const RES = (heading: string, text: string): TipBlock => ({ kind: "callout", heading, text, variant: "result" });
 
 type StepContent = { title: string; teaser: string; keyStat: KeyStat; partners: Partner[] };
 
@@ -347,8 +350,8 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
               "Does average order value rise? If shoppers buy more per order, activate buy now, pay later so budget-conscious customers can spread the cost.",
               "Do shoppers need a fallback? Offering multiple methods means a declined card isn't a lost sale. The customer can simply reach for a different card, a digital wallet or Klarna.",
             ),
-            BOX("What you should do", "enable payment methods 2 months in advance. It costs you nothing, and doing it in advance means the full lifecycle has already run through your system, so when traffic hits, you know it works."),
-            BOX("Result", "you capture sales you'd otherwise lose, protect your average order value, and go into peak with a payment mix built for the season."),
+            DO("What you should do", "enable payment methods 2 months in advance. It costs you nothing, and doing it in advance means the full lifecycle has already run through your system, so when traffic hits, you know it works."),
+            RES("Result", "you capture sales you'd otherwise lose, protect your average order value, and go into peak with a payment mix built for the season."),
           ]),
           tipB("Make mobile and wallets effortless", [
             PB("If you fix only one thing before Q4, make it mobile. Before peak, run your full checkout journey on a real mobile device, not just in desktop preview. Start from the product page and go all the way through to payment confirmation. Look for every extra tap, field or page load that could slow a shopper down."),
@@ -360,20 +363,20 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
               "Test failure and fallback journeys. If a card payment fails, make sure the shopper can easily try another payment method without starting again.",
               "Check the confirmation experience. The payment confirmation page and email should be immediate, clear and mobile-friendly.",
             ),
-            BOX("What you should do", "test your mobile checkout before peak, remove unnecessary fields and taps, and make sure wallets, saved details, guest checkout, and fallback options work smoothly."),
-            BOX("Result", "you meet shoppers where they already are, on mobile, and remove the friction that quietly costs you sales."),
+            DO("What you should do", "test your mobile checkout before peak, remove unnecessary fields and taps, and make sure wallets, saved details, guest checkout, and fallback options work smoothly."),
+            RES("Result", "you meet shoppers where they already are, on mobile, and remove the friction that quietly costs you sales."),
           ]),
           tipB("Reduce friction for your most loyal customers", [
             PB("Your most loyal, high-value customers are your stickiest, and they'll almost certainly be shopping during peak. The last thing you want is to frustrate them with unnecessary friction at the very moment you have the least time to fix it."),
             PB("If you use a fraud or risk platform to screen payments, trusted-customer lists help you recognise high-value customers, so their payments are less likely to be caught by tighter seasonal checks."),
-            BOX("What you should do", "refresh your list. Make sure every high-value, frequent customer is on it, and that it's fully up to date."),
-            BOX("Result", "your best customers glide through checkout, feel valued at your busiest time, and keep coming back long after the promotional period ends."),
+            DO("What you should do", "refresh your list. Make sure every high-value, frequent customer is on it, and that it's fully up to date."),
+            RES("Result", "your best customers glide through checkout, feel valued at your busiest time, and keep coming back long after the promotional period ends."),
           ]),
           tipB("Tell your PSP if you're doing something exceptional", [
             PB("Here's an insider tip most merchants miss. Your payments partner prepares for peak every year. For example, at Mollie, we scale our infrastructure for the end-of-year surge. But we can't prepare for what we don't know about."),
             PB("During peak, we're on high alert for fraud, and the velocity rules that protect you all year round can accidentally block a genuine spike in sales. Flag it in advance, and we'll make sure the settings are right before you go live."),
-            BOX("What you should do", "if this is the year you launch a limited-edition drop or go unusually hard on a flash sale during the peak season, then tell your PSP."),
-            BOX("Result", "your big moment goes off without a hitch, with no legitimate sales blocked at the crucial moment."),
+            DO("What you should do", "if this is the year you launch a limited-edition drop or go unusually hard on a flash sale during the peak season, then tell your PSP."),
+            RES("Result", "your big moment goes off without a hitch, with no legitimate sales blocked at the crucial moment."),
           ]),
           tipB("Nail the post-payment experience", [
             PB("Payment doesn't end at checkout, yet the post-payment experience is often overlooked. During peak, shoppers are on edge; they want their goods, and they want them on time."),
@@ -384,8 +387,8 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
               "Signpost your support channel. Guide customers to the right place, and your contact rate stays low.",
               "Communicate order status regularly. At this time of year, there's arguably no such thing as overcommunication. People just want to know things are moving.",
             ),
-            BOX("What you should do", "make sure your customer communications are clear and easy to follow."),
-            BOX("Result", "you reassure anxious gift-buyers, cut support costs, and turn a stressful season into a reason to trust you again next year."),
+            DO("What you should do", "make sure your customer communications are clear and easy to follow."),
+            RES("Result", "you reassure anxious gift-buyers, cut support costs, and turn a stressful season into a reason to trust you again next year."),
           ]),
           tipB("Let Mollie optimise your payments in the background", [
             PB("A single, unified payments platform centralises your operations, one lens to manage everything, monitor performance, and stay efficient when you can least afford to chase transactions."),
@@ -395,7 +398,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
               "Mollie Checkout: localises your payment methods automatically, so shoppers see familiar options in a format they recognise.",
               "Unified dashboard: recognises your customer across channels, connecting in-store and online activity for advanced use cases.",
             ),
-            BOX("Result", "you get stronger payments performance throughout peak, because Mollie is optimising in the background for you."),
+            RES("Result", "you get stronger payments performance throughout peak, because Mollie is optimising in the background for you."),
           ]),
         ],
       }],
@@ -928,8 +931,8 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
               "¿Aumenta el valor medio de los pedidos? Si los compradores gastan más por pedido, activa la opción «compra ahora, paga después» para que los clientes que cuidan su presupuesto puedan repartir el coste.",
               "¿Necesitan los compradores una alternativa? Ofrecer varios métodos significa que una tarjeta rechazada no supone una venta perdida. El cliente puede simplemente recurrir a otra tarjeta, un monedero digital o Klarna.",
             ),
-            BOX("Lo que debes hacer", "activa los métodos de pago con dos meses de antelación. No te cuesta nada, y hacerlo con antelación significa que todo el ciclo de vida ya ha pasado por tu sistema, así que cuando aumente el tráfico, sabrás que funciona."),
-            BOX("Resultado", "captas ventas que, de otro modo, perderías, proteges el valor medio de tus pedidos y llegas a la temporada alta con una combinación de pagos adaptada a la temporada."),
+            DO("Lo que debes hacer", "activa los métodos de pago con dos meses de antelación. No te cuesta nada, y hacerlo con antelación significa que todo el ciclo de vida ya ha pasado por tu sistema, así que cuando aumente el tráfico, sabrás que funciona."),
+            RES("Resultado", "captas ventas que, de otro modo, perderías, proteges el valor medio de tus pedidos y llegas a la temporada alta con una combinación de pagos adaptada a la temporada."),
           ]),
           tipB("Haz que el pago desde el móvil y con monederos electrónicos sea sencillo", [
             PB("Si solo vas a arreglar una cosa antes del cuarto trimestre, que sea el móvil. Antes de la temporada alta, prueba todo el proceso de pago en un dispositivo móvil real, no solo en la vista previa del ordenador. Empieza por la página del producto y recorre todo el proceso hasta la confirmación del pago. Busca cada toque, campo o carga de página adicional que pueda ralentizar al comprador."),
@@ -941,21 +944,21 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
               "Prueba los procesos de error y los planes alternativos. Si falla un pago con tarjeta, asegúrate de que el comprador pueda probar fácilmente otro método de pago sin tener que empezar de cero.",
               "Comprueba la experiencia de confirmación. La página de confirmación del pago y el correo electrónico deben ser inmediatos, claros y adaptados a dispositivos móviles.",
             ),
-            BOX("Lo que debes hacer", "prueba tu proceso de pago en móvil antes de la temporada alta, elimina campos y pasos innecesarios, y asegúrate de que los monederos electrónicos, los datos guardados, el pago como invitado y las opciones alternativas funcionen a la perfección."),
-            BOX("Resultado", "te acercas a los compradores allí donde ya están, en el móvil, y eliminas las fricciones que, sin que te des cuenta, te están costando ventas."),
+            DO("Lo que debes hacer", "prueba tu proceso de pago en móvil antes de la temporada alta, elimina campos y pasos innecesarios, y asegúrate de que los monederos electrónicos, los datos guardados, el pago como invitado y las opciones alternativas funcionen a la perfección."),
+            RES("Resultado", "te acercas a los compradores allí donde ya están, en el móvil, y eliminas las fricciones que, sin que te des cuenta, te están costando ventas."),
           ]),
           tipB("Reduce las fricciones para tus clientes más fieles", [
             PB("Tus clientes más fieles y de mayor valor son los que más se quedan contigo, y es casi seguro que comprarán durante las horas punta. Lo último que quieres es frustrarlos con obstáculos innecesarios justo en el momento en que tienes menos tiempo para solucionarlo."),
             PB("Si utilizas una plataforma de prevención de fraude o de gestión de riesgos para filtrar los pagos, las listas de clientes de confianza te ayudan a identificar a los clientes de alto valor, de modo que sus pagos tengan menos probabilidades de verse afectados por los controles estacionales más estrictos."),
-            BOX("Lo que deberías hacer", "actualiza tu lista. Asegúrate de que todos los clientes habituales y de alto valor estén en ella, y de que esté totalmente al día."),
-            BOX("Resultado", "tus mejores clientes pasan por caja sin problemas, se sienten valorados en tu momento de mayor actividad y siguen volviendo mucho después de que termine el periodo promocional."),
+            DO("Lo que deberías hacer", "actualiza tu lista. Asegúrate de que todos los clientes habituales y de alto valor estén en ella, y de que esté totalmente al día."),
+            RES("Resultado", "tus mejores clientes pasan por caja sin problemas, se sienten valorados en tu momento de mayor actividad y siguen volviendo mucho después de que termine el periodo promocional."),
           ]),
           tipB("Avisa a tu PSP si vas a hacer algo excepcional", [
             PB("Aquí tienes un consejo de experto que la mayoría de los comerciantes pasan por alto."),
             PB("Tu socio de pagos se prepara cada año para los picos de actividad. Por ejemplo, en Mollie, ampliamos nuestra infraestructura para el aumento de tráfico de fin de año. Pero no podemos prepararnos para lo que no sabemos."),
             PB("Durante los picos, estamos en alerta máxima ante el fraude, y las reglas de velocidad que te protegen durante todo el año pueden bloquear accidentalmente un aumento legítimo de las ventas. Avísanos con antelación y nos aseguraremos de que la configuración sea la adecuada antes de que lo pongas en marcha."),
-            BOX("Lo que debes hacer", "si este es el año en el que vas a lanzar una edición limitada o vas a apostar fuerte por una venta relámpago durante la temporada alta, avisa a tu PSP."),
-            BOX("Resultado", "tu gran momento saldrá a la perfección, sin que se bloqueen ventas legítimas en el momento crucial."),
+            DO("Lo que debes hacer", "si este es el año en el que vas a lanzar una edición limitada o vas a apostar fuerte por una venta relámpago durante la temporada alta, avisa a tu PSP."),
+            RES("Resultado", "tu gran momento saldrá a la perfección, sin que se bloqueen ventas legítimas en el momento crucial."),
           ]),
           tipB("Perfecciona la experiencia tras el pago", [
             PB("El pago no termina al finalizar la compra, pero la experiencia posterior al pago suele pasarse por alto. Durante la temporada alta, los compradores están nerviosos; quieren sus productos y los quieren a tiempo."),
@@ -966,8 +969,8 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
               "Indica claramente dónde está tu canal de atención al cliente. Guía a los clientes al lugar adecuado y tu tasa de consultas se mantendrá baja.",
               "Comunica el estado de los pedidos con regularidad. En esta época del año, podría decirse que la comunicación nunca es excesiva. La gente solo quiere saber que las cosas avanzan.",
             ),
-            BOX("Lo que debes hacer", "asegúrate de que tus comunicaciones con los clientes sean claras y fáciles de seguir."),
-            BOX("Resultado", "tranquilizas a los compradores de regalos nerviosos, reduces los costes de atención al cliente y conviertes una temporada estresante en un motivo para que vuelvan a confiar en ti el año que viene."),
+            DO("Lo que debes hacer", "asegúrate de que tus comunicaciones con los clientes sean claras y fáciles de seguir."),
+            RES("Resultado", "tranquilizas a los compradores de regalos nerviosos, reduces los costes de atención al cliente y conviertes una temporada estresante en un motivo para que vuelvan a confiar en ti el año que viene."),
           ]),
           tipB("Deja que Mollie optimice tus pagos en segundo plano", [
             PB("Una única plataforma de pagos unificada centraliza tus operaciones: una sola ventana para gestionarlo todo, supervisar el rendimiento y mantener la eficiencia cuando menos te puedes permitir estar pendiente de las transacciones."),
@@ -977,7 +980,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
               "Mollie Checkout: adapta automáticamente tus métodos de pago a cada mercado, para que los compradores vean opciones familiares en un formato que les resulte reconocible.",
               "Panel de control unificado: identifica a tus clientes en todos los canales, conectando la actividad en tienda y online para casos de uso avanzados.",
             ),
-            BOX("Resultado", "consigues un mejor rendimiento de los pagos durante los picos de actividad, porque Mollie se encarga de optimizarlo todo en segundo plano por ti."),
+            RES("Resultado", "consigues un mejor rendimiento de los pagos durante los picos de actividad, porque Mollie se encarga de optimizarlo todo en segundo plano por ti."),
           ]),
         ],
       }],

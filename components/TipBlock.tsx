@@ -39,10 +39,18 @@ function TipRich({ blocks, accent, ui }: { blocks: TipBlockT[]; accent: string; 
           );
         }
         if (b.kind === "callout") {
+          const tone = b.variant === "do" ? "#2965FE" : b.variant === "result" ? "#1E9E63" : accent;
+          const iconName = b.variant === "do" ? "check" : "spark";
+          const text = b.text ? b.text.charAt(0).toUpperCase() + b.text.slice(1) : b.text;
           return (
-            <div key={i} style={{ margin: 0, background: tint(accent, 0.05), border: `1px solid ${P.p200}`, borderLeft: `3px solid ${accent}`, borderRadius: 8, padding: "18px 20px" }}>
-              {b.heading ? <div style={{ fontFamily: DISP, fontWeight: 600, fontSize: 15, color: P.p950, marginBottom: 8 }}>{b.heading}</div> : null}
-              <p style={{ fontFamily: BODY, fontSize: 14, lineHeight: 1.65, color: P.p800, margin: 0, textWrap: "pretty" }}>{inline(b.text)}</p>
+            <div key={i} style={{ margin: 0, background: tint(tone, 0.05), border: `1px solid ${P.p200}`, borderLeft: `3px solid ${tone}`, borderRadius: 8, padding: "18px 20px" }}>
+              {b.heading ? (
+                <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 8 }}>
+                  <Icon name={iconName} color={tone} size={16} />
+                  <span style={{ fontFamily: DISP, fontWeight: 600, fontSize: 15, color: P.p950 }}>{b.heading}</span>
+                </div>
+              ) : null}
+              <p style={{ fontFamily: BODY, fontSize: 14, lineHeight: 1.65, color: P.p800, margin: 0, textWrap: "pretty" }}>{inline(text)}</p>
               {b.href ? (
                 <a href={b.href} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 5, marginTop: 10, fontFamily: BODY, fontSize: 13, fontWeight: 600, color: accent, textDecoration: "none" }}>
                   {ui.viewCaseStudy}
