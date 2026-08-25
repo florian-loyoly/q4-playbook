@@ -420,10 +420,33 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       teaser: "Hit your SLAs when ticket volume triples, without letting CSAT slip.",
       keyStat: { value: 24, unit: "%", prefix: "+", label: "CSAT when peak tickets are deflected with self-serve answers", source: "Helply benchmark, 2025" },
       partners: [{
-        name: "Aliqua Enim", pitch: "Support automation and help center.", url: "#",
+        name: "Gorgias",
+        logo: "/assets/partners/gorgias-logo.svg",
+        pitch: "Gorgias is the Conversational AI platform for ecommerce that drives sales and resolves support inquiries. Trusted by over 15,000 ecommerce brands, Gorgias supports growing independent shops to globally recognizable brands.",
+        url: "https://www.gorgias.com/",
+        author: { name: "Theo Burns", role: "Senior Technology Partner Manager", photo: "/assets/partners/gorgias-author.jpg" },
+        keyStat: { statement: "42% of consumers will pay more for a friendly, welcoming customer experience, and 32% will leave a brand they love after just one bad experience.", highlight: "42%", source: "Customer Service Statistics: 33 Key Stats for 2026, Shopify", sourceUrl: "https://www.shopify.com/blog/customer-service-statistics" },
         tips: [
-          tip("Consectetur adipiscing elit", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
-          tip("Sed do eiusmod tempor incididunt", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
+          tip("Publish your Q4 knowledge now and refine it with live feedback", [
+            "Push your holiday shipping, returns, gift-policy, and promo-code guidance live today while traffic is still manageable. Then run a 15-minute weekly review of AI handovers and merchant knowledge feedback as volume slowly climbs.",
+            "With V3 of our AI Agent having just been released, use its sharper reasoning to test nuanced seasonal answers now; small guidance tweaks tend to have a bigger impact on V3, so early feedback pays off even more.",
+          ]),
+          tip("Use Gaia as your weekly AI Agent QA partner", [
+            "Ask Gaia to audit your AI Agent setup before peak season: review recent handovers, flag missing guidances, and draft answers for your top seasonal intents.",
+            "Run this as a 20-minute weekly ritual; small fixes in September and October compound into much lower handover rates when Black Friday hits.",
+          ]),
+          tip("Staff humans for exceptions, not volume", [
+            "Use AI coverage for predictable Q4 intents (order status, returns, shipping, and stock checks) so your human team can handle exceptions, VIP complaints, and edge-case product advice.",
+            "Build a simple escalation playbook by topic: if the AI hands over on \"damaged item\" or \"wrong order,\" route directly to your most experienced agents.",
+          ]),
+          tip("Train your human team to own the handover moment", [
+            "When the AI hands over, the agent should see the full transcript, intent, and what was already tried, never make the shopper repeat themselves.",
+            "Run a pre-Q4 bootcamp on your top handover scenarios (damaged items, wrong orders, VIP complaints, complex product advice) and practice reading handover context under time pressure. On V3, handovers carry richer context, so agents who know how to read it keep FRT after AI handover low and CSAT high even when queues spike.",
+          ]),
+          tip("Get comfortable with the new Shopping Assistant revenue metrics before peak", [
+            "Add \"revenue per interaction\" and \"time to purchase\" to your weekly analytics review now, while traffic is still low enough to learn from.",
+            "Use revenue per interaction to spot which conversation starters, product recommendations, or discount offers actually drive checkout, and use time to purchase to identify where shoppers stall. On V3, these metrics are especially useful because the newer architecture supports more natural, multi-turn sales conversations.",
+          ]),
         ],
       }],
     },
@@ -1002,10 +1025,33 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       teaser: "Cumple tus SLA cuando el volumen de tickets se triplica, sin sacrificar la satisfacción.",
       keyStat: { value: 24, unit: "%", prefix: "+", label: "de CSAT cuando los tickets de pico se desvían a self-service", source: "Benchmark Ayudame, 2025" },
       partners: [{
-        name: "Aliqua Enim", pitch: "Automatización de soporte y centro de ayuda.", url: "#",
+        name: "Gorgias",
+        logo: "/assets/partners/gorgias-logo.svg",
+        pitch: "Gorgias es la plataforma de IA conversacional para ecommerce que impulsa las ventas y resuelve las consultas de soporte. Con la confianza de más de 15 000 marcas de ecommerce, Gorgias acompaña desde tiendas independientes en crecimiento hasta marcas reconocidas mundialmente.",
+        url: "https://www.gorgias.com/",
+        author: { name: "Theo Burns", role: "Senior Technology Partner Manager", photo: "/assets/partners/gorgias-author.jpg" },
+        keyStat: { statement: "El 42 % de los consumidores pagará más por una experiencia de atención al cliente amable y acogedora, y el 32 % abandonará una marca que adora tras una sola mala experiencia.", highlight: "42 %", source: "Customer Service Statistics: 33 Key Stats for 2026, Shopify", sourceUrl: "https://www.shopify.com/blog/customer-service-statistics" },
         tips: [
-          tip("Consectetur adipiscing elit", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
-          tip("Sed do eiusmod tempor incididunt", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
+          tip("Publica ya tu conocimiento de Q4 y perfecciónalo con feedback en directo", [
+            "Publica hoy tus indicaciones sobre envíos navideños, devoluciones, política de regalos y códigos promocionales, mientras el tráfico todavía es manejable. Luego, a medida que el volumen sube poco a poco, dedica 15 minutos semanales a revisar los traspasos de la IA y el feedback sobre el conocimiento del comercio.",
+            "Con la V3 de nuestro Agente de IA recién lanzada, aprovecha su razonamiento más afinado para probar ahora respuestas estacionales más matizadas; los pequeños ajustes de las indicaciones suelen tener un mayor impacto en la V3, así que el feedback temprano compensa aún más.",
+          ]),
+          tip("Usa Gaia como tu partner semanal de control de calidad del Agente de IA", [
+            "Pide a Gaia que audite la configuración de tu Agente de IA antes de la temporada alta: que revise los traspasos recientes, señale las indicaciones que faltan y redacte respuestas para tus principales intenciones estacionales.",
+            "Conviértelo en un ritual semanal de 20 minutos; las pequeñas correcciones de septiembre y octubre se acumulan y se traducen en tasas de traspaso mucho más bajas cuando llega el Black Friday.",
+          ]),
+          tip("Dedica a las personas a las excepciones, no al volumen", [
+            "Usa la cobertura de la IA para las intenciones previsibles del cuarto trimestre (estado del pedido, devoluciones, envíos y comprobaciones de stock) para que tu equipo humano pueda ocuparse de las excepciones, las reclamaciones de clientes VIP y los consejos de producto más específicos.",
+            "Crea un manual de escalado sencillo por tema: si la IA traspasa un caso de «artículo dañado» o «pedido incorrecto», dirígelo directamente a tus agentes más experimentados.",
+          ]),
+          tip("Forma a tu equipo humano para que domine el momento del traspaso", [
+            "Cuando la IA traspasa la conversación, el agente debería ver la transcripción completa, la intención y lo que ya se ha intentado, sin obligar nunca al comprador a repetirse.",
+            "Organiza un bootcamp previo al cuarto trimestre sobre tus principales escenarios de traspaso (artículos dañados, pedidos incorrectos, reclamaciones VIP, consejos de producto complejos) y practica la lectura del contexto del traspaso bajo presión de tiempo. En la V3, los traspasos incluyen un contexto más rico, así que los agentes que saben interpretarlo mantienen bajo el FRT tras el traspaso de la IA y alto el CSAT, incluso cuando las colas se disparan.",
+          ]),
+          tip("Familiarízate con las nuevas métricas de ingresos del Shopping Assistant antes del pico", [
+            "Añade ahora «ingresos por interacción» y «tiempo hasta la compra» a tu revisión semanal de analítica, mientras el tráfico aún es lo bastante bajo como para aprender de él.",
+            "Usa los ingresos por interacción para detectar qué iniciadores de conversación, recomendaciones de producto u ofertas de descuento impulsan realmente el checkout, y usa el tiempo hasta la compra para identificar dónde se atascan los compradores. En la V3, estas métricas son especialmente útiles porque la nueva arquitectura permite conversaciones de venta más naturales y de varios turnos.",
+          ]),
         ],
       }],
     },
