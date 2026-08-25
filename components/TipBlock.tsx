@@ -5,6 +5,12 @@ import { Reveal } from "./Reveal";
 
 const paraStyle = { fontFamily: BODY, fontSize: 15, lineHeight: 1.65, color: P.p800, margin: "0 0 14px", textWrap: "pretty" as const };
 
+// Render inline **bold** markers within body copy as <strong>.
+function inline(text: string) {
+  if (!text.includes("**")) return text;
+  return text.split(/\*\*(.+?)\*\*/g).map((seg, i) => (i % 2 === 1 ? <strong key={i} style={{ fontWeight: 600, color: P.p950 }}>{seg}</strong> : seg));
+}
+
 // Renders a tip's rich content: paragraphs, bullet lists, pull quotes, and
 // boxed callouts (e.g. a client example), in author order.
 function TipRich({ blocks, accent, ui }: { blocks: TipBlockT[]; accent: string; ui: UIStrings }) {
@@ -19,7 +25,7 @@ function TipRich({ blocks, accent, ui }: { blocks: TipBlockT[]; accent: string; 
               {b.items.map((it, j) => (
                 <li key={j} style={{ display: "flex", gap: 12, alignItems: "flex-start", fontFamily: BODY, fontSize: 15, lineHeight: 1.55, color: P.p800 }}>
                   <span aria-hidden="true" style={{ flexShrink: 0, width: 6, height: 6, borderRadius: 999, background: accent, marginTop: 8 }} />
-                  <span>{it}</span>
+                  <span>{inline(it)}</span>
                 </li>
               ))}
             </ul>
@@ -36,7 +42,7 @@ function TipRich({ blocks, accent, ui }: { blocks: TipBlockT[]; accent: string; 
           return (
             <div key={i} style={{ margin: 0, background: tint(accent, 0.05), border: `1px solid ${P.p200}`, borderLeft: `3px solid ${accent}`, borderRadius: 8, padding: "18px 20px" }}>
               {b.heading ? <div style={{ fontFamily: DISP, fontWeight: 600, fontSize: 15, color: P.p950, marginBottom: 8 }}>{b.heading}</div> : null}
-              <p style={{ fontFamily: BODY, fontSize: 14, lineHeight: 1.65, color: P.p800, margin: 0, textWrap: "pretty" }}>{b.text}</p>
+              <p style={{ fontFamily: BODY, fontSize: 14, lineHeight: 1.65, color: P.p800, margin: 0, textWrap: "pretty" }}>{inline(b.text)}</p>
               {b.href ? (
                 <a href={b.href} target="_blank" rel="noopener noreferrer" style={{ display: "inline-flex", alignItems: "center", gap: 5, marginTop: 10, fontFamily: BODY, fontSize: 13, fontWeight: 600, color: accent, textDecoration: "none" }}>
                   {ui.viewCaseStudy}
@@ -48,7 +54,7 @@ function TipRich({ blocks, accent, ui }: { blocks: TipBlockT[]; accent: string; 
         }
         return (
           <p key={i} style={{ ...paraStyle, margin: 0 }}>
-            {b.text}
+            {inline(b.text)}
           </p>
         );
       })}
@@ -104,7 +110,7 @@ export function TipBlock({ step, partner, pi, ui, limit }: { step: Step; partner
                 ) : (
                   tp.paragraphs.map((pg, gi) => (
                     <p key={gi} style={paraStyle}>
-                      {pg}
+                      {inline(pg)}
                     </p>
                   ))
                 )}
