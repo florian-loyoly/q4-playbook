@@ -244,7 +244,11 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       teaser: "Make your ROAS work even when CPMs spike and everyone is bidding you up.",
       keyStat: { value: 38, unit: "%", prefix: "+", label: "higher ROAS for brands that pre-build Q4 audiences before November", source: "AdPeak Q4 benchmark, 2025" },
       partners: [{
-        name: "Lorem Ipsum", pitch: "Paid acquisition, tuned for peak season.", url: "#",
+        name: "Brave",
+        logo: "/assets/partners/brave-logo.png",
+        pitch: "We help eCommerce brands grow with connected experiences, turning SEO, Paid Media, CRO and email into one seamless journey.",
+        url: "https://brave.agency/",
+        noAuthor: true,
         tips: [
           tip("Lorem ipsum dolor sit amet", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."], [V("Lorem ipsum")]),
           tip("Consectetur adipiscing elit", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."], [V("Lorem ipsum")]),
@@ -737,7 +741,11 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       teaser: "Afficher une date de livraison crédible et la tenir, même quand les volumes explosent.",
       keyStat: { value: 31, unit: "%", prefix: "+", label: "d'intention de rachat quand la promesse de livraison est tenue en période de pic", source: "Indice Cargoo, 2025" },
       partners: [{
-        name: "Dolore Magna", pitch: "Orchestration de livraison et suivi.", url: "#",
+        name: "Shippingbo",
+        logo: "/assets/partners/shippingbo-logo.png",
+        pitch: "Shippingbo est une solution SaaS française dédiée à la logistique e-commerce, réunissant trois modules : un OMS pour centraliser les commandes, un WMS pour la gestion d'entrepôt et un TMS pour les expéditions multi-transporteurs. Elle s'intègre à plus de 300 plateformes (Amazon, Shopify, Colissimo, etc.) et est utilisée par plus de 1 000 marchands.",
+        url: "https://www.shippingbo.com/",
+        noAuthor: true,
         tips: [
           tip("Duis aute irure dolor", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
           tip("Lorem ipsum dolor sit amet", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
@@ -888,7 +896,11 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       teaser: "Transformer chaque retour en réachat et protéger votre marge une fois le pic passé.",
       keyStat: { value: 92, unit: "%", prefix: "", label: "des acheteurs rachètent après une expérience de retour simple", source: "Enquête Retourna, 2025" },
       partners: [{
-        name: "Veniam Quis", pitch: "Retours et échanges en self-service.", url: "#",
+        name: "Baback",
+        logo: "/assets/partners/baback-logo.png",
+        pitch: "La plateforme de gestion des retours qui protège vos marges et fidélise vos clients.",
+        url: "https://baback.co/fr",
+        noAuthor: true,
         tips: [
           tip("Quis nostrud exercitation ullamco", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
           tip("Duis aute irure dolor", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
@@ -1013,7 +1025,11 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       teaser: "Muestra una fecha de entrega creíble y cúmplela, aunque los volúmenes se disparen.",
       keyStat: { value: 31, unit: "%", prefix: "+", label: "de intención de recompra cuando se cumple la promesa de entrega en pico", source: "Índice Enviaya, 2025" },
       partners: [{
-        name: "Dolore Magna", pitch: "Orquestación de entrega y seguimiento.", url: "#",
+        name: "Amphora",
+        logo: "/assets/partners/amphora-logo.png",
+        pitch: "Externaliza la logística de tu ecommerce con Amphora, el operador logístico que centraliza fulfillment, almacenes, envíos y tecnología en una única plataforma diseñada para escalar tu ecommerce con mayor eficiencia, visibilidad y alcance internacional.",
+        url: "https://amphoralogistics.com/es",
+        noAuthor: true,
         tips: [
           tip("Duis aute irure dolor", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
           tip("Lorem ipsum dolor sit amet", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
@@ -1092,7 +1108,11 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       teaser: "Convierte cada devolución en una recompra y protege tu margen una vez pasado el pico.",
       keyStat: { value: 92, unit: "%", prefix: "", label: "de los compradores vuelven a comprar tras una devolución sencilla", source: "Encuesta Devolvia, 2025" },
       partners: [{
-        name: "Veniam Quis", pitch: "Devoluciones y cambios en self-service.", url: "#",
+        name: "Sendcloud",
+        logo: "/assets/partners/sendcloud-logo.webp",
+        pitch: "Sendcloud es una plataforma de envíos para e-commerce que conecta tu tienda online con múltiples transportistas y automatiza etiquetas, seguimiento y devoluciones desde un solo panel. Con integraciones nativas para plataformas como Shopify, ayuda a las marcas a optimizar su logística y mejorar la experiencia post-compra.",
+        url: "https://www.sendcloud.com/es/",
+        noAuthor: true,
         tips: [
           tip("Quis nostrud exercitation ullamco", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
           tip("Duis aute irure dolor", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
