@@ -421,7 +421,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       keyStat: { value: 24, unit: "%", prefix: "+", label: "CSAT when peak tickets are deflected with self-serve answers", source: "Helply benchmark, 2025" },
       partners: [{
         name: "Gorgias",
-        logo: "/assets/partners/gorgias-logo.svg",
+        logo: "/assets/partners/gorgias-logo.png",
         pitch: "Gorgias is the Conversational AI platform for ecommerce that drives sales and resolves support inquiries. Trusted by over 15,000 ecommerce brands, Gorgias supports growing independent shops to globally recognizable brands.",
         url: "https://www.gorgias.com/",
         author: { name: "Theo Burns", role: "Senior Technology Partner Manager", photo: "/assets/partners/gorgias-author.jpg" },
@@ -1026,7 +1026,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       keyStat: { value: 24, unit: "%", prefix: "+", label: "de CSAT cuando los tickets de pico se desvían a self-service", source: "Benchmark Ayudame, 2025" },
       partners: [{
         name: "Gorgias",
-        logo: "/assets/partners/gorgias-logo.svg",
+        logo: "/assets/partners/gorgias-logo.png",
         pitch: "Gorgias es la plataforma de IA conversacional para ecommerce que impulsa las ventas y resuelve las consultas de soporte. Con la confianza de más de 15 000 marcas de ecommerce, Gorgias acompaña desde tiendas independientes en crecimiento hasta marcas reconocidas mundialmente.",
         url: "https://www.gorgias.com/",
         author: { name: "Theo Burns", role: "Senior Technology Partner Manager", photo: "/assets/partners/gorgias-author.jpg" },
