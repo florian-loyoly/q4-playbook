@@ -637,7 +637,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
             "51 % des consommateurs ont déclaré préférer faire leurs achats en magasin pendant le Black Friday 2025, souvent après avoir repéré le produit en ligne (Bilan Black Friday 2025, Payplug).",
             "Pour éviter la file d'attente aux heures de pointe, équipez vos vendeurs d'un encaissement mobile (SoftPOS / Tap to Pay) qui permet de finaliser la vente directement en rayon, en cabine d'essayage, ou là où se trouve le client plutôt qu'uniquement à la caisse.",
             "Avec le SoftPOS, l'encaissement n'est plus un lieu fixe mais une fonction mobile : chaque vendeur devient capable de finaliser une transaction à tout moment. Le marché mondial du SoftPOS doit plus que tripler d'ici 2034, signe que cet usage devient un standard plutôt qu'un simple gadget (Fortune Business Insights).",
-          ]),
+          ], [V("Payplug", "/assets/partners/FR-payment-checkout-payplug-tip4.jpg")]),
           tip("Appuyez-vous sur l'IA pour gagner du temps en SAV et limiter les risques d'erreur", [
             "Pendant le BFCM, la précipitation du rush peut vite transformer chaque manipulation manuelle en risque d'erreur, alors que votre trafic peut être multiplié par 5, 10, voire 15 en quelques minutes (Payplug, \"MCP PrestaShop : pilotez vos commandes et vos paiements avec l'IA\", juillet 2026).",
             "Pour y faire face, l'IA peut vous assister dans la gestion commerciale et celle du service client. Avec le Model Context Protocol (MCP) Payplug, votre assistant IA devient un véritable copilote financier, capable de générer un lien de paiement ou de déclencher un remboursement en langage naturel.",
