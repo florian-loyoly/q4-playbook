@@ -40,8 +40,8 @@ function TipRich({ blocks, accent, ui }: { blocks: TipBlockT[]; accent: string; 
         }
         if (b.kind === "table") {
           return (
-            <div key={i} style={{ overflowX: "auto", border: `1px solid ${P.p200}`, borderRadius: 8 }}>
-              <table style={{ width: "100%", borderCollapse: "collapse", fontFamily: BODY, fontSize: 14 }}>
+            <div key={i} style={{ width: "fit-content", maxWidth: "100%", overflowX: "auto", border: `1px solid ${P.p200}`, borderRadius: 8 }}>
+              <table style={{ width: "auto", borderCollapse: "collapse", fontFamily: BODY, fontSize: 14 }}>
                 <thead>
                   <tr>
                     {b.headers.map((h, hi) => (
@@ -73,8 +73,9 @@ function TipRich({ blocks, accent, ui }: { blocks: TipBlockT[]; accent: string; 
           );
         }
         if (b.kind === "callout") {
-          const tone = b.variant === "do" ? "#2965FE" : b.variant === "result" ? "#1E9E63" : accent;
-          const iconName = b.variant === "do" ? "check" : "spark";
+          const TONES: Record<string, string> = { blue: "#2965FE", green: "#1E9E63", amber: "#B9791C", pink: "#F74F9E" };
+          const tone = b.variant === "do" ? TONES.blue : b.variant === "result" ? TONES.green : b.tone ? TONES[b.tone] : accent;
+          const iconName = b.icon ? b.icon : b.variant === "do" ? "check" : "spark";
           const text = b.text ? b.text.charAt(0).toUpperCase() + b.text.slice(1) : b.text;
           return (
             <div key={i} style={{ margin: 0, background: tint(tone, 0.05), border: `1px solid ${P.p200}`, borderLeft: `3px solid ${tone}`, borderRadius: 8, padding: "18px 20px" }}>
