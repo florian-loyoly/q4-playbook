@@ -490,7 +490,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
     },
     "loyalty-engagement": {
       title: "Loyalty & Engagement",
-      teaser: "Turn Q4 deal-hunters into loyal members and advocates who buy again.",
+      teaser: "Stop burning margin on low-LTV deal-hunters and make BFCM a channel that recruits cohorts who come back.",
       keyStat: { value: 40, unit: "", prefix: "+", label: "engagement mechanics to reward every meaningful action after purchase", source: "Loyoly platform, 2026" },
       partners: [{
         name: "Loyoly", pitch: "The #1 post-purchase engagement platform for ecommerce brands.", url: "https://loyoly.io",
@@ -880,7 +880,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
     },
     "loyalty-engagement": {
       title: "Fidélisation & Engagement",
-      teaser: "Convertir les chasseurs de promo du Q4 en membres fidèles et en ambassadeurs qui rachètent.",
+      teaser: "Arrêter de sacrifier sa marge sur des chasseurs de promo à faible LTV, et faire du BFCM un canal qui recrute des cohortes qui reviennent.",
       keyStat: { value: 40, unit: "", prefix: "+", label: "mécaniques d'engagement pour récompenser chaque action utile après l'achat", source: "Plateforme Loyoly, 2026" },
       partners: [{
         name: "Loyoly", pitch: "La plateforme n°1 d'engagement post-achat pour les marques e-commerce.", url: "https://loyoly.io",
@@ -1092,7 +1092,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
     },
     "loyalty-engagement": {
       title: "Fidelización & Engagement",
-      teaser: "Convierte a los cazadores de ofertas del Q4 en miembros fieles y embajadores que recompran.",
+      teaser: "Deja de quemar margen con cazadores de ofertas de bajo LTV y haz del BFCM un canal que recluta cohortes que vuelven.",
       keyStat: { value: 40, unit: "", prefix: "+", label: "mecánicas de engagement para recompensar cada acción útil tras la compra", source: "Plataforma Loyoly, 2026" },
       partners: [{
         name: "Loyoly", pitch: "La plataforma n.º 1 de engagement post-compra para marcas de ecommerce.", url: "https://loyoly.io",
