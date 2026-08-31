@@ -12,7 +12,9 @@ export type TipBlock =
   | { kind: "p"; text: string }
   | { kind: "list"; items: string[] }
   | { kind: "quote"; text: string }
-  | { kind: "callout"; heading?: string; text: string; href?: string; variant?: "do" | "result" };
+  | { kind: "callout"; heading?: string; text: string; href?: string; variant?: "do" | "result" }
+  | { kind: "subheading"; text: string }
+  | { kind: "table"; headers: string[]; rows: string[][]; caption?: string };
 
 export type Tip = {
   title: string;

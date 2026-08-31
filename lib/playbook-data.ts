@@ -230,6 +230,8 @@ const BOX = (heading: string, text: string, href?: string): TipBlock => ({ kind:
 // Action / result callouts (distinct icon + colour).
 const DO = (heading: string, text: string): TipBlock => ({ kind: "callout", heading, text, variant: "do" });
 const RES = (heading: string, text: string): TipBlock => ({ kind: "callout", heading, text, variant: "result" });
+const SUB = (text: string): TipBlock => ({ kind: "subheading", text });
+const TBL = (headers: string[], rows: string[][], caption?: string): TipBlock => ({ kind: "table", headers, rows, caption });
 
 type StepContent = { title: string; teaser: string; keyStat: KeyStat; partners: Partner[] };
 
@@ -493,11 +495,77 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       teaser: "Stop burning margin on low-LTV deal-hunters and make BFCM a channel that recruits cohorts who come back.",
       keyStat: { value: 40, unit: "", prefix: "+", label: "engagement mechanics to reward every meaningful action after purchase", source: "Loyoly platform, 2026" },
       partners: [{
-        name: "Loyoly", pitch: "The #1 post-purchase engagement platform for ecommerce brands.", url: "https://loyoly.io",
+        name: "Loyoly",
+        pitch: "The #1 post-purchase engagement platform for ecommerce brands.",
+        url: "https://www.loyoly.io/",
+        author: { name: "Joseph Aubry", role: "CEO & Co-founder", photo: "/assets/partners/loyoly-author.jpg" },
         tips: [
-          tip("Consectetur adipiscing elit", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
-          tip("Sed do eiusmod tempor incididunt", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
-          tip("Ut enim ad minim veniam", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
+          tipB("Calibrate your program before November", [
+            PB("Before you segment anything, your program has to be tuned to drive incremental revenue without eroding margin. A badly calibrated program is expensive and underdelivers on results. This is the foundation everything else sits on."),
+            SUB("a. Set your cashback rate."),
+            PB("Find the balance between purchase incentive and margin protection."),
+            PB("How it computes: a customer spends £100 and earns 100 points (1 point per £1); 100 points convert to £10 in rewards (10 points = £1), so a 10% cashback rate."),
+            TBL(["Gross margin", "Cashback rate"], [["Under 40%", "5 to 7%"], ["40 to 60%", "8 to 12%"], ["60 to 80%", "12 to 18%"], ["Over 80%", "18 to 25%"]], "The figures above are indicative averages by gross-margin band, not fixed rules: treat them as a starting point and adjust to your own margins and repurchase economics."),
+            SUB("b. Set redemption thresholds (minimum spend)."),
+            PB("The minimum spend to redeem should sit above your AOV. Below it, the reward just finances a purchase you already had, with zero incremental revenue. Track your gross margin on each reward to set the threshold."),
+            PB("Example: AOV £150, set the minimum around £180, adjusted for the reward's margin."),
+            SUB("c. Set reward expiration windows."),
+            PB("An open-ended reward sits idle and does no work. Give it a deadline short enough to pull the next order forward, benchmarked against your own repurchase cycle rather than an arbitrary date."),
+            PB("Example: if your average time between orders is 6 months, expire rewards after 3 to 4 months. You create urgency ahead of the natural repurchase cycle, so the reward drives a purchase instead of waiting for one."),
+            SUB("d. Define your VIP tiers on real revenue contribution."),
+            PB("Pull your data, analyze repeat cohorts by number of orders over 12 months, and size tiers as a share of your base."),
+            TBL(["Tier", "Share of customers"], [["Gold", "5 to 10%"], ["Silver", "20 to 30%"], ["Bronze", "60 to 75%"]], "The splits above are indicative averages. Use them as a reference point and calibrate against your own cohort data."),
+          ], [V("Lorem ipsum")]),
+          tipB("Activate your existing customers before the rush", [
+            PB("In October, a lot of buyers are already sitting on their hands, waiting for Black Friday to spend. The move is to activate them before the peak. Run an \"your points expire before Black Friday\" campaign to create urgency on the points they already hold."),
+            PB("You smooth out your sales curve and bank revenue before the price war starts, without touching a single price. You also get ahead of competitors who wait for the peak to reactivate their base."),
+            PB("Automate the reminder so it fires only on members who hold a redeemable balance, and the campaign runs itself."),
+            BOX("Who to target (RFM)", "run this on the 'Potential Loyalists' segment and customers who 'Need Attention', buyers who already hold points but have gone quiet. They have a balance and a reason to act, they just lack the urgency, which the expiry deadline supplies."),
+          ], [V("Lorem ipsum")]),
+          tipB("Reward loyalty with early access and a members-only offer", [
+            PB("Open BFCM to your best customers first. Give them a 24 to 48 hour early-access window and a members-only offer they cannot get anywhere else, before the sale goes public."),
+            PB("You reward loyalty with something the public sale cannot offer, exclusivity, and you build a sense of belonging that a blanket promo never creates. It also takes pressure off the main event: a share of your peak demand converts early, so you are less exposed on the day itself. Gate the early access behind VIP tier status so the privilege feels earned, not handed out."),
+            BOX("Who to target (RFM)", "point this at your 'Champions' and/or 'Can't Lose Them' segments, your highest-value and longest-history buyers. Exclusivity only lands with people who already feel invested in the brand."),
+          ], [V("Lorem ipsum")]),
+          tipB("Boost referral value ahead of BFCM", [
+            PB("Temporarily raise the value of your referral reward and launch it a few weeks before the peak, so there is time for members to refer and for their friends to place an order before BFCM ends. Turn your happiest customers into a low-cost acquisition channel right when paid CPMs are at their worst."),
+            PB("You acquire new customers without overpaying on paid media, and every referred buyer arrives pre-qualified by someone they trust. Aim the boosted reward at customers who have already left a positive review: they are your natural advocates, so the invitation to refer reads as authentic rather than transactional."),
+            BOX("Who to target (RFM)", "run this on your 'Loyal Customers' segment, then narrow to those who have left a positive review. Proven satisfaction is the strongest predictor of a referral that actually converts."),
+          ], [V("Lorem ipsum")]),
+          tipB("Use double points as perceived value, not discount", [
+            PB("During the peak, double the points earned on every order instead of cutting prices again. The customer feels they are getting more, and your unit price stays intact."),
+            PB("You hand out more reward currency, not a lower price, so the value the customer feels never comes out of your unit economics. It also sidesteps the deeper trap of repeat discounting: training your best buyers to hold out for the next cut."),
+            PB("Keep the multiplier scoped to the BFCM window and switch it off automatically after, so it stays a peak event rather than the new baseline. Its real power shows when you pair it with the exclusive rewards in the next tip."),
+            BOX("Who to target (RFM)", "aim this at 'Potential Loyalists' and/or 'Promising buyers' segments, your active customers who are not yet VIP. These are the ones you want to move up the value ladder without a discount."),
+          ], [V("Lorem ipsum")]),
+          tipB("Make them buy to unlock, not to save", [
+            PB("Put exclusive, non-monetary BFCM rewards within reach and let customers unlock them faster during the peak. The customer buys to unlock the reward, not to chase the lowest price."),
+            PB("This shifts the motivation from beating a price to reaching a goal, which is a far stickier reason to buy. Stack it on the double-points multiplier and the reward comes within reach in just one or two orders, so the payoff feels immediate and pulls the next purchase forward."),
+            BOX("", "During BFCM, PXP distributed over 10,000 rewards, 3x its weekly average.", "https://loyoly.io/case-studies/pxp"),
+            BOX("Who to target (RFM)", "run this on your Loyal Customers, the mid-tier regulars who buy often enough to chase a reward they can nearly reach."),
+          ], [V("Lorem ipsum")]),
+          tipB("Amplify your reach with social engagement missions", [
+            PB("Reward non-purchase actions during the peak: points for commenting, sharing, and tagging friends on your BFCM posts. You turn your customer base into an organic amplification layer instead of buying more reach."),
+            PB("You extend the campaign's organic footprint without a single extra pound of media spend, and every mission feeds you first-party engagement data."),
+            BOX("", "PXP validated over 9,500 missions during BFCM week, 21x its pre-peak weekly average.", "https://loyoly.io/case-studies/pxp"),
+            BOX("Who to target (RFM)", "the whole base by default, since reach is the point here. With Loyoly you can go finer and single out customers with real social pull, for example nano and micro-influencers above a follower threshold, or members with a high social engagement rate."),
+          ], [V("Lorem ipsum")]),
+          tipB("Reactivate at-risk customers with a high-margin discount and a gift", [
+            PB("For customers drifting toward churn, lead with a discount on your high-margin products combined with a gift-with-purchase. You lift basket size and perceived value without ever cutting your unit price."),
+            PB("The offer reads as generous, which is what it takes to win back a lapsing customer, while the margin math stays in your favour. Done right, it does not just recover the order, it restarts a repeat cycle. Trigger it only on members whose recency has slipped, so you spend the incentive where reactivation is actually at stake."),
+            BOX("Who to target (RFM)", "run this on customers slipping away, your 'At Risk' and/or 'Can't Lose Them' segment. Their recency is fading, but their history is rich enough to make winning them back worth the effort."),
+          ], [V("Lorem ipsum")]),
+          tipB("Convert the BFCM cohort into a second order", [
+            PB("The BFCM cohort is where lifetime value is won or lost, and the second order is the moment that decides it. Seed it on the peak purchase itself: \"buy now, unlock a benefit on your next order\", so the incentive is already in the customer's pocket when the deal-hunting high fades."),
+            PB("You commit a first-time deal-hunter to a repeat while intent is still warm, and you set the second order in motion before January noise takes over. The benefit can be bonus points or a members reward, earned on the BFCM order and redeemable on the next one."),
+            BOX("Who to target (RFM)", "run this on your 'New Customers' segment, high recency but low frequency. With a fresh cohort, the whole job is turning order one into order two."),
+          ], [V("Lorem ipsum")]),
+          tipB("Keep November's new customers hooked", [
+            PB("Do not let your fresh BFCM buyers go cold. Engage them fast and keep them hooked through December with a short, deliberate sequence: an email reminder of their remaining points balance, a points bonus for a second order before January, and short-expiry promos to trigger a quick repurchase."),
+            PB("Each touch gives a reason to come back before the natural post-peak lull, and the short expiry windows do the urgency work for you. This is how you carry momentum across the January dip instead of watching the cohort flatten."),
+            PB("Automate the balance reminders and the second-order bonus off each member's activity so the sequence runs without manual lift."),
+            BOX("Who to target (RFM)", "run this on the 'New Customers' and/or 'Promising buyers' you picked up at the peak. December is when you decide whether the BFCM spike becomes a lasting base."),
+          ], [V("Lorem ipsum")]),
         ],
       }],
     },

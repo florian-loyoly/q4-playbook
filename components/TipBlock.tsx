@@ -31,6 +31,40 @@ function TipRich({ blocks, accent, ui }: { blocks: TipBlockT[]; accent: string; 
             </ul>
           );
         }
+        if (b.kind === "subheading") {
+          return (
+            <h4 key={i} style={{ fontFamily: DISP, fontWeight: 600, fontSize: 16, lineHeight: 1.3, letterSpacing: "-.01em", color: P.p950, margin: 0 }}>
+              {inline(b.text)}
+            </h4>
+          );
+        }
+        if (b.kind === "table") {
+          return (
+            <div key={i} style={{ overflowX: "auto", border: `1px solid ${P.p200}`, borderRadius: 8 }}>
+              <table style={{ width: "100%", borderCollapse: "collapse", fontFamily: BODY, fontSize: 14 }}>
+                <thead>
+                  <tr>
+                    {b.headers.map((h, hi) => (
+                      <th key={hi} style={{ textAlign: "left", fontWeight: 600, color: P.p900, padding: "10px 16px", background: P.bg50, borderBottom: `1px solid ${P.p200}`, whiteSpace: "nowrap" }}>{h}</th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {b.rows.map((row, ri) => (
+                    <tr key={ri}>
+                      {row.map((cell, ci) => (
+                        <td key={ci} style={{ padding: "10px 16px", color: P.p800, borderBottom: ri < b.rows.length - 1 ? `1px solid ${P.p100}` : "none" }}>{cell}</td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+              {b.caption ? (
+                <div style={{ fontFamily: BODY, fontSize: 12.5, lineHeight: 1.5, color: P.p700, padding: "10px 16px", borderTop: `1px solid ${P.p100}`, background: P.bg50 }}>{b.caption}</div>
+              ) : null}
+            </div>
+          );
+        }
         if (b.kind === "quote") {
           return (
             <blockquote key={i} style={{ margin: 0, padding: "6px 0 6px 20px", borderLeft: `3px solid ${accent}`, fontFamily: DISP, fontStyle: "italic", fontWeight: 500, fontSize: 17, lineHeight: 1.5, color: P.p900 }}>
