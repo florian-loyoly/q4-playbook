@@ -31,6 +31,15 @@ function TipRich({ blocks, accent, ui }: { blocks: TipBlockT[]; accent: string; 
             </ul>
           );
         }
+        if (b.kind === "example") {
+          const amber = "#B9791C";
+          const text = b.text ? b.text.charAt(0).toUpperCase() + b.text.slice(1) : b.text;
+          return (
+            <p key={i} style={{ margin: 0, borderLeft: `2px solid ${amber}`, paddingLeft: 14, fontFamily: BODY, fontSize: 15, lineHeight: 1.6, color: P.p800 }}>
+              <span style={{ fontWeight: 600, color: amber }}>Example:</span> {inline(text)}
+            </p>
+          );
+        }
         if (b.kind === "subheading") {
           return (
             <h4 key={i} style={{ fontFamily: DISP, fontWeight: 600, fontSize: 16, lineHeight: 1.3, letterSpacing: "-.01em", color: P.p950, margin: 0 }}>

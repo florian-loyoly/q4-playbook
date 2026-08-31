@@ -14,6 +14,7 @@ export type TipBlock =
   | { kind: "quote"; text: string }
   | { kind: "callout"; heading?: string; text: string; href?: string; variant?: "do" | "result"; tone?: "blue" | "green" | "amber" | "pink"; icon?: string }
   | { kind: "subheading"; text: string }
+  | { kind: "example"; text: string }
   | { kind: "table"; headers: string[]; rows: string[][]; caption?: string };
 
 export type Tip = {

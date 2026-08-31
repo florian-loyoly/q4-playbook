@@ -233,6 +233,7 @@ const RES = (heading: string, text: string): TipBlock => ({ kind: "callout", hea
 const TARGET = (text: string): TipBlock => ({ kind: "callout", heading: "Who to target (RFM)", text, icon: "target" });
 const EX = (heading: string, text: string): TipBlock => ({ kind: "callout", heading, text, tone: "amber", icon: "bulb" });
 const CASE = (heading: string, text: string, href: string): TipBlock => ({ kind: "callout", heading, text, href, tone: "pink", icon: "spark" });
+const EG = (text: string): TipBlock => ({ kind: "example", text });
 const SUB = (text: string): TipBlock => ({ kind: "subheading", text });
 const TBL = (headers: string[], rows: string[][], caption?: string): TipBlock => ({ kind: "table", headers, rows, caption });
 
@@ -513,10 +514,10 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
             SUB("b. Set redemption thresholds (minimum spend)."),
             PB("The minimum spend to redeem should sit above your AOV. Below it, the reward just finances a purchase you already had, with zero incremental revenue. Above it, every redemption also nudges basket size up."),
             PB("Do not overshoot either: a threshold set far above AOV feels unreachable and kills redemption altogether, which defeats the whole point of the program. Track your gross margin on each reward to set the threshold."),
-            EX("Example", "AOV £150, set the minimum around £180, adjusted for the reward's margin."),
+            EG("AOV £150, set the minimum around £180, adjusted for the reward's margin."),
             SUB("c. Set reward expiration windows."),
             PB("An open-ended reward sits idle and does no work. Give it a deadline short enough to pull the next order forward, benchmarked against your own repurchase cycle rather than an arbitrary date."),
-            EX("Example", "if your average time between orders is 6 months, expire rewards after 3 to 4 months."),
+            EG("if your average time between orders is 6 months, expire rewards after 3 to 4 months."),
             PB("Do not go too short either: an expiry that feels like a gotcha erodes trust more than it drives urgency. The aim is to nudge the next purchase just ahead of its natural timing, so the reward drives a sale instead of waiting for one."),
             SUB("d. Define your VIP tiers on real revenue contribution."),
             PB("Anchor the tiers on what customers actually contribute, not round-number spend thresholds pulled from thin air. Pull your data, analyze repeat cohorts by number of orders over 12 months, and size tiers as a share of your base."),
