@@ -523,7 +523,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
             PB("Anchor the tiers on what customers actually contribute, not round-number spend thresholds pulled from thin air. Pull your data, analyze repeat cohorts by number of orders over 12 months, and size tiers as a share of your base."),
             PB("The balance to strike is aspiration versus attainability: the top tier has to feel exclusive, yet stay reachable enough that mid-tier customers push to climb into it."),
             TBL(["Tier", "Share of customers"], [["Gold", "5 to 10%"], ["Silver", "20 to 30%"], ["Bronze", "60 to 75%"]], "The splits above are indicative averages. Use them as a reference point and calibrate against your own cohort data."),
-          ], [V("Lorem ipsum")]),
+          ]),
           tipB("Activate your existing customers before the rush", [
             PB("In October, a lot of buyers are already sitting on their hands, waiting for Black Friday to spend. The move is to activate them before the peak. Run an \"your points expire before Black Friday\" campaign to create urgency on the points they already hold."),
             PB("You smooth out your sales curve and bank revenue before the price war starts, without touching a single price. You also get ahead of competitors who wait for the peak to reactivate their base."),
@@ -539,7 +539,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
             PB("Temporarily raise the value of your referral reward and launch it a few weeks before the peak, so there is time for members to refer and for their friends to place an order before BFCM ends. Turn your happiest customers into a low-cost acquisition channel right when paid CPMs are at their worst."),
             PB("You acquire new customers without overpaying on paid media, and every referred buyer arrives pre-qualified by someone they trust. Aim the boosted reward at customers who have already left a positive review: they are your natural advocates, so the invitation to refer reads as authentic rather than transactional."),
             TARGET("run this on your 'Loyal Customers' segment, then narrow to those who have left a positive review. Proven satisfaction is the strongest predictor of a referral that actually converts."),
-          ], [V("Lorem ipsum")]),
+          ]),
           tipB("Use double points as perceived value, not discount", [
             PB("During the peak, double the points earned on every order instead of cutting prices again. The customer feels they are getting more, and your unit price stays intact."),
             PB("You hand out more reward currency, not a lower price, so the value the customer feels never comes out of your unit economics. It also sidesteps the deeper trap of repeat discounting: training your best buyers to hold out for the next cut."),
@@ -551,7 +551,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
             PB("This shifts the motivation from beating a price to reaching a goal, which is a far stickier reason to buy. Stack it on the double-points multiplier and the reward comes within reach in just one or two orders, so the payoff feels immediate and pulls the next purchase forward."),
             CASE("Case study", "During BFCM, PXP distributed over 10,000 rewards, 3x its weekly average.", "https://loyoly.io/case-studies/pxp"),
             TARGET("run this on your Loyal Customers, the mid-tier regulars who buy often enough to chase a reward they can nearly reach."),
-          ], [V("Lorem ipsum")]),
+          ]),
           tipB("Amplify your reach with social engagement missions", [
             PB("Reward non-purchase actions during the peak: points for commenting, sharing, and tagging friends on your BFCM posts. You turn your customer base into an organic amplification layer instead of buying more reach."),
             PB("You extend the campaign's organic footprint without a single extra pound of media spend, and every mission feeds you first-party engagement data."),
