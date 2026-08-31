@@ -40,27 +40,29 @@ function TipRich({ blocks, accent, ui }: { blocks: TipBlockT[]; accent: string; 
         }
         if (b.kind === "table") {
           return (
-            <div key={i} style={{ width: "fit-content", maxWidth: "100%", overflowX: "auto", border: `1px solid ${P.p200}`, borderRadius: 8 }}>
-              <table style={{ width: "auto", borderCollapse: "collapse", fontFamily: BODY, fontSize: 14 }}>
-                <thead>
-                  <tr>
-                    {b.headers.map((h, hi) => (
-                      <th key={hi} style={{ textAlign: "left", fontWeight: 600, color: P.p900, padding: "10px 16px", background: P.bg50, borderBottom: `1px solid ${P.p200}`, whiteSpace: "nowrap" }}>{h}</th>
-                    ))}
-                  </tr>
-                </thead>
-                <tbody>
-                  {b.rows.map((row, ri) => (
-                    <tr key={ri}>
-                      {row.map((cell, ci) => (
-                        <td key={ci} style={{ padding: "10px 16px", color: P.p800, borderBottom: ri < b.rows.length - 1 ? `1px solid ${P.p100}` : "none" }}>{cell}</td>
+            <div key={i}>
+              <div style={{ width: "fit-content", maxWidth: "100%", overflowX: "auto", border: `1px solid ${P.p200}`, borderRadius: 8 }}>
+                <table style={{ width: "auto", borderCollapse: "collapse", fontFamily: BODY, fontSize: 14 }}>
+                  <thead>
+                    <tr>
+                      {b.headers.map((h, hi) => (
+                        <th key={hi} style={{ textAlign: "left", fontWeight: 600, color: P.p900, padding: "10px 18px", background: P.bg50, borderBottom: `1px solid ${P.p200}`, whiteSpace: "nowrap" }}>{h}</th>
                       ))}
                     </tr>
-                  ))}
-                </tbody>
-              </table>
+                  </thead>
+                  <tbody>
+                    {b.rows.map((row, ri) => (
+                      <tr key={ri}>
+                        {row.map((cell, ci) => (
+                          <td key={ci} style={{ padding: "10px 18px", color: P.p800, whiteSpace: "nowrap", borderBottom: ri < b.rows.length - 1 ? `1px solid ${P.p100}` : "none" }}>{cell}</td>
+                        ))}
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
               {b.caption ? (
-                <div style={{ fontFamily: BODY, fontSize: 12.5, lineHeight: 1.5, color: P.p700, padding: "10px 16px", borderTop: `1px solid ${P.p100}`, background: P.bg50 }}>{b.caption}</div>
+                <div style={{ fontFamily: BODY, fontSize: 12.5, lineHeight: 1.5, color: P.p700, marginTop: 8, maxWidth: 640 }}>{b.caption}</div>
               ) : null}
             </div>
           );
