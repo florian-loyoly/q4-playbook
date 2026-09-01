@@ -6,14 +6,14 @@ import { DISP, BODY, P } from "@/lib/tokens";
 import { Icon } from "./Icon";
 import { submitLead } from "@/lib/leads";
 
-type Fields = { email: string; company: string; job: string; website: string; priority: string; consent: boolean };
+type Fields = { email: string; company: string; website: string; profile: string; orders: string; priority: string; consent: boolean };
 type Errors = Partial<Record<keyof Fields, string>>;
 
 const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 const URL_RE = /^(https?:\/\/)?([\w-]+\.)+[\w-]{2,}(\/.*)?$/;
 
 export function LeadForm({ market, steps, ui, onSuccess }: { market: MarketId; steps: Step[]; ui: UIStrings; onSuccess: (prioritySlug: string) => void }) {
-  const [form, setForm] = useState<Fields>({ email: "", company: "", job: "", website: "", priority: "", consent: false });
+  const [form, setForm] = useState<Fields>({ email: "", company: "", website: "", profile: "", orders: "", priority: "", consent: false });
   const [touched, setTouched] = useState<Partial<Record<keyof Fields, boolean>>>({});
   const [errors, setErrors] = useState<Errors>({});
   const [submitting, setSubmitting] = useState(false);
@@ -23,9 +23,10 @@ export function LeadForm({ market, steps, ui, onSuccess }: { market: MarketId; s
     if (!f.email.trim()) e.email = ui.errRequired;
     else if (!EMAIL_RE.test(f.email)) e.email = ui.errEmail;
     if (!f.company.trim()) e.company = ui.errRequired;
-    if (!f.job.trim()) e.job = ui.errRequired;
     if (!f.website.trim()) e.website = ui.errRequired;
     else if (!URL_RE.test(f.website.trim())) e.website = ui.errUrl;
+    if (!f.profile) e.profile = ui.errRequired;
+    if (f.profile === "brand" && !f.orders) e.orders = ui.errRequired;
     if (!f.priority) e.priority = ui.errRequired;
     if (!f.consent) e.consent = ui.errConsent;
     return e;
@@ -43,15 +44,16 @@ export function LeadForm({ market, steps, ui, onSuccess }: { market: MarketId; s
     const e = validate(form);
     if (Object.keys(e).length) {
       setErrors(e);
-      setTouched({ email: true, company: true, job: true, website: true, priority: true, consent: true });
+      setTouched({ email: true, company: true, website: true, profile: true, orders: true, priority: true, consent: true });
       return;
     }
     setSubmitting(true);
     const res = await submitLead({
       email: form.email.trim(),
       company: form.company.trim(),
-      job: form.job.trim(),
       website: form.website.trim(),
+      profile: form.profile,
+      orders: form.profile === "brand" ? form.orders : "",
       consent: form.consent,
       market,
       source: "Q4 Playbook 2026",
@@ -96,6 +98,65 @@ export function LeadForm({ market, steps, ui, onSuccess }: { market: MarketId; s
     );
   };
 
+  const select = (name: keyof Fields, label: string, ph: string, options: { value: string; label: string }[]) => {
+    const err = touched[name] && errors[name];
+    return (
+      <div style={{ marginBottom: 14 }}>
+        <label htmlFor={`f-${name}`} style={{ display: "block", fontFamily: BODY, fontSize: 12, fontWeight: 500, color: P.p900, marginBottom: 6 }}>
+          {label}
+        </label>
+        <div style={{ position: "relative" }}>
+          <select
+            id={`f-${name}`}
+            value={form[name] as string}
+            onChange={(e) => onField(name, e.target.value as never)}
+            onBlur={() => {
+              setTouched((t) => ({ ...t, [name]: true }));
+              setErrors(validate(form));
+            }}
+            style={{
+              appearance: "none",
+              WebkitAppearance: "none",
+              width: "100%",
+              background: "#fff",
+              border: `1px solid ${err ? P.pink : P.p200}`,
+              borderRadius: 12,
+              padding: "11px 34px 11px 14px",
+              fontFamily: BODY,
+              fontSize: 14,
+              color: form[name] ? P.p950 : P.p500,
+              cursor: "pointer",
+              boxShadow: err ? "0 0 0 3px rgba(247,79,158,.12)" : "none",
+            }}
+          >
+            <option value="" disabled>
+              {ph}
+            </option>
+            {options.map((o) => (
+              <option key={o.value} value={o.value}>
+                {o.label}
+              </option>
+            ))}
+          </select>
+          <span style={{ position: "absolute", right: 12, top: "50%", transform: "translateY(-50%)", pointerEvents: "none", display: "inline-flex" }}>
+            <Icon name="chevD" color={P.p700} size={16} />
+          </span>
+        </div>
+        {err ? <div style={{ fontFamily: BODY, fontSize: 12, color: P.pink, marginTop: 5 }}>{err}</div> : null}
+      </div>
+    );
+  };
+
+  const profileOptions = [
+    { value: "brand", label: ui.profileBrand },
+    { value: "agency", label: ui.profileAgency },
+    { value: "saas", label: ui.profileSaas },
+    { value: "media", label: ui.profileMedia },
+    { value: "other", label: ui.profileOther },
+  ];
+  const orderOptions = ["0-500", "500-1500", "1500-2500", "2500-5000", "5000-7000", "7000-12000", "12000+"].map((v) => ({ value: v, label: v }));
+  orderOptions.push({ value: "not_ecom", label: ui.ordersNotEcom });
+
   const consentErr = touched.consent && errors.consent;
 
   return (
@@ -123,8 +184,9 @@ export function LeadForm({ market, steps, ui, onSuccess }: { market: MarketId; s
 
       {field("email", ui.fieldEmail, ui.phEmail, "email")}
       {field("company", ui.fieldCompany, ui.phCompany)}
-      {field("job", ui.fieldJob, ui.phJob)}
       {field("website", ui.fieldWebsite, ui.phWebsite)}
+      {select("profile", ui.fieldProfile, ui.phSelect, profileOptions)}
+      {form.profile === "brand" ? select("orders", ui.fieldOrders, ui.phSelect, orderOptions) : null}
 
       <div style={{ marginBottom: 14 }}>
         <label htmlFor="f-priority" style={{ display: "block", fontFamily: BODY, fontSize: 12, fontWeight: 500, color: P.p900, marginBottom: 6 }}>

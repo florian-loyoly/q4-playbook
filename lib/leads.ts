@@ -3,8 +3,9 @@ import type { MarketId } from "./types";
 export type LeadPayload = {
   email: string;
   company: string;
-  job: string;
   website: string;
+  profile: string; // "I work for": brand / agency / saas / media / other
+  orders: string; // monthly orders band (only when profile === "brand", else "")
   consent: boolean;
   market: MarketId; // originating market (fr / uk / es)
   source: string; // e.g. "Q4 Playbook 2026"

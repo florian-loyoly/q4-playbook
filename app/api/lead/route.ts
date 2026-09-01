@@ -7,11 +7,13 @@ import { NextResponse } from "next/server";
 type Body = {
   email?: string;
   company?: string;
-  job?: string;
   website?: string;
+  profile?: string;
+  orders?: string;
   consent?: boolean;
   market?: string;
   source?: string;
+  priority?: string;
 };
 
 const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
@@ -27,14 +29,16 @@ export async function POST(req: Request) {
 
   const email = (body.email || "").trim();
   const company = (body.company || "").trim();
-  const job = (body.job || "").trim();
   const website = (body.website || "").trim();
+  const profile = (body.profile || "").trim();
+  const orders = (body.orders || "").trim();
 
   if (
     !EMAIL_RE.test(email) ||
     !company ||
-    !job ||
     !URL_RE.test(website) ||
+    !profile ||
+    (profile === "brand" && !orders) ||
     body.consent !== true
   ) {
     return NextResponse.json({ ok: false, error: "validation" }, { status: 422 });
@@ -43,11 +47,10 @@ export async function POST(req: Request) {
   // Simulate a short network round-trip so the UI can show its loading state.
   await new Promise((r) => setTimeout(r, 400));
 
-  // TODO HubSpot: POST the validated lead to the HubSpot Forms Submission API here
-  // (portal ID + form GUID, or a private app token). Map email/company/job/website
-  // to HubSpot properties, add a source property ("Q4 Playbook 2026"), the market
-  // of origin (fr/uk/es), and membership in the shared list. The payload above
-  // already carries everything needed for a trivial mapping.
+  // TODO HubSpot + Google Sheets: upsert the contact (email, company, website,
+  // profile / "I work for", monthly orders when profile === "brand", Q4 priority,
+  // market) and append a row to the sheet. The validated fields above carry
+  // everything needed. Secrets read from server-only env vars.
 
   return NextResponse.json({ ok: true });
 }
