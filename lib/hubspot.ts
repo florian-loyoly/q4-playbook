@@ -99,6 +99,12 @@ async function upsertContact(token: string, lead: LeadInput): Promise<string> {
   };
   const q4 = Q4_PRIORITY[lead.priority];
   if (q4) properties.q4_priority = q4;
+  if (lead.profile === "brand") {
+    // Contact property is `average_number_of_orders_per_month` (note the `of_`),
+    // distinct from the company's `average_number_orders_per_month`.
+    const orders = ORDERS[lead.orders];
+    if (orders) properties.average_number_of_orders_per_month = orders;
+  }
 
   const json = await hs(token, "/crm/v3/objects/contacts/batch/upsert", {
     method: "POST",
