@@ -45,10 +45,11 @@ export function StepScreen({ market, step, steps, ui }: { market: MarketId; step
 
   const redirectTitle = redirectSlug ? steps.find((s) => s.slug === redirectSlug)?.title ?? "" : "";
 
-  // If the chosen priority is the stage we're already on, there's no redirect:
-  // unlock in place (no notice). Otherwise show the notice, then redirect.
+  // No priority picked (non-brand), or the chosen priority is the stage we're
+  // already on: no redirect, unlock in place (no notice). Otherwise show the
+  // notice, then redirect to the chosen stage.
   const handleGateSuccess = (slug: string) => {
-    if (slug === step.slug) unlock();
+    if (!slug || slug === step.slug) unlock();
     else setRedirectSlug(slug);
   };
 

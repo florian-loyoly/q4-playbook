@@ -27,7 +27,7 @@ export function LeadForm({ market, steps, ui, onSuccess }: { market: MarketId; s
     else if (!URL_RE.test(f.website.trim())) e.website = ui.errUrl;
     if (!f.profile) e.profile = ui.errRequired;
     if (f.profile === "brand" && !f.orders) e.orders = ui.errRequired;
-    if (!f.priority) e.priority = ui.errRequired;
+    if (f.profile === "brand" && !f.priority) e.priority = ui.errRequired;
     if (!f.consent) e.consent = ui.errConsent;
     return e;
   }
@@ -57,10 +57,10 @@ export function LeadForm({ market, steps, ui, onSuccess }: { market: MarketId; s
       consent: form.consent,
       market,
       source: "Q4 Playbook 2026",
-      priority: form.priority,
+      priority: form.profile === "brand" ? form.priority : "",
     });
     setSubmitting(false);
-    if (res.ok) onSuccess(form.priority);
+    if (res.ok) onSuccess(form.profile === "brand" ? form.priority : "");
   }
 
   const field = (name: keyof Fields, label: string, ph: string, type = "text") => {
@@ -188,49 +188,51 @@ export function LeadForm({ market, steps, ui, onSuccess }: { market: MarketId; s
       {select("profile", ui.fieldProfile, ui.phSelect, profileOptions)}
       {form.profile === "brand" ? select("orders", ui.fieldOrders, ui.phSelect, orderOptions) : null}
 
-      <div style={{ marginBottom: 14 }}>
-        <label htmlFor="f-priority" style={{ display: "block", fontFamily: BODY, fontSize: 12, fontWeight: 500, color: P.p900, marginBottom: 6 }}>
-          {ui.fieldPriority}
-        </label>
-        <div style={{ position: "relative" }}>
-          <select
-            id="f-priority"
-            value={form.priority}
-            onChange={(e) => onField("priority", e.target.value)}
-            onBlur={() => {
-              setTouched((t) => ({ ...t, priority: true }));
-              setErrors(validate(form));
-            }}
-            style={{
-              appearance: "none",
-              WebkitAppearance: "none",
-              width: "100%",
-              background: "#fff",
-              border: `1px solid ${touched.priority && errors.priority ? P.pink : P.p200}`,
-              borderRadius: 12,
-              padding: "11px 34px 11px 14px",
-              fontFamily: BODY,
-              fontSize: 14,
-              color: form.priority ? P.p950 : P.p500,
-              cursor: "pointer",
-              boxShadow: touched.priority && errors.priority ? "0 0 0 3px rgba(247,79,158,.12)" : "none",
-            }}
-          >
-            <option value="" disabled>
-              {ui.phPriority}
-            </option>
-            {steps.map((s) => (
-              <option key={s.slug} value={s.slug}>
-                {s.order}. {s.title}
+      {form.profile === "brand" ? (
+        <div style={{ marginBottom: 14 }}>
+          <label htmlFor="f-priority" style={{ display: "block", fontFamily: BODY, fontSize: 12, fontWeight: 500, color: P.p900, marginBottom: 6 }}>
+            {ui.fieldPriority}
+          </label>
+          <div style={{ position: "relative" }}>
+            <select
+              id="f-priority"
+              value={form.priority}
+              onChange={(e) => onField("priority", e.target.value)}
+              onBlur={() => {
+                setTouched((t) => ({ ...t, priority: true }));
+                setErrors(validate(form));
+              }}
+              style={{
+                appearance: "none",
+                WebkitAppearance: "none",
+                width: "100%",
+                background: "#fff",
+                border: `1px solid ${touched.priority && errors.priority ? P.pink : P.p200}`,
+                borderRadius: 12,
+                padding: "11px 34px 11px 14px",
+                fontFamily: BODY,
+                fontSize: 14,
+                color: form.priority ? P.p950 : P.p500,
+                cursor: "pointer",
+                boxShadow: touched.priority && errors.priority ? "0 0 0 3px rgba(247,79,158,.12)" : "none",
+              }}
+            >
+              <option value="" disabled>
+                {ui.phPriority}
               </option>
-            ))}
-          </select>
-          <span style={{ position: "absolute", right: 12, top: "50%", transform: "translateY(-50%)", pointerEvents: "none", display: "inline-flex" }}>
-            <Icon name="chevD" color={P.p700} size={16} />
-          </span>
+              {steps.map((s) => (
+                <option key={s.slug} value={s.slug}>
+                  {s.order}. {s.title}
+                </option>
+              ))}
+            </select>
+            <span style={{ position: "absolute", right: 12, top: "50%", transform: "translateY(-50%)", pointerEvents: "none", display: "inline-flex" }}>
+              <Icon name="chevD" color={P.p700} size={16} />
+            </span>
+          </div>
+          {touched.priority && errors.priority ? <div style={{ fontFamily: BODY, fontSize: 12, color: P.pink, marginTop: 5 }}>{errors.priority}</div> : null}
         </div>
-        {touched.priority && errors.priority ? <div style={{ fontFamily: BODY, fontSize: 12, color: P.pink, marginTop: 5 }}>{errors.priority}</div> : null}
-      </div>
+      ) : null}
 
       <label style={{ display: "flex", gap: 10, alignItems: "flex-start", margin: "6px 0 4px", cursor: "pointer" }}>
         <input
