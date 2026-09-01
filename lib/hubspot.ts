@@ -25,6 +25,7 @@ export type LeadInput = {
   profile: string; // form value: brand | agency | saas | media | other
   orders: string; // form value (brands only), else ""
   priority: string; // app step slug (brands only), else ""
+  utm: string; // raw landing-URL query string (partner / UTM attribution), else ""
 };
 
 // Form value -> HubSpot company `type_dentreprise` enum.
@@ -99,6 +100,7 @@ async function upsertContact(token: string, lead: LeadInput): Promise<string> {
   };
   const q4 = Q4_PRIORITY[lead.priority];
   if (q4) properties.q4_priority = q4;
+  if (lead.utm) properties.q4_playbook__utm = lead.utm;
   if (lead.profile === "brand") {
     // Contact property is `average_number_of_orders_per_month` (note the `of_`),
     // distinct from the company's `average_number_orders_per_month`.

@@ -15,6 +15,7 @@ type Body = {
   market?: string;
   source?: string;
   priority?: string;
+  utm?: string;
 };
 
 const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
@@ -49,7 +50,7 @@ export async function POST(req: Request) {
   // we log and still return ok (the client unlocks the app on ok). We await it
   // because, on serverless, work after the response is not guaranteed to run.
   try {
-    await syncLeadToHubSpot({ email, company, website, profile, orders, priority: (body.priority || "").trim() });
+    await syncLeadToHubSpot({ email, company, website, profile, orders, priority: (body.priority || "").trim(), utm: (body.utm || "").trim().slice(0, 500) });
   } catch (err) {
     console.error("[lead] HubSpot sync failed:", err);
   }

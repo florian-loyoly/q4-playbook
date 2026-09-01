@@ -1,6 +1,7 @@
 "use client";
 
 import React, { createContext, useCallback, useContext, useEffect, useState } from "react";
+import { captureAttribution } from "./attribution";
 
 // Central gate logic. Every lock / wall / unlock check goes through useGate(),
 // so the dev bypass flag and the unlock state live in exactly one place.
@@ -25,6 +26,12 @@ const GateContext = createContext<GateValue | null>(null);
 export function GateProvider({ children }: { children: React.ReactNode }) {
   const [unlocked, setUnlocked] = useState(false);
   const [justUnlocked, setJustUnlocked] = useState(false);
+
+  // First-touch capture of partner / UTM attribution from the landing URL,
+  // independent of the gate (runs even when the gate is disabled).
+  useEffect(() => {
+    captureAttribution();
+  }, []);
 
   // Restore session unlock (survives reloads and route navigation within the session).
   useEffect(() => {

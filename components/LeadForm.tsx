@@ -5,6 +5,7 @@ import type { MarketId, Step, UIStrings } from "@/lib/types";
 import { DISP, BODY, P } from "@/lib/tokens";
 import { Icon } from "./Icon";
 import { submitLead } from "@/lib/leads";
+import { getAttribution } from "@/lib/attribution";
 
 type Fields = { email: string; company: string; website: string; profile: string; orders: string; priority: string; consent: boolean };
 type Errors = Partial<Record<keyof Fields, string>>;
@@ -58,6 +59,7 @@ export function LeadForm({ market, steps, ui, onSuccess }: { market: MarketId; s
       market,
       source: "Q4 Playbook 2026",
       priority: form.profile === "brand" ? form.priority : "",
+      utm: getAttribution(),
     });
     setSubmitting(false);
     if (res.ok) onSuccess(form.profile === "brand" ? form.priority : "");

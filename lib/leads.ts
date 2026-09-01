@@ -10,6 +10,7 @@ export type LeadPayload = {
   market: MarketId; // originating market (fr / uk / es)
   source: string; // e.g. "Q4 Playbook 2026"
   priority?: string; // slug of the stage the user picked as their #1 Q4 priority
+  utm?: string; // raw landing-URL query string (partner / UTM attribution)
 };
 
 export type LeadResult = { ok: boolean };
