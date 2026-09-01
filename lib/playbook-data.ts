@@ -500,10 +500,10 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
     "loyalty-engagement": {
       title: "Loyalty & Engagement",
       teaser: "Stop burning margin on low-LTV deal-hunters and make BFCM a channel that recruits cohorts who come back.",
-      keyStat: { value: 40, unit: "", prefix: "+", label: "engagement mechanics to reward every meaningful action after purchase", source: "Loyoly platform, 2026" },
+      keyStat: { statement: "83% of consumers are motivated to return to a brand this peak season by the opportunity to use or redeem existing loyalty points.", highlight: "83%", source: "Censuswide study, 4,005 respondents UK/USA, 2025" },
       partners: [{
         name: "Loyoly",
-        pitch: "The #1 post-purchase engagement platform for ecommerce brands.",
+        pitch: "Most brands sit on a goldmine, years of customers they've already paid to win. Yet the majority leave it buried, still favoring the expensive acquisition of new ones while their \"loyalty program\" just hands out discounts. Loyoly opens the mine: the loyalty, referral & engagement platform that turns your existing customers into your #1 growth channel: repeat revenue, referrals and advocacy across a truly omnichannel experience (e-shop, stores and mobile), with customer journeys personalized at scale and every signal flowing back to your CRM. Trusted by 600+ brands.",
         url: "https://www.loyoly.io/",
         author: { name: "Joseph Aubry", role: "CEO & Co-founder", photo: "/assets/partners/loyoly-author.jpg" },
         tips: [
@@ -960,12 +960,12 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
     "loyalty-engagement": {
       title: "Fidélisation & Engagement",
       teaser: "Arrêter de sacrifier sa marge sur des chasseurs de promo à faible LTV, et faire du BFCM un canal qui recrute des cohortes qui reviennent.",
-      keyStat: { value: 40, unit: "", prefix: "+", label: "mécaniques d'engagement pour récompenser chaque action utile après l'achat", source: "Plateforme Loyoly, 2026" },
+      keyStat: { statement: "83 % des consommateurs sont incités à revenir chez une marque pendant le peak par la possibilité d'utiliser ou de convertir leurs points de fidélité existants.", highlight: "83 %", source: "Étude Censuswide, 4 005 répondants UK/USA, 2025" },
       partners: [{
         name: "Loyoly",
-        pitch: "La plateforme n°1 d'engagement post-achat pour les marques e-commerce.",
-        url: "https://www.loyoly.io/",
-        author: { name: "Joseph Aubry", role: "CEO & Co-founder", photo: "/assets/partners/loyoly-author.jpg" },
+        pitch: "La plupart des marques sont assises sur une mine d'or : des années de clients qu'elles ont déjà payé pour conquérir. Pourtant, la majorité la laisse enfouie, en misant encore sur l'acquisition coûteuse de nouveaux clients pendant que leur « programme de fidélité » se contente de distribuer des réductions. Loyoly déverrouille cette mine d'or : la plateforme de fidélité, parrainage et engagement qui transforme vos clients existants en votre premier levier de croissance. Réachat, recommandations et advocacy au sein d'une expérience véritablement omnicanale (e-shop, boutiques et mobile), avec des parcours clients personnalisés à grande échelle et chaque signal renvoyé vers votre CRM. +600 marques nous font confiance.",
+        url: "https://www.loyoly.io/fr",
+        author: { name: "Joseph Aubry", role: "CEO & Cofondateur", photo: "/assets/partners/loyoly-author.jpg" },
         tips: [
           tipB("Calibrez votre programme avant novembre", [
             PB("Avant même de segmenter quoi que ce soit, votre programme doit être réglé pour générer du chiffre incrémental sans rogner votre marge. Un programme mal calibré coûte cher et tient rarement ses promesses. C'est la fondation sur laquelle tout le reste repose."),
@@ -1242,12 +1242,12 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
     "loyalty-engagement": {
       title: "Fidelización & Engagement",
       teaser: "Deja de quemar margen con cazadores de ofertas de bajo LTV y haz del BFCM un canal que recluta cohortes que vuelven.",
-      keyStat: { value: 40, unit: "", prefix: "+", label: "mecánicas de engagement para recompensar cada acción útil tras la compra", source: "Plataforma Loyoly, 2026" },
+      keyStat: { statement: "El 83 % de los consumidores se sienten motivados a volver a una marca durante el peak por la posibilidad de usar o canjear sus puntos de fidelidad existentes.", highlight: "83 %", source: "Estudio Censuswide, 4005 encuestados en Reino Unido/EE. UU., 2025" },
       partners: [{
         name: "Loyoly",
-        pitch: "La plataforma n.º 1 de engagement post-compra para marcas de ecommerce.",
-        url: "https://www.loyoly.io/",
-        author: { name: "Joseph Aubry", role: "CEO & Co-founder", photo: "/assets/partners/loyoly-author.jpg" },
+        pitch: "La mayoría de las marcas están sentadas sobre una mina de oro: años de clientes que ya han pagado por conquistar. Sin embargo, la mayoría la deja enterrada, apostando todavía por la costosa adquisición de nuevos clientes mientras su « programa de fidelización » se limita a repartir descuentos. Loyoly desbloquea esa mina de oro: la plataforma de fidelización, referidos y engagement que convierte a tus clientes actuales en tu principal palanca de crecimiento. Recompra, recomendaciones y advocacy dentro de una experiencia verdaderamente omnicanal (e-shop, tiendas y móvil), con customer journeys personalizados a gran escala y cada señal de vuelta en tu CRM. Más de 600 marcas ya confían en nosotros.",
+        url: "https://www.loyoly.io/es",
+        author: { name: "Joseph Aubry", role: "CEO & Cofundador", photo: "/assets/partners/loyoly-author.jpg" },
         tips: [
           tipB("Calibra tu programa antes de noviembre", [
             PB("Antes incluso de segmentar nada, tu programa debe estar ajustado para generar ingresos incrementales sin erosionar tu margen. Un programa mal calibrado sale caro y rara vez cumple sus promesas. Es la base sobre la que se apoya todo lo demás."),
