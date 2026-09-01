@@ -1,8 +1,9 @@
 import { NextResponse } from "next/server";
+import { syncLeadToHubSpot } from "@/lib/hubspot";
 
-// Lead capture endpoint. For now it only validates the payload and returns ok.
-// No data is sent anywhere yet. This is the single, isolated place where the
-// real HubSpot Forms Submission API call will be added later.
+// Lead capture endpoint. Validates the payload, then syncs the lead to HubSpot
+// (contact + company + association). This is the single, isolated server-side
+// place for CRM integrations; a future Google Sheets append goes here too.
 
 type Body = {
   email?: string;
@@ -44,13 +45,17 @@ export async function POST(req: Request) {
     return NextResponse.json({ ok: false, error: "validation" }, { status: 422 });
   }
 
-  // Simulate a short network round-trip so the UI can show its loading state.
-  await new Promise((r) => setTimeout(r, 400));
+  // Sync to HubSpot. A CRM failure must not break the visitor's submission, so
+  // we log and still return ok (the client unlocks the app on ok). We await it
+  // because, on serverless, work after the response is not guaranteed to run.
+  try {
+    await syncLeadToHubSpot({ email, company, website, profile, orders, priority: (body.priority || "").trim() });
+  } catch (err) {
+    console.error("[lead] HubSpot sync failed:", err);
+  }
 
-  // TODO HubSpot + Google Sheets: upsert the contact (email, company, website,
-  // profile / "I work for", monthly orders when profile === "brand", Q4 priority,
-  // market) and append a row to the sheet. The validated fields above carry
-  // everything needed. Secrets read from server-only env vars.
+  // TODO Google Sheets: append a row (email, company, website, profile, orders,
+  // priority, market) once the Sheets integration is set up.
 
   return NextResponse.json({ ok: true });
 }
