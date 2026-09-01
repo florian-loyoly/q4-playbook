@@ -14,6 +14,10 @@
 
 const BASE = "https://api.hubapi.com";
 
+// Static HubSpot list every captured lead is added to (membership add only
+// works on MANUAL/static lists; dynamic lists manage their own membership).
+const LEAD_LIST_ID = "3238";
+
 export type LeadInput = {
   email: string;
   company: string;
@@ -146,6 +150,12 @@ async function associate(token: string, contactId: string, companyId: string): P
   await hs(token, `/crm/v4/objects/contacts/${contactId}/associations/default/companies/${companyId}`, { method: "PUT" });
 }
 
+// Add the contact to a static list. Only works on MANUAL lists; the endpoint
+// returns the record id under recordsIdsAdded (or recordIdsDidNotExist).
+async function addContactToList(token: string, contactId: string, listId: string): Promise<void> {
+  await hs(token, `/crm/v3/lists/${listId}/memberships/add`, { method: "PUT", body: JSON.stringify([contactId]) });
+}
+
 // Entry point. Throws on any HubSpot error so the caller can log it; the caller
 // is responsible for not letting a CRM failure break the user's submission.
 export async function syncLeadToHubSpot(lead: LeadInput): Promise<void> {
@@ -158,4 +168,12 @@ export async function syncLeadToHubSpot(lead: LeadInput): Promise<void> {
   const companyId = await upsertCompany(token, lead, domain);
   const contactId = await upsertContact(token, lead);
   await associate(token, contactId, companyId);
+
+  // Independent last step: a list failure (wrong scope / non-static list) must
+  // not undo the contact/company sync that already succeeded above.
+  try {
+    await addContactToList(token, contactId, LEAD_LIST_ID);
+  } catch (err) {
+    console.error("[lead] HubSpot list add failed:", err);
+  }
 }
