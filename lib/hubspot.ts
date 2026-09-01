@@ -2,11 +2,15 @@
 // Imported exclusively by app/api/lead/route.ts — never from client code.
 // Reads the Private App token from HUBSPOT_PRIVATE_APP_TOKEN (server env var).
 //
-// Flow, all synchronous and deterministic (we do NOT rely on HubSpot's async
-// auto-creation of companies):
-//   1. Upsert the Contact by email (create-or-update in one call).
-//   2. Find-or-create the Company by the domain derived from the Website URL.
-//   3. Associate Contact <-> Company (default/primary association).
+// Flow, all synchronous and deterministic. The Company is handled FIRST, on
+// purpose: many portals have "automatically create & associate companies"
+// enabled, which auto-creates a company from the contact's email domain the
+// moment the contact is created. By creating/finding our company (keyed on the
+// typed Website domain) BEFORE the contact, HubSpot's domain dedupe links the
+// new contact to our existing company instead of spawning a bare duplicate.
+//   1. Find-or-create the Company by the domain derived from the Website URL.
+//   2. Upsert the Contact by email (create-or-update in one call).
+//   3. Associate Contact <-> Company (default/primary; idempotent).
 
 const BASE = "https://api.hubapi.com";
 
@@ -150,8 +154,8 @@ export async function syncLeadToHubSpot(lead: LeadInput): Promise<void> {
     console.warn("[lead] HUBSPOT_PRIVATE_APP_TOKEN not set — skipping HubSpot sync");
     return;
   }
-  const contactId = await upsertContact(token, lead);
   const domain = domainFromWebsite(lead.website);
   const companyId = await upsertCompany(token, lead, domain);
+  const contactId = await upsertContact(token, lead);
   await associate(token, contactId, companyId);
 }
