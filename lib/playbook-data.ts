@@ -1103,10 +1103,26 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       teaser: "Convierte tus nuevos opt-ins en una base comprometida antes del pico, con flows que convierten.",
       keyStat: { value: 4.2, unit: "x", prefix: "", label: "más ingresos por envío con flows de bienvenida segmentados frente a envíos masivos", source: "Datos Correara, 2025" },
       partners: [
-        { name: "Dolor Amet", pitch: "Email de ciclo de vida y automatización.", url: "#",
+        {
+          name: "Klaviyo",
+          logo: "/assets/partners/klaviyo-logo.png",
+          pitch: "Klaviyo es un CRM B2C autónomo y una plataforma de marketing con IA que centraliza los datos de clientes y automatiza los mensajes por email, SMS, RCS, WhatsApp y notificaciones push, permitiendo gestionar campañas personalizadas que convierten.",
+          url: "https://www.klaviyo.com/es/",
+          author: { name: "Henri Soropogui Viret", role: "Responsable de Marketing para el Sur de Europa", photo: "/assets/partners/klaviyo-author.jpg" },
+          keyStat: { statement: "Los flows, como la welcome series y el abandono de carrito, representan solo el 5,3 % de los envíos pero generan el 41 % de los ingresos totales por email, con unos ingresos por destinatario casi 18 veces superiores a los de las campañas puntuales.", highlight: "41 %", source: "Email marketing benchmarks by Industry, Klaviyo, 2026" },
           tips: [
-            tip("Ut enim ad minim veniam", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."], [V("Lorem ipsum")]),
-            tip("Quis nostrud exercitation ullamco", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
+            tip("Empieza a construir tu lista mucho antes del pico", [
+              "Los compradores piensan en el Black Friday y en Navidad mucho antes de que arranque la temporada, así que tu captación de opt-ins debería seguir el mismo ritmo. El acceso anticipado es una palanca sencilla: ofrece acceso prioritario a productos en edición limitada o a ofertas de temporada a cambio de los datos de contacto. Las herramientas interactivas como los gift finders o los quizzes de estilo son aún más eficaces, porque recopilan datos declarados además del email o el número de teléfono.",
+              "Resultado: desde el opt-in, las respuestas de un nuevo suscriptor ya te dicen mucho sobre su intención, tanto si compra para sí mismo en noviembre como si lo hace para un ser querido en diciembre. Las auto-respuestas en redes sociales son otra vía de entrada muy potente: permiten suscribirse por email, SMS o WhatsApp directamente desde una interacción en Instagram.",
+            ]),
+            tip("Activa tus flows clave antes del pico de volumen", [
+              "Nuestros datos son claros: las mejores marcas afrontan el pico con al menos 8 flows generadores de ingresos ya activos, hasta 13 en el caso de las más grandes. En el menú: welcome series, abandono de carrito, abandono de navegación, post-compra, win-back, back-in-stock y VIP.",
+              "Las marcas con mejor rendimiento apuestan por activar y optimizar los flows que ya tienen, en lugar de crear otros nuevos cuando el tráfico se dispara. La clave: ponerlos en marcha y rodarlos bien con antelación. La welcome series y los abandonos de navegación o de carrito siguen siendo los flows más desplegados, y con razón: son los que sostienen la mayor parte del nurturing de los nuevos suscriptores y de la recuperación de ventas perdidas cuando el volumen crece.",
+            ]),
+            tip("Segmenta con más detalle para personalizar tus envíos", [
+              "Nuestros datos muestran que las marcas con mejor rendimiento reparten el 66 % de sus envíos entre al menos 6 segmentos, en lugar de tratar el pico como un gran blast a toda la base. Los segmentos que de verdad mueven la aguja son de comportamiento, no solo demográficos: cazadores de ofertas vs. clientes fieles, activos vs. inactivos, AOV alto vs. bajo.",
+              "Todo se basa aquí en una regla: convertir tu CRM en la single source of truth de tus datos de cliente. Cuanto más completos sean esos datos, con más precisión llegas a estos grupos y envías a cada uno un mensaje ajustado a su intención, en lugar de esperar que un envío genérico le hable a todo el mundo.",
+            ]),
           ],
         },
       ],
@@ -1116,10 +1132,40 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       teaser: "Pon el producto adecuado ante el visitante adecuado para subir la tasa de conversión, sin recargar la página.",
       keyStat: { value: 27, unit: "%", prefix: "+", label: "de conversión con un merchandising ajustado al pico y señales de urgencia claras", source: "Estudio Escaparate, 2025" },
       partners: [{
-        name: "Sed Tempor", pitch: "Personalización on-site y merchandising.", url: "#",
+        name: "Kubix",
+        logo: "/assets/partners/kubix-logo.svg",
+        pitch: "Kubix es una agencia Shopify Platinum que ayuda a marcas de e-commerce y retail a crear mejores experiencias de compra y a obtener mejores resultados comerciales. Combina estrategia, UX, diseño y desarrollo con una experiencia práctica en Shopify, acompañando a las marcas en merchandising on-site, conversión, TPV, retención y paid media.",
+        url: "https://kubixmedia.co.uk",
+        noAuthor: true,
+        keyStat: { statement: "+107 % de aumento en la tasa de conversión tras la reconstrucción por Kubix del storefront y la UX de Ted Baker en Shopify.", highlight: "+107 %", source: "Kubix, caso de cliente Ted Baker", sourceUrl: "https://kubixmedia.co.uk/case-study/ted-baker" },
         tips: [
-          tip("Consectetur adipiscing elit", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
-          tip("Sed do eiusmod tempor incididunt", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
+          tipB("Convierte una navegación sencilla en una herramienta de merchandising", [
+            PB("La mayoría de las personas llegan sabiendo más o menos lo que quieren, así que los fundamentos no han cambiado: la navegación tiene que ser sencilla, clara y rápida de escanear."),
+            PB("Una vez que eso funciona, el menú se convierte en una herramienta de merchandising por derecho propio. Prueba señales visuales dentro del menú para destacar ofertas de temporada, selecciones de regalo o nuevos lanzamientos vinculados a colecciones y gamas concretas."),
+            PB("Sigue probando qué se gana su sitio, porque un menú diseñado para promocionarlo todo acaba no promocionando nada."),
+          ], [V("Kubix", "/assets/partners/UK-onsite-experience-merchandising-kubix-tip1.png")]),
+          tipB("Convierte las páginas de colección en una experiencia, sin estorbar", [
+            PB("En las páginas de colección es donde ocurre gran parte de la navegación durante el pico, y los compradores responden mejor a páginas que se sienten cuidadas y visualmente ricas que a una simple cuadrícula plana de productos."),
+            PB("El objetivo es una colección que se sienta como una experiencia, con imágenes editoriales, un encuadre de temporada claro y una agrupación bien pensada, pero sin tanto diseño que distraiga de los productos o ralentice la página."),
+            PB("Diseña primero para móvil, ya que es donde ocurre la mayor parte de esta navegación y donde los layouts pesados hacen más daño."),
+            PB("Bien hecha, una colección con buen merchandising guía a las personas hacia los productos adecuados más rápido, sin dejar de parecer una marca en la que merece la pena comprar."),
+          ], [V("Kubix", "/assets/partners/UK-onsite-experience-merchandising-kubix-tip2.png")]),
+          tipB("Publica contenido realmente útil que ayude a guiar a los clientes hacia la compra", [
+            PB("El contenido de blog y guías solía ser una apuesta a largo plazo justificada sobre todo por el SEO, pero eso ha cambiado."),
+            PB("Ahora los compradores investigan y comparan a través de ChatGPT y otros LLM, y el contenido útil y específico es lo que hace que tu marca sea visible y citable en esas respuestas."),
+            PB("Una guía de regalos o una guía de compra bien hecha ofrece a los visitantes humanos algo que merece la pena leer en un periodo de pico cargado de decisiones, a la vez que hace un trabajo comercial real para el SEO, el GEO y el AEO. Escribe desde una experiencia genuina con los productos en lugar de reformular un feed, porque esa especificidad es justamente lo que recompensan los buscadores y las plataformas de IA."),
+          ], [V("Kubix", "/assets/partners/UK-onsite-experience-merchandising-kubix-tip3a.png"), V("Kubix", "/assets/partners/UK-onsite-experience-merchandising-kubix-tip3b.png")]),
+          tipB("Haz que cada promoción de marketing coincida con la página que promete", [
+            PB("Esto es fundamental y muchas marcas todavía fallan en ello, sobre todo en el pico, cuando la inversión publicitaria está en su punto más alto. Envía el tráfico de pago a la página de producto o de colección concreta que coincide con el anuncio, nunca a la home, y asegúrate de que la oferta y la creatividad que la persona vio en el anuncio se repiten en la PDP a la que llega."),
+            PB("Si un cliente hace clic en un anuncio de regalos para un producto concreto con un descuento concreto, ese producto, ese precio y esa creatividad deberían ser lo primero que vea. Cualquier desajuste entre el anuncio y la página reintroduce dudas y desperdicia una atención por la que has pagado una prima."),
+            PB("Asegúrate de probarlo todo antes del lanzamiento."),
+            BOX("", "Tras la reconstrucción por Kubix de la tienda Shopify de Scotch & Soda para reforzar la navegación, la UX y el merchandising de cara al pico, la marca de moda de Ámsterdam vio crecer sus ventas totales más de un 40 % interanual, con un aumento del 66 % en las sesiones.", "https://kubixmedia.co.uk/case-study/scotch-soda"),
+          ], [V("Kubix", "/assets/partners/UK-onsite-experience-merchandising-kubix-tip4.png")]),
+          tipB("Lleva el live shopping a tu tienda Shopify", [
+            PB("La mayoría de las marcas ahora venden e interactúan en muchos canales, pero esa actividad suele vivir en todas partes excepto en su propia web. Un hub dedicado o una página de live shopping dentro de tu tienda Shopify da a los clientes un único lugar para unirse a eventos en directo, seguir los drops e implicarse con la comunidad, algo que importa más que nunca en el pico, cuando la atención y la urgencia están altas."),
+            PB("Mantiene esa interacción en una propiedad que es tuya y sobre la que puedes hacer merchandising directamente, en lugar de alquilarla en una plataforma social."),
+            PB("Incluso un hub sencillo y bien señalizado puede convertir a un comprador puntual del pico en una audiencia recurrente."),
+          ], [V("Kubix", "/assets/partners/UK-onsite-experience-merchandising-kubix-tip5.png")]),
         ],
       }],
     },
