@@ -392,7 +392,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
             ),
             DO("What you should do", "enable payment methods 2 months in advance. It costs you nothing, and doing it in advance means the full lifecycle has already run through your system, so when traffic hits, you know it works."),
             RES("Result", "you capture sales you'd otherwise lose, protect your average order value, and go into peak with a payment mix built for the season."),
-          ]),
+          ], [V("Mollie", "/assets/partners/EN-payment-checkout-mollie-tip1.webp")]),
           tipB("Make mobile and wallets effortless", [
             PB("If you fix only one thing before Q4, make it mobile. Before peak, run your full checkout journey on a real mobile device, not just in desktop preview. Start from the product page and go all the way through to payment confirmation. Look for every extra tap, field or page load that could slow a shopper down."),
             LB(
@@ -1144,7 +1144,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
             ),
             DO("Lo que debes hacer", "activa los métodos de pago con dos meses de antelación. No te cuesta nada, y hacerlo con antelación significa que todo el ciclo de vida ya ha pasado por tu sistema, así que cuando aumente el tráfico, sabrás que funciona."),
             RES("Resultado", "captas ventas que, de otro modo, perderías, proteges el valor medio de tus pedidos y llegas a la temporada alta con una combinación de pagos adaptada a la temporada."),
-          ]),
+          ], [V("Mollie", "/assets/partners/EN-payment-checkout-mollie-tip1.webp")]),
           tipB("Haz que el pago desde el móvil y con monederos electrónicos sea sencillo", [
             PB("Si solo vas a arreglar una cosa antes del cuarto trimestre, que sea el móvil. Antes de la temporada alta, prueba todo el proceso de pago en un dispositivo móvil real, no solo en la vista previa del ordenador. Empieza por la página del producto y recorre todo el proceso hasta la confirmación del pago. Busca cada toque, campo o carga de página adicional que pueda ralentizar al comprador."),
             LB(
