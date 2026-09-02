@@ -1352,16 +1352,30 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
     "returns-after-sales": {
       title: "Devoluciones & Postventa",
       teaser: "Convierte cada devolución en una recompra y protege tu margen una vez pasado el pico.",
-      keyStat: { value: 92, unit: "%", prefix: "", label: "de los compradores vuelven a comprar tras una devolución sencilla", source: "Encuesta Devolvia, 2025" },
+      keyStat: { value: 77, unit: "%", prefix: "", label: "de los compradores son más fieles a los minoristas que gestionan las incidencias de entrega de forma transparente", source: "E-commerce Delivery Statistics 2026 | Free Sendcloud Report", sourceUrl: "https://www.sendcloud.com/ecommerce-delivery-compass/" },
       partners: [{
         name: "Sendcloud",
-        logo: "/assets/partners/sendcloud-logo.webp",
-        pitch: "Sendcloud es una plataforma de envíos para e-commerce que conecta tu tienda online con múltiples transportistas y automatiza etiquetas, seguimiento y devoluciones desde un solo panel. Con integraciones nativas para plataformas como Shopify, ayuda a las marcas a optimizar su logística y mejorar la experiencia post-compra.",
-        url: "https://www.sendcloud.com/es/",
-        noAuthor: true,
+        logo: "/assets/partners/sendcloud-logo.svg",
+        pitch: "Sendcloud es la plataforma de envíos líder en Europa que permite a los comercios e-commerce escalar sus operaciones logísticas sin esfuerzo y ofrecer una experiencia centrada en el cliente.",
+        url: "https://www.sendcloud.com/",
+        author: { name: "Ana Ondreicsik", role: "Product Lead", photo: "/assets/partners/sendcloud-author.jpg" },
         tips: [
-          tip("Quis nostrud exercitation ullamco", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
-          tip("Duis aute irure dolor", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
+          tip("Define las expectativas de tu política de devoluciones antes del checkout", [
+            "Muestra tu plazo de devolución, el coste y el proceso de forma bien visible en las páginas de producto y en el checkout, en lugar de esconderlos en un enlace del pie de página.",
+            "El 71 % de los compradores (70,73 %) tiene más probabilidades de comprar en tiendas que ofrecen devoluciones sencillas, lo que demuestra que la transparencia está directamente ligada a la fidelidad, no solo a la conversión. No es una palanca de conversión puntual: construye la confianza que los hace volver. Una frase breve y visible elimina esa duda justo cuando más importa.",
+          ], [V("Sendcloud", "/assets/partners/ES-return-aftersales-sendcloud-tip1.png")]),
+          tip("Amplía el plazo de devolución hasta diciembre", [
+            "Los consumidores más avispados empiezan sus compras navideñas ya en el Black Friday. Si solo ofreces el plazo legal estándar de 14 días, ese plazo ya se habrá cerrado antes de que llegue la Navidad para cualquiera que haya comprado durante el BF.",
+            "Al ampliar tu periodo de cambios y devoluciones, das a los compradores anticipados una razón real para comprar ahora en lugar de esperar, eliminando en el checkout la duda de «¿y si necesito devolver esto después de Navidad?».",
+          ]),
+          tip("Convierte las devoluciones en autoservicio con un portal de marca", [
+            "Ofrece a tus clientes un portal de autoservicio para iniciar una devolución o un cambio sin tener que escribir a soporte, para que el proceso resulte tan sencillo como la propia compra.",
+            "Según el European Delivery Compass 2026, las devoluciones sencillas influyen directamente en la recompra, y un portal de marca ayuda a que tu equipo de soporte no se vea desbordado por solicitudes de devolución manuales.",
+          ], [V("Sendcloud", "/assets/partners/ES-return-aftersales-sendcloud-tip3.png")]),
+          tip("Comunica de forma proactiva los plazos de reembolso y dimensiona tu equipo para el volumen real", [
+            "Los clientes esperan un reembolso en 5,2 días; el procesamiento interno suele alargarse hasta unos 8 días durante las semanas de mayor actividad.",
+            "Es el dato más accionable de todo el conjunto, ya que te da una cifra sobre la que diseñar tu SLA.",
+          ], [V("Sendcloud", "/assets/partners/ES-return-aftersales-sendcloud-tip4.png")]),
         ],
       }],
     },
