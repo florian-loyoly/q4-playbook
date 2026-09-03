@@ -1141,12 +1141,30 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       partners: [{
         name: "Baback",
         logo: "/assets/partners/baback-logo.png",
-        pitch: "La plateforme de gestion des retours qui protège vos marges et fidélise vos clients.",
+        pitch: "Baback, c'est deux solutions pour maîtriser tout l'après-achat, du suivi au retour. Baback Tracking : un suivi de commande en temps réel, à vos couleurs et intégrable dans Apple et Google Wallet, pour rassurer vos clients et alléger votre support. Baback Returns : des retours 100 % digitalisés et automatisés, avec vos propres règles (délais, frais, échange ou avoir) pour protéger votre marge.",
         url: "https://baback.co/fr",
-        noAuthor: true,
+        author: { name: "Raphaël Touati", role: "Cofondateur & CEO", photo: "/assets/partners/baback-author.jpeg" },
         tips: [
-          tip("Quis nostrud exercitation ullamco", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
-          tip("Duis aute irure dolor", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
+          tip("Allongez votre délai de retour pour les fêtes", [
+            "Vos clients anticipent leurs cadeaux dès le Black Friday mais ne les offrent qu'en décembre. Prolongez votre fenêtre de retour jusqu'à mi-janvier sur toute la période de Noël.",
+            "Vous rassurez l'acheteur au moment de commander, vous levez un frein clé à l'achat et vous étalez la vague de retours post-fêtes. Un réglage en quelques clics qui transforme l'hésitation en conversion, pile pendant votre pic de trafic.",
+          ]),
+          tip("Offrez le suivi de commande dans Apple et Google Wallet", [
+            "En peak season, vos clients veulent savoir où est leur colis, tout de suite. Offrez-leur la possibilité d'ajouter leur suivi directement dans Apple Wallet et Google Wallet : mise à jour en temps réel, notifications push, zéro friction.",
+            "Résultat : moins de « où est ma commande ? » qui saturent votre support au pire moment, et une expérience premium qui fidélise. Le suivi devient un point de contact marketing plutôt qu'une source d'inquiétude.",
+          ]),
+          tip("Récompensez vos meilleurs clients avec le retour offert", [
+            "Faites du retour un levier de fidélité plutôt qu'un centre de coût. Modulez vos frais selon le profil client : retour 100 % offert pour vos clients fidèles, participation légère de 5 à 6 € pour les remboursements ponctuels.",
+            "Vous protégez votre marge sur une période où les retours explosent, tout en valorisant ceux qui comptent le plus. Un dispositif malin qui responsabilise l'achat sans jamais pénaliser vos meilleurs acheteurs.",
+          ]),
+          tip("Automatisez vos litiges en connectant votre solution de tracking à votre support", [
+            "En pleine peak season, chaque colis perdu ou en retard génère un ticket. Interconnectez votre solution de tracking avec Gorgias ou Zendesk pour déclencher des déclarations de litige automatisées dès qu'une anomalie de livraison est détectée.",
+            "Votre équipe support gagne un temps précieux, vos clients sont pris en charge sans attendre et vos réclamations transporteur ne passent plus à la trappe. Moins de charge mentale, plus de réactivité au moment où ça compte.",
+          ]),
+          tip("Transformez chaque retour en vente conservée", [
+            "Un remboursement, c'est du chiffre d'affaires qui sort. Mettez l'échange et l'avoir en avant dès la demande de retour : nouvelle taille, nouveau coloris ou crédit boutique bonifié.",
+            "Pendant la peak season, où les volumes explosent, chaque échange conservé protège votre marge et évite un remboursement sec. Le retour devient un second point de vente plutôt qu'une perte, avec un simple paramétrage de parcours qui améliore directement votre rétention du CA.",
+          ]),
         ],
       }],
     },
