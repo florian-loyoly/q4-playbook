@@ -987,7 +987,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
     "loyalty-engagement": {
       title: "Fidélisation & Engagement",
       teaser: "Arrêter de sacrifier sa marge sur des chasseurs de promo à faible LTV, et faire du BFCM un canal qui recrute des cohortes qui reviennent.",
-      keyStat: { statement: "Le vrai problème du Black Friday n'est pas d'attirer du monde (+103% de trafic, +79% de conversion en moyenne), c'est de le garder. 12 mois plus tard, seulement 22% des nouveaux clients ont effectué un 2nd achat.", highlight: "22%", source: "Uptain, 2025" },
+      keyStat: { statement: "Le vrai problème du Black Friday n'est pas d'attirer du monde (+103 % de trafic, +79 % de conversion en moyenne), c'est de le garder. 12 mois plus tard, seulement 22 % des nouveaux clients ont effectué un 2nd achat.", highlight: "22 %", source: "Uptain, 2025" },
       partners: [{
         name: "Loyoly",
         pitch: "La plupart des marques sont assises sur une mine d'or : des années de clients qu'elles ont déjà payé pour conquérir. Pourtant, la majorité la laisse enfouie, en misant encore sur l'acquisition coûteuse de nouveaux clients pendant que leur « programme de fidélité » se contente de distribuer des réductions. Loyoly déverrouille cette mine d'or : la plateforme de fidélité, parrainage et engagement qui transforme vos clients existants en votre premier levier de croissance. Réachat, recommandations et advocacy au sein d'une expérience véritablement omnicanale (e-shop, boutiques et mobile), avec des parcours clients personnalisés à grande échelle et chaque signal renvoyé vers votre CRM. +600 marques nous font confiance.",
