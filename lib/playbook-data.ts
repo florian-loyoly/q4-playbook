@@ -101,7 +101,10 @@ export const UI: Record<Locale, UIStrings> = {
     marketSwitchHeading: "Switching market",
     marketSwitchMessage: "Each market has its own local partners and expert tips. We're taking you to the {market} playbook, keeping you on the same stage.",
     reduceHint: "",
-    footNote: "Prototype with static data. Lead capture is simulated.",
+    footTagline: "Expert Q4 commerce tactics, curated by Loyoly and its partners.",
+    footCta: "Visit loyoly.io",
+    footUrl: "https://www.loyoly.io/",
+    footRights: "© 2026 Loyoly. All rights reserved.",
   },
   fr: {
     kicker: "L'ultime Playbook Q4 2026",
@@ -172,7 +175,10 @@ export const UI: Record<Locale, UIStrings> = {
     marketSwitchHeading: "Changement de marché",
     marketSwitchMessage: "Chaque marché a ses propres partenaires locaux et conseils d'experts. On vous emmène vers le playbook {market}, en gardant la même étape.",
     reduceHint: "",
-    footNote: "Prototype avec données statiques. La capture de lead est simulée.",
+    footTagline: "Les tactiques commerce du Q4, sélectionnées par Loyoly et ses partenaires.",
+    footCta: "Découvrir loyoly.io",
+    footUrl: "https://www.loyoly.io/fr",
+    footRights: "© 2026 Loyoly. Tous droits réservés.",
   },
   es: {
     kicker: "El Playbook Q4 definitivo 2026",
@@ -243,7 +249,10 @@ export const UI: Record<Locale, UIStrings> = {
     marketSwitchHeading: "Cambio de mercado",
     marketSwitchMessage: "Cada mercado tiene sus propios partners locales y consejos de expertos. Te llevamos al playbook {market}, manteniéndote en la misma etapa.",
     reduceHint: "",
-    footNote: "Prototipo con datos estáticos. La captura de leads está simulada.",
+    footTagline: "Tácticas de comercio para el Q4, seleccionadas por Loyoly y sus partners.",
+    footCta: "Descubre loyoly.io",
+    footUrl: "https://www.loyoly.io/es",
+    footRights: "© 2026 Loyoly. Todos los derechos reservados.",
   },
 };
 
