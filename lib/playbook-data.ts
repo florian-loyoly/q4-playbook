@@ -1298,16 +1298,67 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
       teaser: "Activa el segundo pedido antes de enero y convierte los one-shot del BFCM en clientes recurrentes.",
       keyStat: { value: 5, unit: "x", prefix: "", label: "más barato reactivar a un comprador Q4 que adquirir uno nuevo en Q1", source: "Análisis Recupera, 2025" },
       partners: [
-        { name: "Nostrud Exercitation", pitch: "Flows de reactivación post-compra.", url: "#",
+        {
+          name: "ThirtyFive",
+          logo: "/assets/partners/thirtyfive-logo.svg",
+          pitch: "ThirtyFive acompaña a las marcas de e-commerce en la estructuración, el análisis y la gestión de su estrategia CRM. Convertimos tus datos en decisiones y tu retención en crecimiento incremental, gracias a un enfoque a medida pensado para tus retos de negocio.",
+          url: "https://www.thirtyfive.fr/",
+          author: { name: "Maxime Cal", role: "CEO", photo: "/assets/partners/thirtyfive-author.png" },
+          keyStat: { statement: "+5 % de retención = +25 % a +95 % de rentabilidad. Dicho de otro modo: el verdadero retorno de tu Q4 no se juega en la facturación de noviembre, sino en lo que haces con tus clientes en diciembre, enero y después.", highlight: "+5 %", source: "Bain & Company (efecto Reichheld)" },
           tips: [
-            tip("Ut enim ad minim veniam", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
-            tip("Quis nostrud exercitation ullamco", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
-          ],
-        },
-        { name: "Ullamco Laboris", pitch: "Predicción de churn y win-back.", url: "#",
-          tips: [
-            tip("Duis aute irure dolor", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
-            tip("Lorem ipsum dolor sit amet", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
+            tipB("Etiqueta a cada cliente en la entrada, o tu base será ilegible en enero", [
+              PB("En 48 h de Black Friday captas más clientes que en dos meses normales. El 15 de enero querrás saber a cuáles contactar de forma prioritaria. Y entonces ya será tarde: en tu base, todos se parecen."),
+              PB("Un cliente que entró a precio completo y un cazador de -40 % se han convertido en la misma línea dentro de Klaviyo. La etiqueta puesta en caliente es lo único que separa una base gestionable de una nebulosa. Captúrala desde el primer pedido:"),
+              LB(
+                "Entrada con o sin código promocional, y nivel de descuento obtenido",
+                "Mecánica desencadenante: descuento global, bundle, oferta VIP, regalo",
+                "Producto de entrada: producto estrella solo, pack, gifting",
+              ),
+              QB("Es el gesto más descuidado del Q4, y el más barato: cinco minutos de configuración que hacen legibles los tres meses siguientes."),
+            ]),
+            tipB("Tu cliente de Black Friday no es un mal cliente, está anclado al precio", [
+              PB("A menudo se dice que los clientes de Black Friday no vuelven nunca, y las curvas de enero a veces parecen confirmarlo. Pero comparar una cohorte de BF con una cohorte de marzo es comparar a dos personas que no entraron por la misma puerta: una buscaba tu marca, la otra buscaba una ganga. La división «nuevo frente a recurrente» es demasiado tosca para ver esa diferencia."),
+              PB("Segmenta más bien por comportamiento real:"),
+              LB(
+                "Nuevo con promoción o nuevo sin promoción",
+                "Comprador de bundle / pack de BF o comprador del producto estrella solo",
+                "Comprador de gifting (regalo) o uso personal",
+                "Recurrente con un carrito anormalmente alto = señal de acaparamiento",
+              ),
+              QB("El objetivo no es juzgar a este cliente, sino desanclarlo. La verdadera pregunta no es si es bueno o malo, sino cómo vas a hacerlo evolucionar."),
+            ], [V("ThirtyFive", "/assets/partners/ES-CRM-retention-repurchase-thirtyfive-tip2.png")]),
+            tipB("Activa tu flow de segundo pedido entre el día +30 y el día +60", [
+              PB("Hay una cuenta atrás que nadie mira. Pasados 60 días desde el primer pedido, la probabilidad de que un cliente vuelva a comprar se desploma. Y mientras aún liquidas tus existencias, tu cohorte de Black Friday atraviesa esa ventana en silencio, antes de que la declaren «mala» cuando nunca se le tendió la mano. Son los flows, no las campañas puntuales, los que rescatan ese momento."),
+              PB("La regla: provocar una segunda compra que no dependa de un nuevo descuento."),
+              LB(
+                "Reactiva sobre el valor, el uso, el contenido, no sobre un descuento más",
+                "Recomienda según el producto de entrada, no un descuento generalizado en toda la web",
+                "Reserva los incentivos solo para los segmentos que únicamente reaccionan ante una oferta",
+                "Orquesta sin duplicar: Email (día) → SMS (día +1) → WhatsApp (día +2)",
+              ),
+              QB("Es esa segunda compra sin descuento la que convierte a un cazador de ofertas en un cliente a secas."),
+            ], [V("ThirtyFive", "/assets/partners/ES-CRM-retention-repurchase-thirtyfive-tip3.png")]),
+            tipB("Corta la presión promocional desde enero, o fabricarás adictos", [
+              PB("En enero, las ventas caen y la tentación es real: lanzar una pequeña promoción para mantener el ritmo, y luego otra la semana siguiente. Sin darte cuenta, le enseñas a toda tu base una sola cosa: basta con esperar al próximo código. Un cliente que solo compra con promoción no tiene un valor percibido estable, y es en enero cuando se decide, no en el próximo BF."),
+              LB(
+                "Reduce a propósito la frecuencia de las ofertas después del pico",
+                "Vuelve a una comunicación de valor (producto, marca, uso, contenido)",
+                "Reserva los descuentos para desencadenantes concretos, segmento a segmento",
+                "Trata por separado los segmentos ya desanclados y los que siguen enganchados al precio",
+              ),
+              QB("Promoción continua = dependencia. Promoción segmentada + valor = retención."),
+            ]),
+            tipB("Mide el LTV por vía de entrada y devuélveselo al Paid", [
+              PB("La verdadera pregunta de tu Q4 no se plantea en noviembre, sino en abril: ¿cuánto vale, de verdad, un cliente que entró en Black Friday? Mientras leas tu base en bloque, nunca lo sabrás, y volverás a comprar los mismos perfiles demasiado caros el año que viene, convencido de que el Black Friday funciona."),
+              PB("Sigue cada cohorte según cómo entró, con el margen descontado, y haz llegar el veredicto a la adquisición."),
+              LB(
+                "Recompra en M1 / M3 / M6, LTV con promo vs. sin promo, bundle vs. producto solo",
+                "Margen real por cohorte, una vez descontado el descuento",
+                "Referencia: una retención de ~30 % ya es excelente, >35 % satisfactoria (HubSpot)",
+                "Una mecánica de BF que capta con bajo LTV → ajustas el CAC objetivo el año que viene",
+              ),
+              QB("El CRM no sufre el Q4: le enseña al Paid a prepararlo mejor. El bucle se cierra."),
+            ], [V("ThirtyFive", "/assets/partners/ES-CRM-retention-repurchase-thirtyfive-tip5.png")]),
           ],
         },
       ],
