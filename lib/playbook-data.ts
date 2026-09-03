@@ -1137,7 +1137,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
     "returns-after-sales": {
       title: "Retours & SAV",
       teaser: "Transformer chaque retour en réachat et protéger votre marge une fois le pic passé.",
-      keyStat: { value: 92, unit: "%", prefix: "", label: "des acheteurs rachètent après une expérience de retour simple", source: "Enquête Retourna, 2025" },
+      keyStat: { statement: "La gestion des retours constitue un poste de coût significatif. Dans la mode, 30 à 40 % des volumes expédiés font l'objet d'un retour, avec un coût de traitement de 8 à 20 € par retour selon la complexité du processus.", highlight: "30 à 40 %", source: "Accenture, 2025" },
       partners: [{
         name: "Baback",
         logo: "/assets/partners/baback-logo.png",
