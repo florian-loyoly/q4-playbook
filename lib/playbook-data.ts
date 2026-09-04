@@ -472,12 +472,66 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
     "logistics-delivery": {
       title: "Logistics & Delivery",
       teaser: "Show a delivery date you can actually hold, even when volumes spike.",
-      keyStat: { value: 31, unit: "%", prefix: "+", label: "repeat intent when the delivery promise is met during peak", source: "Shipwise index, 2025" },
+      keyStat: { statement: "During a promotional peak like Black Friday, daily order volume can be multiplied by more than 12. The whole challenge is absorbing that surge without slowing down fulfilment or degrading delivery.", highlight: "more than 12", source: "Shippingbo internal data (Novoma case study)" },
       partners: [{
-        name: "Dolore Magna", pitch: "Delivery orchestration and tracking.", url: "#",
+        name: "Shippingbo",
+        logo: "/assets/partners/shippingbo-logo.png",
+        pitch: "Shippingbo has built 3 robust SaaS tools dedicated to the performance of e-commerce professionals: an OMS to collect and centralise omnichannel e-commerce orders, a WMS dedicated to warehouse management and order-picking optimisation, and a TMS to manage multi-carrier shipping.",
+        url: "https://www.shippingbo.com/",
+        author: { name: "Florian Laillet", role: "COO & Partner", photo: "/assets/partners/shippingbo-author.jpg" },
         tips: [
-          tip("Duis aute irure dolor", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
-          tip("Lorem ipsum dolor sit amet", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
+          tipB("Prepare for the peak one to two months ahead", [
+            PB("An activity peak isn't prepared from a revenue target alone. Translate your sales forecasts into a logistics workload plan:"),
+            LB(
+              "Estimate the volumes to handle: orders per day, average number of items per order, and the split between single-item and multi-item orders.",
+              "Secure your supply: anticipate best-seller replenishment, factoring in supplier lead times and any seasonal delays.",
+              "Make stock reliable: run an inventory of picking locations two to three weeks before the peak, then fill the locations of the most-requested references.",
+              "Size your resources: adjust headcount, shifts, packing stations, trolleys and consumables to the expected volume.",
+            ),
+            BOX("", "The goal: turn sales forecasts into a realistic operational plan before the orders arrive."),
+          ]),
+          tipB("Get the warehouse into peak condition", [
+            PB("Before the rush, cut the movements and handling that create no value:"),
+            LB(
+              "Clear aisles and work zones so pallets or boxes don't slow down routes.",
+              "Move best-sellers closer to the picking and dispatch zones, using an ABC classification for example.",
+              "Map your locations and organise the warehouse into zones consistent with product types: standard, bulky, fragile or fast-moving.",
+              "Prepare the packing stations: boxes, mailers, consumables and printers should be reachable without a round trip.",
+              "Guide pickers with a handheld (PDA) to optimise routes and make onboarding seasonal reinforcements easier.",
+            ),
+            BOX("", "The goal: reduce the distance travelled per order and increase the number of lines picked per hour."),
+          ]),
+          tipB("Match the picking method to the order profile", [
+            PB("Don't apply a single method to every order. The right choice depends on the number of items, the presence of barcodes, reference frequency, product volume and trolley capacity:"),
+            LB(
+              "Pick-and-pack in one step: picking and labelling done together, especially suited to simple orders. Ideal for small or medium single-item orders.",
+              "Mobile cart: several orders picked in parallel using a compartmented trolley. Ideal for small or medium multi-item orders.",
+              "Fixed sortation: items are collected then split across several orders on a dedicated sorting area. Ideal for multi-item orders.",
+              "Single-order picking: one order picked on its own, notably when its make-up or volume warrants it. Ideal for orders containing bulky items.",
+            ),
+            BOX("", "The goal: limit the number of routes and handling steps while securing every order with a scan."),
+          ]),
+          tipB("Steer priorities and remove manual tasks", [
+            PB("During the peak, the processing order must rest on explicit operational criteria:"),
+            LB(
+              "Prioritise by the customer promise, the shipping deadline and the carrier cut-off.",
+              "Make the rules visible to teams so everyone immediately knows which batch to pick.",
+              "Automate repetitive operations: order retrieval, scan checks, label generation and tracking updates.",
+              "Adapt shifts to the workload curve, especially the volume built up over the weekend to be processed on Monday.",
+            ),
+            BOX("", "The goal: maximise the share of orders ready before collection time, without multiplying re-keying or manual arbitration."),
+          ]),
+          tipB("Secure your transport collection capacity", [
+            PB("An order picked on time but still sitting on the dock is still a late order. So prepare the warehouse's outbound as rigorously as the picking:"),
+            LB(
+              "Share your forecasts with carriers several weeks before the peak.",
+              "Confirm collection slots and pickup capacity against the expected daily volume.",
+              "Plan an intermediate collection when volume risks saturating the docks before the end of the day.",
+              "Identify a backup carrier and define the reassignment rules in case of saturation, delay or incident.",
+              "Test the continuity scenario before the peak so it can be activated without friction.",
+            ),
+            BOX("", "The goal: hand over all picked orders to carriers on time and avoid parcels piling up on the docks."),
+          ]),
         ],
       }],
     },
