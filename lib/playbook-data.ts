@@ -183,7 +183,7 @@ export const UI: Record<Locale, UIStrings> = {
   es: {
     kicker: "El Playbook Q4 definitivo 2026",
     headerTag: "Playbook Q4",
-    heroTitle: "El Q4 supone entre el 30 % y el 40 % de tu facturación. Aquí tienes el playbook para aprovechar al máximo cada euro de este pico de ventas.",
+    heroTitle: "El Q4 supone entre el 30 % y el 40 % de tu facturación. Aquí tienes el playbook para aprovechar al máximo cada euro de este pico de ventas.",
     heroSub: "Desde la primera impresión de un anuncio hasta la última devolución de un producto, analizamos las 9 etapas clave de la experiencia de cliente junto a un partner experto. Las palancas concretas para maximizar tus resultados durante Black Friday, Cyber Week y Navidad.",
     heroCta: "Explorar el recorrido",
     editedBy: "Editado por",
