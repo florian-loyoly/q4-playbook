@@ -287,75 +287,34 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
     "acquisition-ads": {
       title: "Acquisition & Ads",
       teaser: "Make your ROAS work even when CPMs spike and everyone is bidding you up.",
-      keyStat: { value: 38, unit: "%", prefix: "+", label: "higher ROAS for brands that pre-build Q4 audiences before November", source: "AdPeak Q4 benchmark, 2025" },
+      keyStat: { statement: "£26.9bn: UK consumers spent online during November and December 2025, setting a record and rising 4.1% year on year.", highlight: "£26.9bn", source: "Adobe Digital Insights, 2025 Holiday Shopping Report", sourceUrl: "https://business.adobe.com/uk/resources/holiday-shopping-report.html" },
       partners: [{
-        name: "Ben&Vic",
-        logo: "/assets/partners/benandvic-logo.svg",
-        pitch: "Ben&Vic turns your Ads into profitable growth levers. Google Ads, Social Ads, Creative Ads & UGC: expert-run campaigns.",
-        url: "https://www.benandvic.com/",
-        author: { name: "Victor Montaucet", role: "CEO", photo: "/assets/partners/benandvic-author.png" },
-        keyStat: { statement: "A creative seen 4 times converts around 45% less. At peak, it's not budget you're short of. It's creative diversity.", highlight: "45%", source: "Analytics at Meta, Meta, 2025" },
+        name: "Brave Agency",
+        logo: "/assets/partners/brave-logo.png",
+        pitch: "Brave is an eCommerce marketing agency that has been helping brands grow since 2000. Our From Search to Sale approach connects visibility, customer experience and conversion, bringing Paid Media, SEO, CRO and email together around the commercial journey. Acquisition is not simply about generating more clicks. It is about attracting the right customers and turning demand into profitable revenue.",
+        url: "https://brave.agency/",
+        author: { name: "Tony Conte", role: "Founder", photo: "/assets/partners/brave-author.png" },
         tips: [
-          tipB("Test your offers before Black Friday", [
-            PB("Black Friday isn't the time to find out whether your offer converts. It's the time to scale it. Too many brands show up in November with a blanket -30% off, never tested, pushed on a big budget, and watch the offer fall flat in real time. Yet everything you need comes just before: back-to-school, seasonal sale events, Halloween, the pre-BF window. Perfect windows to test on a small budget."),
-            LB(
-              "Start testing early in the autumn: offers, hooks, discount tiers, on a small budget",
-              "Look for the right mechanism, not just the percentage: bundle, free gift, tiered offer, early access",
-              "Let each test run its course: spend 3-4× your target CPA before deciding, not a single day",
-              "Arrive at BF with 2-3 proven offers, and an algorithm that has already learned on them",
-            ),
-            QB("Black Friday is won in September and October. You scale proven offers there, you test nothing."),
-          ], [V("Ben&Vic", "/assets/partners/EN-acquisition-ads-benandvic-tip1.png")]),
-          tipB("Watch your penetration rate: a loss of signal can 4× your CPA", [
-            PB("The penetration rate is the ratio between your landing page views and your clicks. In plain terms: out of 10 people who click, how many does Meta actually see land on your site. It's the amount of signal you send back to the algorithm. And it's at peak, when you scale and the auction heats up, that Meta most needs to see who buys. The problem: that's exactly when signal degrades the most. A site rebuild for BF, a new consent banner, tags that got moved."),
-            LB(
-              "High signal = Meta sees, CPA drops, you can scale.",
-              "Low signal = Meta is blind, CPA climbs. Not because your ad is bad. Because the data is missing.",
-            ),
-            PB("A tracking setup that breaks on 20 November means three weeks of peak budget optimised blind."),
-            BOX("A 4× CPA with no change to the ads", "E-commerce account, penetration rate stable at 0.50, CPA around €40. Within a few months, the rate drops to 0.20 and CPA climbs to €160. Everyone's instinct: cut the budget. Except the ads had nothing to do with it. A reconfigured cookie banner had cut the signal. We fix the tracking: the rate climbs back to 0.52, CPA is divided by 2.7 in 4 to 6 weeks. Without touching the creatives."),
-            LB(
-              "Check your penetration rate before the Q4 launch: a drop = a signal problem, not a creative one",
-              "A CPA is never read in isolation: before cutting, check that Meta is properly recording your conversions",
-              "Steer on cost-per-ATC → CPC → CPA, and measure incrementality (+24% conversions that standard attribution misses, per Meta)",
-              "Connect your offline conversions: at BF, omnichannel delivers -21% CPA versus +8% for online-only",
-            ),
-            QB("A rising CPA isn't always the ad's fault. Often it's Meta that has gone blind. Restore the signal before cutting anything."),
-          ], [V("Ben&Vic", "/assets/partners/EN-acquisition-ads-benandvic-tip2.png")]),
-          tipB("Bet on vertical video: +48% CPM at peak, versus +61% for other formats", [
-            PB("When everyone bids at the same time, video becomes a cost lever. During Black Friday, 9:16 videos with sound rose +48% in CPM. Every other format: +61%. Same peak, less pressure on your costs."),
-            PB("Why: vertical video is the format people already consume all day long. It drives more interactions, so a better quality score, so a lower CPM in the auction. And on conversion, 53% of users say they buy more easily when a creator presents the product in Reels."),
-            LB(
-              "Build your library of vertical videos with sound before the season: production pays for itself in delivery costs",
-              "A native video = better quality score = lower CPM in the hot auction",
-              "More than half the time spent on Instagram is short-form video: bet on Reels and creators",
-              "Bonus: your videos hold up better through the Christmas dip (CVR -18% versus -33% for other formats)",
-            ),
-            QB("In a saturated auction, a good video doesn't just cost less to deliver. It converts better, for longer."),
-          ], [V("Ben&Vic", "/assets/partners/EN-acquisition-ads-benandvic-tip3.png")]),
-          tipB("Refresh your creatives before November: at Q4 pace, a creative wears out in a few days", [
-            PB("The telltale sign: your CTR drops while your CPM stays flat. It's not the competition. It's your creative getting tired. And at Q4 pace, that happens within days."),
-            PB("The good news: production is no longer the bottleneck. AI has unlocked it (adoption of AI tools: +70% in a year, Air France tested up to 150 combinations automatically). But AI produces volume. The angle is still your job."),
-            LB(
-              "Watch the CTR-down / CPM-flat combo = a tiring creative → refresh before the peak",
-              "Prepare several angles and hooks upfront, not ten variants of the same one",
-              "Use AI for production (volume, variations), keep control of the angle",
-              "Test early: a creative is judged after spending 3-4× its target CPA, not by the day",
-            ),
-            QB("At peak, it's not budget you're short of. It's the creative angle. Build the reserve before November."),
-          ], [V("Ben&Vic", "/assets/partners/EN-acquisition-ads-benandvic-tip4.png")]),
-          tipB("Launch on Cost Cap with big budgets: volume, without giving up profitability", [
-            PB("The number-one fear at peak: CPA running away the moment you open the budgets."),
-            PB("Cost Cap answers exactly that. You set a cost per result not to exceed on average, and the algorithm only spends when it can hold it. You can launch with wide budgets without fearing a blow-out."),
-            PB("You no longer trade off volume against profitability: you go after all the volume your cost target allows. The only trap: a cap set too tight against rising auctions ends up throttling your delivery."),
-            LB(
-              "Launch on Cost Cap, not 'lowest cost': you set the CPA ceiling, the algorithm maximises volume below it",
-              "Open up wide budgets: budget is no longer the brake, the cost ceiling is what regulates",
-              "Set your cap on your real CAC target (margin deducted, derived from your LTV by cohort), not a gut-feel CPA",
-              "If delivery throttles at peak, loosen the cap by a few % rather than cutting: high auctions ≠ a failed campaign",
-            ),
-            QB("Cost Cap turns your budget into an accelerator: you push volume, and the ceiling guarantees every euro stays profitable."),
-          ], [V("Ben&Vic", "/assets/partners/EN-acquisition-ads-benandvic-tip5.png")]),
+          tip("Don't wait until Black Friday to find out what works", [
+            "Q4 is not the time to start testing from scratch. Use the weeks leading into peak trading to test audiences, creative, messaging, products and offers, so you enter Black Friday with evidence rather than assumptions.",
+            "Build learnings and remarketing audiences early, then put additional budget behind the combinations already demonstrating intent and conversion.",
+          ]),
+          tip("Measure profit, not just headline ROAS", [
+            "A strong ROAS can still hide a weak commercial result. Q4 discounts, delivery costs, promotional codes, returns and changing product margins all affect the value of a sale, so agree what profitable acquisition looks like before peak trading begins.",
+            "Use revenue and ROAS alongside margin, new-customer acquisition and wider commercial targets when deciding where to scale.",
+          ]),
+          tip("Separate genuine acquisition from demand you already own", [
+            "Peak trading can make performance dashboards look exceptional because existing customers and people already searching for your brand convert in greater numbers.",
+            "Look separately at new versus returning customers, branded versus non-branded demand, and prospecting versus remarketing. This shows whether paid media is genuinely bringing new customers into the business.",
+          ], [V("Brave Agency", "/assets/partners/EN-acquisition-ads-brave-tip3-a.png"), V("Brave Agency", "/assets/partners/EN-acquisition-ads-brave-tip3-b.png")]),
+          tip("Let stock and margin decide where your budget goes", [
+            "Q4 media plans often fail when campaign budgets ignore what the business can actually fulfil profitably. Feed live stock position, product margin and fulfilment constraints into daily budget decisions.",
+            "Pull spend away from products that are low in stock, slow to dispatch or unprofitable after discount, and redirect it towards available products with healthy contribution. This prevents paid media from creating demand the operation cannot convert or serve.",
+          ]),
+          tip("Take customers from search to sale", [
+            "Brave's From Search to Sale approach recognises that the click is only the beginning. Before increasing Q4 budgets, check the journey your ads lead into: mobile experience, page speed, product availability, promotional consistency, tracking and the path to purchase.",
+            "Paid acquisition works hardest when visibility leads to a strong experience, conversion and profitable revenue.",
+          ]),
         ],
       }],
     },
