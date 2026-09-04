@@ -175,7 +175,7 @@ export const UI: Record<Locale, UIStrings> = {
     marketSwitchHeading: "Changement de marché",
     marketSwitchMessage: "Nouveau marché, nouveaux partenaires et conseils locaux. On vous emmène à la même étape du playbook {market}.",
     reduceHint: "",
-    footTagline: "Les tactiques commerce du Q4, sélectionnées par Loyoly et ses partenaires.",
+    footTagline: "Les tactiques e-commerce Q4, sélectionnées par Loyoly et ses partenaires.",
     footCta: "Découvrir loyoly.io",
     footUrl: "https://www.loyoly.io/fr",
     footRights: "© 2026 Loyoly. Tous droits réservés.",
