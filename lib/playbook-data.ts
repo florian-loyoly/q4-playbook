@@ -871,16 +871,66 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
     "logistics-delivery": {
       title: "Logistique & Livraison",
       teaser: "Afficher une date de livraison crédible et la tenir, même quand les volumes explosent.",
-      keyStat: { value: 31, unit: "%", prefix: "+", label: "d'intention de rachat quand la promesse de livraison est tenue en période de pic", source: "Indice Cargoo, 2025" },
+      keyStat: { statement: "Lors d'un pic promotionnel, comme le Black Friday, le volume quotidien de commandes peut être multiplié par plus de 12. Toute la difficulté est d'absorber cette hausse sans ralentir la préparation ni dégrader la livraison.", highlight: "plus de 12", source: "Données internes Shippingbo (cas client Novoma)" },
       partners: [{
         name: "Shippingbo",
         logo: "/assets/partners/shippingbo-logo.png",
-        pitch: "Shippingbo est une solution SaaS française dédiée à la logistique e-commerce, réunissant trois modules : un OMS pour centraliser les commandes, un WMS pour la gestion d'entrepôt et un TMS pour les expéditions multi-transporteurs. Elle s'intègre à plus de 300 plateformes (Amazon, Shopify, Colissimo, etc.) et est utilisée par plus de 1 000 marchands.",
+        pitch: "Shippingbo a développé 3 logiciels SaaS robustes au service de la performance des professionnels du e-commerce : un OMS pour récupérer et centraliser les commandes e-commerce omnicanales, un WMS dédié à la gestion d'entrepôt et à l'optimisation de la préparation de commandes, et un TMS pour gérer ses expéditions multi-transporteurs.",
         url: "https://www.shippingbo.com/",
-        noAuthor: true,
+        author: { name: "Florian Laillet", role: "COO et Associé", photo: "/assets/partners/shippingbo-author.jpg" },
         tips: [
-          tip("Duis aute irure dolor", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."], [V("Lorem ipsum")]),
-          tip("Lorem ipsum dolor sit amet", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."]),
+          tipB("Préparer le pic un à deux mois en amont", [
+            PB("Un pic d'activité ne se prépare pas uniquement à partir d'un objectif de chiffre d'affaires. Traduisez vos prévisions commerciales en plan de charge logistique :"),
+            LB(
+              "Estimez les volumes à traiter : nombre de commandes par jour, nombre moyen d'articles par commande et répartition entre commandes mono-produit et multi-produits.",
+              "Sécurisez les approvisionnements : anticipez le réassort des best-sellers en tenant compte des délais fournisseurs et des éventuels allongements liés à la saison.",
+              "Fiabilisez les stocks : réalisez un inventaire des emplacements de picking deux à trois semaines avant le pic, puis remplissez les emplacements des références les plus demandées.",
+              "Dimensionnez les ressources : ajustez les effectifs, les horaires, les postes d'emballage, les chariots et les consommables au volume attendu.",
+            ),
+            BOX("", "L'objectif : transformer les prévisions de vente en un plan opérationnel réaliste avant que les commandes n'arrivent."),
+          ]),
+          tipB("Mettre l'entrepôt en condition de pic", [
+            PB("Avant le rush, réduisez les déplacements et les manipulations qui ne créent pas de valeur :"),
+            LB(
+              "Dégagez les allées et les zones de travail pour éviter que des palettes ou des cartons ne ralentissent les parcours.",
+              "Rapprochez les best-sellers des zones de préparation et d'expédition, en vous appuyant par exemple sur une classification ABC.",
+              "Cartographiez les emplacements et organisez l'entrepôt par zones cohérentes avec les typologies de produits : standards, volumineux, fragiles ou à forte rotation.",
+              "Préparez les postes d'emballage : cartons, pochettes, consommables et imprimantes doivent être accessibles sans aller-retour inutile.",
+              "Guidez les préparateurs avec un PDA pour optimiser les trajets et faciliter l'intégration des renforts saisonniers.",
+            ),
+            BOX("", "L'objectif : réduire la distance parcourue par commande et augmenter le nombre de lignes préparées par heure."),
+          ], [V("Shippingbo", "/assets/partners/FR-logistics-delivery-shippingbo-tip2.png")]),
+          tipB("Adapter le mode de préparation au profil des commandes", [
+            PB("N'appliquez pas une méthode unique à l'ensemble des commandes. Le choix dépend notamment du nombre d'articles, de la présence de codes-barres, de la fréquence des références, du volume des produits et de la capacité des chariots :"),
+            LB(
+              "Préparation-étiquetage simultané : préparation et étiquetage réalisés en une seule étape, particulièrement adaptée aux commandes simples. Idéal pour les commandes mono-produit de petite ou moyenne taille.",
+              "Rucher mobile : préparation de plusieurs commandes en parallèle à l'aide d'un chariot compartimenté. Idéal pour les commandes multi-produits de petite ou moyenne taille.",
+              "Rucher fixe : les articles sont collectés puis répartis entre plusieurs commandes sur une zone de tri dédiée. Idéal pour les commandes multi-produits.",
+              "Mono-picking : une commande est préparée individuellement, notamment lorsque sa composition ou son volume le justifie. Idéal pour les commandes contenant des articles volumineux.",
+            ),
+            BOX("", "L'objectif : limiter le nombre de parcours et de manipulations tout en sécurisant chaque commande par le scan."),
+          ], [V("Shippingbo", "/assets/partners/FR-logistics-delivery-shippingbo-tip3.png")]),
+          tipB("Piloter les priorités et supprimer les tâches manuelles", [
+            PB("Pendant le pic, l'ordre de traitement doit reposer sur des critères opérationnels explicites :"),
+            LB(
+              "Priorisez selon la promesse client, l'heure limite d'expédition et le cut-off du transporteur.",
+              "Rendez les règles visibles par les équipes afin que chacun sache immédiatement quelle session préparer.",
+              "Automatisez les opérations répétitives : récupération des commandes, contrôle au scan, génération des étiquettes et transmission du suivi.",
+              "Adaptez les horaires à la courbe de charge, notamment au volume accumulé pendant le week-end et à traiter le lundi.",
+            ),
+            BOX("", "L'objectif : maximiser la part des commandes prêtes avant l'heure de collecte, sans multiplier les ressaisies ni les arbitrages manuels."),
+          ], [V("Shippingbo", "/assets/partners/FR-logistics-delivery-shippingbo-tip4.png")]),
+          tipB("Sécuriser la capacité de collecte transport", [
+            PB("Une commande préparée à temps mais encore présente sur le quai reste une commande en retard. Préparez donc la sortie de l'entrepôt aussi rigoureusement que le picking :"),
+            LB(
+              "Communiquez vos prévisions aux transporteurs plusieurs semaines avant le pic.",
+              "Confirmez les horaires et la capacité de ramasse en fonction du volume quotidien attendu.",
+              "Prévoyez une collecte intermédiaire lorsque le volume risque de saturer les quais avant la fin de journée.",
+              "Identifiez un transporteur de secours et définissez les règles de réattribution en cas de saturation, de retard ou d'incident.",
+              "Testez le scénario de continuité avant le pic afin qu'il puisse être activé sans friction.",
+            ),
+            BOX("", "L'objectif : remettre l'intégralité des commandes préparées aux transporteurs dans les délais et éviter l'accumulation de colis sur les quais."),
+          ], [V("Shippingbo", "/assets/partners/FR-logistics-delivery-shippingbo-tip5.png")]),
         ],
       }],
     },
