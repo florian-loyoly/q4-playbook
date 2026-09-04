@@ -20,7 +20,7 @@ export function PartnerCard({ step, partner, ui }: { step: Step; partner: Partne
         borderRadius: 2,
         padding: "26px 28px",
         display: "flex",
-        gap: 20,
+        gap: 16,
         alignItems: "flex-start",
         flexWrap: "wrap",
       }}
@@ -30,7 +30,7 @@ export function PartnerCard({ step, partner, ui }: { step: Step; partner: Partne
         <div style={{ marginBottom: 12 }}>
           <PartnerLogo partner={partner} accent={accent} size={34} />
         </div>
-        <p style={{ fontFamily: BODY, fontSize: 15, lineHeight: 1.5, color: P.p800, margin: 0, maxWidth: 520 }}>{partner.pitch}</p>
+        <p style={{ fontFamily: BODY, fontSize: 15, lineHeight: 1.5, color: P.p800, margin: 0, maxWidth: 680 }}>{partner.pitch}</p>
 
         {author ? (
           <div style={{ display: "flex", alignItems: "center", gap: 13, marginTop: 20, paddingTop: 18, borderTop: `1px solid ${P.p200}` }}>
