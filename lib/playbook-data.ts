@@ -1224,11 +1224,11 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
             tip("Activa tus flows clave antes del pico de volumen", [
               "Nuestros datos son claros: las mejores marcas afrontan el pico con al menos 8 flows generadores de ingresos ya activos, hasta 13 en el caso de las más grandes. En el menú: welcome series, abandono de carrito, abandono de navegación, post-compra, win-back, back-in-stock y VIP.",
               "Las marcas con mejor rendimiento apuestan por activar y optimizar los flows que ya tienen, en lugar de crear otros nuevos cuando el tráfico se dispara. La clave: ponerlos en marcha y rodarlos bien con antelación. La welcome series y los abandonos de navegación o de carrito siguen siendo los flows más desplegados, y con razón: son los que sostienen la mayor parte del nurturing de los nuevos suscriptores y de la recuperación de ventas perdidas cuando el volumen crece.",
-            ]),
+            ], [V("Klaviyo", "/assets/partners/ES-CRM-activation-nurturing-klaviyo-tip2.png")]),
             tip("Segmenta con más detalle para personalizar tus envíos", [
               "Nuestros datos muestran que las marcas con mejor rendimiento reparten el 66 % de sus envíos entre al menos 6 segmentos, en lugar de tratar el pico como un gran blast a toda la base. Los segmentos que de verdad mueven la aguja son de comportamiento, no solo demográficos: cazadores de ofertas vs. clientes fieles, activos vs. inactivos, AOV alto vs. bajo.",
               "Todo se basa aquí en una regla: convertir tu CRM en la single source of truth de tus datos de cliente. Cuanto más completos sean esos datos, con más precisión llegas a estos grupos y envías a cada uno un mensaje ajustado a su intención, en lugar de esperar que un envío genérico le hable a todo el mundo.",
-            ]),
+            ], [V("Klaviyo", "/assets/partners/ES-CRM-activation-nurturing-klaviyo-tip3.png")]),
           ],
         },
       ],
