@@ -346,7 +346,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
             tip("Personalise nurture content off real behaviour, not assumptions.", [
               "Static, one-size-fits-all nurture emails get lost in an inbox that's more crowded than any other point in the year.",
               "Use browse and purchase behaviour to dynamically tailor content and offers within your activation flows. Even simple category-based personalisation will outperform a generic send during Q4.",
-            ], [V("Visualsoft", "/assets/partners/EN-CRM-activation-nurturing-visualsoft-tip4.png")]),
+            ], [V("Visualsoft", "/assets/partners/EN-CRM-activation-nurturing_visualsoft-tip4.png")]),
             tip("Align your CRM cadence with the paid and social calendar.", [
               "Q4 send frequency naturally increases, and if CRM isn't coordinated with paid promotions, you end up either competing with your own ads or fatiguing the same audience twice.",
               "Map your nurture and activation sends against the wider marketing calendar so each channel is doing a distinct job, not duplicating the same message.",
