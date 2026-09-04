@@ -30,7 +30,13 @@ export function PartnerCard({ step, partner, ui }: { step: Step; partner: Partne
         <div style={{ marginBottom: 12 }}>
           <PartnerLogo partner={partner} accent={accent} size={34} />
         </div>
-        <p style={{ fontFamily: BODY, fontSize: 15, lineHeight: 1.5, color: P.p800, margin: 0, maxWidth: 680 }}>{partner.pitch}</p>
+        <div style={{ maxWidth: 680 }}>
+          {partner.pitch.split("\n\n").map((para, i) => (
+            <p key={i} style={{ fontFamily: BODY, fontSize: 15, lineHeight: 1.5, color: P.p800, margin: i === 0 ? 0 : "12px 0 0" }}>
+              {para}
+            </p>
+          ))}
+        </div>
 
         {author ? (
           <div style={{ display: "flex", alignItems: "center", gap: 13, marginTop: 20, paddingTop: 18, borderTop: `1px solid ${P.p200}` }}>
