@@ -509,7 +509,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
               "Guide pickers with a handheld (PDA) to optimise routes and make onboarding seasonal reinforcements easier.",
             ),
             BOX("", "The goal: reduce the distance travelled per order and increase the number of lines picked per hour."),
-          ]),
+          ], [V("Shippingbo", "/assets/partners/EN-logistics-delivery-shippingbo-tip2.jpg")]),
           tipB("Match the picking method to the order profile", [
             PB("Don't apply a single method to every order. The right choice depends on the number of items, the presence of barcodes, reference frequency, product volume and trolley capacity:"),
             LB(
@@ -519,7 +519,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
               "Single-order picking: one order picked on its own, notably when its make-up or volume warrants it. Ideal for orders containing bulky items.",
             ),
             BOX("", "The goal: limit the number of routes and handling steps while securing every order with a scan."),
-          ]),
+          ], [V("Shippingbo", "/assets/partners/EN-logistics-delivery-shippingbo-tip3.jpeg")]),
           tipB("Steer priorities and remove manual tasks", [
             PB("During the peak, the processing order must rest on explicit operational criteria:"),
             LB(
@@ -529,7 +529,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
               "Adapt shifts to the workload curve, especially the volume built up over the weekend to be processed on Monday.",
             ),
             BOX("", "The goal: maximise the share of orders ready before collection time, without multiplying re-keying or manual arbitration."),
-          ]),
+          ], [V("Shippingbo", "/assets/partners/EN-logistics-delivery-shippingbo-tip4.jpeg")]),
           tipB("Secure your transport collection capacity", [
             PB("An order picked on time but still sitting on the dock is still a late order. So prepare the warehouse's outbound as rigorously as the picking:"),
             LB(
