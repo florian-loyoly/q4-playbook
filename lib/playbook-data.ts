@@ -593,13 +593,27 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
         {
           name: "Paper Run",
           logo: "/assets/partners/paper-run-logo.png",
-          pitch: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, quis nostrud exercitation ullamco laboris.",
-          url: "#",
-          keyStat: { value: 42, unit: "%", prefix: "+", label: "Lorem ipsum dolor sit amet, consectetur adipiscing elit sed do eiusmod.", source: "Lorem ipsum" },
+          pitch: "Paper Run sends programmatic Direct Mail that plugs into your CRM. We build the segments for you, design the mailers, and manage the rest. Measured on real incrementality via holdout testing. Live across the UK, US, Netherlands and France, and trusted by leading DTC brands including Grüns, Charlotte Tilbury, AG1, Paul Smith, IM8 and Mars Men.",
+          url: "https://paperrun.com/",
+          author: { name: "Charlie Marks", role: "Growth", photo: "/assets/partners/paperrun-author.jpeg" },
+          keyStat: { statement: "70% of emails are unopened. Not because of the incentive, or the offer. Just too much noise.", highlight: "70%", source: "Paper Run internal data" },
           tips: [
-            tip("Lorem ipsum dolor sit amet", ["Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.", "Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."], [V("Lorem ipsum")]),
-            tip("Consectetur adipiscing elit", ["Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident."]),
-            tip("Sed do eiusmod tempor incididunt", ["Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure."], [V("Lorem ipsum")]),
+            tipB("Win back the customers who've gone dark", [
+              PB("When a lapsed customer stops opening email, your win-back flow is shouting into the void. Trigger a postcard instead: same lapsed-purchaser logic, different mailbox."),
+              BOX("Proof", "4.1X incremental ROAS reactivating lapsed customers. Top of the Mornin' hit 10X ROAS winning back lapsed coffee drinkers; Dirtea used the same play to reactivate dormant customers it couldn't reach digitally."),
+            ]),
+            tipB("Reactivate cancelled subscribers", [
+              PB("Winning back subscribers is hard, especially when they're digitally unreachable: the ones who stopped opening your emails months ago, so your 'we miss you' flow never lands. Paper Run plugs into your subscription platform, such as a Recharge cancelled-subscriber flow, and triggers a physical win-back the moment a subscriber becomes unreachable, programmatically sending them a mailer."),
+              BOX("Proof", "Create built Paper Run into its Recharge cancellation flow and lifted repeat customer rate +22%. UpCircle Beauty runs the same play at 4.9X ROAS on cancelled subscribers; TRIP is winning back cancelled subs it can't reach any other way."),
+            ]),
+            tipB("Turn the BFCM one-time buyer into a second order", [
+              PB("Your biggest Q4 risk isn't acquisition, it's the thousands of discount-led first-timers who never come back. Fire a post-purchase mailer soon after the first order, while you're still top of mind, to earn the profitable second purchase. Handwritten style, from the founder."),
+              BOX("Proof", "Pod Company: 12X incremental ROAS from post-purchase mailers. Collider lifted repeat purchase +28% with a handwritten-style welcome note (no discount); Miller Harris doubled its repeat purchase rate; one A/B test lifted new-customer repeat purchase +39.7%."),
+            ]),
+            tipB("Cash in expiring loyalty points", [
+              PB("Points quietly expiring in the post-holiday lull are a reason to return that customers never see, because the reminder email goes unopened. A dated, personalised mailer makes the deadline physical, sitting on the coffee table and impossible to ignore."),
+              BOX("Proof", "Because Market: 4.9X incremental ROAS from loyalty-reminder mailers. Eric Javits turned its loyalty program into a genuine reason to come back."),
+            ]),
           ],
         },
       ],
