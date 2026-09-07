@@ -24,6 +24,7 @@ export type LeadInput = {
   website: string;
   profile: string; // form value: brand | agency | saas | media | other
   orders: string; // form value (brands only), else ""
+  cms: string; // HubSpot company `cms` enum value (brands only), else ""
   priority: string; // app step slug (brands only), else ""
   utm: string; // raw landing-URL query string (partner / UTM attribution), else ""
 };
@@ -141,6 +142,7 @@ async function upsertCompany(token: string, lead: LeadInput, domain: string): Pr
   if (lead.profile === "brand") {
     const orders = ORDERS[lead.orders];
     if (orders) properties.average_number_orders_per_month = orders;
+    if (lead.cms) properties.cms = lead.cms;
   }
 
   const existing = await findCompanyByDomain(token, domain);

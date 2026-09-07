@@ -7,14 +7,14 @@ import { Icon } from "./Icon";
 import { submitLead } from "@/lib/leads";
 import { getAttribution } from "@/lib/attribution";
 
-type Fields = { email: string; company: string; website: string; profile: string; orders: string; priority: string; consent: boolean };
+type Fields = { email: string; company: string; website: string; profile: string; orders: string; cms: string; priority: string; consent: boolean };
 type Errors = Partial<Record<keyof Fields, string>>;
 
 const EMAIL_RE = /^[^@\s]+@[^@\s]+\.[^@\s]+$/;
 const URL_RE = /^(https?:\/\/)?([\w-]+\.)+[\w-]{2,}(\/.*)?$/;
 
 export function LeadForm({ market, steps, ui, onSuccess }: { market: MarketId; steps: Step[]; ui: UIStrings; onSuccess: (prioritySlug: string) => void }) {
-  const [form, setForm] = useState<Fields>({ email: "", company: "", website: "", profile: "", orders: "", priority: "", consent: false });
+  const [form, setForm] = useState<Fields>({ email: "", company: "", website: "", profile: "", orders: "", cms: "", priority: "", consent: false });
   const [touched, setTouched] = useState<Partial<Record<keyof Fields, boolean>>>({});
   const [errors, setErrors] = useState<Errors>({});
   const [submitting, setSubmitting] = useState(false);
@@ -28,6 +28,7 @@ export function LeadForm({ market, steps, ui, onSuccess }: { market: MarketId; s
     else if (!URL_RE.test(f.website.trim())) e.website = ui.errUrl;
     if (!f.profile) e.profile = ui.errRequired;
     if (f.profile === "brand" && !f.orders) e.orders = ui.errRequired;
+    if (f.profile === "brand" && !f.cms) e.cms = ui.errRequired;
     if (f.profile === "brand" && !f.priority) e.priority = ui.errRequired;
     if (!f.consent) e.consent = ui.errConsent;
     return e;
@@ -45,7 +46,7 @@ export function LeadForm({ market, steps, ui, onSuccess }: { market: MarketId; s
     const e = validate(form);
     if (Object.keys(e).length) {
       setErrors(e);
-      setTouched({ email: true, company: true, website: true, profile: true, orders: true, priority: true, consent: true });
+      setTouched({ email: true, company: true, website: true, profile: true, orders: true, cms: true, priority: true, consent: true });
       return;
     }
     setSubmitting(true);
@@ -55,6 +56,7 @@ export function LeadForm({ market, steps, ui, onSuccess }: { market: MarketId; s
       website: form.website.trim(),
       profile: form.profile,
       orders: form.profile === "brand" ? form.orders : "",
+      cms: form.profile === "brand" ? form.cms : "",
       consent: form.consent,
       market,
       source: "Q4 Playbook 2026",
@@ -158,6 +160,19 @@ export function LeadForm({ market, steps, ui, onSuccess }: { market: MarketId; s
   ];
   const orderOptions = ["0-500", "500-1500", "1500-2500", "2500-5000", "5000-7000", "7000-12000", "12000+"].map((v) => ({ value: v, label: v }));
   orderOptions.push({ value: "not_ecom", label: ui.ordersNotEcom });
+  // Values are the exact HubSpot company `cms` enum values; only the two generic
+  // options carry a localized label.
+  const cmsOptions = [
+    { value: "Shopify", label: "Shopify" },
+    { value: "Shopify Plus", label: "Shopify Plus" },
+    { value: "PrestaShop", label: "PrestaShop" },
+    { value: "Salesforce", label: "Salesforce" },
+    { value: "Magento (Adobe Commerce)", label: "Magento (Adobe Commerce)" },
+    { value: "WooCommerce", label: "WooCommerce" },
+    { value: "Squarespace", label: "Squarespace" },
+    { value: "Custom CMS", label: ui.cmsCustom },
+    { value: "Autre", label: ui.cmsOther },
+  ];
 
   const consentErr = touched.consent && errors.consent;
 
@@ -189,6 +204,7 @@ export function LeadForm({ market, steps, ui, onSuccess }: { market: MarketId; s
       {field("website", ui.fieldWebsite, ui.phWebsite)}
       {select("profile", ui.fieldProfile, ui.phSelect, profileOptions)}
       {form.profile === "brand" ? select("orders", ui.fieldOrders, ui.phSelect, orderOptions) : null}
+      {form.profile === "brand" ? select("cms", ui.fieldCms, ui.phSelect, cmsOptions) : null}
 
       {form.profile === "brand" ? (
         <div style={{ marginBottom: 14 }}>

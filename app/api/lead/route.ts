@@ -11,6 +11,7 @@ type Body = {
   website?: string;
   profile?: string;
   orders?: string;
+  cms?: string;
   consent?: boolean;
   market?: string;
   source?: string;
@@ -50,7 +51,7 @@ export async function POST(req: Request) {
   // we log and still return ok (the client unlocks the app on ok). We await it
   // because, on serverless, work after the response is not guaranteed to run.
   try {
-    await syncLeadToHubSpot({ email, company, website, profile, orders, priority: (body.priority || "").trim(), utm: (body.utm || "").trim().slice(0, 500) });
+    await syncLeadToHubSpot({ email, company, website, profile, orders, cms: (body.cms || "").trim(), priority: (body.priority || "").trim(), utm: (body.utm || "").trim().slice(0, 500) });
   } catch (err) {
     console.error("[lead] HubSpot sync failed:", err);
   }

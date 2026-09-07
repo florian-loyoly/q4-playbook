@@ -6,6 +6,7 @@ export type LeadPayload = {
   website: string;
   profile: string; // "I work for": brand / agency / saas / media / other
   orders: string; // monthly orders band (only when profile === "brand", else "")
+  cms: string; // e-commerce platform / CMS (only when profile === "brand", else "")
   consent: boolean;
   market: MarketId; // originating market (fr / uk / es)
   source: string; // e.g. "Q4 Playbook 2026"
