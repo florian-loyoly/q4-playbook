@@ -98,8 +98,6 @@ async function upsertContact(token: string, lead: LeadInput): Promise<string> {
     email: lead.email,
     company: lead.company,
     website: lead.website,
-    // Every form lead opts into marketing, so mark them a marketing contact.
-    hs_marketable_status: "true",
   };
   const q4 = Q4_PRIORITY[lead.priority];
   if (q4) properties.q4_priority = q4;
