@@ -609,20 +609,20 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
           tips: [
             tipB("Win back the customers who've gone dark", [
               PB("When a lapsed customer stops opening email, your win-back flow is shouting into the void. Trigger a postcard instead: same lapsed-purchaser logic, different mailbox."),
-              BOX("Proof", "4.1X incremental ROAS reactivating lapsed customers. Top of the Mornin' hit 10X ROAS winning back lapsed coffee drinkers; Dirtea used the same play to reactivate dormant customers it couldn't reach digitally."),
-            ]),
+              BOX("Proof", "4.1X incremental ROAS reactivating lapsed customers. Top of the Mornin' hit 6.1X ROAS winning back lapsed water drinkers; Dirtea used the same play to reactivate dormant customers it couldn't reach digitally."),
+            ], [V("Paper Run", "/assets/partners/UK-CRM-Retention-Repurchase-paper-run-tip1.png")]),
             tipB("Reactivate cancelled subscribers", [
               PB("Winning back subscribers is hard, especially when they're digitally unreachable: the ones who stopped opening your emails months ago, so your 'we miss you' flow never lands. Paper Run plugs into your subscription platform, such as a Recharge cancelled-subscriber flow, and triggers a physical win-back the moment a subscriber becomes unreachable, programmatically sending them a mailer."),
               BOX("Proof", "Create built Paper Run into its Recharge cancellation flow and lifted repeat customer rate +22%. UpCircle Beauty runs the same play at 4.9X ROAS on cancelled subscribers; TRIP is winning back cancelled subs it can't reach any other way."),
-            ]),
+            ], [V("Paper Run", "/assets/partners/UK-CRM-Retention-Repurchase-paper-run-tip2-a.webp"), V("Paper Run", "/assets/partners/UK-CRM-Retention-Repurchase-paper-run-tip2-b.png"), V("Paper Run", "/assets/partners/UK-CRM-Retention-Repurchase-paper-run-tip2-c.webp")]),
             tipB("Turn the BFCM one-time buyer into a second order", [
               PB("Your biggest Q4 risk isn't acquisition, it's the thousands of discount-led first-timers who never come back. Fire a post-purchase mailer soon after the first order, while you're still top of mind, to earn the profitable second purchase. Handwritten style, from the founder."),
               BOX("Proof", "Pod Company: 12X incremental ROAS from post-purchase mailers. Collider lifted repeat purchase +28% with a handwritten-style welcome note (no discount); Miller Harris doubled its repeat purchase rate; one A/B test lifted new-customer repeat purchase +39.7%."),
-            ]),
+            ], [V("Paper Run", "/assets/partners/UK-CRM-Retention-Repurchase-paper-run-tip3.webp")]),
             tipB("Cash in expiring loyalty points", [
               PB("Points quietly expiring in the post-holiday lull are a reason to return that customers never see, because the reminder email goes unopened. A dated, personalised mailer makes the deadline physical, sitting on the coffee table and impossible to ignore."),
-              BOX("Proof", "Because Market: 4.9X incremental ROAS from loyalty-reminder mailers. Eric Javits turned its loyalty program into a genuine reason to come back."),
-            ]),
+              BOX("Proof", "Pair of Thieves: 4.9X incremental ROAS from loyalty-reminder mailers, turning its loyalty program into a genuine reason to come back."),
+            ], [V("Paper Run", "/assets/partners/UK-CRM-Retention-Repurchase-paper-run-tip4.png")]),
           ],
         },
       ],
