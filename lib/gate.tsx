@@ -12,6 +12,9 @@ import { captureAttribution } from "./attribution";
 const GATE_ENABLED = process.env.NEXT_PUBLIC_GATE_ENABLED !== "false";
 
 const STORAGE_KEY = "q4-playbook-unlocked";
+// Once a visitor submits the form, remember it across sessions (localStorage)
+// for this long, so they are not asked to fill it again on later visits.
+const UNLOCK_TTL_MS = 90 * 24 * 60 * 60 * 1000; // 90 days
 
 type GateValue = {
   enabled: boolean; // is the gate mechanism active at all
@@ -33,13 +36,19 @@ export function GateProvider({ children }: { children: React.ReactNode }) {
     captureAttribution();
   }, []);
 
-  // Restore session unlock (survives reloads and route navigation within the session).
+  // Restore a previous unlock (persists across sessions via localStorage, for
+  // UNLOCK_TTL_MS), so a visitor who already filled the form isn't asked again.
   useEffect(() => {
     if (!GATE_ENABLED) return;
     try {
-      if (sessionStorage.getItem(STORAGE_KEY) === "1") setUnlocked(true);
+      const raw = localStorage.getItem(STORAGE_KEY);
+      if (raw) {
+        const ts = Number(raw);
+        if (Number.isFinite(ts) && Date.now() - ts < UNLOCK_TTL_MS) setUnlocked(true);
+        else localStorage.removeItem(STORAGE_KEY);
+      }
     } catch {
-      /* sessionStorage unavailable (privacy mode) */
+      /* localStorage unavailable (privacy mode) */
     }
   }, []);
 
@@ -47,7 +56,7 @@ export function GateProvider({ children }: { children: React.ReactNode }) {
     setUnlocked(true);
     setJustUnlocked(true);
     try {
-      sessionStorage.setItem(STORAGE_KEY, "1");
+      localStorage.setItem(STORAGE_KEY, String(Date.now()));
     } catch {
       /* ignore */
     }
