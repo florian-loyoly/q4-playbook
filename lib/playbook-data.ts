@@ -1478,65 +1478,26 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
     "logistics-delivery": {
       title: "Logística & Entrega",
       teaser: "Muestra una fecha de entrega creíble y cúmplela, aunque los volúmenes se disparen.",
-      keyStat: { statement: "Durante un pico promocional como el Black Friday, el volumen diario de pedidos puede multiplicarse por más de 12. Toda la dificultad está en absorber ese aumento sin ralentizar la preparación ni degradar la entrega.", highlight: "más de 12", source: "Datos internos Shippingbo (caso de cliente Novoma)" },
+      keyStat: { statement: "Las notificaciones proactivas a través de WhatsApp pueden reducir las solicitudes de asistencia hasta en un 35 %.", highlight: "35 %", source: "Datos internos de Amphora" },
       partners: [{
-        name: "Shippingbo",
-        logo: "/assets/partners/shippingbo-logo.png",
-        pitch: "Shippingbo ha desarrollado 3 software SaaS robustos al servicio del rendimiento de los profesionales del e-commerce: un OMS para recuperar y centralizar los pedidos e-commerce omnicanales, un WMS dedicado a la gestión de almacén y a la optimización de la preparación de pedidos, y un TMS para gestionar los envíos multitransportista.",
-        url: "https://www.shippingbo.com/",
-        author: { name: "Florian Laillet", role: "COO y Socio", photo: "/assets/partners/shippingbo-author.jpg" },
+        name: "Amphora",
+        logo: "/assets/partners/amphora-logo.png",
+        pitch: "Gestionamos almacenamiento, preparación de pedidos, distribución y logística internacional para que puedas escalar tu ecommerce de forma ágil, eficiente y sin fronteras.",
+        url: "https://amphoralogistics.com/es",
+        author: { name: "Marc Fitó Cortada", role: "Partnerships & Business Development", photo: "/assets/partners/amphora-author.jpeg" },
         tips: [
-          tipB("Prepara el pico con uno o dos meses de antelación", [
-            PB("Un pico de actividad no se prepara solo a partir de un objetivo de facturación. Traduce tus previsiones comerciales en un plan de carga logística:"),
-            LB(
-              "Estima los volúmenes a gestionar: número de pedidos por día, número medio de artículos por pedido y reparto entre pedidos mono-producto y multi-producto.",
-              "Asegura los aprovisionamientos: anticipa la reposición de los best-sellers teniendo en cuenta los plazos de los proveedores y las posibles demoras estacionales.",
-              "Fiabiliza el stock: realiza un inventario de las ubicaciones de picking dos o tres semanas antes del pico, y luego llena las ubicaciones de las referencias más demandadas.",
-              "Dimensiona los recursos: ajusta la plantilla, los horarios, los puestos de embalaje, los carros y los consumibles al volumen previsto.",
-            ),
-            BOX("", "El objetivo: convertir las previsiones de venta en un plan operativo realista antes de que lleguen los pedidos."),
+          tip("Convierte las devoluciones post-navideñas en una ventaja, no en un cuello de botella", [
+            "El 53 % de los consumidores aprovecha las rebajas de BFCM para adelantar sus regalos de fin de año, lo que significa que buena parte de esas devoluciones no llegarán hasta bien entrado enero. Sin un proceso pensado para eso, es fácil que se acumulen justo cuando el equipo ya está agotado del pico.",
+            "Una operativa de devoluciones bien diseñada no solo procesa cada paquete que vuelve: clasifica, verifica y decide (reembolso, reenvío o reacondicionamiento) sin que cada caso tenga que pasar por una persona. Eso es lo que marca la diferencia entre un enero tranquilo y uno colapsado.",
+            "Amphora, por ejemplo, consolida las devoluciones semanalmente hacia Barcelona y usa IA para clasificarlas automáticamente antes de decidir qué hacer con cada una.",
           ]),
-          tipB("Pon el almacén en condiciones de pico", [
-            PB("Antes del rush, reduce los desplazamientos y las manipulaciones que no crean valor:"),
-            LB(
-              "Despeja los pasillos y las zonas de trabajo para evitar que palés o cajas ralenticen los recorridos.",
-              "Acerca los best-sellers a las zonas de preparación y expedición, apoyándote por ejemplo en una clasificación ABC.",
-              "Cartografía las ubicaciones y organiza el almacén por zonas coherentes con las tipologías de producto: estándar, voluminosos, frágiles o de alta rotación.",
-              "Prepara los puestos de embalaje: cajas, sobres, consumibles e impresoras deben estar accesibles sin idas y venidas.",
-              "Guía a los preparadores con una PDA para optimizar los trayectos y facilitar la integración de los refuerzos de temporada.",
-            ),
-            BOX("", "El objetivo: reducir la distancia recorrida por pedido y aumentar el número de líneas preparadas por hora."),
+          tip("Ofrece opciones de entrega, no una única promesa", [
+            "Prometer «entrega rápida» de forma genérica no siempre convence: dar a elegir entre varias velocidades sí. Mostrar en el checkout dos o tres opciones de envío, cada una con un plazo realista y un coste claro, permite que el propio cliente decida cuánto vale la rapidez para él, en vez de que la marca adivine el punto óptimo.",
+            "Amphora sostiene entregas nacionales en menos de 25h y a mercados clave de la UE en menos de 48h, con avisos proactivos por WhatsApp que llegan a reducir los tickets de soporte hasta un 35 %.",
           ]),
-          tipB("Adapta el método de preparación al perfil de los pedidos", [
-            PB("No apliques un único método a todos los pedidos. La elección depende sobre todo del número de artículos, de la presencia de códigos de barras, de la frecuencia de las referencias, del volumen de los productos y de la capacidad de los carros:"),
-            LB(
-              "Preparación y etiquetado simultáneos: ambos pasos se realizan a la vez, especialmente adaptado a los pedidos simples. Ideal para pedidos mono-producto de tamaño pequeño o medio.",
-              "Carro compartimentado: preparación de varios pedidos en paralelo con un carro dividido en compartimentos. Ideal para pedidos multi-producto de tamaño pequeño o medio.",
-              "Clasificación fija: los artículos se recogen y luego se reparten entre varios pedidos en una zona de clasificación dedicada. Ideal para pedidos multi-producto.",
-              "Mono-picking: cada pedido se prepara individualmente, sobre todo cuando su composición o su volumen lo justifican. Ideal para pedidos con artículos voluminosos.",
-            ),
-            BOX("", "El objetivo: limitar el número de recorridos y manipulaciones garantizando cada pedido con el escaneo."),
-          ]),
-          tipB("Gestiona las prioridades y elimina las tareas manuales", [
-            PB("Durante el pico, el orden de tratamiento debe basarse en criterios operativos explícitos:"),
-            LB(
-              "Prioriza según la promesa al cliente, la hora límite de expedición y el cut-off del transportista.",
-              "Haz visibles las reglas para los equipos, de modo que cada uno sepa de inmediato qué sesión preparar.",
-              "Automatiza las operaciones repetitivas: recuperación de los pedidos, control por escaneo, generación de etiquetas y transmisión del seguimiento.",
-              "Adapta los horarios a la curva de carga, en especial al volumen acumulado durante el fin de semana y a tratar el lunes.",
-            ),
-            BOX("", "El objetivo: maximizar la parte de los pedidos listos antes de la hora de recogida, sin multiplicar las reintroducciones de datos ni los arbitrajes manuales."),
-          ]),
-          tipB("Asegura la capacidad de recogida del transporte", [
-            PB("Un pedido preparado a tiempo pero que sigue en el muelle es un pedido con retraso. Así que prepara la salida del almacén con tanto rigor como el picking:"),
-            LB(
-              "Comunica tus previsiones a los transportistas varias semanas antes del pico.",
-              "Confirma los horarios y la capacidad de recogida en función del volumen diario previsto.",
-              "Prevé una recogida intermedia cuando el volumen amenace con saturar los muelles antes del final del día.",
-              "Identifica un transportista de reserva y define las reglas de reasignación en caso de saturación, retraso o incidente.",
-              "Prueba el escenario de continuidad antes del pico para que pueda activarse sin fricción.",
-            ),
-            BOX("", "El objetivo: entregar todos los pedidos preparados a los transportistas a tiempo y evitar la acumulación de paquetes en los muelles."),
+          tip("No dependas de un único transportista en el pico", [
+            "Los transportistas también llegan a su límite de capacidad en temporada de pico.",
+            "Las marcas que dependen de un único transportista para todo no tienen alternativa cuando se retrasa una recogida o se congestiona un hub.",
           ]),
         ],
       }],
