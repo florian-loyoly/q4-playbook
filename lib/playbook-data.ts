@@ -1737,7 +1737,7 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
         name: "Sendcloud",
         logo: "/assets/partners/sendcloud-logo.svg",
         pitch: "Sendcloud es la plataforma de envíos líder en Europa que permite a los comercios e-commerce escalar sus operaciones logísticas sin esfuerzo y ofrecer una experiencia centrada en el cliente.",
-        url: "https://www.sendcloud.com/",
+        url: "https://go.sendcloud.es/partner-referral-promotion?partner_name_ps=Loyoly",
         author: { name: "Ana Ondreicsik", role: "Product Lead", photo: "/assets/partners/sendcloud-author.jpg" },
         tips: [
           tip("Define las expectativas de tu política de devoluciones antes del checkout", [
