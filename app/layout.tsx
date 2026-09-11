@@ -18,10 +18,12 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://q4-playbook.vercel.app"),
+  metadataBase: new URL("https://q4-playbook.loyoly.io"),
   title: "The Ultimate Q4 Playbook 2026",
   description:
     "The Q4 customer journey, sponsored by the experts who master it. Nine stages, nine partner playbooks for Black Friday, Cyber Week and the holidays.",
+  // Gated marketing asset: keep it out of search engines.
+  robots: { index: false, follow: false },
 };
 
 export default function RootLayout({
