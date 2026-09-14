@@ -1486,18 +1486,24 @@ export const CONTENT: Record<Locale, Record<string, StepContent>> = {
         url: "https://amphoralogistics.com/es",
         author: { name: "Marc Fitó Cortada", role: "Partnerships & Business Development", photo: "/assets/partners/amphora-author.jpeg" },
         tips: [
-          tip("Convierte las devoluciones post-navideñas en una ventaja, no en un cuello de botella", [
-            "El 53 % de los consumidores aprovecha las rebajas de BFCM para adelantar sus regalos de fin de año, lo que significa que buena parte de esas devoluciones no llegarán hasta bien entrado enero. Sin un proceso pensado para eso, es fácil que se acumulen justo cuando el equipo ya está agotado del pico.",
-            "Una operativa de devoluciones bien diseñada no solo procesa cada paquete que vuelve: clasifica, verifica y decide (reembolso, reenvío o reacondicionamiento) sin que cada caso tenga que pasar por una persona. Eso es lo que marca la diferencia entre un enero tranquilo y uno colapsado.",
-            "Amphora, por ejemplo, consolida las devoluciones semanalmente hacia Barcelona y usa IA para clasificarlas automáticamente antes de decidir qué hacer con cada una.",
+          tip("Convierte las devoluciones en una palanca de fidelización", [
+            "El 53 % de los consumidores aprovecha las rebajas de BFCM para adelantar sus regalos de fin de año, lo que significa que buena parte de esas devoluciones no llegarán hasta bien entrado enero.",
+            "Una operativa de devoluciones bien diseñada no solo procesa cada paquete que vuelve: clasifica, verifica y decide (reembolso, reenvío o reacondicionamiento) sin que cada caso tenga que pasar por una persona, y recibirlas en varios hubs para consolidarlas hacia un centro principal reduce costes y agiliza el reembolso.",
+            "Amphora, por ejemplo, consolida las devoluciones semanalmente hacia Barcelona y utiliza IA para agilizar su clasificación antes de decidir qué hacer con cada una.",
           ]),
-          tip("Ofrece opciones de entrega, no una única promesa", [
-            "Prometer «entrega rápida» de forma genérica no siempre convence: dar a elegir entre varias velocidades sí. Mostrar en el checkout dos o tres opciones de envío, cada una con un plazo realista y un coste claro, permite que el propio cliente decida cuánto vale la rapidez para él, en vez de que la marca adivine el punto óptimo.",
-            "Amphora sostiene entregas nacionales en menos de 25h y a mercados clave de la UE en menos de 48h, con avisos proactivos por WhatsApp que llegan a reducir los tickets de soporte hasta un 35 %.",
+          tip("Deja que el cliente elija cómo quiere recibir su pedido", [
+            "Prometer «entrega rápida» de forma genérica no siempre convence: dar a elegir entre varias velocidades sí. Mostrar en el checkout dos o tres opciones de envío, cada una con un plazo realista y un coste claro, permite que el cliente decida cuánto vale la rapidez para él, y ajustar ese plazo según el destino real, no la media nacional, evita expectativas rotas justo en el pico de pedidos.",
+            "Amphora sostiene entregas nacionales en menos de 25h y a mercados clave de la UE desde 48h, con avisos proactivos por WhatsApp que llegan a reducir los tickets de soporte hasta un 35 %.",
           ]),
-          tip("No dependas de un único transportista en el pico", [
-            "Los transportistas también llegan a su límite de capacidad en temporada de pico.",
-            "Las marcas que dependen de un único transportista para todo no tienen alternativa cuando se retrasa una recogida o se congestiona un hub.",
+          tip("Acerca el stock al cliente para acelerar tu expansión internacional", [
+            "El pico de temporada es cuando más rápido se nota el coste de una operativa internacional fragmentada: retrasos aduaneros, aranceles inesperados y entregas transfronterizas lentas se traducen en carritos abandonados justo cuando más importa el volumen.",
+            "2026 trae además cambios en la normativa aduanera de la UE que afectarán a las marcas que envían desde fuera, así que vale la pena preguntar si tu partner logístico tiene stock local en tus mercados clave, no solo un transportista que envía allí.",
+            "Amphora opera su hub europeo desde Barcelona, a menos de 48h de más de 400M de consumidores, con almacenes propios también en EE.UU., México, Polonia y Hong Kong.",
+          ]),
+          tip("Construye una red de transporte preparada para el pico", [
+            "Los transportistas también llegan a su límite de capacidad en temporada de pico, y las marcas que dependen de uno solo para todo no tienen alternativa cuando se retrasa una recogida o se congestiona un hub.",
+            "Merece la pena preguntar a tu partner logístico con qué transportistas trabaja y si puede mover volumen entre ellos si uno se retrasa, para que ese riesgo no recaiga solo en ti.",
+            "Amphora trabaja con una red de más de 90 partners de transporte y selecciona el transportista para cada envío en función del destino, el servicio y la performance operativa, con servicios que incluyen hasta dos intentos de entrega.",
           ]),
         ],
       }],
